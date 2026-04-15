@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Crises Familias Ancora</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Final Crises Familias Ancora</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>carteira_ancora</th>
+<th>crise</th>
+<th>familia_estrategia</th>
+<th>retorno_periodo</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="0.0622044967703507">6,22%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="-0.0229493826129688">-2,29%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="0.0463125377737569">4,63%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="0.0192023737996758">1,92%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="0.0540198109999559">5,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="0.0444067045739426">4,44%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="-0.0979664921539892">-9,80%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="-0.1314095870869626">-13,14%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="-0.1089427831288278">-10,89%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="-0.117301178109816">-11,73%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="-0.1207145523949723">-12,07%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="-0.1123453354776651">-11,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="-0.1720500336249496">-17,21%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="-0.1129825742858098">-11,30%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="-0.1672806886599155">-16,73%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="-0.1528972226600593">-15,29%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="-0.15001138277483">-15,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="-0.1492591678186563">-14,93%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="0.0929357571616986">9,29%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="0.0506263918459377">5,06%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="0.1539941305170802">15,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="0.0269939273338692">2,70%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="0.1438045477568958">14,38%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">stress_2015_2016</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="0.0991059799782363">9,91%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="-0.1053395579367811">-10,53%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="-0.0815669996634891">-8,16%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="-0.072254963119806">-7,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="-0.1264652700215943">-12,65%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="-0.1196737828383202">-11,97%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">covid_2020</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="-0.0815449886825009">-8,15%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="-0.1741591322581391">-17,42%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="-0.0428496155070062">-4,28%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="-0.1003942415685199">-10,04%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="-0.1230253915891294">-12,30%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="-0.1899380213215505">-18,99%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">inflacao_2022</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="-0.1210897483273528">-12,11%</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

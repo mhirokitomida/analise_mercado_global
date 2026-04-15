@@ -1,0 +1,18 @@
+﻿carteira,n_ativos,ativos
+etfs_todos,24,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE
+etfs_global,3,ACWI | VEA | VT
+etfs_america_norte,3,QQQ | SPY | XLE
+etfs_latam,3,ARGT | ECH | EWW
+etfs_europa,3,EWG | EWU | FEZ
+etfs_asia,6,EWH | EWJ | EWT | EWY | INDA | MCHI
+etfs_oceania,2,ENZL | EWA
+etfs_brasil,2,BOVA11.SA | SMAL11.SA
+etfs_exterior,22,ACWI | ARGT | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SPY | VEA | VT | XLE
+etfs_desenvolvidos_emergentes,2,VEA | IEMG
+etfs_com_ouro,25,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD
+etfs_com_btc,25,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD
+etfs_com_petroleo,25,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | USO
+etfs_com_ouro_btc,26,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD
+etfs_com_ouro_petroleo,26,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | USO
+etfs_com_btc_petroleo,26,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD | USO
+etfs_com_tudo,27,ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD | USO

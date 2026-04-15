@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Melhores Estrategias Por Familia</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Final Melhores Estrategias Por Familia</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>carteira</th>
+<th>metodo</th>
+<th>tipo</th>
+<th>estrategia</th>
+<th>cenario_alternativos</th>
+<th>detalhe_alternativos</th>
+<th>grupo_familia</th>
+<th>retorno_total</th>
+<th>cagr</th>
+<th>vol_anual</th>
+<th>sharpe</th>
+<th>sortino</th>
+<th>max_drawdown</th>
+<th>calmar</th>
+<th>pct_meses_positivos</th>
+<th>peso_max</th>
+<th>top3_peso</th>
+<th>hhi</th>
+<th>n_efetivo_ativos</th>
+<th>n_clusters_finais</th>
+<th>rank_sharpe</th>
+<th>rank_cagr</th>
+<th>rank_mdd</th>
+<th>rank_calmar</th>
+<th>rank_vol</th>
+<th>score_final</th>
+<th>familia_estrategia</th>
+<th>coluna_base100_metodo</th>
+<th>label_familia</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-text">ouro+btc+petroleo</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="4.90211612211021">490,21%</td>
+<td class="col-num" data-order="0.1723009650137374">17,23%</td>
+<td class="col-num" data-order="0.1440037467335969">14,40%</td>
+<td class="col-num" data-order="1.2712133691977752">1,2712</td>
+<td class="col-num" data-order="2.198507474869181">2,1985</td>
+<td class="col-num" data-order="-0.2369581080959546">-23,70%</td>
+<td class="col-num" data-order="0.7271368192388055">0,7271</td>
+<td class="col-num" data-order="0.6296296296296297">62,96%</td>
+<td class="col-num"></td>
+<td class="col-num"></td>
+<td class="col-num"></td>
+<td class="col-num"></td>
+<td class="col-num"></td>
+<td class="col-num" data-order="29.0">29,0000</td>
+<td class="col-num" data-order="25.0">2500,00%</td>
+<td class="col-num" data-order="48.0">48,0000</td>
+<td class="col-num" data-order="44.0">44,0000</td>
+<td class="col-num" data-order="38.0">3800,00%</td>
+<td class="col-num" data-order="184.0">184,0000</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">equal_weight | etfs_com_tudo</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">markowitz_puro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-text">ouro+btc+petroleo</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="4.552187780038707">455,22%</td>
+<td class="col-num" data-order="0.1659191376918878">16,59%</td>
+<td class="col-num" data-order="0.0974189937341108">9,74%</td>
+<td class="col-num" data-order="1.7111688717490054">1,7112</td>
+<td class="col-num" data-order="2.852687404823968">2,8527</td>
+<td class="col-num" data-order="-0.0898325857980363">-8,98%</td>
+<td class="col-num" data-order="1.846981651679392">1,8470</td>
+<td class="col-num" data-order="0.6592592592592592">65,93%</td>
+<td class="col-num" data-order="0.3637892986782263">36,38%</td>
+<td class="col-num" data-order="0.7914068316543407">79,14%</td>
+<td class="col-num" data-order="0.2616552849602276">0,2617</td>
+<td class="col-num" data-order="3.821822288634464">4</td>
+<td class="col-num"></td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-num" data-order="31.0">3100,00%</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="40.0">40,0000</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">markowitz_puro__min_vol | etfs_com_tudo</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">markowitz_puro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-text">ouro+btc+petroleo</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="9.568789111436004">956,88%</td>
+<td class="col-num" data-order="0.235104636777127">23,51%</td>
+<td class="col-num" data-order="0.1117069081112741">11,17%</td>
+<td class="col-num" data-order="2.0327777329974936">2,0328</td>
+<td class="col-num" data-order="4.382137647458068">4,3821</td>
+<td class="col-num" data-order="-0.142545072162764">-14,25%</td>
+<td class="col-num" data-order="1.649335422193161">1,6493</td>
+<td class="col-num" data-order="0.7111111111111111">71,11%</td>
+<td class="col-num" data-order="0.3986233274723388">39,86%</td>
+<td class="col-num" data-order="0.8655149780748328">86,55%</td>
+<td class="col-num" data-order="0.2867969934267607">0,2868</td>
+<td class="col-num" data-order="3.4867869012558868">3</td>
+<td class="col-num"></td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="7.0">700,00%</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-num" data-order="7.0">700,00%</td>
+<td class="col-num" data-order="26.0">26,0000</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">markowitz_puro__max_sharpe | etfs_com_tudo</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">markowitz_restrito</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-text">ouro+btc+petroleo</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="4.139434381007902">413,94%</td>
+<td class="col-num" data-order="0.1578813505154239">15,79%</td>
+<td class="col-num" data-order="0.1206281650542643">12,06%</td>
+<td class="col-num" data-order="1.3723922488314115">1,3724</td>
+<td class="col-num" data-order="2.1566361445313014">2,1566</td>
+<td class="col-num" data-order="-0.177862731607996">-17,79%</td>
+<td class="col-num" data-order="0.8876584154986981">0,8877</td>
+<td class="col-num" data-order="0.674074074074074">67,41%</td>
+<td class="col-num" data-order="0.1">10,00%</td>
+<td class="col-num" data-order="0.3000000000000001">30,00%</td>
+<td class="col-num" data-order="0.0638635189125338">0,0639</td>
+<td class="col-num" data-order="15.658391786546847">16</td>
+<td class="col-num"></td>
+<td class="col-num" data-order="19.0">19,0000</td>
+<td class="col-num" data-order="37.0">3700,00%</td>
+<td class="col-num" data-order="12.0">12,0000</td>
+<td class="col-num" data-order="19.0">19,0000</td>
+<td class="col-num" data-order="14.0">1400,00%</td>
+<td class="col-num" data-order="101.0">101,0000</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">markowitz_restrito__min_vol | etfs_com_tudo</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">markowitz_restrito</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-text">ouro+petroleo</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="4.744695942798636">474,47%</td>
+<td class="col-num" data-order="0.169483406036272">16,95%</td>
+<td class="col-num" data-order="0.1270565906908082">12,71%</td>
+<td class="col-num" data-order="1.3926441124386597">1,3926</td>
+<td class="col-num" data-order="2.525710975006041">2,5257</td>
+<td class="col-num" data-order="-0.1810894060892653">-18,11%</td>
+<td class="col-num" data-order="0.9359101103502852">0,9359</td>
+<td class="col-num" data-order="0.6518518518518519">65,19%</td>
+<td class="col-num" data-order="0.0999999999999976">10,00%</td>
+<td class="col-num" data-order="0.299999999999993">30,00%</td>
+<td class="col-num" data-order="0.0624612911791787">0,0625</td>
+<td class="col-num" data-order="16.00991559926874">16</td>
+<td class="col-num"></td>
+<td class="col-num" data-order="17.0">17,0000</td>
+<td class="col-num" data-order="29.0">2900,00%</td>
+<td class="col-num" data-order="17.0">17,0000</td>
+<td class="col-num" data-order="13.0">13,0000</td>
+<td class="col-num" data-order="18.0">1800,00%</td>
+<td class="col-num" data-order="94.0">94,0000</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">markowitz_restrito__max_sharpe | etfs_com_ouro_petroleo</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-text">ouro+btc+petroleo</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="4.428578994069727">442,86%</td>
+<td class="col-num" data-order="0.1635707372881965">16,36%</td>
+<td class="col-num" data-order="0.1252736942289271">12,53%</td>
+<td class="col-num" data-order="1.367549927968646">1,3675</td>
+<td class="col-num" data-order="2.343587855347907">2,3436</td>
+<td class="col-num" data-order="-0.1782814515811153">-17,83%</td>
+<td class="col-num" data-order="0.9174860078687116">0,9175</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="0.1879465479924673">18,79%</td>
+<td class="col-num" data-order="0.3038354688510589">30,38%</td>
+<td class="col-num" data-order="0.063853707647227">0,0639</td>
+<td class="col-num" data-order="15.660797733542823">16</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-num" data-order="20.0">20,0000</td>
+<td class="col-num" data-order="33.0">3300,00%</td>
+<td class="col-num" data-order="13.0">13,0000</td>
+<td class="col-num" data-order="16.0">16,0000</td>
+<td class="col-num" data-order="17.0">1700,00%</td>
+<td class="col-num" data-order="99.0">99,0000</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">hrp | etfs_com_tudo</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

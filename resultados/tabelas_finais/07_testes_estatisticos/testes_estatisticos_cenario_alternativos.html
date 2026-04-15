@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes Estatisticos Cenario Alternativos</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Testes Estatisticos Cenario Alternativos</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>tipo_teste</th>
+<th>familia_estrategia</th>
+<th>metrica</th>
+<th>n_com_alternativos</th>
+<th>n_sem_alternativos</th>
+<th>media_com_alternativos</th>
+<th>media_sem_alternativos</th>
+<th>media_diff_com_menos_sem</th>
+<th>bootstrap_ci_low</th>
+<th>bootstrap_ci_high</th>
+<th>mannwhitney_stat</th>
+<th>mannwhitney_pvalue</th>
+<th>permutation_pvalue</th>
+<th>vencedor_media</th>
+<th>significativo_mannwhitney_5pct</th>
+<th>significativo_permutation_5pct</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">sharpe</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.1962716545275678">1,1963</td>
+<td class="col-num" data-order="0.9194999904589306">0,9195</td>
+<td class="col-num" data-order="0.2767716640686372">0,2768</td>
+<td class="col-num" data-order="0.1736833372415504">0,1737</td>
+<td class="col-num" data-order="0.3898979907118948">0,3899</td>
+<td class="col-num" data-order="69.0">69,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0003999200159968">0,0004</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">vol_anual</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1449914571916141">0,1450</td>
+<td class="col-num" data-order="0.175561680473966">0,1756</td>
+<td class="col-num" data-order="-0.0305702232823518">-0,0306</td>
+<td class="col-num" data-order="-0.0452042524080503">-0,0452</td>
+<td class="col-num" data-order="-0.0179802962655565">-0,0180</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.0007198683669271">0,0007</td>
+<td class="col-num" data-order="0.000999800039992">0,0010</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">sortino</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="2.07309398956373">2,0731</td>
+<td class="col-num" data-order="1.5260696241901497">1,5261</td>
+<td class="col-num" data-order="0.5470243653735807">0,5470</td>
+<td class="col-num" data-order="0.3033703302287561">0,3034</td>
+<td class="col-num" data-order="0.8006706282842389">0,8007</td>
+<td class="col-num" data-order="65.0">65,0000</td>
+<td class="col-num" data-order="0.0019539284245166">0,0020</td>
+<td class="col-num" data-order="0.002999400119976">0,0030</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">calmar</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.6860252978271015">0,6860</td>
+<td class="col-num" data-order="0.4904287368882462">0,4904</td>
+<td class="col-num" data-order="0.1955965609388553">0,1956</td>
+<td class="col-num" data-order="0.0876129878770344">0,0876</td>
+<td class="col-num" data-order="0.2953111153954502">0,2953</td>
+<td class="col-num" data-order="63.0">63,0000</td>
+<td class="col-num" data-order="0.0046277252159605">0,0046</td>
+<td class="col-num" data-order="0.0145970805838832">0,0146</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">max_drawdown</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="-0.2346406865659338">-0,2346</td>
+<td class="col-num" data-order="-0.2987001416180733">-0,2987</td>
+<td class="col-num" data-order="0.0640594550521394">0,0641</td>
+<td class="col-num" data-order="0.0296601326366421">0,0297</td>
+<td class="col-num" data-order="0.1008719577503846">0,1009</td>
+<td class="col-num" data-order="61.0">61,0000</td>
+<td class="col-num" data-order="0.0096668037844508">0,0097</td>
+<td class="col-num" data-order="0.0157968406318736">0,0158</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">cagr</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1611334179987578">0,1611</td>
+<td class="col-num" data-order="0.1383454169203344">0,1383</td>
+<td class="col-num" data-order="0.0227880010784233">0,0228</td>
+<td class="col-num" data-order="0.0045899526181919">0,0046</td>
+<td class="col-num" data-order="0.0403341241368145">0,0403</td>
+<td class="col-num" data-order="55.0">55,0000</td>
+<td class="col-num" data-order="0.0553270259152612">0,0553</td>
+<td class="col-num" data-order="0.0465906818636272">0,0466</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">equal_weight</td>
+<td class="col-text">retorno_total</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="4.345174582130345">4,3452</td>
+<td class="col-num" data-order="3.3594918141208803">3,3595</td>
+<td class="col-num" data-order="0.9856827680094646">0,9857</td>
+<td class="col-num" data-order="0.100016647956057">0,1000</td>
+<td class="col-num" data-order="1.7896900030302625">1,7897</td>
+<td class="col-num" data-order="55.0">55,0000</td>
+<td class="col-num" data-order="0.0553270259152612">0,0553</td>
+<td class="col-num" data-order="0.0651869626074785">0,0652</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">max_drawdown</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="-0.1931917273855788">-0,1932</td>
+<td class="col-num" data-order="-0.2915790615936321">-0,2916</td>
+<td class="col-num" data-order="0.0983873342080532">0,0984</td>
+<td class="col-num" data-order="0.0653285662223419">0,0653</td>
+<td class="col-num" data-order="0.1325987528833749">0,1326</td>
+<td class="col-num" data-order="70.0">70,0000</td>
+<td class="col-num" data-order="0.0001028383381324">0,0001</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">vol_anual</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1345487638620424">0,1345</td>
+<td class="col-num" data-order="0.1729117966105872">0,1729</td>
+<td class="col-num" data-order="-0.0383630327485447">-0,0384</td>
+<td class="col-num" data-order="-0.0542979977497283">-0,0543</td>
+<td class="col-num" data-order="-0.0250125148322032">-0,0250</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+<td class="col-num" data-order="0.0001028383381324">0,0001</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">sharpe</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.2040993877669306">1,2041</td>
+<td class="col-num" data-order="0.9048731949940356">0,9049</td>
+<td class="col-num" data-order="0.2992261927728948">0,2992</td>
+<td class="col-num" data-order="0.1914755669951822">0,1915</td>
+<td class="col-num" data-order="0.4165267949141851">0,4165</td>
+<td class="col-num" data-order="69.0">69,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0003999200159968">0,0004</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">calmar</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.7790822602499442">0,7791</td>
+<td class="col-num" data-order="0.4824316752790027">0,4824</td>
+<td class="col-num" data-order="0.2966505849709415">0,2967</td>
+<td class="col-num" data-order="0.1786232408422106">0,1786</td>
+<td class="col-num" data-order="0.4029022101403228">0,4029</td>
+<td class="col-num" data-order="64.0">64,0000</td>
+<td class="col-num" data-order="0.0030851501439736">0,0031</td>
+<td class="col-num" data-order="0.0013997200559888">0,0014</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">sortino</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="2.04126058067156">2,0413</td>
+<td class="col-num" data-order="1.477860535962527">1,4779</td>
+<td class="col-num" data-order="0.563400044709033">0,5634</td>
+<td class="col-num" data-order="0.313378614676998">0,3134</td>
+<td class="col-num" data-order="0.8183542398262255">0,8184</td>
+<td class="col-num" data-order="64.0">64,0000</td>
+<td class="col-num" data-order="0.0030851501439736">0,0031</td>
+<td class="col-num" data-order="0.0027994401119776">0,0028</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">cagr</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1498347408108583">0,1498</td>
+<td class="col-num" data-order="0.1333299710327415">0,1333</td>
+<td class="col-num" data-order="0.0165047697781167">0,0165</td>
+<td class="col-num" data-order="0.0001543410733186">0,0002</td>
+<td class="col-num" data-order="0.0307440019932305">0,0307</td>
+<td class="col-num" data-order="61.0">61,0000</td>
+<td class="col-num" data-order="0.0096668037844508">0,0097</td>
+<td class="col-num" data-order="0.0995800839832033">0,0996</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">retorno_total</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.766544562258679">3,7665</td>
+<td class="col-num" data-order="3.147565360212097">3,1476</td>
+<td class="col-num" data-order="0.6189792020465816">0,6190</td>
+<td class="col-num" data-order="-0.1797239162780289">-0,1797</td>
+<td class="col-num" data-order="1.2524464378186606">1,2524</td>
+<td class="col-num" data-order="61.0">61,0000</td>
+<td class="col-num" data-order="0.0096668037844508">0,0097</td>
+<td class="col-num" data-order="0.1971605678864227">0,1972</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">sharpe</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.8029020133837577">1,8029</td>
+<td class="col-num" data-order="1.0418583954333716">1,0419</td>
+<td class="col-num" data-order="0.7610436179503861">0,7610</td>
+<td class="col-num" data-order="0.5714477766245518">0,5714</td>
+<td class="col-num" data-order="0.9455784701787484">0,9456</td>
+<td class="col-num" data-order="70.0">70,0000</td>
+<td class="col-num" data-order="0.0001028383381324">0,0001</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">calmar</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.3256965955848727">1,3257</td>
+<td class="col-num" data-order="0.6060649242234672">0,6061</td>
+<td class="col-num" data-order="0.7196316713614055">0,7196</td>
+<td class="col-num" data-order="0.4828305291978122">0,4828</td>
+<td class="col-num" data-order="0.9614054571891988">0,9614</td>
+<td class="col-num" data-order="70.0">70,0000</td>
+<td class="col-num" data-order="0.0001028383381324">0,0001</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">sortino</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.664055127949939">3,6641</td>
+<td class="col-num" data-order="1.8006418977220275">1,8006</td>
+<td class="col-num" data-order="1.8634132302279116">1,8634</td>
+<td class="col-num" data-order="1.260654214733956">1,2607</td>
+<td class="col-num" data-order="2.465917755623225">2,4659</td>
+<td class="col-num" data-order="69.0">69,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">vol_anual</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1275861819271628">0,1276</td>
+<td class="col-num" data-order="0.1809311365525601">0,1809</td>
+<td class="col-num" data-order="-0.0533449546253972">-0,0533</td>
+<td class="col-num" data-order="-0.0738583738888523">-0,0739</td>
+<td class="col-num" data-order="-0.0317250306857471">-0,0317</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.0007198683669271">0,0007</td>
+<td class="col-num" data-order="0.0005998800239952">0,0006</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">max_drawdown</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="-0.1854662237911301">-0,1855</td>
+<td class="col-num" data-order="-0.2886932171999321">-0,2887</td>
+<td class="col-num" data-order="0.1032269934088019">0,1032</td>
+<td class="col-num" data-order="0.0505520851759106">0,0506</td>
+<td class="col-num" data-order="0.1563715525093927">0,1564</td>
+<td class="col-num" data-order="63.0">63,0000</td>
+<td class="col-num" data-order="0.0046277252159605">0,0046</td>
+<td class="col-num" data-order="0.0031993601279744">0,0032</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">retorno_total</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="9.6259863821483">9,6260</td>
+<td class="col-num" data-order="5.072496749036416">5,0725</td>
+<td class="col-num" data-order="4.553489633111884">4,5535</td>
+<td class="col-num" data-order="1.96567290791306">1,9657</td>
+<td class="col-num" data-order="7.379363948527559">7,3794</td>
+<td class="col-num" data-order="61.0">61,0000</td>
+<td class="col-num" data-order="0.0096668037844508">0,0097</td>
+<td class="col-num" data-order="0.0067986402719456">0,0068</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-text">cagr</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.2315243238968619">0,2315</td>
+<td class="col-num" data-order="0.1680405031791874">0,1680</td>
+<td class="col-num" data-order="0.0634838207176744">0,0635</td>
+<td class="col-num" data-order="0.030617151671906">0,0306</td>
+<td class="col-num" data-order="0.098189524660781">0,0982</td>
+<td class="col-num" data-order="61.0">61,0000</td>
+<td class="col-num" data-order="0.0096668037844508">0,0097</td>
+<td class="col-num" data-order="0.0087982403519296">0,0088</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">sharpe</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.505357414301418">1,5054</td>
+<td class="col-num" data-order="0.9331981087069782">0,9332</td>
+<td class="col-num" data-order="0.57215930559444">0,5722</td>
+<td class="col-num" data-order="0.3946868217054498">0,3947</td>
+<td class="col-num" data-order="0.7414362440055059">0,7414</td>
+<td class="col-num" data-order="69.0">69,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">max_drawdown</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="-0.1326751577441143">-0,1327</td>
+<td class="col-num" data-order="-0.2722068957686712">-0,2722</td>
+<td class="col-num" data-order="0.1395317380245568">0,1395</td>
+<td class="col-num" data-order="0.0995781206703509">0,0996</td>
+<td class="col-num" data-order="0.1812782588912037">0,1813</td>
+<td class="col-num" data-order="69.0">69,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">vol_anual</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1068039659780504">0,1068</td>
+<td class="col-num" data-order="0.1663359533785444">0,1663</td>
+<td class="col-num" data-order="-0.0595319874004939">-0,0595</td>
+<td class="col-num" data-order="-0.0764729832581982">-0,0765</td>
+<td class="col-num" data-order="-0.0428845863660406">-0,0429</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">calmar</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.26599092923407">1,2660</td>
+<td class="col-num" data-order="0.5154335496795237">0,5154</td>
+<td class="col-num" data-order="0.7505573795545462">0,7506</td>
+<td class="col-num" data-order="0.4260553746834962">0,4261</td>
+<td class="col-num" data-order="1.0837452703355148">1,0837</td>
+<td class="col-num" data-order="66.0">66,0000</td>
+<td class="col-num" data-order="0.0012340600575894">0,0012</td>
+<td class="col-num" data-order="0.0003999200159968">0,0004</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">sortino</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="2.542073861869932">2,5421</td>
+<td class="col-num" data-order="1.5237764760573085">1,5238</td>
+<td class="col-num" data-order="1.0182973858126234">1,0183</td>
+<td class="col-num" data-order="0.590204559704963">0,5902</td>
+<td class="col-num" data-order="1.4267308453555532">1,4267</td>
+<td class="col-num" data-order="65.0">65,0000</td>
+<td class="col-num" data-order="0.0019539284245166">0,0020</td>
+<td class="col-num" data-order="0.0007998400319936">0,0008</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">cagr</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1540798428511247">0,1541</td>
+<td class="col-num" data-order="0.1323113337152">0,1323</td>
+<td class="col-num" data-order="0.0217685091359246">0,0218</td>
+<td class="col-num" data-order="0.0061290759186143">0,0061</td>
+<td class="col-num" data-order="0.0355610139448057">0,0356</td>
+<td class="col-num" data-order="59.0">59,0000</td>
+<td class="col-num" data-order="0.018510900863842">0,0185</td>
+<td class="col-num" data-order="0.0315936812637472">0,0316</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-text">retorno_total</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.9823352503828575">3,9823</td>
+<td class="col-num" data-order="3.082463835059202">3,0825</td>
+<td class="col-num" data-order="0.8998714153236556">0,8999</td>
+<td class="col-num" data-order="0.1636362852129358">0,1636</td>
+<td class="col-num" data-order="1.5325183400117095">1,5325</td>
+<td class="col-num" data-order="59.0">59,0000</td>
+<td class="col-num" data-order="0.018510900863842">0,0185</td>
+<td class="col-num" data-order="0.0505898820235952">0,0506</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">sharpe</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.4747163584512513">1,4747</td>
+<td class="col-num" data-order="0.9507382706165416">0,9507</td>
+<td class="col-num" data-order="0.5239780878347097">0,5240</td>
+<td class="col-num" data-order="0.3798816028374405">0,3799</td>
+<td class="col-num" data-order="0.6711141534504788">0,6711</td>
+<td class="col-num" data-order="70.0">70,0000</td>
+<td class="col-num" data-order="0.0001028383381324">0,0001</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">sortino</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="2.8241889909393287">2,8242</td>
+<td class="col-num" data-order="1.6148185745576047">1,6148</td>
+<td class="col-num" data-order="1.209370416381724">1,2094</td>
+<td class="col-num" data-order="0.8301648650840007">0,8302</td>
+<td class="col-num" data-order="1.592192328087646">1,5922</td>
+<td class="col-num" data-order="69.0">69,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0001999600079984">0,0002</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">calmar</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.9049695357217846">0,9050</td>
+<td class="col-num" data-order="0.5224356685076396">0,5224</td>
+<td class="col-num" data-order="0.382533867214145">0,3825</td>
+<td class="col-num" data-order="0.256357420867305">0,2564</td>
+<td class="col-num" data-order="0.5037918407536736">0,5038</td>
+<td class="col-num" data-order="70.0">70,0000</td>
+<td class="col-num" data-order="0.0001028383381324">0,0001</td>
+<td class="col-num" data-order="0.000999800039992">0,0010</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">retorno_total</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="7.638262704978103">7,6383</td>
+<td class="col-num" data-order="3.615599502550261">3,6156</td>
+<td class="col-num" data-order="4.022663202427841">4,0227</td>
+<td class="col-num" data-order="1.9707316635914416">1,9707</td>
+<td class="col-num" data-order="5.979151385797822">5,9792</td>
+<td class="col-num" data-order="62.0">62,0000</td>
+<td class="col-num" data-order="0.006787330316742">0,0068</td>
+<td class="col-num" data-order="0.0013997200559888">0,0014</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">cagr</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.2084833584063894">0,2085</td>
+<td class="col-num" data-order="0.1433679836332356">0,1434</td>
+<td class="col-num" data-order="0.0651153747731537">0,0651</td>
+<td class="col-num" data-order="0.0350798283005545">0,0351</td>
+<td class="col-num" data-order="0.0948396365390301">0,0948</td>
+<td class="col-num" data-order="62.0">62,0000</td>
+<td class="col-num" data-order="0.006787330316742">0,0068</td>
+<td class="col-num" data-order="0.0021995600879824">0,0022</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">vol_anual</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1437240209027829">0,1437</td>
+<td class="col-num" data-order="0.1753557658170308">0,1754</td>
+<td class="col-num" data-order="-0.0316317449142478">-0,0316</td>
+<td class="col-num" data-order="-0.0486200886147811">-0,0486</td>
+<td class="col-num" data-order="-0.0154169377258229">-0,0154</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="0.0030851501439736">0,0031</td>
+<td class="col-num" data-order="0.0051989602079584">0,0052</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-text">max_drawdown</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="-0.2301853947112203">-0,2302</td>
+<td class="col-num" data-order="-0.2953254902029318">-0,2953</td>
+<td class="col-num" data-order="0.0651400954917114">0,0651</td>
+<td class="col-num" data-order="0.0216884755565795">0,0217</td>
+<td class="col-num" data-order="0.1104038452400532">0,1104</td>
+<td class="col-num" data-order="55.0">55,0000</td>
+<td class="col-num" data-order="0.0553270259152612">0,0553</td>
+<td class="col-num" data-order="0.0325934813037392">0,0326</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">sharpe</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="1.2623625178578108">1,2624</td>
+<td class="col-num" data-order="0.92052244690571">0,9205</td>
+<td class="col-num" data-order="0.3418400709521008">0,3418</td>
+<td class="col-num" data-order="0.2354999955233602">0,2355</td>
+<td class="col-num" data-order="0.4610424675447805">0,4610</td>
+<td class="col-num" data-order="70.0">70,0000</td>
+<td class="col-num" data-order="0.0001028383381324">0,0001</td>
+<td class="col-num" data-order="0.0003999200159968">0,0004</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">vol_anual</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1251844802720988">0,1252</td>
+<td class="col-num" data-order="0.1735229452827521">0,1735</td>
+<td class="col-num" data-order="-0.0483384650106533">-0,0483</td>
+<td class="col-num" data-order="-0.0646525116029602">-0,0647</td>
+<td class="col-num" data-order="-0.0325534229972833">-0,0326</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="0.0002056766762649">0,0002</td>
+<td class="col-num" data-order="0.0003999200159968">0,0004</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">max_drawdown</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="-0.1946138887138009">-0,1946</td>
+<td class="col-num" data-order="-0.2945722216262284">-0,2946</td>
+<td class="col-num" data-order="0.0999583329124275">0,1000</td>
+<td class="col-num" data-order="0.0613866568644479">0,0614</td>
+<td class="col-num" data-order="0.1403646995694999">0,1404</td>
+<td class="col-num" data-order="67.0">67,0000</td>
+<td class="col-num" data-order="0.0007198683669271">0,0007</td>
+<td class="col-num" data-order="0.0017996400719856">0,0018</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">calmar</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.7668962583091441">0,7669</td>
+<td class="col-num" data-order="0.4929048933011438">0,4929</td>
+<td class="col-num" data-order="0.2739913650080002">0,2740</td>
+<td class="col-num" data-order="0.1561443196541895">0,1561</td>
+<td class="col-num" data-order="0.3891567127650446">0,3892</td>
+<td class="col-num" data-order="65.0">65,0000</td>
+<td class="col-num" data-order="0.0019539284245166">0,0020</td>
+<td class="col-num" data-order="0.0017996400719856">0,0018</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">sortino</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="2.0650484487935485">2,0650</td>
+<td class="col-num" data-order="1.5163225869028962">1,5163</td>
+<td class="col-num" data-order="0.5487258618906523">0,5487</td>
+<td class="col-num" data-order="0.2900686404385662">0,2901</td>
+<td class="col-num" data-order="0.8221844013895285">0,8222</td>
+<td class="col-num" data-order="63.0">63,0000</td>
+<td class="col-num" data-order="0.0046277252159605">0,0046</td>
+<td class="col-num" data-order="0.0041991601679664">0,0042</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">cagr</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="0.1478700143331935">0,1479</td>
+<td class="col-num" data-order="0.1363096377329987">0,1363</td>
+<td class="col-num" data-order="0.0115603766001948">0,0116</td>
+<td class="col-num" data-order="-0.004309465355408">-0,0043</td>
+<td class="col-num" data-order="0.0265247994299488">0,0265</td>
+<td class="col-num" data-order="53.0">53,0000</td>
+<td class="col-num" data-order="0.0878239407651172">0,0878</td>
+<td class="col-num" data-order="0.2811437712457508">0,2811</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">cenario_alternativos</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-text">retorno_total</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.676317136108079">3,6763</td>
+<td class="col-num" data-order="3.2777864128359204">3,2778</td>
+<td class="col-num" data-order="0.3985307232721582">0,3985</td>
+<td class="col-num" data-order="-0.3600445462769512">-0,3600</td>
+<td class="col-num" data-order="1.0707426349486793">1,0707</td>
+<td class="col-num" data-order="53.0">53,0000</td>
+<td class="col-num" data-order="0.0878239407651172">0,0878</td>
+<td class="col-num" data-order="0.4365126974605079">0,4365</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

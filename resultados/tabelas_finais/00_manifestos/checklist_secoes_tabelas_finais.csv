@@ -1,0 +1,17 @@
+secao,secao_titulo,formato,qtd_arquivos,secao_ordem
+00_manifestos,Manifestos e catálogos,csv,3,0
+00_manifestos,Manifestos e catálogos,html,8,0
+01_universo_ativos,Universo de ativos,csv,12,1
+01_universo_ativos,Universo de ativos,html,12,1
+02_equal_weight,Equal Weight,csv,9,2
+02_equal_weight,Equal Weight,html,7,2
+03_markowitz_puro,Markowitz puro,csv,19,3
+03_markowitz_puro,Markowitz puro,html,14,3
+04_markowitz_restrito,Markowitz restrito,csv,21,4
+04_markowitz_restrito,Markowitz restrito,html,16,4
+05_hrp,HRP,csv,20,5
+05_hrp,HRP,html,15,5
+06_comparacao_familias,Comparação consolidada,csv,23,6
+06_comparacao_familias,Comparação consolidada,html,23,6
+07_testes_estatisticos,Testes estatísticos,csv,5,7
+07_testes_estatisticos,Testes estatísticos,html,5,7

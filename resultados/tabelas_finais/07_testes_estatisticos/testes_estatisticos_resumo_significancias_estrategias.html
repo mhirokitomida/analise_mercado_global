@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes Estatisticos Resumo Significancias Estrategias</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Testes Estatisticos Resumo Significancias Estrategias</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>metrica</th>
+<th>vencedor_media</th>
+<th>qtd_comparacoes</th>
+<th>qtd_sig_wilcoxon</th>
+<th>qtd_sig_permutation</th>
+<th>media_diff_media</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">cagr</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="0.0063616813239009">0,0064</td>
+</tr>
+<tr>
+<td class="col-text col-first">cagr</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="-0.0126032761233929">-0,0126</td>
+</tr>
+<tr>
+<td class="col-text col-first">cagr</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0069051504864373">0,0069</td>
+</tr>
+<tr>
+<td class="col-text col-first">cagr</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0006769147221759">0,0007</td>
+</tr>
+<tr>
+<td class="col-text col-first">cagr</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0009437400975834">0,0009</td>
+</tr>
+<tr>
+<td class="col-text col-first">calmar</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="0.0815165072422435">0,0815</td>
+</tr>
+<tr>
+<td class="col-text col-first">calmar</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="0.0824213192014066">0,0824</td>
+</tr>
+<tr>
+<td class="col-text col-first">calmar</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="-0.0359460551925667">-0,0359</td>
+</tr>
+<tr>
+<td class="col-text col-first">calmar</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="-0.0168067094372783">-0,0168</td>
+</tr>
+<tr>
+<td class="col-text col-first">calmar</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="-0.0336134188745567">-0,0336</td>
+</tr>
+<tr>
+<td class="col-text col-first">max_drawdown</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="0.0205179898895358">0,0205</td>
+</tr>
+<tr>
+<td class="col-text col-first">max_drawdown</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="-0.0019098105039532">-0,0019</td>
+</tr>
+<tr>
+<td class="col-text col-first">max_drawdown</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="-0.0136796117941745">-0,0137</td>
+</tr>
+<tr>
+<td class="col-text col-first">max_drawdown</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0020709869218439">0,0021</td>
+</tr>
+<tr>
+<td class="col-text col-first">max_drawdown</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="-0.0038196210079064">-0,0038</td>
+</tr>
+<tr>
+<td class="col-text col-first">retorno_total</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="0.4099013400635135">0,4099</td>
+</tr>
+<tr>
+<td class="col-text col-first">retorno_total</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="-0.8215430008547264">-0,8215</td>
+</tr>
+<tr>
+<td class="col-text col-first">retorno_total</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.3329193318832186">0,3329</td>
+</tr>
+<tr>
+<td class="col-text col-first">retorno_total</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0308358996322515">0,0308</td>
+</tr>
+<tr>
+<td class="col-text col-first">retorno_total</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0394481495990606">0,0394</td>
+</tr>
+<tr>
+<td class="col-text col-first">sharpe</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="0.0603258299739669">0,0603</td>
+</tr>
+<tr>
+<td class="col-text col-first">sharpe</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="0.0287982424551012">0,0288</td>
+</tr>
+<tr>
+<td class="col-text col-first">sharpe</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="-0.0332776725350781">-0,0333</td>
+</tr>
+<tr>
+<td class="col-text col-first">sharpe</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0026904065286297">0,0027</td>
+</tr>
+<tr>
+<td class="col-text col-first">sharpe</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0053808130572595">0,0054</td>
+</tr>
+<tr>
+<td class="col-text col-first">sortino</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="0.1394816202155143">0,1395</td>
+</tr>
+<tr>
+<td class="col-text col-first">sortino</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="-0.1246947914049246">-0,1247</td>
+</tr>
+<tr>
+<td class="col-text col-first">sortino</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.080757677011769">0,0808</td>
+</tr>
+<tr>
+<td class="col-text col-first">sortino</td>
+<td class="col-text">equal_weight</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.025256291258389">0,0253</td>
+</tr>
+<tr>
+<td class="col-text col-first">sortino</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0324197403680949">0,0324</td>
+</tr>
+<tr>
+<td class="col-text col-first">vol_anual</td>
+<td class="col-text">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="5.0">5</td>
+<td class="col-num" data-order="-0.0087176668164889">-0,0087</td>
+</tr>
+<tr>
+<td class="col-text col-first">vol_anual</td>
+<td class="col-text">hrp</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0043082256699211">0,0043</td>
+</tr>
+<tr>
+<td class="col-text col-first">vol_anual</td>
+<td class="col-text">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="4.0">4</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0006233312715697">0,0006</td>
+</tr>
+<tr>
+<td class="col-text col-first">vol_anual</td>
+<td class="col-text">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0003215058997403">0,0003</td>
+</tr>
+<tr>
+<td class="col-text col-first">vol_anual</td>
+<td class="col-text">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0">0</td>
+<td class="col-num" data-order="0.0006430117994806">0,0006</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

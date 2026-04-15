@@ -1,0 +1,788 @@
+<table class="dataframe tabela-projeto table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>nome_ativo</th>
+      <th>ticker_yahoo</th>
+      <th>grupo_universo</th>
+      <th>classe</th>
+      <th>subclasse</th>
+      <th>regiao</th>
+      <th>pais</th>
+      <th>moeda_original</th>
+      <th>tipo_ativo</th>
+      <th>data_min_final</th>
+      <th>data_max_final</th>
+      <th>n_linhas_final</th>
+      <th>n_adj_close_na_final</th>
+      <th>pct_adj_close_na_final</th>
+      <th>flag_obs_pos_corte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ASX 200</td>
+      <td>^AXJO</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Oceania</td>
+      <td>Australia</td>
+      <td>AUD</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2853</td>
+      <td>1</td>
+      <td>0.0003505082</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Bitcoin USD</td>
+      <td>BTC-USD</td>
+      <td>alternativos</td>
+      <td>Crypto</td>
+      <td>Bitcoin</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>cripto</td>
+      <td>2015-01-01</td>
+      <td>2026-04-15</td>
+      <td>4123</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Brent Crude Oil</td>
+      <td>BZ=F</td>
+      <td>alternativos</td>
+      <td>Commodity</td>
+      <td>Petroleo</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>commodity</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2838</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>DAX</td>
+      <td>^GDAXI</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Europa</td>
+      <td>Alemanha</td>
+      <td>EUR</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2862</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Energy Select Sector SPDR Fund</td>
+      <td>XLE</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Energia</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Euro Stoxx 50</td>
+      <td>^STOXX50E</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Europa</td>
+      <td>Zona do Euro</td>
+      <td>EUR</td>
+      <td>indice</td>
+      <td>2015-01-05</td>
+      <td>2026-04-15</td>
+      <td>2834</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>FTSE 100</td>
+      <td>^FTSE</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Europa</td>
+      <td>Reino Unido</td>
+      <td>GBP</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2850</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Global X MSCI Argentina ETF</td>
+      <td>ARGT</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Argentina</td>
+      <td>America Latina</td>
+      <td>Argentina</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Hang Seng</td>
+      <td>^HSI</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Hong Kong</td>
+      <td>HKD</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2774</td>
+      <td>1</td>
+      <td>0.0003604903</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Ibovespa</td>
+      <td>^BVSP</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2800</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Invesco QQQ Trust</td>
+      <td>QQQ</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>US Tech/Growth</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Kospi</td>
+      <td>^KS11</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Coreia do Sul</td>
+      <td>KRW</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-14</td>
+      <td>2765</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Mexico IPC</td>
+      <td>^MXX</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>America Latina</td>
+      <td>Mexico</td>
+      <td>MXN</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2836</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>NZX 50</td>
+      <td>^NZ50</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Oceania</td>
+      <td>Nova Zelandia</td>
+      <td>NZD</td>
+      <td>indice</td>
+      <td>2015-01-05</td>
+      <td>2026-04-15</td>
+      <td>2824</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Nasdaq 100</td>
+      <td>^NDX</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Tech/Growth</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Nifty 50</td>
+      <td>^NSEI</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>India</td>
+      <td>INR</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2776</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Nikkei 225</td>
+      <td>^N225</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Japao</td>
+      <td>JPY</td>
+      <td>indice</td>
+      <td>2015-01-05</td>
+      <td>2026-04-15</td>
+      <td>2757</td>
+      <td>1</td>
+      <td>0.0003627131</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Ouro Spot/Front</td>
+      <td>GC=F</td>
+      <td>alternativos</td>
+      <td>Commodity</td>
+      <td>Ouro</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>commodity</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2836</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>S&amp;P 500</td>
+      <td>^GSPC</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>indice</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>SPDR EURO STOXX 50 ETF</td>
+      <td>FEZ</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Zona do Euro</td>
+      <td>Europa</td>
+      <td>Zona do Euro</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>SPDR Gold Shares</td>
+      <td>GLD</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Ouro</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>SPDR S&amp;P 500 ETF</td>
+      <td>SPY</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>US Broad Market</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Shanghai Composite</td>
+      <td>000001.SS</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>China</td>
+      <td>CNY</td>
+      <td>indice</td>
+      <td>2015-01-05</td>
+      <td>2026-04-15</td>
+      <td>2738</td>
+      <td>1</td>
+      <td>0.0003652301</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Taiwan Weighted</td>
+      <td>^TWII</td>
+      <td>indices</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Taiwan</td>
+      <td>TWD</td>
+      <td>indice</td>
+      <td>2015-01-05</td>
+      <td>2026-04-15</td>
+      <td>2737</td>
+      <td>1</td>
+      <td>0.0003653635</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>USDBRL</td>
+      <td>BRL=X</td>
+      <td>alternativos</td>
+      <td>FX</td>
+      <td>Cambio</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>cambio</td>
+      <td>2015-01-01</td>
+      <td>2026-04-15</td>
+      <td>2937</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>United States Oil Fund</td>
+      <td>USO</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Petroleo</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Vanguard FTSE Developed Markets ETF</td>
+      <td>VEA</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Developed Markets</td>
+      <td>Global</td>
+      <td>Desenvolvidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>Vanguard Total World Stock ETF</td>
+      <td>VT</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Global Equity</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares Core MSCI Emerging Markets ETF</td>
+      <td>IEMG</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Emerging Markets</td>
+      <td>Emergentes</td>
+      <td>Emergentes</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares Ibovespa ETF</td>
+      <td>BOVA11.SA</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Brasil Broad Market</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2781</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI ACWI ETF</td>
+      <td>ACWI</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Global Equity</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Australia ETF</td>
+      <td>EWA</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Australia</td>
+      <td>Oceania</td>
+      <td>Australia</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Chile ETF</td>
+      <td>ECH</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Chile</td>
+      <td>America Latina</td>
+      <td>Chile</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI China ETF</td>
+      <td>MCHI</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>China</td>
+      <td>Asia</td>
+      <td>China</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Germany ETF</td>
+      <td>EWG</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Alemanha</td>
+      <td>Europa</td>
+      <td>Alemanha</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Hong Kong ETF</td>
+      <td>EWH</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Hong Kong</td>
+      <td>Asia</td>
+      <td>Hong Kong</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI India ETF</td>
+      <td>INDA</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>India</td>
+      <td>Asia</td>
+      <td>India</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Japan ETF</td>
+      <td>EWJ</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Japao</td>
+      <td>Asia</td>
+      <td>Japao</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Mexico ETF</td>
+      <td>EWW</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Mexico</td>
+      <td>America Latina</td>
+      <td>Mexico</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI New Zealand ETF</td>
+      <td>ENZL</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Nova Zelandia</td>
+      <td>Oceania</td>
+      <td>Nova Zelandia</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI South Africa ETF</td>
+      <td>EZA</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Africa do Sul</td>
+      <td>Africa</td>
+      <td>Africa do Sul</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI South Korea ETF</td>
+      <td>EWY</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Coreia do Sul</td>
+      <td>Asia</td>
+      <td>Coreia do Sul</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Taiwan ETF</td>
+      <td>EWT</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Taiwan</td>
+      <td>Asia</td>
+      <td>Taiwan</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI United Kingdom ETF</td>
+      <td>EWU</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Reino Unido</td>
+      <td>Europa</td>
+      <td>Reino Unido</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2837</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>iShares Small Caps ETF</td>
+      <td>SMAL11.SA</td>
+      <td>etfs</td>
+      <td>ETF</td>
+      <td>Brasil Small Caps</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>etf</td>
+      <td>2015-01-02</td>
+      <td>2026-04-15</td>
+      <td>2779</td>
+      <td>0</td>
+      <td>0.0000000000</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>

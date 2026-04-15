@@ -1,0 +1,20 @@
+﻿grupo_universo,classe,regiao,quantidade
+alternativos,Commodity,Global,2
+alternativos,Crypto,Global,1
+alternativos,FX,Brasil,1
+etfs,ETF,Africa,1
+etfs,ETF,America Latina,3
+etfs,ETF,America do Norte,3
+etfs,ETF,Asia,6
+etfs,ETF,Brasil,2
+etfs,ETF,Emergentes,1
+etfs,ETF,Europa,3
+etfs,ETF,Global,6
+etfs,ETF,Oceania,2
+indices,Equity Index,Africa,1
+indices,Equity Index,America Latina,2
+indices,Equity Index,America do Norte,2
+indices,Equity Index,Asia,6
+indices,Equity Index,Brasil,2
+indices,Equity Index,Europa,3
+indices,Equity Index,Oceania,2

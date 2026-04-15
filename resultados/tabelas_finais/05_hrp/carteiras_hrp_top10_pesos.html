@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteiras Hrp Top10 Pesos</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Carteiras Hrp Top10 Pesos</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>carteira</th>
+<th>tipo</th>
+<th>coluna_retorno</th>
+<th>carteira_tipo</th>
+<th>ativo</th>
+<th>peso</th>
+<th>peso_pct</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_america_norte</td>
+<td class="col-text">etfs_america_norte__hrp</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.3961969248102674">39,62%</td>
+<td class="col-num" data-order="39.619692481026746">3961,97%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_america_norte</td>
+<td class="col-text">etfs_america_norte__hrp</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.3217523939848257">32,18%</td>
+<td class="col-num" data-order="32.17523939848257">3217,52%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_america_norte</td>
+<td class="col-text">etfs_america_norte__hrp</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.2820506812049068">28,21%</td>
+<td class="col-num" data-order="28.205068120490683">2820,51%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_asia</td>
+<td class="col-text">etfs_asia__hrp</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.293520558721879">29,35%</td>
+<td class="col-num" data-order="29.352055872187897">2935,21%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_asia</td>
+<td class="col-text">etfs_asia__hrp</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.2268395569734892">22,68%</td>
+<td class="col-num" data-order="22.683955697348924">2268,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_asia</td>
+<td class="col-text">etfs_asia__hrp</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.158483620683126">15,85%</td>
+<td class="col-num" data-order="15.848362068312602">1584,84%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_asia</td>
+<td class="col-text">etfs_asia__hrp</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.1271705395213047">12,72%</td>
+<td class="col-num" data-order="12.717053952130472">1271,71%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_asia</td>
+<td class="col-text">etfs_asia__hrp</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.1092763785410948">10,93%</td>
+<td class="col-num" data-order="10.92763785410948">1092,76%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_asia</td>
+<td class="col-text">etfs_asia__hrp</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="0.0847093455591061">8,47%</td>
+<td class="col-num" data-order="8.470934555910613">847,09%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_brasil</td>
+<td class="col-text">etfs_brasil__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="50.0">5000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_brasil</td>
+<td class="col-text">etfs_brasil__hrp</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="50.0">5000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0725081668850567">7,25%</td>
+<td class="col-num" data-order="7.250816688505678">725,08%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0677232760471823">6,77%</td>
+<td class="col-num" data-order="6.772327604718238">677,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.0621834187146745">6,22%</td>
+<td class="col-num" data-order="6.21834187146745">621,83%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0618370820281833">6,18%</td>
+<td class="col-num" data-order="6.183708202818336">618,37%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.0480062861150723">4,80%</td>
+<td class="col-num" data-order="4.800628611507237">480,06%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="0.047607406413773">4,76%</td>
+<td class="col-num" data-order="4.7607406413773">476,07%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0474940046169717">4,75%</td>
+<td class="col-num" data-order="4.749400461697172">474,94%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0461310312901359">4,61%</td>
+<td class="col-num" data-order="4.613103129013594">461,31%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.0454161824324617">4,54%</td>
+<td class="col-num" data-order="4.541618243246174">454,16%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-text">etfs_com_btc__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.044409716639133">4,44%</td>
+<td class="col-num" data-order="4.440971663913305">444,10%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0839552403118083">8,40%</td>
+<td class="col-num" data-order="8.39552403118084">839,55%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.0596666361212438">5,97%</td>
+<td class="col-num" data-order="5.966663612124388">596,67%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0533764629032405">5,34%</td>
+<td class="col-num" data-order="5.337646290324054">533,76%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.0495318845635911">4,95%</td>
+<td class="col-num" data-order="4.953188456359113">495,32%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0461605421218173">4,62%</td>
+<td class="col-num" data-order="4.616054212181735">461,61%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0459284353297966">4,59%</td>
+<td class="col-num" data-order="4.592843532979666">459,28%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="0.0456805665220916">4,57%</td>
+<td class="col-num" data-order="4.568056652209161">456,81%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0454460673106361">4,54%</td>
+<td class="col-num" data-order="4.544606731063617">454,46%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.0447418326903765">4,47%</td>
+<td class="col-num" data-order="4.474183269037655">447,42%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-text">etfs_com_btc_petroleo__hrp</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.044368720001984">4,44%</td>
+<td class="col-num" data-order="4.4368720001984014">443,69%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.1467642458635856">14,68%</td>
+<td class="col-num" data-order="14.67642458635856">1467,64%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0686004644564677">6,86%</td>
+<td class="col-num" data-order="6.86004644564677">686,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.060622421301266">6,06%</td>
+<td class="col-num" data-order="6.062242130126607">606,22%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0555171341767042">5,55%</td>
+<td class="col-num" data-order="5.551713417670421">555,17%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0518534996086387">5,19%</td>
+<td class="col-num" data-order="5.185349960863872">518,53%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0435487183402298">4,35%</td>
+<td class="col-num" data-order="4.354871834022981">435,49%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0416936838909793">4,17%</td>
+<td class="col-num" data-order="4.169368389097932">416,94%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.041047596399151">4,10%</td>
+<td class="col-num" data-order="4.1047596399151045">410,48%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.0367568446710378">3,68%</td>
+<td class="col-num" data-order="3.675684467103789">367,57%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-text">etfs_com_ouro__hrp</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="0.0357422153011254">3,57%</td>
+<td class="col-num" data-order="3.5742215301125486">357,42%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.1255026499810123">12,55%</td>
+<td class="col-num" data-order="12.550264998101234">1255,03%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0818068210001567">8,18%</td>
+<td class="col-num" data-order="8.180682100015673">818,07%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.0576122754803105">5,76%</td>
+<td class="col-num" data-order="5.761227548031058">576,12%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0513326870460276">5,13%</td>
+<td class="col-num" data-order="5.133268704602764">513,33%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="0.0441077552490071">4,41%</td>
+<td class="col-num" data-order="4.410775524900715">441,08%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.041772155810607">4,18%</td>
+<td class="col-num" data-order="4.177215581060709">417,72%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0416776254219429">4,17%</td>
+<td class="col-num" data-order="4.167762542194291">416,78%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.0411248523138351">4,11%</td>
+<td class="col-num" data-order="4.1124852313835145">411,25%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.0386756862294623">3,87%</td>
+<td class="col-num" data-order="3.867568622946234">386,76%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-text">etfs_com_ouro_btc__hrp</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.036043261002784">3,60%</td>
+<td class="col-num" data-order="3.604326100278409">360,43%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.1465059754499197">14,65%</td>
+<td class="col-num" data-order="14.650597544991978">1465,06%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0995228578592225">9,95%</td>
+<td class="col-num" data-order="9.95228578592226">995,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.0568096118446755">5,68%</td>
+<td class="col-num" data-order="5.68096118446755">568,10%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0410009645189328">4,10%</td>
+<td class="col-num" data-order="4.100096451893282">410,01%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.0403656114424849">4,04%</td>
+<td class="col-num" data-order="4.036561144248497">403,66%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0394529306645299">3,95%</td>
+<td class="col-num" data-order="3.945293066452996">394,53%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.0366112308886661">3,66%</td>
+<td class="col-num" data-order="3.661123088866615">366,11%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0341193209274758">3,41%</td>
+<td class="col-num" data-order="3.411932092747588">341,19%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0339477604179501">3,39%</td>
+<td class="col-num" data-order="3.394776041795019">339,48%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-text">etfs_com_ouro_petroleo__hrp</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.0338110004031821">3,38%</td>
+<td class="col-num" data-order="3.381100040318214">338,11%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0714261691546334">7,14%</td>
+<td class="col-num" data-order="7.142616915463347">714,26%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0713490007336664">7,13%</td>
+<td class="col-num" data-order="7.13490007336664">713,49%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0667126804946007">6,67%</td>
+<td class="col-num" data-order="6.671268049460077">667,13%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.0666467990020697">6,66%</td>
+<td class="col-num" data-order="6.664679900206974">666,47%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.0472899158790836">4,73%</td>
+<td class="col-num" data-order="4.728991587908362">472,90%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0454019548240514">4,54%</td>
+<td class="col-num" data-order="4.540195482405145">454,02%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0452935349844317">4,53%</td>
+<td class="col-num" data-order="4.529353498443179">452,94%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.0446984037731758">4,47%</td>
+<td class="col-num" data-order="4.469840377317588">446,98%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.0437470159437967">4,37%</td>
+<td class="col-num" data-order="4.374701594379679">437,47%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-text">etfs_com_petroleo__hrp</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="0.0392941124410856">3,93%</td>
+<td class="col-num" data-order="3.92941124410856">392,94%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.1879465479924673">18,79%</td>
+<td class="col-num" data-order="18.79465479924673">1879,47%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.0583581432176176">5,84%</td>
+<td class="col-num" data-order="5.835814321761769">583,58%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0575307776409739">5,75%</td>
+<td class="col-num" data-order="5.75307776409739">575,31%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0487845034458448">4,88%</td>
+<td class="col-num" data-order="4.878450344584484">487,85%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="0.0446787889624128">4,47%</td>
+<td class="col-num" data-order="4.467878896241284">446,79%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0409294049275585">4,09%</td>
+<td class="col-num" data-order="4.092940492755858">409,29%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0376046554642228">3,76%</td>
+<td class="col-num" data-order="3.76046554642228">376,05%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.0341916309916894">3,42%</td>
+<td class="col-num" data-order="3.41916309916894">341,92%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.0328673853456271">3,29%</td>
+<td class="col-num" data-order="3.2867385345627187">328,67%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-text">etfs_com_tudo__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.0316300377856971">3,16%</td>
+<td class="col-num" data-order="3.1630037785697103">316,30%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__hrp</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="50.0">5000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__hrp</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="50.0">5000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_europa</td>
+<td class="col-text">etfs_europa__hrp</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.5736564784457583">57,37%</td>
+<td class="col-num" data-order="57.36564784457583">5736,56%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_europa</td>
+<td class="col-text">etfs_europa__hrp</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="0.2209210509574434">22,09%</td>
+<td class="col-num" data-order="22.092105095744348">2209,21%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_europa</td>
+<td class="col-text">etfs_europa__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.2054224705967982">20,54%</td>
+<td class="col-num" data-order="20.542247059679823">2054,22%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0702793541119597">7,03%</td>
+<td class="col-num" data-order="7.027935411195978">702,79%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="0.0663077327148569">6,63%</td>
+<td class="col-num" data-order="6.630773271485695">663,08%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.0654660506663472">6,55%</td>
+<td class="col-num" data-order="6.546605066634721">654,66%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.0647708879373264">6,48%</td>
+<td class="col-num" data-order="6.4770887937326425">647,71%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.0613312582229375">6,13%</td>
+<td class="col-num" data-order="6.133125822293756">613,31%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="0.0533305980530699">5,33%</td>
+<td class="col-num" data-order="5.333059805306995">533,31%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0529772829304512">5,30%</td>
+<td class="col-num" data-order="5.297728293045128">529,77%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0510640788876701">5,11%</td>
+<td class="col-num" data-order="5.106407888767013">510,64%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.0491614565648656">4,92%</td>
+<td class="col-num" data-order="4.91614565648656">491,61%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-text">etfs_exterior__hrp</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0458153269661872">4,58%</td>
+<td class="col-num" data-order="4.581532696618728">458,15%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_global</td>
+<td class="col-text">etfs_global__hrp</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.5049874362544066">50,50%</td>
+<td class="col-num" data-order="50.49874362544065">5049,87%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_global</td>
+<td class="col-text">etfs_global__hrp</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="0.2500022242156878">25,00%</td>
+<td class="col-num" data-order="25.000222421568782">2500,02%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_global</td>
+<td class="col-text">etfs_global__hrp</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="0.2450103395299055">24,50%</td>
+<td class="col-num" data-order="24.50103395299056">2450,10%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_latam</td>
+<td class="col-text">etfs_latam__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.4994229987601699">49,94%</td>
+<td class="col-num" data-order="49.942299876017">4994,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_latam</td>
+<td class="col-text">etfs_latam__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.3227952695058436">32,28%</td>
+<td class="col-num" data-order="32.27952695058436">3227,95%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_latam</td>
+<td class="col-text">etfs_latam__hrp</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.1777817317339864">17,78%</td>
+<td class="col-num" data-order="17.778173173398642">1777,82%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_oceania</td>
+<td class="col-text">etfs_oceania__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="50.0">5000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_oceania</td>
+<td class="col-text">etfs_oceania__hrp</td>
+<td class="col-text">EWA</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="50.0">5000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.0744083285895468">7,44%</td>
+<td class="col-num" data-order="7.440832858954681">744,08%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.0632248102107351">6,32%</td>
+<td class="col-num" data-order="6.322481021073514">632,25%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.0624273774602453">6,24%</td>
+<td class="col-num" data-order="6.242737746024536">624,27%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="0.0590483115122957">5,90%</td>
+<td class="col-num" data-order="5.9048311512295735">590,48%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="0.0577911297682092">5,78%</td>
+<td class="col-num" data-order="5.7791129768209215">577,91%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.0576797216743667">5,77%</td>
+<td class="col-num" data-order="5.767972167436672">576,80%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">EWA</td>
+<td class="col-num" data-order="0.0483558694567713">4,84%</td>
+<td class="col-num" data-order="4.835586945677131">483,56%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="0.047130480118705">4,71%</td>
+<td class="col-num" data-order="4.713048011870506">471,30%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.0455574555925486">4,56%</td>
+<td class="col-num" data-order="4.555745559254869">455,57%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-text">etfs_todos__hrp</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0450339007221445">4,50%</td>
+<td class="col-num" data-order="4.503390072214457">450,34%</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

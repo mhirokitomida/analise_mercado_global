@@ -1,0 +1,5 @@
+﻿bloco,quantidade_ativos,arquivo_csv,arquivo_html,observacao
+indices,18,resultados/tabelas/universo_indices.csv,resultados/tabelas/universo_indices.html,Índices e séries de referência para análise global
+etfs,27,resultados/tabelas/universo_etfs.csv,resultados/tabelas/universo_etfs.html,ETFs investíveis para análise prática em BRL
+alternativos,4,resultados/tabelas/universo_alternativos.csv,resultados/tabelas/universo_alternativos.html,"Ouro, bitcoin, petróleo e câmbio"
+total,49,resultados/tabelas/universo_total_ativos.csv,resultados/tabelas/universo_total_ativos.html,Base consolidada do universo do projeto

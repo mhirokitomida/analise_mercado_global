@@ -1,0 +1,2 @@
+﻿etapa,descricao,data_min_diario_alinhado,data_max_diario_alinhado,quantidade_tickers_alinhados,quantidade_datas_diarias_alinhadas,quantidade_meses_alinhados,ffill_limit
+etapa_6,"Alinhamento do calendário diário comum, diagnóstico de buracos, forward fill controlado, reconstrução das bases mensais e geração de bases normalizadas em base 100",2015-01-02,2026-04-15,45,2942,136,5

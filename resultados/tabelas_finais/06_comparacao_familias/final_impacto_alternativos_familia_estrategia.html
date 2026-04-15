@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Impacto Alternativos Familia Estrategia</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Final Impacto Alternativos Familia Estrategia</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>familia_estrategia</th>
+<th>sharpe_medio__com_alternativos</th>
+<th>sharpe_medio__sem_alternativos</th>
+<th>cagr_medio__com_alternativos</th>
+<th>cagr_medio__sem_alternativos</th>
+<th>max_drawdown_medio__com_alternativos</th>
+<th>max_drawdown_medio__sem_alternativos</th>
+<th>score_medio__com_alternativos</th>
+<th>score_medio__sem_alternativos</th>
+<th>delta_sharpe_medio</th>
+<th>delta_cagr_medio</th>
+<th>delta_max_drawdown_medio</th>
+<th>delta_score_medio</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">equal_weight</td>
+<td class="col-num" data-order="1.196271654527568">1,1963</td>
+<td class="col-num" data-order="0.9194999904589306">0,9195</td>
+<td class="col-num" data-order="0.1611334179987578">0,1611</td>
+<td class="col-num" data-order="0.1383454169203344">0,1383</td>
+<td class="col-num" data-order="-0.2346406865659338">-0,2346</td>
+<td class="col-num" data-order="-0.2987001416180733">-0,2987</td>
+<td class="col-num" data-order="208.28571428571428">208,2857</td>
+<td class="col-num" data-order="353.1">353,1000</td>
+<td class="col-num" data-order="0.2767716640686374">0,2768</td>
+<td class="col-num" data-order="0.0227880010784233">2,28%</td>
+<td class="col-num" data-order="0.0640594550521395">6,41%</td>
+<td class="col-num" data-order="-144.81428571428577">-144,8143</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_puro__min_vol</td>
+<td class="col-num" data-order="1.505357414301418">1,5054</td>
+<td class="col-num" data-order="0.9331981087069782">0,9332</td>
+<td class="col-num" data-order="0.1540798428511247">0,1541</td>
+<td class="col-num" data-order="0.1323113337152">0,1323</td>
+<td class="col-num" data-order="-0.1326751577441143">-0,1327</td>
+<td class="col-num" data-order="-0.2722068957686712">-0,2722</td>
+<td class="col-num" data-order="87.14285714285714">87,1429</td>
+<td class="col-num" data-order="338.0">338,0000</td>
+<td class="col-num" data-order="0.57215930559444">0,5722</td>
+<td class="col-num" data-order="0.0217685091359246">2,18%</td>
+<td class="col-num" data-order="0.1395317380245569">13,95%</td>
+<td class="col-num" data-order="-250.8571428571429">-250,8571</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_puro__max_sharpe</td>
+<td class="col-num" data-order="1.8029020133837577">1,8029</td>
+<td class="col-num" data-order="1.0418583954333716">1,0419</td>
+<td class="col-num" data-order="0.2315243238968619">0,2315</td>
+<td class="col-num" data-order="0.1680405031791874">0,1680</td>
+<td class="col-num" data-order="-0.1854662237911301">-0,1855</td>
+<td class="col-num" data-order="-0.2886932171999321">-0,2887</td>
+<td class="col-num" data-order="69.28571428571429">69,2857</td>
+<td class="col-num" data-order="307.2">307,2000</td>
+<td class="col-num" data-order="0.7610436179503861">0,7610</td>
+<td class="col-num" data-order="0.0634838207176744">6,35%</td>
+<td class="col-num" data-order="0.1032269934088019">10,32%</td>
+<td class="col-num" data-order="-237.9142857142857">-237,9143</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_restrito__min_vol</td>
+<td class="col-num" data-order="1.2623625178578108">1,2624</td>
+<td class="col-num" data-order="0.9205224469057098">0,9205</td>
+<td class="col-num" data-order="0.1478700143331935">0,1479</td>
+<td class="col-num" data-order="0.1363096377329987">0,1363</td>
+<td class="col-num" data-order="-0.1946138887138009">-0,1946</td>
+<td class="col-num" data-order="-0.2945722216262284">-0,2946</td>
+<td class="col-num" data-order="159.14285714285714">159,1429</td>
+<td class="col-num" data-order="350.0">350,0000</td>
+<td class="col-num" data-order="0.341840070952101">0,3418</td>
+<td class="col-num" data-order="0.0115603766001948">1,16%</td>
+<td class="col-num" data-order="0.0999583329124275">10,00%</td>
+<td class="col-num" data-order="-190.8571428571429">-190,8571</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_restrito__max_sharpe</td>
+<td class="col-num" data-order="1.474716358451251">1,4747</td>
+<td class="col-num" data-order="0.9507382706165411">0,9507</td>
+<td class="col-num" data-order="0.2084833584063894">0,2085</td>
+<td class="col-num" data-order="0.1433679836332356">0,1434</td>
+<td class="col-num" data-order="-0.2301853947112203">-0,2302</td>
+<td class="col-num" data-order="-0.2953254902029318">-0,2953</td>
+<td class="col-num" data-order="129.42857142857142">129,4286</td>
+<td class="col-num" data-order="336.0">336,0000</td>
+<td class="col-num" data-order="0.5239780878347098">0,5240</td>
+<td class="col-num" data-order="0.0651153747731537">6,51%</td>
+<td class="col-num" data-order="0.0651400954917114">6,51%</td>
+<td class="col-num" data-order="-206.57142857142856">-206,5714</td>
+</tr>
+<tr>
+<td class="col-text col-first">hrp</td>
+<td class="col-num" data-order="1.2040993877669308">1,2041</td>
+<td class="col-num" data-order="0.9048731949940356">0,9049</td>
+<td class="col-num" data-order="0.1498347408108583">0,1498</td>
+<td class="col-num" data-order="0.1333299710327415">0,1333</td>
+<td class="col-num" data-order="-0.1931917273855788">-0,1932</td>
+<td class="col-num" data-order="-0.2915790615936321">-0,2916</td>
+<td class="col-num" data-order="170.0">170,0000</td>
+<td class="col-num" data-order="358.6">358,6000</td>
+<td class="col-num" data-order="0.2992261927728952">0,2992</td>
+<td class="col-num" data-order="0.0165047697781167">1,65%</td>
+<td class="col-num" data-order="0.0983873342080533">9,84%</td>
+<td class="col-num" data-order="-188.6">-188,6000</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

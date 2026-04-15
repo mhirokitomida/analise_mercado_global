@@ -1,0 +1,18 @@
+carteira,metodo_ligacao,distancia,n_clusters_finais,ordem_hrp
+etfs_com_tudo,single,correlacao,27,BTC-USD | BOVA11.SA | SMAL11.SA | ARGT | GLD | USO | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_com_ouro_btc,single,correlacao,26,BTC-USD | BOVA11.SA | SMAL11.SA | ARGT | GLD | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_com_ouro_petroleo,single,correlacao,26,BOVA11.SA | SMAL11.SA | ARGT | GLD | USO | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_com_ouro,single,correlacao,25,BOVA11.SA | SMAL11.SA | ARGT | GLD | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_com_btc_petroleo,single,correlacao,26,BTC-USD | BOVA11.SA | SMAL11.SA | ARGT | USO | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_com_btc,single,correlacao,25,BTC-USD | BOVA11.SA | SMAL11.SA | ARGT | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_america_norte,single,correlacao,3,XLE | QQQ | SPY
+etfs_com_petroleo,single,correlacao,25,BOVA11.SA | SMAL11.SA | ARGT | USO | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_todos,single,correlacao,24,BOVA11.SA | SMAL11.SA | ARGT | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_global,single,correlacao,3,VEA | ACWI | VT
+etfs_exterior,single,correlacao,22,ARGT | ECH | XLE | EWW | EZA | INDA | EWH | MCHI | EWY | ENZL | EWA | EWJ | EWG | FEZ | EWU | QQQ | VEA | SPY | ACWI | VT | EWT | IEMG
+etfs_desenvolvidos_emergentes,single,correlacao,2,VEA | IEMG
+etfs_asia,single,correlacao,6,EWH | MCHI | INDA | EWJ | EWT | EWY
+etfs_latam,single,correlacao,3,EWW | ARGT | ECH
+etfs_europa,single,correlacao,3,EWU | EWG | FEZ
+etfs_oceania,single,correlacao,2,ENZL | EWA
+etfs_brasil,single,correlacao,2,BOVA11.SA | SMAL11.SA

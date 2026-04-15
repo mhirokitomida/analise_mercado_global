@@ -1,0 +1,50 @@
+﻿nome_ativo,ticker_yahoo,classe,subclasse,regiao,pais,moeda_original,tipo_ativo,categoria_html,observacoes,grupo_universo,nome_ativo_slug,ticker_slug
+Ibovespa,^BVSP,Equity Index,Broad Market,Brasil,Brasil,BRL,indice,Indices Globais,Principal índice de ações do Brasil,indices,ibovespa,bvsp
+Small Caps Brasil,SMLL.SA,Equity Index,Small Caps,Brasil,Brasil,BRL,indice,Indices Globais,Proxy de small caps brasileiras,indices,small_caps_brasil,smllsa
+S&P 500,^GSPC,Equity Index,Broad Market,America do Norte,Estados Unidos,USD,indice,Indices Globais,Principal índice amplo dos EUA,indices,sp_500,gspc
+Nasdaq 100,^NDX,Equity Index,Tech/Growth,America do Norte,Estados Unidos,USD,indice,Indices Globais,Índice concentrado em tecnologia e growth,indices,nasdaq_100,ndx
+Mexico IPC,^MXX,Equity Index,Broad Market,America Latina,Mexico,MXN,indice,Indices Globais,Principal índice do México,indices,mexico_ipc,mxx
+Chile IPSA,^IPSA,Equity Index,Broad Market,America Latina,Chile,CLP,indice,Indices Globais,Principal índice do Chile,indices,chile_ipsa,ipsa
+Euro Stoxx 50,^STOXX50E,Equity Index,Broad Market,Europa,Zona do Euro,EUR,indice,Indices Globais,Índice de grandes empresas da zona do euro,indices,euro_stoxx_50,stoxx50e
+FTSE 100,^FTSE,Equity Index,Broad Market,Europa,Reino Unido,GBP,indice,Indices Globais,Principal índice do Reino Unido,indices,ftse_100,ftse
+DAX,^GDAXI,Equity Index,Broad Market,Europa,Alemanha,EUR,indice,Indices Globais,Principal índice da Alemanha,indices,dax,gdaxi
+Nikkei 225,^N225,Equity Index,Broad Market,Asia,Japao,JPY,indice,Indices Globais,Principal índice do Japão,indices,nikkei_225,n225
+Shanghai Composite,000001.SS,Equity Index,Broad Market,Asia,China,CNY,indice,Indices Globais,Índice amplo da bolsa de Xangai,indices,shanghai_composite,000001ss
+Hang Seng,^HSI,Equity Index,Broad Market,Asia,Hong Kong,HKD,indice,Indices Globais,Principal índice de Hong Kong,indices,hang_seng,hsi
+Kospi,^KS11,Equity Index,Broad Market,Asia,Coreia do Sul,KRW,indice,Indices Globais,Principal índice da Coreia do Sul,indices,kospi,ks11
+Nifty 50,^NSEI,Equity Index,Broad Market,Asia,India,INR,indice,Indices Globais,Principal índice da Índia,indices,nifty_50,nsei
+Taiwan Weighted,^TWII,Equity Index,Broad Market,Asia,Taiwan,TWD,indice,Indices Globais,Principal índice de Taiwan,indices,taiwan_weighted,twii
+ASX 200,^AXJO,Equity Index,Broad Market,Oceania,Australia,AUD,indice,Indices Globais,Principal índice amplo da Austrália,indices,asx_200,axjo
+NZX 50,^NZ50,Equity Index,Broad Market,Oceania,Nova Zelandia,NZD,indice,Indices Globais,Principal índice da Nova Zelândia,indices,nzx_50,nz50
+South Africa Top 40,^JN0U.JO,Equity Index,Broad Market,Africa,Africa do Sul,ZAR,indice,Indices Globais,Proxy do mercado acionário sul-africano,indices,south_africa_top_40,jn0ujo
+iShares Ibovespa ETF,BOVA11.SA,ETF,Brasil Broad Market,Brasil,Brasil,BRL,etf,ETFs Investiveis,ETF do Ibovespa,etfs,ishares_ibovespa_etf,bova11sa
+iShares Small Caps ETF,SMAL11.SA,ETF,Brasil Small Caps,Brasil,Brasil,BRL,etf,ETFs Investiveis,ETF de Small Caps Brasil,etfs,ishares_small_caps_etf,smal11sa
+Vanguard Total World Stock ETF,VT,ETF,Global Equity,Global,Global,USD,etf,ETFs Investiveis,ETF global amplo,etfs,vanguard_total_world_stock_etf,vt
+iShares MSCI ACWI ETF,ACWI,ETF,Global Equity,Global,Global,USD,etf,ETFs Investiveis,ETF global amplo alternativo,etfs,ishares_msci_acwi_etf,acwi
+Vanguard FTSE Developed Markets ETF,VEA,ETF,Developed Markets,Global,Desenvolvidos,USD,etf,ETFs Investiveis,Mercados desenvolvidos ex-EUA,etfs,vanguard_ftse_developed_markets_etf,vea
+iShares Core MSCI Emerging Markets ETF,IEMG,ETF,Emerging Markets,Emergentes,Emergentes,USD,etf,ETFs Investiveis,ETF amplo de mercados emergentes,etfs,ishares_core_msci_emerging_markets_etf,iemg
+SPDR S&P 500 ETF,SPY,ETF,US Broad Market,America do Norte,Estados Unidos,USD,etf,ETFs Investiveis,ETF clássico do S&P 500,etfs,spdr_sp_500_etf,spy
+Invesco QQQ Trust,QQQ,ETF,US Tech/Growth,America do Norte,Estados Unidos,USD,etf,ETFs Investiveis,ETF Nasdaq/tecnologia,etfs,invesco_qqq_trust,qqq
+iShares MSCI Mexico ETF,EWW,ETF,Mexico,America Latina,Mexico,USD,etf,ETFs Investiveis,ETF do México,etfs,ishares_msci_mexico_etf,eww
+iShares MSCI Chile ETF,ECH,ETF,Chile,America Latina,Chile,USD,etf,ETFs Investiveis,ETF do Chile,etfs,ishares_msci_chile_etf,ech
+Global X MSCI Argentina ETF,ARGT,ETF,Argentina,America Latina,Argentina,USD,etf,ETFs Investiveis,ETF da Argentina,etfs,global_x_msci_argentina_etf,argt
+SPDR EURO STOXX 50 ETF,FEZ,ETF,Zona do Euro,Europa,Zona do Euro,USD,etf,ETFs Investiveis,ETF amplo da zona do euro,etfs,spdr_euro_stoxx_50_etf,fez
+iShares MSCI United Kingdom ETF,EWU,ETF,Reino Unido,Europa,Reino Unido,USD,etf,ETFs Investiveis,ETF do Reino Unido,etfs,ishares_msci_united_kingdom_etf,ewu
+iShares MSCI Germany ETF,EWG,ETF,Alemanha,Europa,Alemanha,USD,etf,ETFs Investiveis,ETF da Alemanha,etfs,ishares_msci_germany_etf,ewg
+iShares MSCI Japan ETF,EWJ,ETF,Japao,Asia,Japao,USD,etf,ETFs Investiveis,ETF amplo do Japão,etfs,ishares_msci_japan_etf,ewj
+iShares MSCI China ETF,MCHI,ETF,China,Asia,China,USD,etf,ETFs Investiveis,ETF amplo da China,etfs,ishares_msci_china_etf,mchi
+iShares MSCI Hong Kong ETF,EWH,ETF,Hong Kong,Asia,Hong Kong,USD,etf,ETFs Investiveis,ETF de Hong Kong,etfs,ishares_msci_hong_kong_etf,ewh
+iShares MSCI South Korea ETF,EWY,ETF,Coreia do Sul,Asia,Coreia do Sul,USD,etf,ETFs Investiveis,ETF da Coreia do Sul,etfs,ishares_msci_south_korea_etf,ewy
+iShares MSCI India ETF,INDA,ETF,India,Asia,India,USD,etf,ETFs Investiveis,ETF da Índia,etfs,ishares_msci_india_etf,inda
+iShares MSCI Taiwan ETF,EWT,ETF,Taiwan,Asia,Taiwan,USD,etf,ETFs Investiveis,ETF de Taiwan,etfs,ishares_msci_taiwan_etf,ewt
+iShares MSCI Australia ETF,EWA,ETF,Australia,Oceania,Australia,USD,etf,ETFs Investiveis,ETF da Austrália,etfs,ishares_msci_australia_etf,ewa
+iShares MSCI New Zealand ETF,ENZL,ETF,Nova Zelandia,Oceania,Nova Zelandia,USD,etf,ETFs Investiveis,ETF da Nova Zelândia,etfs,ishares_msci_new_zealand_etf,enzl
+iShares MSCI South Africa ETF,EZA,ETF,Africa do Sul,Africa,Africa do Sul,USD,etf,ETFs Investiveis,ETF da África do Sul,etfs,ishares_msci_south_africa_etf,eza
+SPDR Gold Shares,GLD,ETF,Ouro,Global,Global,USD,etf,ETFs Investiveis,ETF de ouro físico/proxy,etfs,spdr_gold_shares,gld
+iShares Bitcoin Trust,IBIT,ETF,Bitcoin,Global,Global,USD,etf,ETFs Investiveis,ETF spot de bitcoin; histórico será mais curto,etfs,ishares_bitcoin_trust,ibit
+United States Oil Fund,USO,ETF,Petroleo,Global,Global,USD,etf,ETFs Investiveis,ETF proxy para petróleo,etfs,united_states_oil_fund,uso
+Energy Select Sector SPDR Fund,XLE,ETF,Energia,America do Norte,Estados Unidos,USD,etf,ETFs Investiveis,ETF de energia para comparação com petróleo,etfs,energy_select_sector_spdr_fund,xle
+Ouro Spot/Front,GC=F,Commodity,Ouro,Global,Global,USD,commodity,Alternativos,Contrato futuro/proxy de ouro no Yahoo,alternativos,ouro_spotfront,gcf
+Bitcoin USD,BTC-USD,Crypto,Bitcoin,Global,Global,USD,cripto,Alternativos,Preço do bitcoin em USD,alternativos,bitcoin_usd,btcusd
+Brent Crude Oil,BZ=F,Commodity,Petroleo,Global,Global,USD,commodity,Alternativos,Contrato/proxy do Brent no Yahoo,alternativos,brent_crude_oil,bzf
+USDBRL,BRL=X,FX,Cambio,Brasil,Brasil,BRL,cambio,Cambio,Série de câmbio no Yahoo; normalmente BRL por USD,alternativos,usdbrl,brlx

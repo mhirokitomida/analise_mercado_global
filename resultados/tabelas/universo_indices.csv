@@ -1,0 +1,19 @@
+﻿nome_ativo,ticker_yahoo,classe,subclasse,regiao,pais,moeda_original,tipo_ativo,categoria_html,observacoes,grupo_universo
+Ibovespa,^BVSP,Equity Index,Broad Market,Brasil,Brasil,BRL,indice,Indices Globais,Principal índice de ações do Brasil,indices
+Small Caps Brasil,SMLL.SA,Equity Index,Small Caps,Brasil,Brasil,BRL,indice,Indices Globais,Proxy de small caps brasileiras,indices
+S&P 500,^GSPC,Equity Index,Broad Market,America do Norte,Estados Unidos,USD,indice,Indices Globais,Principal índice amplo dos EUA,indices
+Nasdaq 100,^NDX,Equity Index,Tech/Growth,America do Norte,Estados Unidos,USD,indice,Indices Globais,Índice concentrado em tecnologia e growth,indices
+Mexico IPC,^MXX,Equity Index,Broad Market,America Latina,Mexico,MXN,indice,Indices Globais,Principal índice do México,indices
+Chile IPSA,^IPSA,Equity Index,Broad Market,America Latina,Chile,CLP,indice,Indices Globais,Principal índice do Chile,indices
+Euro Stoxx 50,^STOXX50E,Equity Index,Broad Market,Europa,Zona do Euro,EUR,indice,Indices Globais,Índice de grandes empresas da zona do euro,indices
+FTSE 100,^FTSE,Equity Index,Broad Market,Europa,Reino Unido,GBP,indice,Indices Globais,Principal índice do Reino Unido,indices
+DAX,^GDAXI,Equity Index,Broad Market,Europa,Alemanha,EUR,indice,Indices Globais,Principal índice da Alemanha,indices
+Nikkei 225,^N225,Equity Index,Broad Market,Asia,Japao,JPY,indice,Indices Globais,Principal índice do Japão,indices
+Shanghai Composite,000001.SS,Equity Index,Broad Market,Asia,China,CNY,indice,Indices Globais,Índice amplo da bolsa de Xangai,indices
+Hang Seng,^HSI,Equity Index,Broad Market,Asia,Hong Kong,HKD,indice,Indices Globais,Principal índice de Hong Kong,indices
+Kospi,^KS11,Equity Index,Broad Market,Asia,Coreia do Sul,KRW,indice,Indices Globais,Principal índice da Coreia do Sul,indices
+Nifty 50,^NSEI,Equity Index,Broad Market,Asia,India,INR,indice,Indices Globais,Principal índice da Índia,indices
+Taiwan Weighted,^TWII,Equity Index,Broad Market,Asia,Taiwan,TWD,indice,Indices Globais,Principal índice de Taiwan,indices
+ASX 200,^AXJO,Equity Index,Broad Market,Oceania,Australia,AUD,indice,Indices Globais,Principal índice amplo da Austrália,indices
+NZX 50,^NZ50,Equity Index,Broad Market,Oceania,Nova Zelandia,NZD,indice,Indices Globais,Principal índice da Nova Zelândia,indices
+South Africa Top 40,^JN0U.JO,Equity Index,Broad Market,Africa,Africa do Sul,ZAR,indice,Indices Globais,Proxy do mercado acionário sul-africano,indices

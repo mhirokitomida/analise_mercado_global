@@ -1,0 +1,13 @@
+﻿regra,valor
+quantidade_tickers_total,45
+quantidade_tickers_cripto,1
+quantidade_tickers_excluidos_calendario,1
+quantidade_tickers_referencia_calendario,43
+data_min_calendario_comum,2015-01-02
+data_max_calendario_comum,2026-04-15
+n_datas_calendario_comum,2942
+ffill_limit,5
+n_linhas_base_long_alinhada,127277
+n_tickers_base_long_alinhada,45
+n_datas_diario_alinhado,2942
+n_meses_mensal_alinhado,136

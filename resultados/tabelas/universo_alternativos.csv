@@ -1,0 +1,5 @@
+﻿nome_ativo,ticker_yahoo,classe,subclasse,regiao,pais,moeda_original,tipo_ativo,categoria_html,observacoes,grupo_universo
+Ouro Spot/Front,GC=F,Commodity,Ouro,Global,Global,USD,commodity,Alternativos,Contrato futuro/proxy de ouro no Yahoo,alternativos
+Bitcoin USD,BTC-USD,Crypto,Bitcoin,Global,Global,USD,cripto,Alternativos,Preço do bitcoin em USD,alternativos
+Brent Crude Oil,BZ=F,Commodity,Petroleo,Global,Global,USD,commodity,Alternativos,Contrato/proxy do Brent no Yahoo,alternativos
+USDBRL,BRL=X,FX,Cambio,Brasil,Brasil,BRL,cambio,Cambio,Série de câmbio no Yahoo; normalmente BRL por USD,alternativos

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Resumo Cenario Familia Estrategia</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Final Resumo Cenario Familia Estrategia</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>familia_estrategia</th>
+<th>cenario_alternativos</th>
+<th>qtd_estrategias</th>
+<th>retorno_total_medio</th>
+<th>cagr_medio</th>
+<th>vol_anual_media</th>
+<th>sharpe_medio</th>
+<th>sortino_medio</th>
+<th>max_drawdown_medio</th>
+<th>calmar_medio</th>
+<th>score_medio</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">equal_weight</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="4.345174582130345">434,52%</td>
+<td class="col-num" data-order="0.1611334179987578">16,11%</td>
+<td class="col-num" data-order="0.1449914571916142">14,50%</td>
+<td class="col-num" data-order="1.196271654527568">1,1963</td>
+<td class="col-num" data-order="2.07309398956373">2,0731</td>
+<td class="col-num" data-order="-0.2346406865659338">-23,46%</td>
+<td class="col-num" data-order="0.6860252978271015">0,6860</td>
+<td class="col-num" data-order="208.28571428571428">208,2857</td>
+</tr>
+<tr>
+<td class="col-text col-first">equal_weight</td>
+<td class="col-text">sem_alternativos</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.3594918141208807">335,95%</td>
+<td class="col-num" data-order="0.1383454169203344">13,83%</td>
+<td class="col-num" data-order="0.175561680473966">17,56%</td>
+<td class="col-num" data-order="0.9194999904589306">0,9195</td>
+<td class="col-num" data-order="1.5260696241901497">1,5261</td>
+<td class="col-num" data-order="-0.2987001416180733">-29,87%</td>
+<td class="col-num" data-order="0.4904287368882462">0,4904</td>
+<td class="col-num" data-order="353.1">353,1000</td>
+</tr>
+<tr>
+<td class="col-text col-first">hrp</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="3.7665445622586793">376,65%</td>
+<td class="col-num" data-order="0.1498347408108583">14,98%</td>
+<td class="col-num" data-order="0.1345487638620424">13,45%</td>
+<td class="col-num" data-order="1.2040993877669308">1,2041</td>
+<td class="col-num" data-order="2.04126058067156">2,0413</td>
+<td class="col-num" data-order="-0.1931917273855788">-19,32%</td>
+<td class="col-num" data-order="0.7790822602499442">0,7791</td>
+<td class="col-num" data-order="170.0">170,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">hrp</td>
+<td class="col-text">sem_alternativos</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.1475653602120977">314,76%</td>
+<td class="col-num" data-order="0.1333299710327415">13,33%</td>
+<td class="col-num" data-order="0.1729117966105872">17,29%</td>
+<td class="col-num" data-order="0.9048731949940356">0,9049</td>
+<td class="col-num" data-order="1.477860535962527">1,4779</td>
+<td class="col-num" data-order="-0.2915790615936321">-29,16%</td>
+<td class="col-num" data-order="0.4824316752790028">0,4824</td>
+<td class="col-num" data-order="358.6">358,6000</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_puro__max_sharpe</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="9.6259863821483">962,60%</td>
+<td class="col-num" data-order="0.2315243238968619">23,15%</td>
+<td class="col-num" data-order="0.1275861819271628">12,76%</td>
+<td class="col-num" data-order="1.8029020133837577">1,8029</td>
+<td class="col-num" data-order="3.6640551279499394">3,6641</td>
+<td class="col-num" data-order="-0.1854662237911301">-18,55%</td>
+<td class="col-num" data-order="1.3256965955848723">1,3257</td>
+<td class="col-num" data-order="69.28571428571429">69,2857</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_puro__max_sharpe</td>
+<td class="col-text">sem_alternativos</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="5.072496749036416">507,25%</td>
+<td class="col-num" data-order="0.1680405031791874">16,80%</td>
+<td class="col-num" data-order="0.1809311365525601">18,09%</td>
+<td class="col-num" data-order="1.0418583954333716">1,0419</td>
+<td class="col-num" data-order="1.8006418977220275">1,8006</td>
+<td class="col-num" data-order="-0.2886932171999321">-28,87%</td>
+<td class="col-num" data-order="0.6060649242234672">0,6061</td>
+<td class="col-num" data-order="307.2">307,2000</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_puro__min_vol</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="3.982335250382857">398,23%</td>
+<td class="col-num" data-order="0.1540798428511247">15,41%</td>
+<td class="col-num" data-order="0.1068039659780504">10,68%</td>
+<td class="col-num" data-order="1.505357414301418">1,5054</td>
+<td class="col-num" data-order="2.542073861869932">2,5421</td>
+<td class="col-num" data-order="-0.1326751577441143">-13,27%</td>
+<td class="col-num" data-order="1.26599092923407">1,2660</td>
+<td class="col-num" data-order="87.14285714285714">87,1429</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_puro__min_vol</td>
+<td class="col-text">sem_alternativos</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.082463835059202">308,25%</td>
+<td class="col-num" data-order="0.1323113337152">13,23%</td>
+<td class="col-num" data-order="0.1663359533785444">16,63%</td>
+<td class="col-num" data-order="0.9331981087069782">0,9332</td>
+<td class="col-num" data-order="1.523776476057308">1,5238</td>
+<td class="col-num" data-order="-0.2722068957686712">-27,22%</td>
+<td class="col-num" data-order="0.5154335496795237">0,5154</td>
+<td class="col-num" data-order="338.0">338,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_restrito__max_sharpe</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="7.638262704978103">763,83%</td>
+<td class="col-num" data-order="0.2084833584063894">20,85%</td>
+<td class="col-num" data-order="0.1437240209027829">14,37%</td>
+<td class="col-num" data-order="1.474716358451251">1,4747</td>
+<td class="col-num" data-order="2.8241889909393287">2,8242</td>
+<td class="col-num" data-order="-0.2301853947112203">-23,02%</td>
+<td class="col-num" data-order="0.9049695357217846">0,9050</td>
+<td class="col-num" data-order="129.42857142857142">129,4286</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_restrito__max_sharpe</td>
+<td class="col-text">sem_alternativos</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.615599502550261">361,56%</td>
+<td class="col-num" data-order="0.1433679836332356">14,34%</td>
+<td class="col-num" data-order="0.1753557658170308">17,54%</td>
+<td class="col-num" data-order="0.9507382706165411">0,9507</td>
+<td class="col-num" data-order="1.6148185745576051">1,6148</td>
+<td class="col-num" data-order="-0.2953254902029318">-29,53%</td>
+<td class="col-num" data-order="0.5224356685076397">0,5224</td>
+<td class="col-num" data-order="336.0">336,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_restrito__min_vol</td>
+<td class="col-text">com_alternativos</td>
+<td class="col-num" data-order="7.0">7</td>
+<td class="col-num" data-order="3.676317136108079">367,63%</td>
+<td class="col-num" data-order="0.1478700143331935">14,79%</td>
+<td class="col-num" data-order="0.1251844802720988">12,52%</td>
+<td class="col-num" data-order="1.2623625178578108">1,2624</td>
+<td class="col-num" data-order="2.065048448793548">2,0650</td>
+<td class="col-num" data-order="-0.1946138887138009">-19,46%</td>
+<td class="col-num" data-order="0.7668962583091441">0,7669</td>
+<td class="col-num" data-order="159.14285714285714">159,1429</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_restrito__min_vol</td>
+<td class="col-text">sem_alternativos</td>
+<td class="col-num" data-order="10.0">10</td>
+<td class="col-num" data-order="3.2777864128359204">327,78%</td>
+<td class="col-num" data-order="0.1363096377329987">13,63%</td>
+<td class="col-num" data-order="0.1735229452827521">17,35%</td>
+<td class="col-num" data-order="0.9205224469057098">0,9205</td>
+<td class="col-num" data-order="1.5163225869028962">1,5163</td>
+<td class="col-num" data-order="-0.2945722216262284">-29,46%</td>
+<td class="col-num" data-order="0.4929048933011439">0,4929</td>
+<td class="col-num" data-order="350.0">350,0000</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

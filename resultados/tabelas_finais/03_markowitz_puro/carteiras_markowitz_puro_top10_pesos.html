@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteiras Markowitz Puro Top10 Pesos</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Carteiras Markowitz Puro Top10 Pesos</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>carteira</th>
+<th>tipo</th>
+<th>coluna_retorno</th>
+<th>carteira_tipo</th>
+<th>ativo</th>
+<th>peso</th>
+<th>peso_pct</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_america_norte__max_sharpe</td>
+<td class="col-text">etfs_america_norte__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.846594985775639">84,66%</td>
+<td class="col-num" data-order="84.6594985775639">8465,95%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_america_norte__max_sharpe</td>
+<td class="col-text">etfs_america_norte__max_sharpe</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.1534050142243609">15,34%</td>
+<td class="col-num" data-order="15.340501422436098">1534,05%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_america_norte__max_sharpe</td>
+<td class="col-text">etfs_america_norte__max_sharpe</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="5.219763095781487e-17">0,00%</td>
+<td class="col-num" data-order="5.2197630957814855e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_america_norte__min_vol</td>
+<td class="col-text">etfs_america_norte__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.8701150407036536">87,01%</td>
+<td class="col-num" data-order="87.01150407036536">8701,15%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_america_norte__min_vol</td>
+<td class="col-text">etfs_america_norte__min_vol</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.1298849592963461">12,99%</td>
+<td class="col-num" data-order="12.988495929634617">1298,85%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_america_norte__min_vol</td>
+<td class="col-text">etfs_america_norte__min_vol</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="2.262033256791786e-16">0,00%</td>
+<td class="col-num" data-order="2.2620332567917862e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.7877178021579947">78,77%</td>
+<td class="col-num" data-order="78.77178021579947">7877,18%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.2122821978420052">21,23%</td>
+<td class="col-num" data-order="21.22821978420053">2122,82%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="9.501889272158795e-17">0,00%</td>
+<td class="col-num" data-order="9.501889272158796e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="2.220100221123556e-17">0,00%</td>
+<td class="col-num" data-order="2.220100221123556e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.4789825791504836">47,90%</td>
+<td class="col-num" data-order="47.89825791504836">4789,83%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.262304586264225">26,23%</td>
+<td class="col-num" data-order="26.230458626422497">2623,05%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="0.1699402064158766">16,99%</td>
+<td class="col-num" data-order="16.994020641587664">1699,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.0887726281694146">8,88%</td>
+<td class="col-num" data-order="8.877262816941462">887,73%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_brasil__max_sharpe</td>
+<td class="col-text">etfs_brasil__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="100.0">10000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_brasil__max_sharpe</td>
+<td class="col-text">etfs_brasil__max_sharpe</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="1.1102230246251563e-16">0,00%</td>
+<td class="col-num" data-order="1.1102230246251564e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_brasil__min_vol</td>
+<td class="col-text">etfs_brasil__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="100.0">10000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_brasil__min_vol</td>
+<td class="col-text">etfs_brasil__min_vol</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="4.163336342344337e-17">0,00%</td>
+<td class="col-num" data-order="4.163336342344337e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3546885390421981">35,47%</td>
+<td class="col-num" data-order="35.46885390421981">3546,89%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.3029016647487674">30,29%</td>
+<td class="col-num" data-order="30.290166474876735">3029,02%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.2007386003822223">20,07%</td>
+<td class="col-num" data-order="20.07386003822224">2007,39%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">BTC-USD</td>
+<td class="col-num" data-order="0.1098755584753717">10,99%</td>
+<td class="col-num" data-order="10.987555847537172">1098,76%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0230350120875411">2,30%</td>
+<td class="col-num" data-order="2.303501208754112">230,35%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0087606252638985">0,88%</td>
+<td class="col-num" data-order="0.8760625263898586">87,61%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="2.1690116822218744e-16">0,00%</td>
+<td class="col-num" data-order="2.1690116822218742e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="1.2561116011558158e-16">0,00%</td>
+<td class="col-num" data-order="1.2561116011558158e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="9.805623517479863e-17">0,00%</td>
+<td class="col-num" data-order="9.805623517479864e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="8.991994251198775e-17">0,00%</td>
+<td class="col-num" data-order="8.991994251198777e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3694517751455736">36,95%</td>
+<td class="col-num" data-order="36.945177514557365">3694,52%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.2614147944414111">26,14%</td>
+<td class="col-num" data-order="26.141479444141112">2614,15%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.1426190672085456">14,26%</td>
+<td class="col-num" data-order="14.261906720854562">1426,19%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.1046427242091482">10,46%</td>
+<td class="col-num" data-order="10.464272420914828">1046,43%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0922315075921309">9,22%</td>
+<td class="col-num" data-order="9.223150759213098">922,32%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0296401314031901">2,96%</td>
+<td class="col-num" data-order="2.964013140319013">296,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="6.760975919044345e-17">0,00%</td>
+<td class="col-num" data-order="6.760975919044345e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="2.7105184086450957e-17">0,00%</td>
+<td class="col-num" data-order="2.7105184086450955e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="2.446269177988025e-17">0,00%</td>
+<td class="col-num" data-order="2.446269177988025e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="2.2207070531186968e-17">0,00%</td>
+<td class="col-num" data-order="2.2207070531186968e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3405481012472741">34,05%</td>
+<td class="col-num" data-order="34.05481012472741">3405,48%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.2911687554064134">29,12%</td>
+<td class="col-num" data-order="29.116875540641345">2911,69%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.1995151873690505">19,95%</td>
+<td class="col-num" data-order="19.951518736905054">1995,15%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">BTC-USD</td>
+<td class="col-num" data-order="0.1077542262776902">10,78%</td>
+<td class="col-num" data-order="10.775422627769029">1077,54%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0483733080360615">4,84%</td>
+<td class="col-num" data-order="4.837330803606153">483,73%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0119981742408969">1,20%</td>
+<td class="col-num" data-order="1.1998174240896915">119,98%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0006422474226121">0,06%</td>
+<td class="col-num" data-order="0.0642247422612104">6,42%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="2.9928443678358127e-16">0,00%</td>
+<td class="col-num" data-order="2.9928443678358135e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="2.0204931607330351e-16">0,00%</td>
+<td class="col-num" data-order="2.020493160733035e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="1.1848957134381292e-16">0,00%</td>
+<td class="col-num" data-order="1.1848957134381292e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3609779114781971">36,10%</td>
+<td class="col-num" data-order="36.097791147819706">3609,78%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.2903893039580401">29,04%</td>
+<td class="col-num" data-order="29.03893039580401">2903,89%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.1399725108515294">14,00%</td>
+<td class="col-num" data-order="13.997251085152948">1399,73%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0957938915140494">9,58%</td>
+<td class="col-num" data-order="9.579389151404946">957,94%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.0601202404742227">6,01%</td>
+<td class="col-num" data-order="6.012024047422275">601,20%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0435302299457602">4,35%</td>
+<td class="col-num" data-order="4.353022994576023">435,30%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0092159117782008">0,92%</td>
+<td class="col-num" data-order="0.9215911778200824">92,16%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="6.151132414660084e-17">0,00%</td>
+<td class="col-num" data-order="6.151132414660084e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="4.0555459947414856e-17">0,00%</td>
+<td class="col-num" data-order="4.055545994741486e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="1.642565208979564e-17">0,00%</td>
+<td class="col-num" data-order="1.642565208979564e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.3830226012761362">38,30%</td>
+<td class="col-num" data-order="38.30226012761362">3830,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3103114594455405">31,03%</td>
+<td class="col-num" data-order="31.03114594455405">3103,11%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.2394988674829715">23,95%</td>
+<td class="col-num" data-order="23.94988674829715">2394,99%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0382794949360259">3,83%</td>
+<td class="col-num" data-order="3.827949493602593">382,79%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0288875768593158">2,89%</td>
+<td class="col-num" data-order="2.888757685931583">288,88%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="2.736808339522004e-15">0,00%</td>
+<td class="col-num" data-order="2.736808339522004e-13">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="1.584431105620184e-15">0,00%</td>
+<td class="col-num" data-order="1.584431105620184e-13">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="1.240831767309675e-15">0,00%</td>
+<td class="col-num" data-order="1.240831767309675e-13">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="8.725141279842632e-16">0,00%</td>
+<td class="col-num" data-order="8.725141279842632e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="7.875116980198833e-16">0,00%</td>
+<td class="col-num" data-order="7.875116980198835e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.3443564903103713">34,44%</td>
+<td class="col-num" data-order="34.43564903103714">3443,56%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3384479941876415">33,84%</td>
+<td class="col-num" data-order="33.84479941876415">3384,48%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.122226945041383">12,22%</td>
+<td class="col-num" data-order="12.222694504138303">1222,27%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.0778699060242486">7,79%</td>
+<td class="col-num" data-order="7.786990602424862">778,70%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0648838666938624">6,49%</td>
+<td class="col-num" data-order="6.488386669386244">648,84%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0427720256371266">4,28%</td>
+<td class="col-num" data-order="4.2772025637126685">427,72%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0058273299912316">0,58%</td>
+<td class="col-num" data-order="0.5827329991231657">58,27%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0036154421141346">0,36%</td>
+<td class="col-num" data-order="0.3615442114134643">36,15%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="1.5615630482121053e-17">0,00%</td>
+<td class="col-num" data-order="1.5615630482121053e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="1.5333612345334366e-17">0,00%</td>
+<td class="col-num" data-order="1.5333612345334366e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.3961248461656212">39,61%</td>
+<td class="col-num" data-order="39.61248461656212">3961,25%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3167097872609207">31,67%</td>
+<td class="col-num" data-order="31.67097872609207">3167,10%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.1766514209935685">17,67%</td>
+<td class="col-num" data-order="17.66514209935685">1766,51%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">BTC-USD</td>
+<td class="col-num" data-order="0.0697558431287664">6,98%</td>
+<td class="col-num" data-order="6.9755843128766415">697,56%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0281669500626325">2,82%</td>
+<td class="col-num" data-order="2.8166950062632505">281,67%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0125911523884893">1,26%</td>
+<td class="col-num" data-order="1.2591152388489355">125,91%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="3.923428915791567e-16">0,00%</td>
+<td class="col-num" data-order="3.9234289157915676e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="2.441875180962612e-16">0,00%</td>
+<td class="col-num" data-order="2.4418751809626122e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="1.986495423588191e-16">0,00%</td>
+<td class="col-num" data-order="1.986495423588191e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="1.6480246602699414e-16">0,00%</td>
+<td class="col-num" data-order="1.6480246602699415e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.344356503799996">34,44%</td>
+<td class="col-num" data-order="34.43565037999961">3443,57%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3384479938768331">33,84%</td>
+<td class="col-num" data-order="33.84479938768331">3384,48%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.1222271782768456">12,22%</td>
+<td class="col-num" data-order="12.222717827684566">1222,27%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.0778697915514321">7,79%</td>
+<td class="col-num" data-order="7.786979155143213">778,70%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0648838304877436">6,49%</td>
+<td class="col-num" data-order="6.488383048774364">648,84%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0427719494045105">4,28%</td>
+<td class="col-num" data-order="4.277194940451054">427,72%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0058272863132539">0,58%</td>
+<td class="col-num" data-order="0.5827286313253903">58,27%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0036154662893849">0,36%</td>
+<td class="col-num" data-order="0.3615466289384964">36,15%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="2.3179370652512237e-17">0,00%</td>
+<td class="col-num" data-order="2.3179370652512235e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-text">EWA</td>
+<td class="col-num" data-order="1.4287246079954678e-17">0,00%</td>
+<td class="col-num" data-order="1.4287246079954678e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.385592789231758">38,56%</td>
+<td class="col-num" data-order="38.5592789231758">3855,93%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3009699023095172">30,10%</td>
+<td class="col-num" data-order="30.096990230951725">3009,70%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.2272561173786952">22,73%</td>
+<td class="col-num" data-order="22.725611737869524">2272,56%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0575748470043797">5,76%</td>
+<td class="col-num" data-order="5.757484700437978">575,75%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0286063440756449">2,86%</td>
+<td class="col-num" data-order="2.8606344075644907">286,06%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="1.2838346419841745e-15">0,00%</td>
+<td class="col-num" data-order="1.2838346419841746e-13">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="7.850383008519026e-16">0,00%</td>
+<td class="col-num" data-order="7.850383008519026e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="6.282745385197968e-16">0,00%</td>
+<td class="col-num" data-order="6.282745385197968e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="4.585870342509291e-16">0,00%</td>
+<td class="col-num" data-order="4.5858703425092914e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="3.882460543134628e-16">0,00%</td>
+<td class="col-num" data-order="3.882460543134627e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.363511507131852">36,35%</td>
+<td class="col-num" data-order="36.3511507131852">3635,12%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3246415232468669">32,46%</td>
+<td class="col-num" data-order="32.464152324686694">3246,42%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.1021695224586224">10,22%</td>
+<td class="col-num" data-order="10.21695224586224">1021,70%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0722292503304976">7,22%</td>
+<td class="col-num" data-order="7.2229250330497665">722,29%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0690715530828303">6,91%</td>
+<td class="col-num" data-order="6.907155308283038">690,72%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0614505117470245">6,15%</td>
+<td class="col-num" data-order="6.145051174702449">614,51%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.0069261320023061">0,69%</td>
+<td class="col-num" data-order="0.6926132002306103">69,26%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="2.3567746482242258e-17">0,00%</td>
+<td class="col-num" data-order="2.3567746482242258e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="2.2938311666926157e-17">0,00%</td>
+<td class="col-num" data-order="2.293831166692616e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="1.3388524729891257e-17">0,00%</td>
+<td class="col-num" data-order="1.3388524729891257e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.4273260500831274">42,73%</td>
+<td class="col-num" data-order="42.732605008312746">4273,26%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3401217098454346">34,01%</td>
+<td class="col-num" data-order="34.01217098454346">3401,22%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.1415724357977492">14,16%</td>
+<td class="col-num" data-order="14.15724357977492">1415,72%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0533687972944277">5,34%</td>
+<td class="col-num" data-order="5.33687972944277">533,69%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0376110069792597">3,76%</td>
+<td class="col-num" data-order="3.761100697925974">376,11%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="3.1113590627129684e-16">0,00%</td>
+<td class="col-num" data-order="3.1113590627129693e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="1.7828034258175446e-16">0,00%</td>
+<td class="col-num" data-order="1.7828034258175452e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">INDA</td>
+<td class="col-num" data-order="1.5560856708357454e-16">0,00%</td>
+<td class="col-num" data-order="1.5560856708357457e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">EWA</td>
+<td class="col-num" data-order="1.325755630961007e-16">0,00%</td>
+<td class="col-num" data-order="1.3257556309610074e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="1.0804647946501707e-16">0,00%</td>
+<td class="col-num" data-order="1.0804647946501708e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3609779007925576">36,10%</td>
+<td class="col-num" data-order="36.09779007925576">3609,78%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.2903887710775666">29,04%</td>
+<td class="col-num" data-order="29.03887710775666">2903,89%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.139972442340145">14,00%</td>
+<td class="col-num" data-order="13.997244234014502">1399,72%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0957941212838957">9,58%</td>
+<td class="col-num" data-order="9.579412128389569">957,94%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.060120682741751">6,01%</td>
+<td class="col-num" data-order="6.012068274175105">601,21%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0435301954943038">4,35%</td>
+<td class="col-num" data-order="4.3530195494303845">435,30%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0092158862697802">0,92%</td>
+<td class="col-num" data-order="0.92158862697802">92,16%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="1.6949934601334026e-17">0,00%</td>
+<td class="col-num" data-order="1.6949934601334022e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="1.3111538165291481e-17">0,00%</td>
+<td class="col-num" data-order="1.3111538165291482e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="1.28751039375549e-17">0,00%</td>
+<td class="col-num" data-order="1.28751039375549e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.3986233274723388">39,86%</td>
+<td class="col-num" data-order="39.862332747233886">3986,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3044523339148537">30,45%</td>
+<td class="col-num" data-order="30.445233391485377">3044,52%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.1624393166876401">16,24%</td>
+<td class="col-num" data-order="16.243931668764013">1624,39%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">BTC-USD</td>
+<td class="col-num" data-order="0.0673631725172817">6,74%</td>
+<td class="col-num" data-order="6.7363172517281775">673,63%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0654059607687026">6,54%</td>
+<td class="col-num" data-order="6.540596076870264">654,06%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0017158886391788">0,17%</td>
+<td class="col-num" data-order="0.17158886391788">17,16%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="2.307217532094932e-15">0,00%</td>
+<td class="col-num" data-order="2.307217532094932e-13">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="8.374354440726184e-16">0,00%</td>
+<td class="col-num" data-order="8.374354440726182e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="5.256047973734949e-16">0,00%</td>
+<td class="col-num" data-order="5.2560479737349495e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="1.076243552481888e-16">0,00%</td>
+<td class="col-num" data-order="1.076243552481888e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">GLD</td>
+<td class="col-num" data-order="0.3637892986782263">36,38%</td>
+<td class="col-num" data-order="36.37892986782264">3637,89%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3244515370450997">32,45%</td>
+<td class="col-num" data-order="32.44515370450997">3244,52%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.1031659959310146">10,32%</td>
+<td class="col-num" data-order="10.316599593101463">1031,66%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">USO</td>
+<td class="col-num" data-order="0.0693508461163061">6,94%</td>
+<td class="col-num" data-order="6.935084611630617">693,51%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0683715366884241">6,84%</td>
+<td class="col-num" data-order="6.837153668842412">683,72%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0621856499226503">6,22%</td>
+<td class="col-num" data-order="6.21856499226503">621,86%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.0067540805320468">0,68%</td>
+<td class="col-num" data-order="0.6754080532046884">67,54%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">BTC-USD</td>
+<td class="col-num" data-order="0.0019310550862318">0,19%</td>
+<td class="col-num" data-order="0.193105508623185">19,31%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="2.2674871487036205e-17">0,00%</td>
+<td class="col-num" data-order="2.2674871487036205e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="1.912713021412645e-17">0,00%</td>
+<td class="col-num" data-order="1.912713021412645e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__max_sharpe</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__max_sharpe</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.6822897921231563">68,23%</td>
+<td class="col-num" data-order="68.22897921231564">6822,90%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__max_sharpe</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__max_sharpe</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="0.3177102078768436">31,77%</td>
+<td class="col-num" data-order="31.77102078768436">3177,10%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__min_vol</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__min_vol</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="0.5848598806431536">58,49%</td>
+<td class="col-num" data-order="58.48598806431536">5848,60%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__min_vol</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__min_vol</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.4151401193568463">41,51%</td>
+<td class="col-num" data-order="41.51401193568464">4151,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_europa__max_sharpe</td>
+<td class="col-text">etfs_europa__max_sharpe</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="0.5109960391213241">51,10%</td>
+<td class="col-num" data-order="51.09960391213241">5109,96%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_europa__max_sharpe</td>
+<td class="col-text">etfs_europa__max_sharpe</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.489003960878676">48,90%</td>
+<td class="col-num" data-order="48.9003960878676">4890,04%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_europa__max_sharpe</td>
+<td class="col-text">etfs_europa__max_sharpe</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_europa__min_vol</td>
+<td class="col-text">etfs_europa__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="100.0">10000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_europa__min_vol</td>
+<td class="col-text">etfs_europa__min_vol</td>
+<td class="col-text">EWG</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_europa__min_vol</td>
+<td class="col-text">etfs_europa__min_vol</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.4365103162288056">43,65%</td>
+<td class="col-num" data-order="43.651031622880566">4365,10%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.2707419882658538">27,07%</td>
+<td class="col-num" data-order="27.074198826585384">2707,42%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.2282438041541137">22,82%</td>
+<td class="col-num" data-order="22.82438041541137">2282,44%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">XLE</td>
+<td class="col-num" data-order="0.0645038913512263">6,45%</td>
+<td class="col-num" data-order="6.4503891351226335">645,04%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="2.3502918818784435e-16">0,00%</td>
+<td class="col-num" data-order="2.3502918818784437e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="9.14032111569715e-17">0,00%</td>
+<td class="col-num" data-order="9.14032111569715e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="6.468918328875458e-17">0,00%</td>
+<td class="col-num" data-order="6.468918328875458e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="5.4617523169782934e-17">0,00%</td>
+<td class="col-num" data-order="5.461752316978293e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="2.367870671889838e-17">0,00%</td>
+<td class="col-num" data-order="2.367870671889838e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="1.944480649617484e-17">0,00%</td>
+<td class="col-num" data-order="1.944480649617484e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="0.3371273920822371">33,71%</td>
+<td class="col-num" data-order="33.71273920822371">3371,27%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.2813334283386314">28,13%</td>
+<td class="col-num" data-order="28.133342833863143">2813,33%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.1096774234429008">10,97%</td>
+<td class="col-num" data-order="10.967742344290087">1096,77%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.1047406812214072">10,47%</td>
+<td class="col-num" data-order="10.47406812214072">1047,41%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.0779267901427855">7,79%</td>
+<td class="col-num" data-order="7.792679014278551">779,27%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0498257177590715">4,98%</td>
+<td class="col-num" data-order="4.982571775907154">498,26%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.0282191840965955">2,82%</td>
+<td class="col-num" data-order="2.821918409659554">282,19%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0111493829163706">1,11%</td>
+<td class="col-num" data-order="1.114938291637065">111,49%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="3.112486444732939e-17">0,00%</td>
+<td class="col-num" data-order="3.112486444732939e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="2.820572394602513e-17">0,00%</td>
+<td class="col-num" data-order="2.820572394602513e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_global__max_sharpe</td>
+<td class="col-text">etfs_global__max_sharpe</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="0.9999999999999996">100,00%</td>
+<td class="col-num" data-order="99.99999999999996">10000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_global__max_sharpe</td>
+<td class="col-text">etfs_global__max_sharpe</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="4.440892098500625e-16">0,00%</td>
+<td class="col-num" data-order="4.4408920985006255e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_global__max_sharpe</td>
+<td class="col-text">etfs_global__max_sharpe</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_global__min_vol</td>
+<td class="col-text">etfs_global__min_vol</td>
+<td class="col-text">VEA</td>
+<td class="col-num" data-order="0.5534861353725006">55,35%</td>
+<td class="col-num" data-order="55.34861353725006">5534,86%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_global__min_vol</td>
+<td class="col-text">etfs_global__min_vol</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="0.4465138646274994">44,65%</td>
+<td class="col-num" data-order="44.65138646274994">4465,14%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_global__min_vol</td>
+<td class="col-text">etfs_global__min_vol</td>
+<td class="col-text">VT</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_latam__max_sharpe</td>
+<td class="col-text">etfs_latam__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.4911166784624028">49,11%</td>
+<td class="col-num" data-order="49.11166784624028">4911,17%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_latam__max_sharpe</td>
+<td class="col-text">etfs_latam__max_sharpe</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.3782864885521672">37,83%</td>
+<td class="col-num" data-order="37.82864885521672">3782,86%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_latam__max_sharpe</td>
+<td class="col-text">etfs_latam__max_sharpe</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.13059683298543">13,06%</td>
+<td class="col-num" data-order="13.059683298543002">1305,97%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_latam__min_vol</td>
+<td class="col-text">etfs_latam__min_vol</td>
+<td class="col-text">EWW</td>
+<td class="col-num" data-order="0.4922782318921021">49,23%</td>
+<td class="col-num" data-order="49.22782318921021">4922,78%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_latam__min_vol</td>
+<td class="col-text">etfs_latam__min_vol</td>
+<td class="col-text">ECH</td>
+<td class="col-num" data-order="0.3862227381655715">38,62%</td>
+<td class="col-num" data-order="38.622273816557154">3862,23%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_latam__min_vol</td>
+<td class="col-text">etfs_latam__min_vol</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.1214990299423263">12,15%</td>
+<td class="col-num" data-order="12.149902994232638">1214,99%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_oceania__max_sharpe</td>
+<td class="col-text">etfs_oceania__max_sharpe</td>
+<td class="col-text">EWA</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="100.0">10000,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_oceania__max_sharpe</td>
+<td class="col-text">etfs_oceania__max_sharpe</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_oceania__min_vol</td>
+<td class="col-text">etfs_oceania__min_vol</td>
+<td class="col-text">EWA</td>
+<td class="col-num" data-order="0.6989319222574816">69,89%</td>
+<td class="col-num" data-order="69.89319222574815">6989,32%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_oceania__min_vol</td>
+<td class="col-text">etfs_oceania__min_vol</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="0.3010680777425184">30,11%</td>
+<td class="col-num" data-order="30.10680777425184">3010,68%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="0.4395696557765752">43,96%</td>
+<td class="col-num" data-order="43.95696557765752">4395,70%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3510459200936446">35,10%</td>
+<td class="col-num" data-order="35.10459200936447">3510,46%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">EWT</td>
+<td class="col-num" data-order="0.146639867615078">14,66%</td>
+<td class="col-num" data-order="14.663986761507802">1466,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">ARGT</td>
+<td class="col-num" data-order="0.0627445565147011">6,27%</td>
+<td class="col-num" data-order="6.274455651470112">627,45%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="6.480302839554707e-16">0,00%</td>
+<td class="col-num" data-order="6.480302839554707e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">FEZ</td>
+<td class="col-num" data-order="2.8314198536339587e-16">0,00%</td>
+<td class="col-num" data-order="2.8314198536339587e-14">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">IEMG</td>
+<td class="col-num" data-order="8.04657897491833e-17">0,00%</td>
+<td class="col-num" data-order="8.04657897491833e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">EWY</td>
+<td class="col-num" data-order="4.8893160364795305e-17">0,00%</td>
+<td class="col-num" data-order="4.88931603647953e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">SMAL11.SA</td>
+<td class="col-num" data-order="2.4936963784513166e-17">0,00%</td>
+<td class="col-num" data-order="2.4936963784513167e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="6.965867326021741e-18">0,00%</td>
+<td class="col-num" data-order="6.965867326021742e-16">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">BOVA11.SA</td>
+<td class="col-num" data-order="0.3694517288892101">36,95%</td>
+<td class="col-num" data-order="36.94517288892101">3694,52%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">EWJ</td>
+<td class="col-num" data-order="0.2614144586838398">26,14%</td>
+<td class="col-num" data-order="26.14144586838398">2614,14%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">EWU</td>
+<td class="col-num" data-order="0.1426193496051542">14,26%</td>
+<td class="col-num" data-order="14.261934960515427">1426,19%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">EWH</td>
+<td class="col-num" data-order="0.1046426777711082">10,46%</td>
+<td class="col-num" data-order="10.464267777110823">1046,43%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">SPY</td>
+<td class="col-num" data-order="0.0922316331853369">9,22%</td>
+<td class="col-num" data-order="9.223163318533697">922,32%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">MCHI</td>
+<td class="col-num" data-order="0.0296401518653502">2,96%</td>
+<td class="col-num" data-order="2.9640151865350264">296,40%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">EZA</td>
+<td class="col-num" data-order="6.204752506834519e-17">0,00%</td>
+<td class="col-num" data-order="6.204752506834519e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">QQQ</td>
+<td class="col-num" data-order="5.366447403569201e-17">0,00%</td>
+<td class="col-num" data-order="5.3664474035692e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">ENZL</td>
+<td class="col-num" data-order="3.583052197830262e-17">0,00%</td>
+<td class="col-num" data-order="3.583052197830262e-15">0,00%</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-text">ACWI</td>
+<td class="col-num" data-order="3.4432819164740025e-17">0,00%</td>
+<td class="col-num" data-order="3.4432819164740026e-15">0,00%</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,636 @@
+<table class="dataframe tabela-projeto table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>carteira</th>
+      <th>tipo</th>
+      <th>coluna_retorno</th>
+      <th>n_ativos_universo</th>
+      <th>n_ativos_validos</th>
+      <th>n_ativos_com_peso</th>
+      <th>periodo_inicio</th>
+      <th>periodo_fim</th>
+      <th>n_meses</th>
+      <th>peso_min_base</th>
+      <th>peso_max_base</th>
+      <th>peso_min_efetivo</th>
+      <th>peso_max_efetivo</th>
+      <th>ajuste_limites</th>
+      <th>ativos_universo</th>
+      <th>ativos_validos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>etfs_america_norte</td>
+      <td>max_sharpe</td>
+      <td>etfs_america_norte__max_sharpe</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>QQQ | SPY | XLE</td>
+      <td>QQQ | SPY | XLE</td>
+    </tr>
+    <tr>
+      <td>etfs_america_norte</td>
+      <td>min_vol</td>
+      <td>etfs_america_norte__min_vol</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>QQQ | SPY | XLE</td>
+      <td>QQQ | SPY | XLE</td>
+    </tr>
+    <tr>
+      <td>etfs_asia</td>
+      <td>max_sharpe</td>
+      <td>etfs_asia__max_sharpe</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1666666667</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>EWH | EWJ | EWT | EWY | INDA | MCHI</td>
+      <td>EWH | EWJ | EWT | EWY | INDA | MCHI</td>
+    </tr>
+    <tr>
+      <td>etfs_asia</td>
+      <td>min_vol</td>
+      <td>etfs_asia__min_vol</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1666666667</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>EWH | EWJ | EWT | EWY | INDA | MCHI</td>
+      <td>EWH | EWJ | EWT | EWY | INDA | MCHI</td>
+    </tr>
+    <tr>
+      <td>etfs_brasil</td>
+      <td>max_sharpe</td>
+      <td>etfs_brasil__max_sharpe</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.5000000000</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>BOVA11.SA | SMAL11.SA</td>
+      <td>BOVA11.SA | SMAL11.SA</td>
+    </tr>
+    <tr>
+      <td>etfs_brasil</td>
+      <td>min_vol</td>
+      <td>etfs_brasil__min_vol</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.5000000000</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>BOVA11.SA | SMAL11.SA</td>
+      <td>BOVA11.SA | SMAL11.SA</td>
+    </tr>
+    <tr>
+      <td>etfs_com_btc</td>
+      <td>max_sharpe</td>
+      <td>etfs_com_btc__max_sharpe</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD</td>
+    </tr>
+    <tr>
+      <td>etfs_com_btc</td>
+      <td>min_vol</td>
+      <td>etfs_com_btc__min_vol</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD</td>
+    </tr>
+    <tr>
+      <td>etfs_com_btc_petroleo</td>
+      <td>max_sharpe</td>
+      <td>etfs_com_btc_petroleo__max_sharpe</td>
+      <td>26</td>
+      <td>26</td>
+      <td>26</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_com_btc_petroleo</td>
+      <td>min_vol</td>
+      <td>etfs_com_btc_petroleo__min_vol</td>
+      <td>26</td>
+      <td>26</td>
+      <td>26</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | BTC-USD | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_com_ouro</td>
+      <td>max_sharpe</td>
+      <td>etfs_com_ouro__max_sharpe</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD</td>
+    </tr>
+    <tr>
+      <td>etfs_com_ouro</td>
+      <td>min_vol</td>
+      <td>etfs_com_ouro__min_vol</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD</td>
+    </tr>
+    <tr>
+      <td>etfs_com_ouro_btc</td>
+      <td>max_sharpe</td>
+      <td>etfs_com_ouro_btc__max_sharpe</td>
+      <td>26</td>
+      <td>26</td>
+      <td>26</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD</td>
+    </tr>
+    <tr>
+      <td>etfs_com_ouro_btc</td>
+      <td>min_vol</td>
+      <td>etfs_com_ouro_btc__min_vol</td>
+      <td>26</td>
+      <td>26</td>
+      <td>26</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD</td>
+    </tr>
+    <tr>
+      <td>etfs_com_ouro_petroleo</td>
+      <td>max_sharpe</td>
+      <td>etfs_com_ouro_petroleo__max_sharpe</td>
+      <td>26</td>
+      <td>26</td>
+      <td>26</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_com_ouro_petroleo</td>
+      <td>min_vol</td>
+      <td>etfs_com_ouro_petroleo__min_vol</td>
+      <td>26</td>
+      <td>26</td>
+      <td>26</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_com_petroleo</td>
+      <td>max_sharpe</td>
+      <td>etfs_com_petroleo__max_sharpe</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_com_petroleo</td>
+      <td>min_vol</td>
+      <td>etfs_com_petroleo__min_vol</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_com_tudo</td>
+      <td>max_sharpe</td>
+      <td>etfs_com_tudo__max_sharpe</td>
+      <td>27</td>
+      <td>27</td>
+      <td>27</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_com_tudo</td>
+      <td>min_vol</td>
+      <td>etfs_com_tudo__min_vol</td>
+      <td>27</td>
+      <td>27</td>
+      <td>27</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD | USO</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE | GLD | BTC-USD | USO</td>
+    </tr>
+    <tr>
+      <td>etfs_desenvolvidos_emergentes</td>
+      <td>max_sharpe</td>
+      <td>etfs_desenvolvidos_emergentes__max_sharpe</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.5000000000</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>VEA | IEMG</td>
+      <td>VEA | IEMG</td>
+    </tr>
+    <tr>
+      <td>etfs_desenvolvidos_emergentes</td>
+      <td>min_vol</td>
+      <td>etfs_desenvolvidos_emergentes__min_vol</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.5000000000</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>VEA | IEMG</td>
+      <td>VEA | IEMG</td>
+    </tr>
+    <tr>
+      <td>etfs_europa</td>
+      <td>max_sharpe</td>
+      <td>etfs_europa__max_sharpe</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>EWG | EWU | FEZ</td>
+      <td>EWG | EWU | FEZ</td>
+    </tr>
+    <tr>
+      <td>etfs_europa</td>
+      <td>min_vol</td>
+      <td>etfs_europa__min_vol</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>EWG | EWU | FEZ</td>
+      <td>EWG | EWU | FEZ</td>
+    </tr>
+    <tr>
+      <td>etfs_exterior</td>
+      <td>max_sharpe</td>
+      <td>etfs_exterior__max_sharpe</td>
+      <td>22</td>
+      <td>22</td>
+      <td>22</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SPY | VEA | VT | XLE</td>
+      <td>ACWI | ARGT | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SPY | VEA | VT | XLE</td>
+    </tr>
+    <tr>
+      <td>etfs_exterior</td>
+      <td>min_vol</td>
+      <td>etfs_exterior__min_vol</td>
+      <td>22</td>
+      <td>22</td>
+      <td>22</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SPY | VEA | VT | XLE</td>
+      <td>ACWI | ARGT | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SPY | VEA | VT | XLE</td>
+    </tr>
+    <tr>
+      <td>etfs_global</td>
+      <td>max_sharpe</td>
+      <td>etfs_global__max_sharpe</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>ACWI | VEA | VT</td>
+      <td>ACWI | VEA | VT</td>
+    </tr>
+    <tr>
+      <td>etfs_global</td>
+      <td>min_vol</td>
+      <td>etfs_global__min_vol</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>ACWI | VEA | VT</td>
+      <td>ACWI | VEA | VT</td>
+    </tr>
+    <tr>
+      <td>etfs_latam</td>
+      <td>max_sharpe</td>
+      <td>etfs_latam__max_sharpe</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>ARGT | ECH | EWW</td>
+      <td>ARGT | ECH | EWW</td>
+    </tr>
+    <tr>
+      <td>etfs_latam</td>
+      <td>min_vol</td>
+      <td>etfs_latam__min_vol</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.3333333333</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>ARGT | ECH | EWW</td>
+      <td>ARGT | ECH | EWW</td>
+    </tr>
+    <tr>
+      <td>etfs_oceania</td>
+      <td>max_sharpe</td>
+      <td>etfs_oceania__max_sharpe</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.5000000000</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>ENZL | EWA</td>
+      <td>ENZL | EWA</td>
+    </tr>
+    <tr>
+      <td>etfs_oceania</td>
+      <td>min_vol</td>
+      <td>etfs_oceania__min_vol</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.5000000000</td>
+      <td>ajuste_max_para_viabilidade</td>
+      <td>ENZL | EWA</td>
+      <td>ENZL | EWA</td>
+    </tr>
+    <tr>
+      <td>etfs_todos</td>
+      <td>max_sharpe</td>
+      <td>etfs_todos__max_sharpe</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE</td>
+    </tr>
+    <tr>
+      <td>etfs_todos</td>
+      <td>min_vol</td>
+      <td>etfs_todos__min_vol</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>2015-02-28</td>
+      <td>2026-04-30</td>
+      <td>135</td>
+      <td>0.02</td>
+      <td>0.1</td>
+      <td>0.02</td>
+      <td>0.1000000000</td>
+      <td>nenhum</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE</td>
+      <td>ACWI | ARGT | BOVA11.SA | ECH | ENZL | EWA | EWG | EWH | EWJ | EWT | EWU | EWW | EWY | EZA | FEZ | IEMG | INDA | MCHI | QQQ | SMAL11.SA | SPY | VEA | VT | XLE</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metricas Completas</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Metricas Completas</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>ticker</th>
+<th>retorno_total</th>
+<th>cagr</th>
+<th>volatilidade</th>
+<th>sharpe</th>
+<th>sortino</th>
+<th>max_drawdown</th>
+<th>calmar</th>
+<th>skew</th>
+<th>kurtosis</th>
+<th>pct_meses_positivos</th>
+<th>melhor_mes</th>
+<th>pior_mes</th>
+<th>nome_ativo</th>
+<th>classe</th>
+<th>subclasse</th>
+<th>regiao</th>
+<th>pais</th>
+<th>tipo_ativo</th>
+<th>grupo_universo</th>
+<th>rank_cagr</th>
+<th>rank_vol</th>
+<th>rank_sharpe</th>
+<th>rank_sortino</th>
+<th>rank_calmar</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">BTC-USD</td>
+<td class="col-num" data-order="441.1529167027492">44115,29%</td>
+<td class="col-num" data-order="0.7158558287619119">71,59%</td>
+<td class="col-num" data-order="0.6779388357797108">67,79%</td>
+<td class="col-num" data-order="1.111029494082588">1,1110</td>
+<td class="col-num" data-order="1.5363538784885582">1,5364</td>
+<td class="col-num" data-order="-0.8009863458240699">-80,10%</td>
+<td class="col-num" data-order="0.8937178923136647">0,8937</td>
+<td class="col-num" data-order="0.0186317646512356">0,0186</td>
+<td class="col-num" data-order="5.579881003708897">5,5799</td>
+<td class="col-num" data-order="0.5851851851851851">58,52%</td>
+<td class="col-num" data-order="0.7777619642376055">77,78%</td>
+<td class="col-num" data-order="-0.3654658395443061">-36,55%</td>
+<td class="col-text">Bitcoin USD</td>
+<td class="col-text">Crypto</td>
+<td class="col-text">Bitcoin</td>
+<td class="col-text">Global</td>
+<td class="col-text">Global</td>
+<td class="col-text">cripto</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="45.0">4500,00%</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">QQQ</td>
+<td class="col-num" data-order="11.579099750116656">1157,91%</td>
+<td class="col-num" data-order="0.2515940223116162">25,16%</td>
+<td class="col-num" data-order="0.2757162161853137">27,57%</td>
+<td class="col-num" data-order="0.9245645035839246">0,9246</td>
+<td class="col-num" data-order="1.379907775058464">1,3799</td>
+<td class="col-num" data-order="-0.4116511654266136">-41,17%</td>
+<td class="col-num" data-order="0.6111825823470641">0,6112</td>
+<td class="col-num" data-order="0.2985410216929081">0,2985</td>
+<td class="col-num" data-order="4.455238595722859">4,4552</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="0.1978920328904045">19,79%</td>
+<td class="col-num" data-order="-0.1582695339129651">-15,83%</td>
+<td class="col-text">Invesco QQQ Trust</td>
+<td class="col-text">ETF</td>
+<td class="col-text">US Tech/Growth</td>
+<td class="col-text">America do Norte</td>
+<td class="col-text">Estados Unidos</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="2.0">200,00%</td>
+<td class="col-num" data-order="33.0">3300,00%</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^NDX</td>
+<td class="col-num" data-order="10.571220391414569">1057,12%</td>
+<td class="col-num" data-order="0.2423637882411089">24,24%</td>
+<td class="col-num" data-order="0.2773697427533412">27,74%</td>
+<td class="col-num" data-order="0.8948824694278087">0,8949</td>
+<td class="col-num" data-order="1.335197222183021">1,3352</td>
+<td class="col-num" data-order="-0.4148590134768877">-41,49%</td>
+<td class="col-num" data-order="0.5842075991308101">0,5842</td>
+<td class="col-num" data-order="0.2939595507920693">0,2940</td>
+<td class="col-num" data-order="4.398150462427669">4,3982</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="0.1959254200976616">19,59%</td>
+<td class="col-num" data-order="-0.1588609344710061">-15,89%</td>
+<td class="col-text">Nasdaq 100</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Tech/Growth</td>
+<td class="col-text">America do Norte</td>
+<td class="col-text">Estados Unidos</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="3.0">300,00%</td>
+<td class="col-num" data-order="34.0">3400,00%</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">GC=F</td>
+<td class="col-num" data-order="6.654366551662754">665,44%</td>
+<td class="col-num" data-order="0.1976836336126322">19,77%</td>
+<td class="col-num" data-order="0.2260986742283836">22,61%</td>
+<td class="col-num" data-order="0.8846207925520841">0,8846</td>
+<td class="col-num" data-order="1.3145966360454058">1,3146</td>
+<td class="col-num" data-order="-0.2507121216055863">-25,07%</td>
+<td class="col-num" data-order="0.7884885355628032">0,7885</td>
+<td class="col-num" data-order="-0.0437937217113161">-0,0438</td>
+<td class="col-num" data-order="3.699847199760608">3,6998</td>
+<td class="col-num" data-order="0.6666666666666666">66,67%</td>
+<td class="col-num" data-order="0.1721313884786679">17,21%</td>
+<td class="col-num" data-order="-0.1254295472837238">-12,54%</td>
+<td class="col-text">Ouro Spot/Front</td>
+<td class="col-text">Commodity</td>
+<td class="col-text">Ouro</td>
+<td class="col-text">Global</td>
+<td class="col-text">Global</td>
+<td class="col-text">commodity</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="7.0">700,00%</td>
+<td class="col-num" data-order="6.0">600,00%</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">GLD</td>
+<td class="col-num" data-order="6.281579499031434">628,16%</td>
+<td class="col-num" data-order="0.1923953171191446">19,24%</td>
+<td class="col-num" data-order="0.2276676660944606">22,77%</td>
+<td class="col-num" data-order="0.861217249560795">0,8612</td>
+<td class="col-num" data-order="1.3087023893757137">1,3087</td>
+<td class="col-num" data-order="-0.2510740114825361">-25,11%</td>
+<td class="col-num" data-order="0.7662892546428564">0,7663</td>
+<td class="col-num" data-order="0.0115254376441356">0,0115</td>
+<td class="col-num" data-order="2.930272795653336">2,9303</td>
+<td class="col-num" data-order="0.6592592592592592">65,93%</td>
+<td class="col-num" data-order="0.1869984032839657">18,70%</td>
+<td class="col-num" data-order="-0.1253514687726264">-12,54%</td>
+<td class="col-text">SPDR Gold Shares</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Ouro</td>
+<td class="col-text">Global</td>
+<td class="col-text">Global</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="8.0">800,00%</td>
+<td class="col-num" data-order="9.0">900,00%</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^TWII</td>
+<td class="col-num" data-order="6.259468889408863">625,95%</td>
+<td class="col-num" data-order="0.1922265518066648">19,22%</td>
+<td class="col-num" data-order="0.2321877441707192">23,22%</td>
+<td class="col-num" data-order="0.8481049198508355">0,8481</td>
+<td class="col-num" data-order="1.1871475185858855">1,1871</td>
+<td class="col-num" data-order="-0.4594478173758001">-45,94%</td>
+<td class="col-num" data-order="0.4183860376235835">0,4184</td>
+<td class="col-num" data-order="-0.0272118036245757">-0,0272</td>
+<td class="col-num" data-order="3.6711175183993583">3,6711</td>
+<td class="col-num" data-order="0.6370370370370371">63,70%</td>
+<td class="col-num" data-order="0.1878129514035864">18,78%</td>
+<td class="col-num" data-order="-0.188824101600001">-18,88%</td>
+<td class="col-text">Taiwan Weighted</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Taiwan</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="9.0">900,00%</td>
+<td class="col-num" data-order="11.0">1100,00%</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-num" data-order="13.0">13,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">SPY</td>
+<td class="col-num" data-order="6.714382826378873">671,44%</td>
+<td class="col-num" data-order="0.1985129929891187">19,85%</td>
+<td class="col-num" data-order="0.2419382012225825">24,19%</td>
+<td class="col-num" data-order="0.8442905021718001">0,8443</td>
+<td class="col-num" data-order="1.266021667705154">1,2660</td>
+<td class="col-num" data-order="-0.3157281154203389">-31,57%</td>
+<td class="col-num" data-order="0.6287466440067652">0,6287</td>
+<td class="col-num" data-order="0.3968453850098822">0,3968</td>
+<td class="col-num" data-order="5.812835671591008">5,8128</td>
+<td class="col-num" data-order="0.6222222222222222">62,22%</td>
+<td class="col-num" data-order="0.1800144350615478">18,00%</td>
+<td class="col-num" data-order="-0.1427498915101642">-14,27%</td>
+<td class="col-text">SPDR S&amp;P 500 ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">US Broad Market</td>
+<td class="col-text">America do Norte</td>
+<td class="col-text">Estados Unidos</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="6.0">600,00%</td>
+<td class="col-num" data-order="20.0">2000,00%</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWT</td>
+<td class="col-num" data-order="7.744212976863212">774,42%</td>
+<td class="col-num" data-order="0.2118978822785981">21,19%</td>
+<td class="col-num" data-order="0.2673168116279162">26,73%</td>
+<td class="col-num" data-order="0.8286469156165415">0,8286</td>
+<td class="col-num" data-order="1.2620064371488635">1,2620</td>
+<td class="col-num" data-order="-0.4455773081663516">-44,56%</td>
+<td class="col-num" data-order="0.4755580645491226">0,4756</td>
+<td class="col-num" data-order="0.1714964558067787">0,1715</td>
+<td class="col-num" data-order="2.852124306889445">2,8521</td>
+<td class="col-num" data-order="0.6222222222222222">62,22%</td>
+<td class="col-num" data-order="0.2151926448971011">21,52%</td>
+<td class="col-num" data-order="-0.1907427705524847">-19,07%</td>
+<td class="col-text">iShares MSCI Taiwan ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Taiwan</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Taiwan</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="5.0">500,00%</td>
+<td class="col-num" data-order="31.0">3100,00%</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-num" data-order="11.0">11,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^GSPC</td>
+<td class="col-num" data-order="5.397821532258915">539,78%</td>
+<td class="col-num" data-order="0.178798991072024">17,88%</td>
+<td class="col-num" data-order="0.2426948751441455">24,27%</td>
+<td class="col-num" data-order="0.7763272486428521">0,7763</td>
+<td class="col-num" data-order="1.1615622769455856">1,1616</td>
+<td class="col-num" data-order="-0.3202425281158557">-32,02%</td>
+<td class="col-num" data-order="0.5583236933707287">0,5583</td>
+<td class="col-num" data-order="0.3811214513580997">0,3811</td>
+<td class="col-num" data-order="5.887360994366164">5,8874</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1785488759473121">17,85%</td>
+<td class="col-num" data-order="-0.143025327359292">-14,30%</td>
+<td class="col-text">S&amp;P 500</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">America do Norte</td>
+<td class="col-text">Estados Unidos</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="10.0">1000,00%</td>
+<td class="col-num" data-order="21.0">2100,00%</td>
+<td class="col-num" data-order="9.0">9,0000</td>
+<td class="col-num" data-order="9.0">9,0000</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">ARGT</td>
+<td class="col-num" data-order="9.711122237431251">971,11%</td>
+<td class="col-num" data-order="0.2338879296102436">23,39%</td>
+<td class="col-num" data-order="0.342390723468607">34,24%</td>
+<td class="col-num" data-order="0.7655906389629571">0,7656</td>
+<td class="col-num" data-order="1.0964615084764089">1,0965</td>
+<td class="col-num" data-order="-0.444021713860714">-44,40%</td>
+<td class="col-num" data-order="0.5267488555382055">0,5267</td>
+<td class="col-num" data-order="-0.1776680074197696">-0,1777</td>
+<td class="col-num" data-order="9.810664880688382">9,8107</td>
+<td class="col-num" data-order="0.5703703703703704">57,04%</td>
+<td class="col-num" data-order="0.3683991282711585">36,84%</td>
+<td class="col-num" data-order="-0.2376744537835814">-23,77%</td>
+<td class="col-text">Global X MSCI Argentina ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Argentina</td>
+<td class="col-text">America Latina</td>
+<td class="col-text">Argentina</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="4.0">400,00%</td>
+<td class="col-num" data-order="41.0">4100,00%</td>
+<td class="col-num" data-order="10.0">10,0000</td>
+<td class="col-num" data-order="12.0">12,0000</td>
+<td class="col-num" data-order="9.0">9,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">ACWI</td>
+<td class="col-num" data-order="4.938779162442342">493,88%</td>
+<td class="col-num" data-order="0.1710457546771855">17,10%</td>
+<td class="col-num" data-order="0.236461228798693">23,65%</td>
+<td class="col-num" data-order="0.7635807348702307">0,7636</td>
+<td class="col-num" data-order="1.145941725696607">1,1459</td>
+<td class="col-num" data-order="-0.3265157028127224">-32,65%</td>
+<td class="col-num" data-order="0.5238515428315897">0,5239</td>
+<td class="col-num" data-order="0.3189862568636197">0,3190</td>
+<td class="col-num" data-order="5.223202194968261">5,2232</td>
+<td class="col-num" data-order="0.6148148148148148">61,48%</td>
+<td class="col-num" data-order="0.1787624533442804">17,88%</td>
+<td class="col-num" data-order="-0.1475656196584599">-14,76%</td>
+<td class="col-text">iShares MSCI ACWI ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Global Equity</td>
+<td class="col-text">Global</td>
+<td class="col-text">Global</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="12.0">1200,00%</td>
+<td class="col-num" data-order="13.0">1300,00%</td>
+<td class="col-num" data-order="11.0">11,0000</td>
+<td class="col-num" data-order="10.0">10,0000</td>
+<td class="col-num" data-order="10.0">10,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">VT</td>
+<td class="col-num" data-order="4.931113736075754">493,11%</td>
+<td class="col-num" data-order="0.1709117079581692">17,09%</td>
+<td class="col-num" data-order="0.2373301811185227">23,73%</td>
+<td class="col-num" data-order="0.7612037829284134">0,7612</td>
+<td class="col-num" data-order="1.1378272104670653">1,1378</td>
+<td class="col-num" data-order="-0.3243912288270341">-32,44%</td>
+<td class="col-num" data-order="0.52686907897038">0,5269</td>
+<td class="col-num" data-order="0.3037929594730398">0,3038</td>
+<td class="col-num" data-order="5.499885266500662">5,4999</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1837183618804179">18,37%</td>
+<td class="col-num" data-order="-0.1511271102799998">-15,11%</td>
+<td class="col-text">Vanguard Total World Stock ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Global Equity</td>
+<td class="col-text">Global</td>
+<td class="col-text">Global</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="13.0">1300,00%</td>
+<td class="col-num" data-order="15.0">1500,00%</td>
+<td class="col-num" data-order="12.0">12,0000</td>
+<td class="col-num" data-order="11.0">11,0000</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">VEA</td>
+<td class="col-num" data-order="3.7912203958412354">379,12%</td>
+<td class="col-num" data-order="0.1489705440319115">14,90%</td>
+<td class="col-num" data-order="0.2375533465837023">23,76%</td>
+<td class="col-num" data-order="0.6838305501109542">0,6838</td>
+<td class="col-num" data-order="1.0185251714279682">1,0185</td>
+<td class="col-num" data-order="-0.351809728558801">-35,18%</td>
+<td class="col-num" data-order="0.4234406610703286">0,4234</td>
+<td class="col-num" data-order="0.1813286969529368">0,1813</td>
+<td class="col-num" data-order="4.8865718055135705">4,8866</td>
+<td class="col-num" data-order="0.6074074074074074">60,74%</td>
+<td class="col-num" data-order="0.1860415314774792">18,60%</td>
+<td class="col-num" data-order="-0.158282869762223">-15,83%</td>
+<td class="col-text">Vanguard FTSE Developed Markets ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Developed Markets</td>
+<td class="col-text">Global</td>
+<td class="col-text">Desenvolvidos</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="14.0">1400,00%</td>
+<td class="col-num" data-order="16.0">1600,00%</td>
+<td class="col-num" data-order="13.0">13,0000</td>
+<td class="col-num" data-order="15.0">15,0000</td>
+<td class="col-num" data-order="12.0">12,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^N225</td>
+<td class="col-num" data-order="3.6680140327349617">366,80%</td>
+<td class="col-num" data-order="0.1464347051000216">14,64%</td>
+<td class="col-num" data-order="0.2381291105692966">23,81%</td>
+<td class="col-num" data-order="0.6732468399428136">0,6732</td>
+<td class="col-num" data-order="1.0304769189323135">1,0305</td>
+<td class="col-num" data-order="-0.4076872145239736">-40,77%</td>
+<td class="col-num" data-order="0.3591839525087945">0,3592</td>
+<td class="col-num" data-order="0.4557295124211947">0,4557</td>
+<td class="col-num" data-order="5.804897973454375">5,8049</td>
+<td class="col-num" data-order="0.6148148148148148">61,48%</td>
+<td class="col-num" data-order="0.1783011782373784">17,83%</td>
+<td class="col-num" data-order="-0.1607376987091369">-16,07%</td>
+<td class="col-text">Nikkei 225</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Japao</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="15.0">1500,00%</td>
+<td class="col-num" data-order="17.0">1700,00%</td>
+<td class="col-num" data-order="14.0">14,0000</td>
+<td class="col-num" data-order="14.0">14,0000</td>
+<td class="col-num" data-order="19.0">19,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWJ</td>
+<td class="col-num" data-order="3.604968925461942">360,50%</td>
+<td class="col-num" data-order="0.1449399554218891">14,49%</td>
+<td class="col-num" data-order="0.2402694800611211">24,03%</td>
+<td class="col-num" data-order="0.6644465722181125">0,6644</td>
+<td class="col-num" data-order="1.0434588097256134">1,0435</td>
+<td class="col-num" data-order="-0.350007667391173">-35,00%</td>
+<td class="col-num" data-order="0.4141050866177235">0,4141</td>
+<td class="col-num" data-order="0.3256787275347023">0,3257</td>
+<td class="col-num" data-order="2.8944560289652617">2,8945</td>
+<td class="col-num" data-order="0.6296296296296297">62,96%</td>
+<td class="col-num" data-order="0.200843282580297">20,08%</td>
+<td class="col-num" data-order="-0.1615231256887049">-16,15%</td>
+<td class="col-text">iShares MSCI Japan ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Japao</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Japao</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="17.0">1700,00%</td>
+<td class="col-num" data-order="19.0">1900,00%</td>
+<td class="col-num" data-order="15.0">15,0000</td>
+<td class="col-num" data-order="13.0">13,0000</td>
+<td class="col-num" data-order="14.0">14,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^GDAXI</td>
+<td class="col-num" data-order="3.507143257026252">350,71%</td>
+<td class="col-num" data-order="0.1427630599507781">14,28%</td>
+<td class="col-num" data-order="0.2371822050661166">23,72%</td>
+<td class="col-num" data-order="0.6623173259940895">0,6623</td>
+<td class="col-num" data-order="1.0008169144068886">1,0008</td>
+<td class="col-num" data-order="-0.4220982505142633">-42,21%</td>
+<td class="col-num" data-order="0.3382223446243683">0,3382</td>
+<td class="col-num" data-order="0.2831689863969568">0,2832</td>
+<td class="col-num" data-order="4.85185302816739">4,8519</td>
+<td class="col-num" data-order="0.6518518518518519">65,19%</td>
+<td class="col-num" data-order="0.1777159200763838">17,77%</td>
+<td class="col-num" data-order="-0.1605733482511172">-16,06%</td>
+<td class="col-text">DAX</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Europa</td>
+<td class="col-text">Alemanha</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="18.0">1800,00%</td>
+<td class="col-num" data-order="14.0">1400,00%</td>
+<td class="col-num" data-order="16.0">16,0000</td>
+<td class="col-num" data-order="16.0">16,0000</td>
+<td class="col-num" data-order="21.0">21,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWY</td>
+<td class="col-num" data-order="5.112315638334725">511,23%</td>
+<td class="col-num" data-order="0.1740389854890605">17,40%</td>
+<td class="col-num" data-order="0.3057119672364202">30,57%</td>
+<td class="col-num" data-order="0.6600923626338289">0,6601</td>
+<td class="col-num" data-order="0.997696271672576">0,9977</td>
+<td class="col-num" data-order="-0.5168555404012167">-51,69%</td>
+<td class="col-num" data-order="0.3367265548782938">0,3367</td>
+<td class="col-num" data-order="0.1732065744311311">0,1732</td>
+<td class="col-num" data-order="4.591013472724661">4,5910</td>
+<td class="col-num" data-order="0.562962962962963">56,30%</td>
+<td class="col-num" data-order="0.224707960120106">22,47%</td>
+<td class="col-num" data-order="-0.2140016200691914">-21,40%</td>
+<td class="col-text">iShares MSCI South Korea ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Coreia do Sul</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Coreia do Sul</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="11.0">1100,00%</td>
+<td class="col-num" data-order="37.0">3700,00%</td>
+<td class="col-num" data-order="17.0">17,0000</td>
+<td class="col-num" data-order="17.0">17,0000</td>
+<td class="col-num" data-order="22.0">22,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^BVSP</td>
+<td class="col-num" data-order="3.0656805919154024">306,57%</td>
+<td class="col-num" data-order="0.1323699436067831">13,24%</td>
+<td class="col-num" data-order="0.227020433336374">22,70%</td>
+<td class="col-num" data-order="0.6438668054492218">0,6439</td>
+<td class="col-num" data-order="0.820247452537776">0,8202</td>
+<td class="col-num" data-order="-0.46815808848136">-46,82%</td>
+<td class="col-num" data-order="0.2827462493196964">0,2827</td>
+<td class="col-num" data-order="-0.6867964621772964">-0,6868</td>
+<td class="col-num" data-order="14.924615418139483">14,9246</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1696733186895358">16,97%</td>
+<td class="col-num" data-order="-0.2990438889528856">-29,90%</td>
+<td class="col-text">Ibovespa</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="24.0">2400,00%</td>
+<td class="col-num" data-order="8.0">800,00%</td>
+<td class="col-num" data-order="18.0">18,0000</td>
+<td class="col-num" data-order="26.0">26,0000</td>
+<td class="col-num" data-order="28.0">28,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^KS11</td>
+<td class="col-num" data-order="3.3181085624988658">331,81%</td>
+<td class="col-num" data-order="0.1384316400492462">13,84%</td>
+<td class="col-num" data-order="0.2391073270886481">23,91%</td>
+<td class="col-num" data-order="0.6437512813797917">0,6438</td>
+<td class="col-num" data-order="0.916286241275894">0,9163</td>
+<td class="col-num" data-order="-0.5096752837319516">-50,97%</td>
+<td class="col-num" data-order="0.2716075204503152">0,2716</td>
+<td class="col-num" data-order="0.11939359702952">0,1194</td>
+<td class="col-num" data-order="6.121812460905918">6,1218</td>
+<td class="col-num" data-order="0.562962962962963">56,30%</td>
+<td class="col-num" data-order="0.1919691910884544">19,20%</td>
+<td class="col-num" data-order="-0.2200818160737586">-22,01%</td>
+<td class="col-text">Kospi</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Coreia do Sul</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="19.0">1900,00%</td>
+<td class="col-num" data-order="18.0">1800,00%</td>
+<td class="col-num" data-order="19.0">19,0000</td>
+<td class="col-num" data-order="19.0">19,0000</td>
+<td class="col-num" data-order="31.0">31,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">BOVA11.SA</td>
+<td class="col-num" data-order="3.0962759884332174">309,63%</td>
+<td class="col-num" data-order="0.1331226300208303">13,31%</td>
+<td class="col-num" data-order="0.2301394153411866">23,01%</td>
+<td class="col-num" data-order="0.6409694131972256">0,6410</td>
+<td class="col-num" data-order="0.8193635257489746">0,8194</td>
+<td class="col-num" data-order="-0.4693169006552962">-46,93%</td>
+<td class="col-num" data-order="0.2836518988234908">0,2837</td>
+<td class="col-num" data-order="-0.6137214901980839">-0,6137</td>
+<td class="col-num" data-order="13.383140048883996">13,3831</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1734619660884924">17,35%</td>
+<td class="col-num" data-order="-0.3106361876142466">-31,06%</td>
+<td class="col-text">iShares Ibovespa ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Brasil Broad Market</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="22.0">2200,00%</td>
+<td class="col-num" data-order="10.0">1000,00%</td>
+<td class="col-num" data-order="20.0">20,0000</td>
+<td class="col-num" data-order="27.0">27,0000</td>
+<td class="col-num" data-order="27.0">27,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">FEZ</td>
+<td class="col-num" data-order="3.667786814515885">366,78%</td>
+<td class="col-num" data-order="0.146315714137027">14,63%</td>
+<td class="col-num" data-order="0.2640342529307695">26,40%</td>
+<td class="col-num" data-order="0.6321012436799543">0,6321</td>
+<td class="col-num" data-order="0.9143655111787252">0,9144</td>
+<td class="col-num" data-order="-0.3993019972653087">-39,93%</td>
+<td class="col-num" data-order="0.3664287059396057">0,3664</td>
+<td class="col-num" data-order="0.0333814486408267">0,0334</td>
+<td class="col-num" data-order="5.448325363539826">5,4483</td>
+<td class="col-num" data-order="0.6074074074074074">60,74%</td>
+<td class="col-num" data-order="0.188997610115283">18,90%</td>
+<td class="col-num" data-order="-0.1544298057486737">-15,44%</td>
+<td class="col-text">SPDR EURO STOXX 50 ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Zona do Euro</td>
+<td class="col-text">Europa</td>
+<td class="col-text">Zona do Euro</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="16.0">1600,00%</td>
+<td class="col-num" data-order="28.0">2800,00%</td>
+<td class="col-num" data-order="21.0">21,0000</td>
+<td class="col-num" data-order="20.0">20,0000</td>
+<td class="col-num" data-order="18.0">18,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^NSEI</td>
+<td class="col-num" data-order="2.672852039274231">267,29%</td>
+<td class="col-num" data-order="0.1222175219774865">12,22%</td>
+<td class="col-num" data-order="0.2165782881360743">21,66%</td>
+<td class="col-num" data-order="0.623244411580539">0,6232</td>
+<td class="col-num" data-order="0.881698212290702">0,8817</td>
+<td class="col-num" data-order="-0.3171489448472545">-31,71%</td>
+<td class="col-num" data-order="0.3853631675689448">0,3854</td>
+<td class="col-num" data-order="-0.128636536173118">-0,1286</td>
+<td class="col-num" data-order="7.637646808644668">7,6376</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1803979092941341">18,04%</td>
+<td class="col-num" data-order="-0.1522109916174371">-15,22%</td>
+<td class="col-text">Nifty 50</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Asia</td>
+<td class="col-text">India</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="27.0">2700,00%</td>
+<td class="col-num" data-order="5.0">500,00%</td>
+<td class="col-num" data-order="22.0">22,0000</td>
+<td class="col-num" data-order="22.0">22,0000</td>
+<td class="col-num" data-order="16.0">16,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^NZ50</td>
+<td class="col-num" data-order="2.341312524871758">234,13%</td>
+<td class="col-num" data-order="0.1129338063612066">11,29%</td>
+<td class="col-num" data-order="0.2019764372177996">20,20%</td>
+<td class="col-num" data-order="0.6128348485614112">0,6128</td>
+<td class="col-num" data-order="0.9280513482135672">0,9281</td>
+<td class="col-num" data-order="-0.4201158406381192">-42,01%</td>
+<td class="col-num" data-order="0.2688158727594514">0,2688</td>
+<td class="col-num" data-order="0.2237670900483918">0,2238</td>
+<td class="col-num" data-order="5.349368105156817">5,3494</td>
+<td class="col-num" data-order="0.5481481481481482">54,81%</td>
+<td class="col-num" data-order="0.1836326633705827">18,36%</td>
+<td class="col-num" data-order="-0.1500961506213592">-15,01%</td>
+<td class="col-text">NZX 50</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Oceania</td>
+<td class="col-text">Nova Zelandia</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="32.0">3200,00%</td>
+<td class="col-num" data-order="2.0">200,00%</td>
+<td class="col-num" data-order="23.0">23,0000</td>
+<td class="col-num" data-order="18.0">18,0000</td>
+<td class="col-num" data-order="32.0">32,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">IEMG</td>
+<td class="col-num" data-order="3.1289387628471976">312,89%</td>
+<td class="col-num" data-order="0.1339205429301455">13,39%</td>
+<td class="col-num" data-order="0.2613600213184306">26,14%</td>
+<td class="col-num" data-order="0.5953645385244998">0,5954</td>
+<td class="col-num" data-order="0.9066374993011734">0,9066</td>
+<td class="col-num" data-order="-0.4044245111466293">-40,44%</td>
+<td class="col-num" data-order="0.3311385419010642">0,3311</td>
+<td class="col-num" data-order="0.2122242010942209">0,2122</td>
+<td class="col-num" data-order="3.904676876864532">3,9047</td>
+<td class="col-num" data-order="0.6222222222222222">62,22%</td>
+<td class="col-num" data-order="0.1642679407447045">16,43%</td>
+<td class="col-num" data-order="-0.1594991215387226">-15,95%</td>
+<td class="col-text">iShares Core MSCI Emerging Markets ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Emerging Markets</td>
+<td class="col-text">Emergentes</td>
+<td class="col-text">Emergentes</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="21.0">2100,00%</td>
+<td class="col-num" data-order="27.0">2700,00%</td>
+<td class="col-num" data-order="24.0">24,0000</td>
+<td class="col-num" data-order="21.0">21,0000</td>
+<td class="col-num" data-order="23.0">23,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWU</td>
+<td class="col-num" data-order="2.865423918361547">286,54%</td>
+<td class="col-num" data-order="0.1273119318924938">12,73%</td>
+<td class="col-num" data-order="0.2489439359785452">24,89%</td>
+<td class="col-num" data-order="0.5900715670942396">0,5901</td>
+<td class="col-num" data-order="0.8358462656590653">0,8358</td>
+<td class="col-num" data-order="-0.3111649121877585">-31,12%</td>
+<td class="col-num" data-order="0.4091461694616554">0,4091</td>
+<td class="col-num" data-order="-0.0669338687458913">-0,0669</td>
+<td class="col-num" data-order="6.891252825084965">6,8913</td>
+<td class="col-num" data-order="0.5777777777777777">57,78%</td>
+<td class="col-num" data-order="0.182867599627325">18,29%</td>
+<td class="col-num" data-order="-0.1414587779325166">-14,15%</td>
+<td class="col-text">iShares MSCI United Kingdom ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Reino Unido</td>
+<td class="col-text">Europa</td>
+<td class="col-text">Reino Unido</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="25.0">2500,00%</td>
+<td class="col-num" data-order="24.0">2400,00%</td>
+<td class="col-num" data-order="25.0">25,0000</td>
+<td class="col-num" data-order="24.0">24,0000</td>
+<td class="col-num" data-order="15.0">15,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^STOXX50E</td>
+<td class="col-num" data-order="2.5718695512423047">257,19%</td>
+<td class="col-num" data-order="0.1195399869685736">11,95%</td>
+<td class="col-num" data-order="0.2345875230518403">23,46%</td>
+<td class="col-num" data-order="0.5823525848358863">0,5824</td>
+<td class="col-num" data-order="0.8683902625436778">0,8684</td>
+<td class="col-num" data-order="-0.4140734834618501">-41,41%</td>
+<td class="col-num" data-order="0.2886926879962532">0,2887</td>
+<td class="col-num" data-order="0.167135461424347">0,1671</td>
+<td class="col-num" data-order="4.5280092100218745">4,5280</td>
+<td class="col-num" data-order="0.5925925925925926">59,26%</td>
+<td class="col-num" data-order="0.1862495126996528">18,62%</td>
+<td class="col-num" data-order="-0.1552521562296088">-15,53%</td>
+<td class="col-text">Euro Stoxx 50</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Europa</td>
+<td class="col-text">Zona do Euro</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="29.0">2900,00%</td>
+<td class="col-num" data-order="12.0">1200,00%</td>
+<td class="col-num" data-order="26.0">26,0000</td>
+<td class="col-num" data-order="23.0">23,0000</td>
+<td class="col-num" data-order="26.0">26,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWA</td>
+<td class="col-num" data-order="3.0949320523956825">309,49%</td>
+<td class="col-num" data-order="0.1330896752079007">13,31%</td>
+<td class="col-num" data-order="0.2822206051492579">28,22%</td>
+<td class="col-num" data-order="0.5689911834074037">0,5690</td>
+<td class="col-num" data-order="0.8151645960054587">0,8152</td>
+<td class="col-num" data-order="-0.3569985329326312">-35,70%</td>
+<td class="col-num" data-order="0.3728017426699507">0,3728</td>
+<td class="col-num" data-order="0.2160415345747693">0,2160</td>
+<td class="col-num" data-order="9.270990084469236">9,2710</td>
+<td class="col-num" data-order="0.5925925925925926">59,26%</td>
+<td class="col-num" data-order="0.2069260277290354">20,69%</td>
+<td class="col-num" data-order="-0.1423925057291167">-14,24%</td>
+<td class="col-text">iShares MSCI Australia ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Australia</td>
+<td class="col-text">Oceania</td>
+<td class="col-text">Australia</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="23.0">2300,00%</td>
+<td class="col-num" data-order="35.0">3500,00%</td>
+<td class="col-num" data-order="27.0">27,0000</td>
+<td class="col-num" data-order="28.0">28,0000</td>
+<td class="col-num" data-order="17.0">17,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWG</td>
+<td class="col-num" data-order="2.7858357473093127">278,58%</td>
+<td class="col-num" data-order="0.1252351417650334">12,52%</td>
+<td class="col-num" data-order="0.2640947487523545">26,41%</td>
+<td class="col-num" data-order="0.5638726228253034">0,5639</td>
+<td class="col-num" data-order="0.8226842426194202">0,8227</td>
+<td class="col-num" data-order="-0.4593159242593964">-45,93%</td>
+<td class="col-num" data-order="0.2726557803693902">0,2727</td>
+<td class="col-num" data-order="0.1481028545234933">0,1481</td>
+<td class="col-num" data-order="5.185677892630785">5,1857</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1829406780213205">18,29%</td>
+<td class="col-num" data-order="-0.1562146064345235">-15,62%</td>
+<td class="col-text">iShares MSCI Germany ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Alemanha</td>
+<td class="col-text">Europa</td>
+<td class="col-text">Alemanha</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="26.0">2600,00%</td>
+<td class="col-num" data-order="30.0">3000,00%</td>
+<td class="col-num" data-order="28.0">28,0000</td>
+<td class="col-num" data-order="25.0">25,0000</td>
+<td class="col-num" data-order="30.0">30,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">XLE</td>
+<td class="col-num" data-order="3.132930633578219">313,29%</td>
+<td class="col-num" data-order="0.1340176647932358">13,40%</td>
+<td class="col-num" data-order="0.3311179658391737">33,11%</td>
+<td class="col-num" data-order="0.5332308295824988">0,5332</td>
+<td class="col-num" data-order="0.7621718155995899">0,7622</td>
+<td class="col-num" data-order="-0.5875119285890164">-58,75%</td>
+<td class="col-num" data-order="0.2281105425639545">0,2281</td>
+<td class="col-num" data-order="-0.0670751030884193">-0,0671</td>
+<td class="col-num" data-order="8.254173594089421">8,2542</td>
+<td class="col-num" data-order="0.5777777777777777">57,78%</td>
+<td class="col-num" data-order="0.3434233489210032">34,34%</td>
+<td class="col-num" data-order="-0.2401178328105246">-24,01%</td>
+<td class="col-text">Energy Select Sector SPDR Fund</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Energia</td>
+<td class="col-text">America do Norte</td>
+<td class="col-text">Estados Unidos</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="20.0">2000,00%</td>
+<td class="col-num" data-order="40.0">4000,00%</td>
+<td class="col-num" data-order="29.0">29,0000</td>
+<td class="col-num" data-order="31.0">31,0000</td>
+<td class="col-num" data-order="36.0">36,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">INDA</td>
+<td class="col-num" data-order="2.5088120665419043">250,88%</td>
+<td class="col-num" data-order="0.1176821206543095">11,77%</td>
+<td class="col-num" data-order="0.2729554611232558">27,30%</td>
+<td class="col-num" data-order="0.5305338659579333">0,5305</td>
+<td class="col-num" data-order="0.7654339072572914">0,7654</td>
+<td class="col-num" data-order="-0.3303139212502961">-33,03%</td>
+<td class="col-num" data-order="0.3562735721487669">0,3563</td>
+<td class="col-num" data-order="0.0982675487040723">0,0983</td>
+<td class="col-num" data-order="7.247577256325812">7,2476</td>
+<td class="col-num" data-order="0.6074074074074074">60,74%</td>
+<td class="col-num" data-order="0.1649040547463793">16,49%</td>
+<td class="col-num" data-order="-0.1591077708777095">-15,91%</td>
+<td class="col-text">iShares MSCI India ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">India</td>
+<td class="col-text">Asia</td>
+<td class="col-text">India</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="30.0">3000,00%</td>
+<td class="col-num" data-order="32.0">3200,00%</td>
+<td class="col-num" data-order="30.0">30,0000</td>
+<td class="col-num" data-order="30.0">30,0000</td>
+<td class="col-num" data-order="20.0">20,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^AXJO</td>
+<td class="col-num" data-order="1.6975287856815826">169,75%</td>
+<td class="col-num" data-order="0.0919358574656785">9,19%</td>
+<td class="col-num" data-order="0.2095783376938679">20,96%</td>
+<td class="col-num" data-order="0.5103915728847488">0,5104</td>
+<td class="col-num" data-order="0.7576425018684025">0,7576</td>
+<td class="col-num" data-order="-0.3654728452841981">-36,55%</td>
+<td class="col-num" data-order="0.2515531828204299">0,2516</td>
+<td class="col-num" data-order="0.1929406773613331">0,1929</td>
+<td class="col-num" data-order="6.295763576499985">6,2958</td>
+<td class="col-num" data-order="0.5481481481481482">54,81%</td>
+<td class="col-num" data-order="0.1887698506673689">18,88%</td>
+<td class="col-num" data-order="-0.1473700120792186">-14,74%</td>
+<td class="col-text">ASX 200</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Oceania</td>
+<td class="col-text">Australia</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="37.0">3700,00%</td>
+<td class="col-num" data-order="3.0">300,00%</td>
+<td class="col-num" data-order="31.0">31,0000</td>
+<td class="col-num" data-order="32.0">32,0000</td>
+<td class="col-num" data-order="33.0">33,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWH</td>
+<td class="col-num" data-order="2.12807219754388">212,81%</td>
+<td class="col-num" data-order="0.1063615483293274">10,64%</td>
+<td class="col-num" data-order="0.2550661549488094">25,51%</td>
+<td class="col-num" data-order="0.5103106430374986">0,5103</td>
+<td class="col-num" data-order="0.8039168594682493">0,8039</td>
+<td class="col-num" data-order="-0.4706469101176235">-47,06%</td>
+<td class="col-num" data-order="0.2259901128486016">0,2260</td>
+<td class="col-num" data-order="0.2749023635072407">0,2749</td>
+<td class="col-num" data-order="2.6548722068200328">2,6549</td>
+<td class="col-num" data-order="0.5777777777777777">57,78%</td>
+<td class="col-num" data-order="0.2380862789818607">23,81%</td>
+<td class="col-num" data-order="-0.1772839777580915">-17,73%</td>
+<td class="col-text">iShares MSCI Hong Kong ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Hong Kong</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Hong Kong</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="34.0">3400,00%</td>
+<td class="col-num" data-order="25.0">2500,00%</td>
+<td class="col-num" data-order="32.0">32,0000</td>
+<td class="col-num" data-order="29.0">29,0000</td>
+<td class="col-num" data-order="37.0">37,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWW</td>
+<td class="col-num" data-order="2.4217283292389995">242,17%</td>
+<td class="col-num" data-order="0.1151952962001203">11,52%</td>
+<td class="col-num" data-order="0.2989556064381463">29,90%</td>
+<td class="col-num" data-order="0.5025709545257061">0,5026</td>
+<td class="col-num" data-order="0.7161837526725172">0,7162</td>
+<td class="col-num" data-order="-0.3888496546560397">-38,88%</td>
+<td class="col-num" data-order="0.2962463636543984">0,2962</td>
+<td class="col-num" data-order="-0.2103586346562308">-0,2104</td>
+<td class="col-num" data-order="4.3817607661226745">4,3818</td>
+<td class="col-num" data-order="0.5555555555555556">55,56%</td>
+<td class="col-num" data-order="0.1958743090567933">19,59%</td>
+<td class="col-num" data-order="-0.2435890414256809">-24,36%</td>
+<td class="col-text">iShares MSCI Mexico ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Mexico</td>
+<td class="col-text">America Latina</td>
+<td class="col-text">Mexico</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="31.0">3100,00%</td>
+<td class="col-num" data-order="36.0">3600,00%</td>
+<td class="col-num" data-order="33.0">33,0000</td>
+<td class="col-num" data-order="35.0">35,0000</td>
+<td class="col-num" data-order="24.0">24,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^FTSE</td>
+<td class="col-num" data-order="1.6335493310007472">163,35%</td>
+<td class="col-num" data-order="0.0896152633849145">8,96%</td>
+<td class="col-num" data-order="0.2147882722649317">21,48%</td>
+<td class="col-num" data-order="0.4937620576775431">0,4938</td>
+<td class="col-num" data-order="0.715397916570092">0,7154</td>
+<td class="col-num" data-order="-0.3190265313894826">-31,90%</td>
+<td class="col-num" data-order="0.280902227769602">0,2809</td>
+<td class="col-num" data-order="-0.0214283113857738">-0,0214</td>
+<td class="col-num" data-order="4.609877907728723">4,6099</td>
+<td class="col-num" data-order="0.5703703703703704">57,04%</td>
+<td class="col-num" data-order="0.1743214643088035">17,43%</td>
+<td class="col-num" data-order="-0.1502097272611271">-15,02%</td>
+<td class="col-text">FTSE 100</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Europa</td>
+<td class="col-text">Reino Unido</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="40.0">4000,00%</td>
+<td class="col-num" data-order="4.0">400,00%</td>
+<td class="col-num" data-order="34.0">34,0000</td>
+<td class="col-num" data-order="36.0">36,0000</td>
+<td class="col-num" data-order="29.0">29,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">EZA</td>
+<td class="col-num" data-order="2.6266687118475174">262,67%</td>
+<td class="col-num" data-order="0.120959617096916">12,10%</td>
+<td class="col-num" data-order="0.3560851439492338">35,61%</td>
+<td class="col-num" data-order="0.4881556374104028">0,4882</td>
+<td class="col-num" data-order="0.7275854157851467">0,7276</td>
+<td class="col-num" data-order="-0.4110510536552438">-41,11%</td>
+<td class="col-num" data-order="0.2942690841473116">0,2943</td>
+<td class="col-num" data-order="0.0089495754245528">0,0089</td>
+<td class="col-num" data-order="2.8971135738996217">2,8971</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1655534306048021">16,56%</td>
+<td class="col-num" data-order="-0.1842199357835495">-18,42%</td>
+<td class="col-text">iShares MSCI South Africa ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Africa do Sul</td>
+<td class="col-text">Africa</td>
+<td class="col-text">Africa do Sul</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="28.0">2800,00%</td>
+<td class="col-num" data-order="42.0">4200,00%</td>
+<td class="col-num" data-order="35.0">35,0000</td>
+<td class="col-num" data-order="34.0">34,0000</td>
+<td class="col-num" data-order="25.0">25,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">ENZL</td>
+<td class="col-num" data-order="1.9838850054388064">198,39%</td>
+<td class="col-num" data-order="0.1017437631508983">10,17%</td>
+<td class="col-num" data-order="0.2640910151457304">26,41%</td>
+<td class="col-num" data-order="0.4863861794902498">0,4864</td>
+<td class="col-num" data-order="0.727890551578432">0,7279</td>
+<td class="col-num" data-order="-0.4386429574124525">-43,86%</td>
+<td class="col-num" data-order="0.2319512064004929">0,2320</td>
+<td class="col-num" data-order="0.3415481089589056">0,3415</td>
+<td class="col-num" data-order="8.044659395381005">8,0447</td>
+<td class="col-num" data-order="0.5703703703703704">57,04%</td>
+<td class="col-num" data-order="0.1867766362890952">18,68%</td>
+<td class="col-num" data-order="-0.1499262980474874">-14,99%</td>
+<td class="col-text">iShares MSCI New Zealand ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Nova Zelandia</td>
+<td class="col-text">Oceania</td>
+<td class="col-text">Nova Zelandia</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="35.0">3500,00%</td>
+<td class="col-num" data-order="29.0">2900,00%</td>
+<td class="col-num" data-order="36.0">36,0000</td>
+<td class="col-num" data-order="33.0">33,0000</td>
+<td class="col-num" data-order="35.0">35,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^MXX</td>
+<td class="col-num" data-order="1.6488626257674603">164,89%</td>
+<td class="col-num" data-order="0.0901753303619821">9,02%</td>
+<td class="col-num" data-order="0.2264591895245506">22,65%</td>
+<td class="col-num" data-order="0.4819188325077115">0,4819</td>
+<td class="col-num" data-order="0.7034225714917396">0,7034</td>
+<td class="col-num" data-order="-0.3821472318121522">-38,21%</td>
+<td class="col-num" data-order="0.2359701257925337">0,2360</td>
+<td class="col-num" data-order="-0.0529209613966937">-0,0529</td>
+<td class="col-num" data-order="4.238497874476892">4,2385</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1889351289978329">18,89%</td>
+<td class="col-num" data-order="-0.2346764913958555">-23,47%</td>
+<td class="col-text">Mexico IPC</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">America Latina</td>
+<td class="col-text">Mexico</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="39.0">3900,00%</td>
+<td class="col-num" data-order="7.0">700,00%</td>
+<td class="col-num" data-order="37.0">37,0000</td>
+<td class="col-num" data-order="37.0">37,0000</td>
+<td class="col-num" data-order="34.0">34,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">ECH</td>
+<td class="col-num" data-order="1.9188255913711911">191,88%</td>
+<td class="col-num" data-order="0.099593209685288">9,96%</td>
+<td class="col-num" data-order="0.3058935427209257">30,59%</td>
+<td class="col-num" data-order="0.4531182965912682">0,4531</td>
+<td class="col-num" data-order="0.6516066092825312">0,6516</td>
+<td class="col-num" data-order="-0.5251975120266147">-52,52%</td>
+<td class="col-num" data-order="0.1896300104335626">0,1896</td>
+<td class="col-num" data-order="0.013670055960037">0,0137</td>
+<td class="col-num" data-order="5.333636889472766">5,3336</td>
+<td class="col-num" data-order="0.6074074074074074">60,74%</td>
+<td class="col-num" data-order="0.2110324278059414">21,10%</td>
+<td class="col-num" data-order="-0.1561413601591555">-15,61%</td>
+<td class="col-text">iShares MSCI Chile ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Chile</td>
+<td class="col-text">America Latina</td>
+<td class="col-text">Chile</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="36.0">3600,00%</td>
+<td class="col-num" data-order="38.0">3800,00%</td>
+<td class="col-num" data-order="38.0">38,0000</td>
+<td class="col-num" data-order="39.0">39,0000</td>
+<td class="col-num" data-order="39.0">39,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">BZ=F</td>
+<td class="col-num" data-order="2.185070730989175">218,51%</td>
+<td class="col-num" data-order="0.1081336642355677">10,81%</td>
+<td class="col-num" data-order="0.4258346204748816">42,58%</td>
+<td class="col-num" data-order="0.4474886143638947">0,4475</td>
+<td class="col-num" data-order="0.5988180589813353">0,5988</td>
+<td class="col-num" data-order="-0.7016633494285995">-70,17%</td>
+<td class="col-num" data-order="0.1541104638337266">0,1541</td>
+<td class="col-num" data-order="-0.1836947575666326">-0,1837</td>
+<td class="col-num" data-order="9.285549584948871">9,2855</td>
+<td class="col-num" data-order="0.5407407407407407">54,07%</td>
+<td class="col-num" data-order="0.6733630637093366">67,34%</td>
+<td class="col-num" data-order="-0.4788325685398722">-47,88%</td>
+<td class="col-text">Brent Crude Oil</td>
+<td class="col-text">Commodity</td>
+<td class="col-text">Petroleo</td>
+<td class="col-text">Global</td>
+<td class="col-text">Global</td>
+<td class="col-text">commodity</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="33.0">3300,00%</td>
+<td class="col-num" data-order="44.0">4400,00%</td>
+<td class="col-num" data-order="39.0">39,0000</td>
+<td class="col-num" data-order="41.0">41,0000</td>
+<td class="col-num" data-order="41.0">41,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">MCHI</td>
+<td class="col-num" data-order="1.6667729712856745">166,68%</td>
+<td class="col-num" data-order="0.0908266498361549">9,08%</td>
+<td class="col-num" data-order="0.3214687630232029">32,15%</td>
+<td class="col-num" data-order="0.4209754885584806">0,4210</td>
+<td class="col-num" data-order="0.6775461917425144">0,6775</td>
+<td class="col-num" data-order="-0.6386349328770067">-63,86%</td>
+<td class="col-num" data-order="0.1422199838442709">0,1422</td>
+<td class="col-num" data-order="0.6340027672517797">0,6340</td>
+<td class="col-num" data-order="6.365392703459474">6,3654</td>
+<td class="col-num" data-order="0.562962962962963">56,30%</td>
+<td class="col-num" data-order="0.3161761884343881">31,62%</td>
+<td class="col-num" data-order="-0.1812115592180315">-18,12%</td>
+<td class="col-text">iShares MSCI China ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">China</td>
+<td class="col-text">Asia</td>
+<td class="col-text">China</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="38.0">3800,00%</td>
+<td class="col-num" data-order="39.0">3900,00%</td>
+<td class="col-num" data-order="40.0">40,0000</td>
+<td class="col-num" data-order="38.0">38,0000</td>
+<td class="col-num" data-order="42.0">42,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">SMAL11.SA</td>
+<td class="col-num" data-order="1.385620864707238">138,56%</td>
+<td class="col-num" data-order="0.0801083983856281">8,01%</td>
+<td class="col-num" data-order="0.2578810681197159">25,79%</td>
+<td class="col-num" data-order="0.4196519538230294">0,4197</td>
+<td class="col-num" data-order="0.5146154884124365">0,5146</td>
+<td class="col-num" data-order="-0.5105657495201594">-51,06%</td>
+<td class="col-num" data-order="0.1569012384025283">0,1569</td>
+<td class="col-num" data-order="-1.135180722935015">-1,1352</td>
+<td class="col-num" data-order="13.276333312722551">13,2763</td>
+<td class="col-num" data-order="0.562962962962963">56,30%</td>
+<td class="col-num" data-order="0.17532461374245">17,53%</td>
+<td class="col-num" data-order="-0.3748213015843871">-37,48%</td>
+<td class="col-text">iShares Small Caps ETF</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Brasil Small Caps</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="41.0">4100,00%</td>
+<td class="col-num" data-order="26.0">2600,00%</td>
+<td class="col-num" data-order="41.0">41,0000</td>
+<td class="col-num" data-order="43.0">43,0000</td>
+<td class="col-num" data-order="40.0">40,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">BRL=X</td>
+<td class="col-num" data-order="0.8826700545373982">88,27%</td>
+<td class="col-num" data-order="0.0576783711182156">5,77%</td>
+<td class="col-num" data-order="0.1673423741709412">16,73%</td>
+<td class="col-num" data-order="0.4074776316911123">0,4075</td>
+<td class="col-num" data-order="0.6277706883320062">0,6278</td>
+<td class="col-num" data-order="-0.2680175321120731">-26,80%</td>
+<td class="col-num" data-order="0.2152037244119427">0,2152</td>
+<td class="col-num" data-order="0.281840578426396">0,2818</td>
+<td class="col-num" data-order="3.672595659774896">3,6726</td>
+<td class="col-num" data-order="0.5481481481481482">54,81%</td>
+<td class="col-num" data-order="0.157844289399591">15,78%</td>
+<td class="col-num" data-order="-0.0929704374070194">-9,30%</td>
+<td class="col-text">USDBRL</td>
+<td class="col-text">FX</td>
+<td class="col-text">Cambio</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">Brasil</td>
+<td class="col-text">cambio</td>
+<td class="col-text">alternativos</td>
+<td class="col-num" data-order="44.0">4400,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="42.0">42,0000</td>
+<td class="col-num" data-order="40.0">40,0000</td>
+<td class="col-num" data-order="38.0">38,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^HSI</td>
+<td class="col-num" data-order="1.0320599806000814">103,21%</td>
+<td class="col-num" data-order="0.0648608128542915">6,49%</td>
+<td class="col-num" data-order="0.2428863417423087">24,29%</td>
+<td class="col-num" data-order="0.3714044576629541">0,3714</td>
+<td class="col-num" data-order="0.5661073653130169">0,5661</td>
+<td class="col-num" data-order="-0.5705076180585202">-57,05%</td>
+<td class="col-num" data-order="0.1136896525151017">0,1137</td>
+<td class="col-num" data-order="0.1716920948876467">0,1717</td>
+<td class="col-num" data-order="3.908193625778415">3,9082</td>
+<td class="col-num" data-order="0.5333333333333333">53,33%</td>
+<td class="col-num" data-order="0.2663410607374044">26,63%</td>
+<td class="col-num" data-order="-0.1752836339111527">-17,53%</td>
+<td class="col-text">Hang Seng</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Asia</td>
+<td class="col-text">Hong Kong</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="42.0">4200,00%</td>
+<td class="col-num" data-order="22.0">2200,00%</td>
+<td class="col-num" data-order="43.0">43,0000</td>
+<td class="col-num" data-order="42.0">42,0000</td>
+<td class="col-num" data-order="44.0">44,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">000001.SS</td>
+<td class="col-num" data-order="1.0232292786163093">102,32%</td>
+<td class="col-num" data-order="0.0644982866936505">6,45%</td>
+<td class="col-num" data-order="0.2479202471681104">24,79%</td>
+<td class="col-num" data-order="0.3679369609903508">0,3679</td>
+<td class="col-num" data-order="0.493488983299828">0,4935</td>
+<td class="col-num" data-order="-0.4913370146627129">-49,13%</td>
+<td class="col-num" data-order="0.1312709703703608">0,1313</td>
+<td class="col-num" data-order="-0.234965412903121">-0,2350</td>
+<td class="col-num" data-order="3.7359826224051367">3,7360</td>
+<td class="col-num" data-order="0.5703703703703704">57,04%</td>
+<td class="col-num" data-order="0.2680522575287747">26,81%</td>
+<td class="col-num" data-order="-0.2150976191976593">-21,51%</td>
+<td class="col-text">Shanghai Composite</td>
+<td class="col-text">Equity Index</td>
+<td class="col-text">Broad Market</td>
+<td class="col-text">Asia</td>
+<td class="col-text">China</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-num" data-order="43.0">4300,00%</td>
+<td class="col-num" data-order="23.0">2300,00%</td>
+<td class="col-num" data-order="44.0">44,0000</td>
+<td class="col-num" data-order="44.0">44,0000</td>
+<td class="col-num" data-order="43.0">43,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">USO</td>
+<td class="col-num" data-order="0.4597159019256998">45,97%</td>
+<td class="col-num" data-order="0.034092368054488">3,41%</td>
+<td class="col-num" data-order="0.4190069923384448">41,90%</td>
+<td class="col-num" data-order="0.2891479957345057">0,2891</td>
+<td class="col-num" data-order="0.3896515603455967">0,3897</td>
+<td class="col-num" data-order="-0.8163095601369211">-81,63%</td>
+<td class="col-num" data-order="0.0417640190919357">0,0418</td>
+<td class="col-num" data-order="-0.4129311509532825">-0,4129</td>
+<td class="col-num" data-order="9.19932713213314">9,1993</td>
+<td class="col-num" data-order="0.5481481481481482">54,81%</td>
+<td class="col-num" data-order="0.5912886894994234">59,13%</td>
+<td class="col-num" data-order="-0.4841772909073114">-48,42%</td>
+<td class="col-text">United States Oil Fund</td>
+<td class="col-text">ETF</td>
+<td class="col-text">Petroleo</td>
+<td class="col-text">Global</td>
+<td class="col-text">Global</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-num" data-order="45.0">4500,00%</td>
+<td class="col-num" data-order="43.0">4300,00%</td>
+<td class="col-num" data-order="45.0">45,0000</td>
+<td class="col-num" data-order="45.0">45,0000</td>
+<td class="col-num" data-order="45.0">45,0000</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

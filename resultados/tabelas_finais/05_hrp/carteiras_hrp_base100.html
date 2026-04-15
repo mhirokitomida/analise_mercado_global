@@ -1,0 +1,2919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteiras Hrp Base100</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Carteiras Hrp Base100</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>data</th>
+<th>etfs_com_tudo</th>
+<th>etfs_com_ouro_btc</th>
+<th>etfs_com_ouro_petroleo</th>
+<th>etfs_com_ouro</th>
+<th>etfs_com_btc_petroleo</th>
+<th>etfs_com_btc</th>
+<th>etfs_america_norte</th>
+<th>etfs_com_petroleo</th>
+<th>etfs_todos</th>
+<th>etfs_global</th>
+<th>etfs_exterior</th>
+<th>etfs_desenvolvidos_emergentes</th>
+<th>etfs_asia</th>
+<th>etfs_latam</th>
+<th>etfs_europa</th>
+<th>etfs_oceania</th>
+<th>etfs_brasil</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-num" data-order="114.64476883781568">114,6448</td>
+<td class="col-num" data-order="115.66880300967308">115,6688</td>
+<td class="col-num" data-order="115.2187448410632">115,2187</td>
+<td class="col-num" data-order="115.11758629306864">115,1176</td>
+<td class="col-num" data-order="116.97756682085252">116,9776</td>
+<td class="col-num" data-order="116.92929629283842">116,9293</td>
+<td class="col-num" data-order="118.1363458727912">118,1363</td>
+<td class="col-num" data-order="116.65377992954964">116,6538</td>
+<td class="col-num" data-order="116.97547335349368">116,9755</td>
+<td class="col-num" data-order="118.36525451821782">118,3653</td>
+<td class="col-num" data-order="118.02696253113876">118,0270</td>
+<td class="col-num" data-order="117.5154736111092">11751,55%</td>
+<td class="col-num" data-order="116.50842411808809">116,5084</td>
+<td class="col-num" data-order="120.62229116266442">120,6223</td>
+<td class="col-num" data-order="118.42368599309468">118,4237</td>
+<td class="col-num" data-order="119.68513320090652">119,6851</td>
+<td class="col-num" data-order="107.70873368994202">107,7087</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20150331">2015-03-31</td>
+<td class="col-num" data-order="124.13726568539592">124,1373</td>
+<td class="col-num" data-order="125.55945914899064">125,5595</td>
+<td class="col-num" data-order="124.75064248925656">124,7506</td>
+<td class="col-num" data-order="124.8391005386077">124,8391</td>
+<td class="col-num" data-order="126.8205880533506">126,8206</td>
+<td class="col-num" data-order="126.94413068686691">126,9441</td>
+<td class="col-num" data-order="129.01349380699864">129,0135</td>
+<td class="col-num" data-order="126.33015856158087">126,3302</td>
+<td class="col-num" data-order="126.9035488241826">126,9035</td>
+<td class="col-num" data-order="129.7647439442361">129,7647</td>
+<td class="col-num" data-order="129.3530706777565">129,3531</td>
+<td class="col-num" data-order="128.8136472448872">12881,36%</td>
+<td class="col-num" data-order="129.5610927061206">129,5611</td>
+<td class="col-num" data-order="131.4270222328223">131,4270</td>
+<td class="col-num" data-order="127.03899411118726">127,0390</td>
+<td class="col-num" data-order="129.16465804337918">129,1647</td>
+<td class="col-num" data-order="107.62744728559883">107,6274</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20150430">2015-04-30</td>
+<td class="col-num" data-order="119.22302296908668">119,2230</td>
+<td class="col-num" data-order="120.08056550688212">120,0806</td>
+<td class="col-num" data-order="119.78018530713672">119,7802</td>
+<td class="col-num" data-order="119.3014986909762">119,3015</td>
+<td class="col-num" data-order="122.46175728253256">122,4618</td>
+<td class="col-num" data-order="122.02731867150284">122,0273</td>
+<td class="col-num" data-order="121.68168279931707">121,6817</td>
+<td class="col-num" data-order="122.17426325742686">122,1743</td>
+<td class="col-num" data-order="122.22020401620728">122,2202</td>
+<td class="col-num" data-order="122.68303651125537">122,6830</td>
+<td class="col-num" data-order="122.2732929290676">122,2733</td>
+<td class="col-num" data-order="124.46137450241196">12446,14%</td>
+<td class="col-num" data-order="123.56102806360374">123,5610</td>
+<td class="col-num" data-order="123.91852019666688">123,9185</td>
+<td class="col-num" data-order="121.07416114203768">121,0742</td>
+<td class="col-num" data-order="120.13457607720608">120,1346</td>
+<td class="col-num" data-order="114.74595493715942">114,7460</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20150531">2015-05-31</td>
+<td class="col-num" data-order="124.71471415956012">124,7147</td>
+<td class="col-num" data-order="125.26179550359208">125,2618</td>
+<td class="col-num" data-order="125.25162030270567">125,2516</td>
+<td class="col-num" data-order="124.74673838569224">124,7467</td>
+<td class="col-num" data-order="127.32680825821323">127,3268</td>
+<td class="col-num" data-order="126.99800332365608">126,9980</td>
+<td class="col-num" data-order="129.4740881002936">129,4741</td>
+<td class="col-num" data-order="127.24005796934657">127,2401</td>
+<td class="col-num" data-order="127.10164258080098">127,1016</td>
+<td class="col-num" data-order="131.3046400071634">131,3046</td>
+<td class="col-num" data-order="128.72959382974733">128,7296</td>
+<td class="col-num" data-order="130.67294054591446">13067,29%</td>
+<td class="col-num" data-order="132.05904648019907">132,0590</td>
+<td class="col-num" data-order="130.37330833071573">130,3733</td>
+<td class="col-num" data-order="129.08877339966585">129,0888</td>
+<td class="col-num" data-order="122.504339864133">122,5043</td>
+<td class="col-num" data-order="110.07118460284502">110,0712</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20150630">2015-06-30</td>
+<td class="col-num" data-order="120.27221764684184">120,2722</td>
+<td class="col-num" data-order="120.4909408921109">120,4909</td>
+<td class="col-num" data-order="120.2663347195111">120,2663</td>
+<td class="col-num" data-order="119.90666569859336">119,9067</td>
+<td class="col-num" data-order="122.3597528340254">122,3598</td>
+<td class="col-num" data-order="122.14082438283118">122,1408</td>
+<td class="col-num" data-order="124.34145501155862">124,3415</td>
+<td class="col-num" data-order="122.15909996399152">122,1591</td>
+<td class="col-num" data-order="121.96002550648916">121,9600</td>
+<td class="col-num" data-order="126.05761872527536">126,0576</td>
+<td class="col-num" data-order="123.17265888726556">123,1727</td>
+<td class="col-num" data-order="125.10308463952242">12510,31%</td>
+<td class="col-num" data-order="126.74243834369918">126,7424</td>
+<td class="col-num" data-order="123.83485905226244">123,8349</td>
+<td class="col-num" data-order="123.21982518203198">123,2198</td>
+<td class="col-num" data-order="114.09570759502006">114,0957</td>
+<td class="col-num" data-order="109.44431980667208">109,4443</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20150731">2015-07-31</td>
+<td class="col-num" data-order="124.206996489291">124,2070</td>
+<td class="col-num" data-order="125.70944218323834">125,7094</td>
+<td class="col-num" data-order="124.71883924484273">124,7188</td>
+<td class="col-num" data-order="125.21473814886876">125,2147</td>
+<td class="col-num" data-order="127.71399475696909">127,7140</td>
+<td class="col-num" data-order="128.36537017837847">128,3654</td>
+<td class="col-num" data-order="134.15679552084197">134,1568</td>
+<td class="col-num" data-order="127.54844517549056">127,5484</td>
+<td class="col-num" data-order="128.1233697019638">128,1234</td>
+<td class="col-num" data-order="137.86646275035787">137,8665</td>
+<td class="col-num" data-order="131.1081644172524">131,1082</td>
+<td class="col-num" data-order="131.92820857893707">13192,82%</td>
+<td class="col-num" data-order="134.03843391208176">134,0384</td>
+<td class="col-num" data-order="128.33363614911147">128,3336</td>
+<td class="col-num" data-order="135.90113385702685">135,9011</td>
+<td class="col-num" data-order="123.46262973439346">123,4626</td>
+<td class="col-num" data-order="105.16850640488586">105,1685</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20150831">2015-08-31</td>
+<td class="col-num" data-order="124.71694091720326">124,7169</td>
+<td class="col-num" data-order="125.03952058990131">125,0395</td>
+<td class="col-num" data-order="124.92787501100462">124,9279</td>
+<td class="col-num" data-order="124.69349424760246">124,6935</td>
+<td class="col-num" data-order="125.30187803155182">125,3019</td>
+<td class="col-num" data-order="125.24183361547398">125,2418</td>
+<td class="col-num" data-order="134.30155089507926">134,3016</td>
+<td class="col-num" data-order="124.99341536262568">124,9934</td>
+<td class="col-num" data-order="125.1761728600157">125,1762</td>
+<td class="col-num" data-order="136.15421168424072">136,1542</td>
+<td class="col-num" data-order="129.2903267285865">129,2903</td>
+<td class="col-num" data-order="128.44698081389117">12844,70%</td>
+<td class="col-num" data-order="128.94851618189415">128,9485</td>
+<td class="col-num" data-order="130.8139296460864">130,8139</td>
+<td class="col-num" data-order="133.27222224185786">133,2722</td>
+<td class="col-num" data-order="119.00255549272735">119,0026</td>
+<td class="col-num" data-order="96.21397880066972">96,2140</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20150930">2015-09-30</td>
+<td class="col-num" data-order="134.68056030942864">134,6806</td>
+<td class="col-num" data-order="134.95800362709284">134,9580</td>
+<td class="col-num" data-order="135.0383382303691">135,0383</td>
+<td class="col-num" data-order="135.05008145718423">135,0501</td>
+<td class="col-num" data-order="134.91070852704016">134,9107</td>
+<td class="col-num" data-order="135.17262910820824">135,1726</td>
+<td class="col-num" data-order="146.1466095914664">146,1466</td>
+<td class="col-num" data-order="134.8361830448845">134,8362</td>
+<td class="col-num" data-order="135.16560813525928">135,1656</td>
+<td class="col-num" data-order="148.34619680470928">148,3462</td>
+<td class="col-num" data-order="141.11781354593717">141,1178</td>
+<td class="col-num" data-order="141.12145977579618">14112,15%</td>
+<td class="col-num" data-order="143.62852523941896">143,6285</td>
+<td class="col-num" data-order="140.51641128730262">140,5164</td>
+<td class="col-num" data-order="143.9706754829027">143,9707</td>
+<td class="col-num" data-order="131.6802805782093">131,6803</td>
+<td class="col-num" data-order="92.7490757165278">92,7491</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20151031">2015-10-31</td>
+<td class="col-num" data-order="137.52330816667754">137,5233</td>
+<td class="col-num" data-order="138.5420950760782">138,5421</td>
+<td class="col-num" data-order="137.17629785152343">137,1763</td>
+<td class="col-num" data-order="137.53246324766317">137,5325</td>
+<td class="col-num" data-order="138.9595606510394">138,9596</td>
+<td class="col-num" data-order="139.47920136988063">139,4792</td>
+<td class="col-num" data-order="152.678914585139">152,6789</td>
+<td class="col-num" data-order="138.03528048516395">138,0353</td>
+<td class="col-num" data-order="138.39401050891564">138,3940</td>
+<td class="col-num" data-order="150.66127016832596">150,6613</td>
+<td class="col-num" data-order="144.52361960282053">144,5236</td>
+<td class="col-num" data-order="142.4378564288598">14243,79%</td>
+<td class="col-num" data-order="144.97484824583893">144,9748</td>
+<td class="col-num" data-order="145.8015558248221">145,8016</td>
+<td class="col-num" data-order="146.83973632097846">146,8397</td>
+<td class="col-num" data-order="136.86572081779818">136,8657</td>
+<td class="col-num" data-order="96.32455923264094">96,3246</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20151130">2015-11-30</td>
+<td class="col-num" data-order="133.08410761623267">133,0841</td>
+<td class="col-num" data-order="134.94109757517384">134,9411</td>
+<td class="col-num" data-order="132.72226430865703">132,7223</td>
+<td class="col-num" data-order="133.76298360824845">133,7630</td>
+<td class="col-num" data-order="135.83257852776228">135,8326</td>
+<td class="col-num" data-order="136.88975574001375">136,8898</td>
+<td class="col-num" data-order="153.02348780865665">153,0235</td>
+<td class="col-num" data-order="134.72756670479671">134,7276</td>
+<td class="col-num" data-order="135.4982554033751">135,4983</td>
+<td class="col-num" data-order="149.72044554285955">149,7204</td>
+<td class="col-num" data-order="141.65327153287845">141,6533</td>
+<td class="col-num" data-order="140.1428998223477">14014,29%</td>
+<td class="col-num" data-order="142.53607719422084">142,5361</td>
+<td class="col-num" data-order="139.48356189184375">139,4836</td>
+<td class="col-num" data-order="145.0296815766736">145,0297</td>
+<td class="col-num" data-order="136.29011412373725">136,2901</td>
+<td class="col-num" data-order="94.56930275092203">94,5693</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20151231">2015-12-31</td>
+<td class="col-num" data-order="132.99119810206236">132,9912</td>
+<td class="col-num" data-order="135.33850391166288">135,3385</td>
+<td class="col-num" data-order="132.59824630646312">132,5982</td>
+<td class="col-num" data-order="134.01471756807996">134,0147</td>
+<td class="col-num" data-order="135.24217335392953">135,2422</td>
+<td class="col-num" data-order="136.84497696555474">136,8450</td>
+<td class="col-num" data-order="150.4948003922133">150,4948</td>
+<td class="col-num" data-order="133.9100539984071">133,9101</td>
+<td class="col-num" data-order="135.23153841064507">135,2315</td>
+<td class="col-num" data-order="150.91566530490297">150,9157</td>
+<td class="col-num" data-order="141.94832674261306">141,9483</td>
+<td class="col-num" data-order="140.31236225913636">14031,24%</td>
+<td class="col-num" data-order="144.8604411255224">144,8604</td>
+<td class="col-num" data-order="138.16478906122666">138,1648</td>
+<td class="col-num" data-order="143.20851666152518">143,2085</td>
+<td class="col-num" data-order="146.64370628762">146,6437</td>
+<td class="col-num" data-order="90.6565926818952">90,6566</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160131">2016-01-31</td>
+<td class="col-num" data-order="131.35160985458697">131,3516</td>
+<td class="col-num" data-order="133.37854592954807">133,3785</td>
+<td class="col-num" data-order="131.09497634615462">131,0950</td>
+<td class="col-num" data-order="132.3856971637187">132,3857</td>
+<td class="col-num" data-order="131.13978778278178">131,1398</td>
+<td class="col-num" data-order="132.5710686037324">132,5711</td>
+<td class="col-num" data-order="146.88269350467755">146,8827</td>
+<td class="col-num" data-order="129.73409173213847">129,7341</td>
+<td class="col-num" data-order="131.35899472601469">131,3590</td>
+<td class="col-num" data-order="146.50611708354413">146,5061</td>
+<td class="col-num" data-order="138.73466328822687">138,7347</td>
+<td class="col-num" data-order="136.4842426573213">13648,42%</td>
+<td class="col-num" data-order="139.11612987481448">139,1161</td>
+<td class="col-num" data-order="139.68767217058345">139,6877</td>
+<td class="col-num" data-order="138.98884437639722">138,9888</td>
+<td class="col-num" data-order="140.63854662373774">140,6385</td>
+<td class="col-num" data-order="83.3240266734984">83,3240</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160229">2016-02-29</td>
+<td class="col-num" data-order="131.0387374964058">131,0387</td>
+<td class="col-num" data-order="132.35638036801524">132,3564</td>
+<td class="col-num" data-order="129.57005170172226">129,5701</td>
+<td class="col-num" data-order="131.05316693025966">131,0532</td>
+<td class="col-num" data-order="127.88135628862388">127,8814</td>
+<td class="col-num" data-order="129.5436089643188">129,5436</td>
+<td class="col-num" data-order="141.21895127310555">141,2190</td>
+<td class="col-num" data-order="126.04087154663772">126,0409</td>
+<td class="col-num" data-order="127.647600508922">127,6476</td>
+<td class="col-num" data-order="139.76348225376088">139,7635</td>
+<td class="col-num" data-order="133.09111306891137">133,0911</td>
+<td class="col-num" data-order="130.3578477900828">13035,78%</td>
+<td class="col-num" data-order="132.17508261380317">132,1751</td>
+<td class="col-num" data-order="138.97470390975326">138,9747</td>
+<td class="col-num" data-order="130.66720549653974">130,6672</td>
+<td class="col-num" data-order="137.7739407271892">137,7739</td>
+<td class="col-num" data-order="87.86989955497032">87,8699</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160331">2016-03-31</td>
+<td class="col-num" data-order="129.71554739336034">129,7155</td>
+<td class="col-num" data-order="132.06523641464844">132,0652</td>
+<td class="col-num" data-order="129.11934013405525">129,1193</td>
+<td class="col-num" data-order="130.7293790080221">130,7294</td>
+<td class="col-num" data-order="129.34584931458028">129,3458</td>
+<td class="col-num" data-order="131.07588931773583">131,0759</td>
+<td class="col-num" data-order="138.1688104333295">138,1688</td>
+<td class="col-num" data-order="127.75579595830966">127,7558</td>
+<td class="col-num" data-order="129.41494196997522">129,4149</td>
+<td class="col-num" data-order="136.19283405826326">136,1928</td>
+<td class="col-num" data-order="132.46526673770688">132,4653</td>
+<td class="col-num" data-order="129.90752833280666">12990,75%</td>
+<td class="col-num" data-order="130.53493151301942">130,5349</td>
+<td class="col-num" data-order="138.36165724420232">138,3617</td>
+<td class="col-num" data-order="126.63593488939728">126,6359</td>
+<td class="col-num" data-order="140.98834894422018">140,9883</td>
+<td class="col-num" data-order="100.5880594522355">100,5881</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160430">2016-04-30</td>
+<td class="col-num" data-order="130.44362884428062">130,4436</td>
+<td class="col-num" data-order="131.95579154096967">131,9558</td>
+<td class="col-num" data-order="129.32583789695494">129,3258</td>
+<td class="col-num" data-order="130.3750592802184">130,3751</td>
+<td class="col-num" data-order="129.1796311573485">129,1796</td>
+<td class="col-num" data-order="130.27595392114966">130,2760</td>
+<td class="col-num" data-order="136.60282685427282">136,6028</td>
+<td class="col-num" data-order="127.37709083633328">127,3771</td>
+<td class="col-num" data-order="128.57320739744156">128,5732</td>
+<td class="col-num" data-order="134.0893557193309">134,0894</td>
+<td class="col-num" data-order="130.53341351071614">130,5334</td>
+<td class="col-num" data-order="127.57936940765669">12757,94%</td>
+<td class="col-num" data-order="125.19191261670134">125,1919</td>
+<td class="col-num" data-order="137.49643674743425">137,4964</td>
+<td class="col-num" data-order="126.55914127129792">126,5591</td>
+<td class="col-num" data-order="139.72281101861887">139,7228</td>
+<td class="col-num" data-order="106.94523468690338">106,9452</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160531">2016-05-31</td>
+<td class="col-num" data-order="129.98802605670147">129,9880</td>
+<td class="col-num" data-order="131.34042289238727">131,3404</td>
+<td class="col-num" data-order="128.48729175405853">128,4873</td>
+<td class="col-num" data-order="129.42226167315803">129,4223</td>
+<td class="col-num" data-order="129.4240303252657">129,4240</td>
+<td class="col-num" data-order="130.42164374807126">130,4216</td>
+<td class="col-num" data-order="142.29518216536698">142,2952</td>
+<td class="col-num" data-order="127.37497006798093">127,3750</td>
+<td class="col-num" data-order="128.18323945726712">128,1832</td>
+<td class="col-num" data-order="137.59542329584806">137,5954</td>
+<td class="col-num" data-order="131.8524401782384">131,8524</td>
+<td class="col-num" data-order="128.36690542964703">12836,69%</td>
+<td class="col-num" data-order="129.77719513594351">129,7772</td>
+<td class="col-num" data-order="132.11847565104617">132,1185</td>
+<td class="col-num" data-order="128.400427172207">128,4004</td>
+<td class="col-num" data-order="141.77621427314088">141,7762</td>
+<td class="col-num" data-order="98.94558387025438">98,9456</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160630">2016-06-30</td>
+<td class="col-num" data-order="123.9477044798443">123,9477</td>
+<td class="col-num" data-order="124.88894562586944">124,8889</td>
+<td class="col-num" data-order="121.57518820416465">121,5752</td>
+<td class="col-num" data-order="122.54088857889012">122,5409</td>
+<td class="col-num" data-order="121.94735252545355">121,9474</td>
+<td class="col-num" data-order="122.9424278524886">122,9424</td>
+<td class="col-num" data-order="129.61880594882345">129,6188</td>
+<td class="col-num" data-order="119.44475637550588">119,4448</td>
+<td class="col-num" data-order="120.23027972002572">120,2303</td>
+<td class="col-num" data-order="123.50395753446736">123,5040</td>
+<td class="col-num" data-order="121.27002233585615">121,2700</td>
+<td class="col-num" data-order="117.82891350565268">11782,89%</td>
+<td class="col-num" data-order="119.2093571811934">119,2094</td>
+<td class="col-num" data-order="125.25847211671406">125,2585</td>
+<td class="col-num" data-order="112.36888828035931">112,3689</td>
+<td class="col-num" data-order="132.0456858559783">132,0457</td>
+<td class="col-num" data-order="106.65930659923664">106,6593</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160731">2016-07-31</td>
+<td class="col-num" data-order="130.4832532139897">130,4833</td>
+<td class="col-num" data-order="132.70822161372985">132,7082</td>
+<td class="col-num" data-order="128.50188961806683">128,5019</td>
+<td class="col-num" data-order="130.19726528553687">130,1973</td>
+<td class="col-num" data-order="129.38499963022448">129,3850</td>
+<td class="col-num" data-order="131.0621372299032">131,0621</td>
+<td class="col-num" data-order="135.40825823164388">135,4083</td>
+<td class="col-num" data-order="126.71553066136842">126,7155</td>
+<td class="col-num" data-order="128.32415318283728">128,3242</td>
+<td class="col-num" data-order="130.27514909851666">130,2751</td>
+<td class="col-num" data-order="128.61415387668134">128,6142</td>
+<td class="col-num" data-order="124.96414407627807">12496,41%</td>
+<td class="col-num" data-order="127.81912919474848">127,8191</td>
+<td class="col-num" data-order="128.23495014763205">128,2350</td>
+<td class="col-num" data-order="117.57120139356005">117,5712</td>
+<td class="col-num" data-order="144.2355214263127">144,2355</td>
+<td class="col-num" data-order="120.59660902068823">120,5966</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160831">2016-08-31</td>
+<td class="col-num" data-order="128.18058029411225">128,1806</td>
+<td class="col-num" data-order="130.1883213580315">130,1883</td>
+<td class="col-num" data-order="126.19385144845168">126,1939</td>
+<td class="col-num" data-order="127.93641269088891">127,9364</td>
+<td class="col-num" data-order="127.66653281334187">127,6665</td>
+<td class="col-num" data-order="129.36705825407722">129,3671</td>
+<td class="col-num" data-order="134.72698464467413">134,7270</td>
+<td class="col-num" data-order="125.37486929572002">125,3749</td>
+<td class="col-num" data-order="126.48983715640298">126,4898</td>
+<td class="col-num" data-order="128.96856848376498">128,9686</td>
+<td class="col-num" data-order="126.73171619736463">126,7317</td>
+<td class="col-num" data-order="124.11453087605908">12411,45%</td>
+<td class="col-num" data-order="127.91209801857836">127,9121</td>
+<td class="col-num" data-order="125.3184769430976">125,3185</td>
+<td class="col-num" data-order="117.42068103527856">117,4207</td>
+<td class="col-num" data-order="140.43089113210664">140,4309</td>
+<td class="col-num" data-order="120.867344941036">120,8673</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20160930">2016-09-30</td>
+<td class="col-num" data-order="131.32783765030416">131,3278</td>
+<td class="col-num" data-order="133.23552875153138">133,2355</td>
+<td class="col-num" data-order="129.0620430391052">129,0620</td>
+<td class="col-num" data-order="130.66175381356788">130,6618</td>
+<td class="col-num" data-order="130.93375970971584">130,9338</td>
+<td class="col-num" data-order="132.45342995892736">132,4534</td>
+<td class="col-num" data-order="138.12350246405467">138,1235</td>
+<td class="col-num" data-order="128.36541759532392">128,3654</td>
+<td class="col-num" data-order="129.4487617281003">129,4488</td>
+<td class="col-num" data-order="131.4918731571187">131,4919</td>
+<td class="col-num" data-order="129.86042828826376">129,8604</td>
+<td class="col-num" data-order="127.68925352135857">12768,93%</td>
+<td class="col-num" data-order="132.4582104990159">132,4582</td>
+<td class="col-num" data-order="125.51452512323942">125,5145</td>
+<td class="col-num" data-order="118.6294712623916">118,6295</td>
+<td class="col-num" data-order="143.83013745509865">143,8301</td>
+<td class="col-num" data-order="121.63518941268158">121,6352</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20161031">2016-10-31</td>
+<td class="col-num" data-order="129.1078863712964">129,1079</td>
+<td class="col-num" data-order="131.45716290843288">131,4572</td>
+<td class="col-num" data-order="127.03230998278356">127,0323</td>
+<td class="col-num" data-order="128.49797652236384">128,4980</td>
+<td class="col-num" data-order="129.42659645071288">129,4266</td>
+<td class="col-num" data-order="130.95727353813004">130,9573</td>
+<td class="col-num" data-order="133.02062184068734">133,0206</td>
+<td class="col-num" data-order="126.659351046253">126,6594</td>
+<td class="col-num" data-order="127.60563255538872">127,6056</td>
+<td class="col-num" data-order="126.41256336247896">126,4126</td>
+<td class="col-num" data-order="126.32939256639342">126,3294</td>
+<td class="col-num" data-order="123.33149000657278">12333,15%</td>
+<td class="col-num" data-order="128.71510818137602">128,7151</td>
+<td class="col-num" data-order="129.58735501569615">129,5874</td>
+<td class="col-num" data-order="112.5597505652046">112,5598</td>
+<td class="col-num" data-order="133.27969410804127">133,2797</td>
+<td class="col-num" data-order="132.74183747476005">132,7418</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20161130">2016-11-30</td>
+<td class="col-num" data-order="133.01392685207688">133,0139</td>
+<td class="col-num" data-order="135.62901392308012">135,6290</td>
+<td class="col-num" data-order="131.15487639705512">131,1549</td>
+<td class="col-num" data-order="132.39617123008676">132,3962</td>
+<td class="col-num" data-order="134.64913863634897">134,6491</td>
+<td class="col-num" data-order="135.71189538615914">135,7119</td>
+<td class="col-num" data-order="149.60913800961012">149,6091</td>
+<td class="col-num" data-order="131.52962354411383">131,5296</td>
+<td class="col-num" data-order="132.42052152224474">132,4205</td>
+<td class="col-num" data-order="136.01990867384518">136,0199</td>
+<td class="col-num" data-order="132.6770080584182">132,6770</td>
+<td class="col-num" data-order="129.22818308719454">12922,82%</td>
+<td class="col-num" data-order="135.07366054804223">135,0737</td>
+<td class="col-num" data-order="126.97642259418956">126,9764</td>
+<td class="col-num" data-order="119.48993022616528">119,4899</td>
+<td class="col-num" data-order="143.18915349453715">143,1892</td>
+<td class="col-num" data-order="124.662160162571">124,6622</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20161231">2016-12-31</td>
+<td class="col-num" data-order="126.55932040928036">126,5593</td>
+<td class="col-num" data-order="128.9583094286269">128,9583</td>
+<td class="col-num" data-order="124.48602911456427">124,4860</td>
+<td class="col-num" data-order="125.28248011796374">125,2825</td>
+<td class="col-num" data-order="128.62497535303993">128,6250</td>
+<td class="col-num" data-order="129.22345058477592">129,2235</td>
+<td class="col-num" data-order="143.24663830396042">143,2466</td>
+<td class="col-num" data-order="125.09109754502406">125,0911</td>
+<td class="col-num" data-order="125.94798790653428">125,9480</td>
+<td class="col-num" data-order="130.8655787765369">130,8656</td>
+<td class="col-num" data-order="126.24236842966609">126,2424</td>
+<td class="col-num" data-order="122.85790966991306">12285,79%</td>
+<td class="col-num" data-order="123.82633479313148">123,8263</td>
+<td class="col-num" data-order="119.63175390568767">119,6318</td>
+<td class="col-num" data-order="118.06005911485722">118,0601</td>
+<td class="col-num" data-order="134.11385631279668">134,1139</td>
+<td class="col-num" data-order="121.81381869932768">121,8138</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170131">2017-01-31</td>
+<td class="col-num" data-order="128.47989928856015">128,4799</td>
+<td class="col-num" data-order="131.07753083031122">131,0775</td>
+<td class="col-num" data-order="125.91471653288212">125,9147</td>
+<td class="col-num" data-order="127.05964946235817">127,0596</td>
+<td class="col-num" data-order="130.3109512848276">130,3110</td>
+<td class="col-num" data-order="131.36300937185098">131,3630</td>
+<td class="col-num" data-order="139.2104021491314">139,2104</td>
+<td class="col-num" data-order="126.6065293768001">126,6065</td>
+<td class="col-num" data-order="127.64523807951323">127,6452</td>
+<td class="col-num" data-order="129.93078123305034">129,9308</td>
+<td class="col-num" data-order="126.77894769679598">126,7789</td>
+<td class="col-num" data-order="124.11283134186158">12411,28%</td>
+<td class="col-num" data-order="126.42504672829602">126,4250</td>
+<td class="col-num" data-order="119.83464533965764">119,8346</td>
+<td class="col-num" data-order="116.39499368170029">116,3950</td>
+<td class="col-num" data-order="138.16869905228384">138,1687</td>
+<td class="col-num" data-order="133.359107310998">133,3591</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170228">2017-02-28</td>
+<td class="col-num" data-order="131.2253226904627">131,2253</td>
+<td class="col-num" data-order="133.70647456820203">133,7065</td>
+<td class="col-num" data-order="128.16280343762585">128,1628</td>
+<td class="col-num" data-order="129.32722811928443">129,3272</td>
+<td class="col-num" data-order="132.7015273455253">132,7015</td>
+<td class="col-num" data-order="133.89115749353903">133,8912</td>
+<td class="col-num" data-order="141.24267437877737">141,2427</td>
+<td class="col-num" data-order="128.68759376533728">128,6876</td>
+<td class="col-num" data-order="129.7434190718185">129,7434</td>
+<td class="col-num" data-order="131.44110344987791">131,4411</td>
+<td class="col-num" data-order="128.40355698810075">128,4036</td>
+<td class="col-num" data-order="125.2155755646084">12521,56%</td>
+<td class="col-num" data-order="128.85676298286677">128,8568</td>
+<td class="col-num" data-order="122.63370704161294">122,6337</td>
+<td class="col-num" data-order="116.7493207888358">116,7493</td>
+<td class="col-num" data-order="139.04907234019416">139,0491</td>
+<td class="col-num" data-order="139.25124436329847">139,2512</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170331">2017-03-31</td>
+<td class="col-num" data-order="135.3001680810589">135,3002</td>
+<td class="col-num" data-order="138.65586503847445">138,6559</td>
+<td class="col-num" data-order="132.61022197787574">132,6102</td>
+<td class="col-num" data-order="134.10387095861708">134,1039</td>
+<td class="col-num" data-order="137.82239596432856">137,8224</td>
+<td class="col-num" data-order="139.51044836804292">139,5104</td>
+<td class="col-num" data-order="143.37603986557102">143,3760</td>
+<td class="col-num" data-order="133.78992186699008">133,7899</td>
+<td class="col-num" data-order="135.26814595508162">135,2681</td>
+<td class="col-num" data-order="136.2238394064734">136,2238</td>
+<td class="col-num" data-order="134.80066780076106">134,8007</td>
+<td class="col-num" data-order="131.10724879730608">13110,72%</td>
+<td class="col-num" data-order="134.37919194963573">134,3792</td>
+<td class="col-num" data-order="136.07910154364103">136,0791</td>
+<td class="col-num" data-order="122.49810205752408">122,4981</td>
+<td class="col-num" data-order="141.56378704293837">141,5638</td>
+<td class="col-num" data-order="136.27051109285966">136,2705</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170430">2017-04-30</td>
+<td class="col-num" data-order="138.80730983226485">138,8073</td>
+<td class="col-num" data-order="142.39979060867438">142,3998</td>
+<td class="col-num" data-order="135.56648167503158">135,5665</td>
+<td class="col-num" data-order="137.3855494229529">137,3855</td>
+<td class="col-num" data-order="141.34966497398693">141,3497</td>
+<td class="col-num" data-order="143.42448119722536">143,4245</td>
+<td class="col-num" data-order="145.2077679610745">145,2078</td>
+<td class="col-num" data-order="136.86459630304967">136,8646</td>
+<td class="col-num" data-order="138.69433609456547">138,6943</td>
+<td class="col-num" data-order="140.3114862241195">140,3115</td>
+<td class="col-num" data-order="138.27854768491085">138,2785</td>
+<td class="col-num" data-order="135.2264921940143">13522,65%</td>
+<td class="col-num" data-order="138.07073775980646">138,0707</td>
+<td class="col-num" data-order="138.05524175272282">138,0552</td>
+<td class="col-num" data-order="126.93405603250412">126,9341</td>
+<td class="col-num" data-order="143.20127265445424">143,2013</td>
+<td class="col-num" data-order="139.02754727600535">139,0275</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170531">2017-05-31</td>
+<td class="col-num" data-order="144.5583261618059">144,5583</td>
+<td class="col-num" data-order="148.64202457625925">148,6420</td>
+<td class="col-num" data-order="140.18213799413795">140,1821</td>
+<td class="col-num" data-order="142.2219210490172">142,2219</td>
+<td class="col-num" data-order="147.7335017368987">147,7335</td>
+<td class="col-num" data-order="150.19641745720844">150,1964</td>
+<td class="col-num" data-order="149.40896343015297">149,4090</td>
+<td class="col-num" data-order="141.9070908317163">141,9071</td>
+<td class="col-num" data-order="144.01341997987794">144,0134</td>
+<td class="col-num" data-order="147.57566231386167">147,5757</td>
+<td class="col-num" data-order="144.87991834105142">144,8799</td>
+<td class="col-num" data-order="142.3994448425522">14239,94%</td>
+<td class="col-num" data-order="146.05378389638634">146,0538</td>
+<td class="col-num" data-order="142.51958145639884">142,5196</td>
+<td class="col-num" data-order="135.83354592827243">135,8335</td>
+<td class="col-num" data-order="146.11908732762495">146,1191</td>
+<td class="col-num" data-order="135.57737992872626">135,5774</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170630">2017-06-30</td>
+<td class="col-num" data-order="146.0364200341158">146,0364</td>
+<td class="col-num" data-order="150.72472575898496">150,7247</td>
+<td class="col-num" data-order="141.85984415844246">141,8598</td>
+<td class="col-num" data-order="144.33570493610864">144,3357</td>
+<td class="col-num" data-order="150.16877301124595">150,1688</td>
+<td class="col-num" data-order="153.10162142935343">153,1016</td>
+<td class="col-num" data-order="150.8801356267639">150,8801</td>
+<td class="col-num" data-order="144.38695972908488">144,3870</td>
+<td class="col-num" data-order="146.78484826898156">146,7848</td>
+<td class="col-num" data-order="150.69083250666776">150,6908</td>
+<td class="col-num" data-order="147.59041795469068">147,5904</td>
+<td class="col-num" data-order="145.70604734244057">14570,60%</td>
+<td class="col-num" data-order="149.83510142632147">149,8351</td>
+<td class="col-num" data-order="147.14270076749466">147,1427</td>
+<td class="col-num" data-order="136.06128585675134">136,0613</td>
+<td class="col-num" data-order="155.45972859030837">155,4597</td>
+<td class="col-num" data-order="136.04419397729467">136,0442</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170731">2017-07-31</td>
+<td class="col-num" data-order="146.97441147725675">146,9744</td>
+<td class="col-num" data-order="151.77119871748656">151,7712</td>
+<td class="col-num" data-order="142.89567195322348">142,8957</td>
+<td class="col-num" data-order="145.02601447271937">145,0260</td>
+<td class="col-num" data-order="151.79192702443208">151,7919</td>
+<td class="col-num" data-order="154.47723938009935">154,4772</td>
+<td class="col-num" data-order="149.23786551715813">149,2379</td>
+<td class="col-num" data-order="145.74359983467008">145,7436</td>
+<td class="col-num" data-order="148.09308885099364">148,0931</td>
+<td class="col-num" data-order="149.0284613705496">149,0285</td>
+<td class="col-num" data-order="147.6262358307912">147,6262</td>
+<td class="col-num" data-order="146.06226798874243">14606,23%</td>
+<td class="col-num" data-order="149.96527603013146">149,9653</td>
+<td class="col-num" data-order="149.17598489828222">149,1760</td>
+<td class="col-num" data-order="134.02229228809531">134,0223</td>
+<td class="col-num" data-order="155.3255629531237">155,3256</td>
+<td class="col-num" data-order="144.77554381604088">144,7755</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170831">2017-08-31</td>
+<td class="col-num" data-order="149.8715301494296">149,8715</td>
+<td class="col-num" data-order="154.94709965489457">154,9471</td>
+<td class="col-num" data-order="144.81242513133157">144,8124</td>
+<td class="col-num" data-order="147.02239207959653">147,0224</td>
+<td class="col-num" data-order="154.06960703500997">154,0696</td>
+<td class="col-num" data-order="157.03436885340628">157,0344</td>
+<td class="col-num" data-order="146.77420580894102">146,7742</td>
+<td class="col-num" data-order="146.83141016276818">146,8314</td>
+<td class="col-num" data-order="149.6028095507298">149,6028</td>
+<td class="col-num" data-order="148.46016001141072">148,4602</td>
+<td class="col-num" data-order="147.56081887483467">147,5608</td>
+<td class="col-num" data-order="146.8883760401273">14688,84%</td>
+<td class="col-num" data-order="150.3756252135956">150,3756</td>
+<td class="col-num" data-order="151.3536505338654">151,3537</td>
+<td class="col-num" data-order="132.6796151306284">132,6796</td>
+<td class="col-num" data-order="152.53015715672822">152,5302</td>
+<td class="col-num" data-order="156.38232194740988">156,3823</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20170930">2017-09-30</td>
+<td class="col-num" data-order="152.04809292795304">152,0481</td>
+<td class="col-num" data-order="157.3939023086243">157,3939</td>
+<td class="col-num" data-order="147.16019227901631">147,1602</td>
+<td class="col-num" data-order="149.10892172207667">149,1089</td>
+<td class="col-num" data-order="157.4942865886905">157,4943</td>
+<td class="col-num" data-order="160.02838152572917">160,0284</td>
+<td class="col-num" data-order="153.700170078049">153,7002</td>
+<td class="col-num" data-order="150.0166197674064">150,0166</td>
+<td class="col-num" data-order="152.38523359445642">152,3852</td>
+<td class="col-num" data-order="152.87168380475873">152,8717</td>
+<td class="col-num" data-order="150.4289558121527">150,4290</td>
+<td class="col-num" data-order="149.78928852381785">14978,93%</td>
+<td class="col-num" data-order="151.04602515119043">151,0460</td>
+<td class="col-num" data-order="152.29174369858458">152,2917</td>
+<td class="col-num" data-order="138.589063091698">138,5891</td>
+<td class="col-num" data-order="153.7589198542963">153,7589</td>
+<td class="col-num" data-order="162.6875786206248">162,6876</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20171031">2017-10-31</td>
+<td class="col-num" data-order="159.4858836141181">159,4859</td>
+<td class="col-num" data-order="165.1492423268129">165,1492</td>
+<td class="col-num" data-order="154.00045755348344">154,0005</td>
+<td class="col-num" data-order="155.40802212705583">155,4080</td>
+<td class="col-num" data-order="165.85443863624562">165,8544</td>
+<td class="col-num" data-order="167.96219794378035">167,9622</td>
+<td class="col-num" data-order="161.96265313539553">161,9627</td>
+<td class="col-num" data-order="156.908747763799">156,9087</td>
+<td class="col-num" data-order="159.38591476906538">159,3859</td>
+<td class="col-num" data-order="161.06525496544046">161,0653</td>
+<td class="col-num" data-order="158.81302483561">158,8130</td>
+<td class="col-num" data-order="158.69431195942428">15869,43%</td>
+<td class="col-num" data-order="163.09068637804847">163,0907</td>
+<td class="col-num" data-order="154.03465730279763">154,0347</td>
+<td class="col-num" data-order="144.60738366600526">144,6074</td>
+<td class="col-num" data-order="157.20914019669277">157,2091</td>
+<td class="col-num" data-order="161.86594114269047">161,8659</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20171130">2017-11-30</td>
+<td class="col-num" data-order="158.6275534280363">158,6276</td>
+<td class="col-num" data-order="163.44710306123292">163,4471</td>
+<td class="col-num" data-order="151.37577942453478">151,3758</td>
+<td class="col-num" data-order="153.18900022936015">153,1890</td>
+<td class="col-num" data-order="164.5081945506842">164,5082</td>
+<td class="col-num" data-order="166.91961151115063">166,9196</td>
+<td class="col-num" data-order="163.59518559933394">163,5952</td>
+<td class="col-num" data-order="154.9788858958058">154,9789</td>
+<td class="col-num" data-order="157.19014818209104">157,1901</td>
+<td class="col-num" data-order="161.2153234286441">161,2153</td>
+<td class="col-num" data-order="157.00511012008317">157,0051</td>
+<td class="col-num" data-order="157.41455520371522">15741,46%</td>
+<td class="col-num" data-order="162.90132252670992">162,9013</td>
+<td class="col-num" data-order="146.0907534574775">146,0908</td>
+<td class="col-num" data-order="142.59826846218385">142,5983</td>
+<td class="col-num" data-order="155.33076899760977">155,3308</td>
+<td class="col-num" data-order="156.92431647328883">156,9243</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20171231">2017-12-31</td>
+<td class="col-num" data-order="168.74532019512986">168,7453</td>
+<td class="col-num" data-order="174.54539228570195">174,5454</td>
+<td class="col-num" data-order="161.16996039994987">161,1700</td>
+<td class="col-num" data-order="162.28952385908696">162,2895</td>
+<td class="col-num" data-order="175.96613490105867">175,9661</td>
+<td class="col-num" data-order="177.79631342307974">177,7963</td>
+<td class="col-num" data-order="170.8543318974503">170,8543</td>
+<td class="col-num" data-order="164.53703497986797">164,5370</td>
+<td class="col-num" data-order="166.99846252497298">166,9985</td>
+<td class="col-num" data-order="167.12276623088874">167,1228</td>
+<td class="col-num" data-order="166.2727324683889">166,2727</td>
+<td class="col-num" data-order="164.9059029547499">16490,59%</td>
+<td class="col-num" data-order="169.23888449652392">169,2389</td>
+<td class="col-num" data-order="158.92837270822824">158,9284</td>
+<td class="col-num" data-order="148.47505659339646">148,4751</td>
+<td class="col-num" data-order="166.85982655500953">166,8598</td>
+<td class="col-num" data-order="167.88721726583526">167,8872</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180131">2018-01-31</td>
+<td class="col-num" data-order="171.47221840396224">171,4722</td>
+<td class="col-num" data-order="177.50068721290936">177,5007</td>
+<td class="col-num" data-order="164.34857941956616">164,3486</td>
+<td class="col-num" data-order="165.36029049708657">165,3603</td>
+<td class="col-num" data-order="179.53049912489195">179,5305</td>
+<td class="col-num" data-order="181.32253879936889">181,3225</td>
+<td class="col-num" data-order="173.6715076793886">173,6715</td>
+<td class="col-num" data-order="168.45804709947708">168,4580</td>
+<td class="col-num" data-order="170.7724100491561">170,7724</td>
+<td class="col-num" data-order="168.77067117331222">168,7707</td>
+<td class="col-num" data-order="168.57948693936572">168,5795</td>
+<td class="col-num" data-order="168.42839580654703">16842,84%</td>
+<td class="col-num" data-order="171.6642842038264">171,6643</td>
+<td class="col-num" data-order="164.29744375460064">164,2974</td>
+<td class="col-num" data-order="149.5882023554656">149,5882</td>
+<td class="col-num" data-order="165.93104829948368">165,9310</td>
+<td class="col-num" data-order="180.5592037632158">180,5592</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180228">2018-02-28</td>
+<td class="col-num" data-order="168.17421213654538">168,1742</td>
+<td class="col-num" data-order="173.69064461320886">173,6906</td>
+<td class="col-num" data-order="160.73640374333488">160,7364</td>
+<td class="col-num" data-order="161.56807722809876">161,5681</td>
+<td class="col-num" data-order="174.8959279767449">174,8959</td>
+<td class="col-num" data-order="176.6569972445183">176,6570</td>
+<td class="col-num" data-order="168.05133346362277">168,0513</td>
+<td class="col-num" data-order="163.89229904625134">163,8923</td>
+<td class="col-num" data-order="166.1774488740886">166,1774</td>
+<td class="col-num" data-order="164.17976853613442">164,1798</td>
+<td class="col-num" data-order="163.25558883439842">163,2556</td>
+<td class="col-num" data-order="162.77356663044523">16277,36%</td>
+<td class="col-num" data-order="166.39432878816106">166,3943</td>
+<td class="col-num" data-order="159.74156533264485">159,7416</td>
+<td class="col-num" data-order="142.32730847907206">142,3273</td>
+<td class="col-num" data-order="163.75260449257095">163,7526</td>
+<td class="col-num" data-order="180.5199816634963">180,5200</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180331">2018-03-31</td>
+<td class="col-num" data-order="170.7017974649374">170,7018</td>
+<td class="col-num" data-order="175.7446184508841">175,7446</td>
+<td class="col-num" data-order="163.67190546597556">163,6719</td>
+<td class="col-num" data-order="164.34806699389108">164,3481</td>
+<td class="col-num" data-order="177.09315143944704">177,0932</td>
+<td class="col-num" data-order="178.65908443813385">178,6591</td>
+<td class="col-num" data-order="168.82564248151132">168,8256</td>
+<td class="col-num" data-order="166.79240987081766">166,7924</td>
+<td class="col-num" data-order="168.64809218543806">168,6481</td>
+<td class="col-num" data-order="166.27395585496933">166,2740</td>
+<td class="col-num" data-order="166.03620833670803">166,0362</td>
+<td class="col-num" data-order="166.67158733525474">16667,16%</td>
+<td class="col-num" data-order="170.64502483272642">170,6450</td>
+<td class="col-num" data-order="164.12540419222597">164,1254</td>
+<td class="col-num" data-order="145.1008556938259">145,1009</td>
+<td class="col-num" data-order="165.39491564369283">165,3949</td>
+<td class="col-num" data-order="180.55129807585467">180,5513</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180430">2018-04-30</td>
+<td class="col-num" data-order="178.42047954225197">178,4205</td>
+<td class="col-num" data-order="183.67450400023176">183,6745</td>
+<td class="col-num" data-order="170.88328170098842">170,8833</td>
+<td class="col-num" data-order="171.44185170099203">171,4419</td>
+<td class="col-num" data-order="185.7514534936324">185,7515</td>
+<td class="col-num" data-order="187.08354230723256">187,0835</td>
+<td class="col-num" data-order="181.86923098865887">181,8692</td>
+<td class="col-num" data-order="174.50983424975402">174,5098</td>
+<td class="col-num" data-order="175.96110537748095">175,9611</td>
+<td class="col-num" data-order="174.6877684016304">174,6878</td>
+<td class="col-num" data-order="174.18987527641198">174,1899</td>
+<td class="col-num" data-order="172.43553312603618">17243,55%</td>
+<td class="col-num" data-order="177.4002685418357">177,4003</td>
+<td class="col-num" data-order="171.3073591215312">171,3074</td>
+<td class="col-num" data-order="156.42170908529783">156,4217</td>
+<td class="col-num" data-order="170.75174535869314">170,7517</td>
+<td class="col-num" data-order="183.3344935142083">183,3345</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180531">2018-05-31</td>
+<td class="col-num" data-order="183.9229896295775">183,9230</td>
+<td class="col-num" data-order="189.4167794893557">189,4168</td>
+<td class="col-num" data-order="177.39535954699036">177,3954</td>
+<td class="col-num" data-order="177.93222291344708">177,9322</td>
+<td class="col-num" data-order="191.3664583241927">191,3665</td>
+<td class="col-num" data-order="192.39837074199667">192,3984</td>
+<td class="col-num" data-order="202.6569263580361">202,6569</td>
+<td class="col-num" data-order="180.37678943570495">180,3768</td>
+<td class="col-num" data-order="182.02822788814703">182,0282</td>
+<td class="col-num" data-order="187.15147045883955">187,1515</td>
+<td class="col-num" data-order="182.8321117552649">182,8321</td>
+<td class="col-num" data-order="182.1195938674845">18211,96%</td>
+<td class="col-num" data-order="189.55624708528137">189,5562</td>
+<td class="col-num" data-order="162.91597655573318">162,9160</td>
+<td class="col-num" data-order="165.12418430838835">165,1242</td>
+<td class="col-num" data-order="187.79656293286743">187,7966</td>
+<td class="col-num" data-order="163.04305153210092">163,0431</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180630">2018-06-30</td>
+<td class="col-num" data-order="185.4438187481147">185,4438</td>
+<td class="col-num" data-order="190.10745766103116">190,1075</td>
+<td class="col-num" data-order="179.30150008729402">179,3015</td>
+<td class="col-num" data-order="179.47204185755476">179,4720</td>
+<td class="col-num" data-order="193.25891826938687">193,2589</td>
+<td class="col-num" data-order="193.91926448997043">193,9193</td>
+<td class="col-num" data-order="211.6804430304231">211,6804</td>
+<td class="col-num" data-order="183.06155538382288">183,0616</td>
+<td class="col-num" data-order="183.9752303375223">183,9752</td>
+<td class="col-num" data-order="191.87285428954957">191,8729</td>
+<td class="col-num" data-order="185.7543697279648">185,7544</td>
+<td class="col-num" data-order="182.8802951593188">18288,03%</td>
+<td class="col-num" data-order="189.84411115797303">189,8441</td>
+<td class="col-num" data-order="168.58984516964097">168,5898</td>
+<td class="col-num" data-order="168.6075783963674">168,6076</td>
+<td class="col-num" data-order="197.4980189941216">197,4980</td>
+<td class="col-num" data-order="155.94538605780346">155,9454</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180731">2018-07-31</td>
+<td class="col-num" data-order="185.10925379592348">185,1093</td>
+<td class="col-num" data-order="190.88776822777743">190,8878</td>
+<td class="col-num" data-order="178.66780752495123">178,6678</td>
+<td class="col-num" data-order="179.44445670291586">179,4445</td>
+<td class="col-num" data-order="194.99642325968424">194,9964</td>
+<td class="col-num" data-order="196.3641813179725">196,3642</td>
+<td class="col-num" data-order="210.10985795959107">210,1099</td>
+<td class="col-num" data-order="184.3197532048916">184,3198</td>
+<td class="col-num" data-order="185.37572664978592">185,3757</td>
+<td class="col-num" data-order="190.20468730840864">190,2047</td>
+<td class="col-num" data-order="185.87809828678783">185,8781</td>
+<td class="col-num" data-order="181.3462652481975">18134,63%</td>
+<td class="col-num" data-order="187.76571682741076">187,7657</td>
+<td class="col-num" data-order="176.54507903005458">176,5451</td>
+<td class="col-num" data-order="166.80556214424428">166,8056</td>
+<td class="col-num" data-order="191.9240401772407">191,9240</td>
+<td class="col-num" data-order="166.75410914296347">166,7541</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180831">2018-08-31</td>
+<td class="col-num" data-order="198.15021476183463">198,1502</td>
+<td class="col-num" data-order="203.44147294831623">203,4415</td>
+<td class="col-num" data-order="191.41837048424756">191,4184</td>
+<td class="col-num" data-order="192.28118143630888">192,2812</td>
+<td class="col-num" data-order="208.0300240314832">208,0300</td>
+<td class="col-num" data-order="209.5055119473465">209,5055</td>
+<td class="col-num" data-order="237.963279358346">237,9633</td>
+<td class="col-num" data-order="197.4618607190923">197,4619</td>
+<td class="col-num" data-order="197.91996462508703">197,9200</td>
+<td class="col-num" data-order="210.6217448619179">210,6217</td>
+<td class="col-num" data-order="201.0918568737345">201,0919</td>
+<td class="col-num" data-order="196.71459628246052">19671,46%</td>
+<td class="col-num" data-order="206.503390804188">206,5034</td>
+<td class="col-num" data-order="182.79529360958756">182,7953</td>
+<td class="col-num" data-order="177.87080681787447">177,8708</td>
+<td class="col-num" data-order="213.29366750943927">213,2937</td>
+<td class="col-num" data-order="160.7479793560412">160,7480</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20180930">2018-09-30</td>
+<td class="col-num" data-order="192.7825327354333">192,7825</td>
+<td class="col-num" data-order="197.8238911034649">197,8239</td>
+<td class="col-num" data-order="186.56008125432035">186,5601</td>
+<td class="col-num" data-order="186.87693758825944">186,8769</td>
+<td class="col-num" data-order="202.61607598654675">202,6161</td>
+<td class="col-num" data-order="203.530847315728">203,5308</td>
+<td class="col-num" data-order="232.2983205342179">232,2983</td>
+<td class="col-num" data-order="192.35644912028656">192,3564</td>
+<td class="col-num" data-order="192.440722882616">192,4407</td>
+<td class="col-num" data-order="204.7678078098724">204,7678</td>
+<td class="col-num" data-order="194.50216869261453">194,5022</td>
+<td class="col-num" data-order="189.94979762665628">18994,98%</td>
+<td class="col-num" data-order="198.22808122050847">198,2281</td>
+<td class="col-num" data-order="181.5449673034664">181,5450</td>
+<td class="col-num" data-order="173.09389308794724">173,0939</td>
+<td class="col-num" data-order="203.62768391929347">203,6277</td>
+<td class="col-num" data-order="162.0322692907658">162,0323</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20181031">2018-10-31</td>
+<td class="col-num" data-order="170.480554255657">170,4806</td>
+<td class="col-num" data-order="173.77624345205635">173,7762</td>
+<td class="col-num" data-order="163.36132073750304">163,3613</td>
+<td class="col-num" data-order="163.73032968406417">163,7303</td>
+<td class="col-num" data-order="175.13634593643303">175,1363</td>
+<td class="col-num" data-order="175.96769907371058">175,9677</td>
+<td class="col-num" data-order="195.0801610257752">195,0802</td>
+<td class="col-num" data-order="165.72478788129635">165,7248</td>
+<td class="col-num" data-order="165.9293997446018">165,9294</td>
+<td class="col-num" data-order="173.26421948820848">173,2642</td>
+<td class="col-num" data-order="162.7153777976201">162,7154</td>
+<td class="col-num" data-order="159.7684851581511">15976,85%</td>
+<td class="col-num" data-order="164.01421557910086">164,0142</td>
+<td class="col-num" data-order="146.30424744920396">146,3042</td>
+<td class="col-num" data-order="147.58755077094003">147,5876</td>
+<td class="col-num" data-order="174.74762547783968">174,7476</td>
+<td class="col-num" data-order="179.9890741767153">179,9891</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20181130">2018-11-30</td>
+<td class="col-num" data-order="178.58713105166294">178,5871</td>
+<td class="col-num" data-order="184.0510452076832">184,0510</td>
+<td class="col-num" data-order="172.41166450560334">172,4117</td>
+<td class="col-num" data-order="173.94526405642415">173,9453</td>
+<td class="col-num" data-order="184.9690648606369">184,9691</td>
+<td class="col-num" data-order="186.93711965209016">186,9371</td>
+<td class="col-num" data-order="203.6578089243953">203,6578</td>
+<td class="col-num" data-order="175.4802461199849">175,4802</td>
+<td class="col-num" data-order="177.18245576489264">177,1825</td>
+<td class="col-num" data-order="182.54193605358947">182,5419</td>
+<td class="col-num" data-order="173.87146621445183">173,8715</td>
+<td class="col-num" data-order="170.84661163716282">17084,66%</td>
+<td class="col-num" data-order="179.533425974011">179,5334</td>
+<td class="col-num" data-order="151.53925186252386">151,5393</td>
+<td class="col-num" data-order="152.24752950591056">152,2475</td>
+<td class="col-num" data-order="188.9976137377297">188,9976</td>
+<td class="col-num" data-order="187.3981421196557">187,3981</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20181231">2018-12-31</td>
+<td class="col-num" data-order="174.94371694978926">174,9437</td>
+<td class="col-num" data-order="179.44193374441673">179,4419</td>
+<td class="col-num" data-order="168.23536073890406">168,2354</td>
+<td class="col-num" data-order="170.22324813174805">170,2232</td>
+<td class="col-num" data-order="178.07772266349085">178,0777</td>
+<td class="col-num" data-order="180.7469726793664">180,7470</td>
+<td class="col-num" data-order="184.5324315631333">184,5324</td>
+<td class="col-num" data-order="169.3750905934319">169,3751</td>
+<td class="col-num" data-order="171.1161094985467">171,1161</td>
+<td class="col-num" data-order="171.81005612094856">171,8101</td>
+<td class="col-num" data-order="167.04371562192165">167,0437</td>
+<td class="col-num" data-order="164.46847533596826">16446,85%</td>
+<td class="col-num" data-order="174.13835242586777">174,1384</td>
+<td class="col-num" data-order="150.98491626932056">150,9849</td>
+<td class="col-num" data-order="145.7667112222272">145,7667</td>
+<td class="col-num" data-order="183.63187110632816">183,6319</td>
+<td class="col-num" data-order="186.63297674474012">186,6330</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190131">2019-01-31</td>
+<td class="col-num" data-order="181.0797407611349">181,0797</td>
+<td class="col-num" data-order="185.84863876741807">185,8486</td>
+<td class="col-num" data-order="174.27766979072533">174,2777</td>
+<td class="col-num" data-order="175.75335901642762">175,7534</td>
+<td class="col-num" data-order="185.9621890174791">185,9622</td>
+<td class="col-num" data-order="188.16564931943944">188,1656</td>
+<td class="col-num" data-order="191.6936324969047">191,6936</td>
+<td class="col-num" data-order="176.78713454689583">176,7871</td>
+<td class="col-num" data-order="178.19274476112255">178,1927</td>
+<td class="col-num" data-order="175.89386607119891">175,8939</td>
+<td class="col-num" data-order="172.1595159880549">172,1595</td>
+<td class="col-num" data-order="169.62556647602506">16962,56%</td>
+<td class="col-num" data-order="176.88549559078666">176,8855</td>
+<td class="col-num" data-order="160.92518055891065">160,9252</td>
+<td class="col-num" data-order="147.74361571817877">147,7436</td>
+<td class="col-num" data-order="185.4579760357559">185,4580</td>
+<td class="col-num" data-order="205.8453716604219">205,8454</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190228">2019-02-28</td>
+<td class="col-num" data-order="184.0757615257479">184,0758</td>
+<td class="col-num" data-order="188.61339419669196">188,6134</td>
+<td class="col-num" data-order="176.81930764966302">176,8193</td>
+<td class="col-num" data-order="178.3443906106503">178,3444</td>
+<td class="col-num" data-order="189.14142165213045">189,1414</td>
+<td class="col-num" data-order="191.3968406313913">191,3968</td>
+<td class="col-num" data-order="199.6529757334271">199,6530</td>
+<td class="col-num" data-order="179.8326730909788">179,8327</td>
+<td class="col-num" data-order="181.03149355203155">181,0315</td>
+<td class="col-num" data-order="182.5112459090468">182,5112</td>
+<td class="col-num" data-order="175.45315926686885">175,4532</td>
+<td class="col-num" data-order="172.81297904191734">17281,30%</td>
+<td class="col-num" data-order="180.91966399219768">180,9197</td>
+<td class="col-num" data-order="158.76490410514978">158,7649</td>
+<td class="col-num" data-order="154.21991215871356">154,2199</td>
+<td class="col-num" data-order="192.5391921118685">192,5392</td>
+<td class="col-num" data-order="204.32019738085208">204,3202</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190331">2019-03-31</td>
+<td class="col-num" data-order="192.22995833389348">192,2300</td>
+<td class="col-num" data-order="196.82758179622888">196,8276</td>
+<td class="col-num" data-order="184.6112411426587">184,6112</td>
+<td class="col-num" data-order="186.30948517263545">186,3095</td>
+<td class="col-num" data-order="198.2572268314701">198,2572</td>
+<td class="col-num" data-order="200.679486131263">200,6795</td>
+<td class="col-num" data-order="214.01833099556765">214,0183</td>
+<td class="col-num" data-order="188.69651245422247">188,6965</td>
+<td class="col-num" data-order="189.6571829097174">189,6572</td>
+<td class="col-num" data-order="192.68520930586016">192,6852</td>
+<td class="col-num" data-order="185.0723433433273">185,0723</td>
+<td class="col-num" data-order="182.29995710440653">18230,00%</td>
+<td class="col-num" data-order="193.5590941445272">193,5591</td>
+<td class="col-num" data-order="163.17896946773436">163,1790</td>
+<td class="col-num" data-order="162.29554157876197">162,2955</td>
+<td class="col-num" data-order="208.2800698224052">208,2801</td>
+<td class="col-num" data-order="201.7191694486545">201,7192</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190430">2019-04-30</td>
+<td class="col-num" data-order="197.974252055326">197,9743</td>
+<td class="col-num" data-order="202.8214276147684">202,8214</td>
+<td class="col-num" data-order="190.13641598516543">190,1364</td>
+<td class="col-num" data-order="191.78808025044904">191,7881</td>
+<td class="col-num" data-order="205.4986141443948">205,4986</td>
+<td class="col-num" data-order="207.95500144672272">207,9550</td>
+<td class="col-num" data-order="223.43121846500736">223,4312</td>
+<td class="col-num" data-order="195.39523512403147">195,3952</td>
+<td class="col-num" data-order="196.2568457941032">196,2568</td>
+<td class="col-num" data-order="201.11092157408652">201,1109</td>
+<td class="col-num" data-order="191.79605341912503">191,7961</td>
+<td class="col-num" data-order="189.11318785894957">18911,32%</td>
+<td class="col-num" data-order="198.72098034030915">198,7210</td>
+<td class="col-num" data-order="167.75905826498686">167,7591</td>
+<td class="col-num" data-order="170.6866440000032">170,6866</td>
+<td class="col-num" data-order="212.07511581232475">212,0751</td>
+<td class="col-num" data-order="204.3587115664237">204,3587</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190531">2019-05-31</td>
+<td class="col-num" data-order="193.72186442156988">193,7219</td>
+<td class="col-num" data-order="197.69298202050007">197,6930</td>
+<td class="col-num" data-order="182.73096252276304">182,7310</td>
+<td class="col-num" data-order="185.204890771672">185,2049</td>
+<td class="col-num" data-order="197.46719425493177">197,4672</td>
+<td class="col-num" data-order="200.8810950843368">200,8811</td>
+<td class="col-num" data-order="206.47298113297495">206,4730</td>
+<td class="col-num" data-order="185.93853206500611">185,9385</td>
+<td class="col-num" data-order="187.49399974689425">187,4940</td>
+<td class="col-num" data-order="191.54328890239051">191,5433</td>
+<td class="col-num" data-order="182.7349804873253">182,7350</td>
+<td class="col-num" data-order="179.1361940317745">17913,62%</td>
+<td class="col-num" data-order="188.5247128417436">188,5247</td>
+<td class="col-num" data-order="160.3913467619664">160,3913</td>
+<td class="col-num" data-order="161.63330649352747">161,6333</td>
+<td class="col-num" data-order="211.62711341432248">211,6271</td>
+<td class="col-num" data-order="207.02105848192">207,0211</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190630">2019-06-30</td>
+<td class="col-num" data-order="199.83138087094665">199,8314</td>
+<td class="col-num" data-order="203.66017740612452">203,6602</td>
+<td class="col-num" data-order="187.60611550240475">187,6061</td>
+<td class="col-num" data-order="189.90536574212348">189,9054</td>
+<td class="col-num" data-order="202.95405425250848">202,9541</td>
+<td class="col-num" data-order="206.16964511275765">206,1696</td>
+<td class="col-num" data-order="213.64520944509547">213,6452</td>
+<td class="col-num" data-order="190.258279614706">190,2583</td>
+<td class="col-num" data-order="191.7164477566026">191,7164</td>
+<td class="col-num" data-order="194.9307758119044">194,9308</td>
+<td class="col-num" data-order="186.20034368796524">186,2003</td>
+<td class="col-num" data-order="181.7425519467075">18174,26%</td>
+<td class="col-num" data-order="189.7614816311038">189,7615</td>
+<td class="col-num" data-order="164.38210911033698">164,3821</td>
+<td class="col-num" data-order="163.9756185904707">163,9756</td>
+<td class="col-num" data-order="214.60999076103667">214,6100</td>
+<td class="col-num" data-order="218.185578645171">218,1856</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190731">2019-07-31</td>
+<td class="col-num" data-order="196.1718881684471">196,1719</td>
+<td class="col-num" data-order="199.29121096120045">199,2912</td>
+<td class="col-num" data-order="183.4613156924269">183,4613</td>
+<td class="col-num" data-order="185.7295970296204">185,7296</td>
+<td class="col-num" data-order="197.9418178260356">197,9418</td>
+<td class="col-num" data-order="201.0156545438202">201,0157</td>
+<td class="col-num" data-order="213.73616783839736">213,7362</td>
+<td class="col-num" data-order="185.4513476464704">185,4513</td>
+<td class="col-num" data-order="186.81522381949028">186,8152</td>
+<td class="col-num" data-order="191.607701401661">191,6077</td>
+<td class="col-num" data-order="180.23097942487144">180,2310</td>
+<td class="col-num" data-order="176.42175560256842">17642,18%</td>
+<td class="col-num" data-order="183.2350021459141">183,2350</td>
+<td class="col-num" data-order="156.32898440473886">156,3290</td>
+<td class="col-num" data-order="158.02719309758248">158,0272</td>
+<td class="col-num" data-order="214.47001822653831">214,4700</td>
+<td class="col-num" data-order="226.1655138893696">226,1655</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190831">2019-08-31</td>
+<td class="col-num" data-order="208.15661561949304">208,1566</td>
+<td class="col-num" data-order="209.9470017390973">209,9470</td>
+<td class="col-num" data-order="195.2170997477666">195,2171</td>
+<td class="col-num" data-order="197.71693107151768">197,7169</td>
+<td class="col-num" data-order="205.5803340131197">205,5803</td>
+<td class="col-num" data-order="208.88364385282165">208,8836</td>
+<td class="col-num" data-order="225.9855192203348">225,9855</td>
+<td class="col-num" data-order="193.6437584305379">193,6438</td>
+<td class="col-num" data-order="195.49016183531504">195,4902</td>
+<td class="col-num" data-order="206.50628313624213">206,5063</td>
+<td class="col-num" data-order="189.3764974088068">189,3765</td>
+<td class="col-num" data-order="188.53617638248332">18853,62%</td>
+<td class="col-num" data-order="194.89173733919392">194,8917</td>
+<td class="col-num" data-order="159.06095038876342">159,0610</td>
+<td class="col-num" data-order="168.76522969971495">168,7652</td>
+<td class="col-num" data-order="225.9927592586556">225,9928</td>
+<td class="col-num" data-order="227.020595907544">227,0206</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20190930">2019-09-30</td>
+<td class="col-num" data-order="210.0018514516662">210,0019</td>
+<td class="col-num" data-order="212.88855530593628">212,8886</td>
+<td class="col-num" data-order="197.9785778136263">197,9786</td>
+<td class="col-num" data-order="200.54631454407595">200,5463</td>
+<td class="col-num" data-order="209.7399193868345">209,7399</td>
+<td class="col-num" data-order="213.0823534425041">213,0824</td>
+<td class="col-num" data-order="230.563401986324">230,5634</td>
+<td class="col-num" data-order="197.7977429960048">197,7977</td>
+<td class="col-num" data-order="199.8804861745423">199,8805</td>
+<td class="col-num" data-order="211.5431688257708">211,5432</td>
+<td class="col-num" data-order="194.12119140161005">194,1212</td>
+<td class="col-num" data-order="192.46323239741952">19246,32%</td>
+<td class="col-num" data-order="200.27996467750177">200,2800</td>
+<td class="col-num" data-order="163.95223520375887">163,9522</td>
+<td class="col-num" data-order="173.80704514508489">173,8070</td>
+<td class="col-num" data-order="229.0149842467112">229,0150</td>
+<td class="col-num" data-order="232.29788629105173">232,2979</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20191031">2019-10-31</td>
+<td class="col-num" data-order="206.5351378657354">206,5351</td>
+<td class="col-num" data-order="209.0336004078939">209,0336</td>
+<td class="col-num" data-order="193.94779005733253">193,9478</td>
+<td class="col-num" data-order="197.3162721746752">197,3163</td>
+<td class="col-num" data-order="206.02426003589804">206,0243</td>
+<td class="col-num" data-order="210.13550610967724">210,1355</td>
+<td class="col-num" data-order="224.26234420232512">224,2623</td>
+<td class="col-num" data-order="194.6735365995848">194,6735</td>
+<td class="col-num" data-order="196.72519709324013">196,7252</td>
+<td class="col-num" data-order="208.91533862631465">208,9153</td>
+<td class="col-num" data-order="190.3964660263501">190,3965</td>
+<td class="col-num" data-order="191.5632209226294">19156,32%</td>
+<td class="col-num" data-order="200.3201306304723">200,3201</td>
+<td class="col-num" data-order="155.05049374959844">155,0505</td>
+<td class="col-num" data-order="173.48942783508673">173,4894</td>
+<td class="col-num" data-order="222.27307950706668">222,2731</td>
+<td class="col-num" data-order="237.70284725015776">237,7028</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20191130">2019-11-30</td>
+<td class="col-num" data-order="216.130328146823">216,1303</td>
+<td class="col-num" data-order="218.30316998705484">218,3032</td>
+<td class="col-num" data-order="201.9961591716257">201,9962</td>
+<td class="col-num" data-order="206.123980236257">206,1240</td>
+<td class="col-num" data-order="216.1212770210636">216,1213</td>
+<td class="col-num" data-order="220.8105656568141">220,8106</td>
+<td class="col-num" data-order="242.9154212120532">242,9154</td>
+<td class="col-num" data-order="204.5086305232671">204,5086</td>
+<td class="col-num" data-order="206.6403690557033">206,6404</td>
+<td class="col-num" data-order="223.64097275896543">223,6410</td>
+<td class="col-num" data-order="200.9458574124018">200,9459</td>
+<td class="col-num" data-order="202.61382455029823">20261,38%</td>
+<td class="col-num" data-order="211.34934778753572">211,3493</td>
+<td class="col-num" data-order="156.8917832410789">156,8918</td>
+<td class="col-num" data-order="184.63490228712644">184,6349</td>
+<td class="col-num" data-order="242.64499849451323">242,6450</td>
+<td class="col-num" data-order="244.7821791016439">244,7822</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20191231">2019-12-31</td>
+<td class="col-num" data-order="220.25607906525656">220,2561</td>
+<td class="col-num" data-order="222.47230815658517">222,4723</td>
+<td class="col-num" data-order="205.83703659887195">205,8370</td>
+<td class="col-num" data-order="209.3787348848311">209,3787</td>
+<td class="col-num" data-order="220.8940822633921">220,8941</td>
+<td class="col-num" data-order="225.05746149168357">225,0575</td>
+<td class="col-num" data-order="242.67290199725085">242,6729</td>
+<td class="col-num" data-order="208.66154317222544">208,6615</td>
+<td class="col-num" data-order="210.5325000949942">210,5325</td>
+<td class="col-num" data-order="221.9623373416036">221,9623</td>
+<td class="col-num" data-order="202.5933140268782">202,5933</td>
+<td class="col-num" data-order="205.0112516479232">20501,13%</td>
+<td class="col-num" data-order="210.93287311016587">210,9329</td>
+<td class="col-num" data-order="162.71325823947208">162,7133</td>
+<td class="col-num" data-order="184.26212188033725">184,2621</td>
+<td class="col-num" data-order="240.48926381817915">240,4893</td>
+<td class="col-num" data-order="268.2414459377171">268,2414</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200131">2020-01-31</td>
+<td class="col-num" data-order="226.60344901882831">226,6034</td>
+<td class="col-num" data-order="228.1765263219621">228,1765</td>
+<td class="col-num" data-order="209.88928918673705">209,8893</td>
+<td class="col-num" data-order="214.5694527482027">214,5695</td>
+<td class="col-num" data-order="223.27371962440964">223,2737</td>
+<td class="col-num" data-order="228.79868795456687">228,7987</td>
+<td class="col-num" data-order="249.44858863687097">249,4486</td>
+<td class="col-num" data-order="210.33201405173992">210,3320</td>
+<td class="col-num" data-order="212.8308461961073">212,8308</td>
+<td class="col-num" data-order="229.1966890866569">229,1967</td>
+<td class="col-num" data-order="205.5163790718712">205,5164</td>
+<td class="col-num" data-order="206.94462518585735">20694,46%</td>
+<td class="col-num" data-order="212.49722939952625">212,4972</td>
+<td class="col-num" data-order="167.82636131488954">167,8264</td>
+<td class="col-num" data-order="186.9087190032327">186,9087</td>
+<td class="col-num" data-order="248.42359108062672">248,4236</td>
+<td class="col-num" data-order="265.8939503156">265,8940</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200229">2020-02-29</td>
+<td class="col-num" data-order="222.85789291066544">222,8579</td>
+<td class="col-num" data-order="223.49040800463536">223,4904</td>
+<td class="col-num" data-order="205.64523001623053">205,6452</td>
+<td class="col-num" data-order="210.97514598201488">210,9751</td>
+<td class="col-num" data-order="216.46600621167872">216,4660</td>
+<td class="col-num" data-order="222.8142249166124">222,8142</td>
+<td class="col-num" data-order="237.9647949063686">237,9648</td>
+<td class="col-num" data-order="204.420018386606">204,4200</td>
+<td class="col-num" data-order="207.21781018891804">207,2178</td>
+<td class="col-num" data-order="224.11640330411248">224,1164</td>
+<td class="col-num" data-order="200.6328207589236">200,6328</td>
+<td class="col-num" data-order="206.3448529574812">20634,49%</td>
+<td class="col-num" data-order="216.4699481283601">216,4699</td>
+<td class="col-num" data-order="159.09123069343144">159,0912</td>
+<td class="col-num" data-order="179.21722175429247">179,2172</td>
+<td class="col-num" data-order="242.3132999568658">242,3133</td>
+<td class="col-num" data-order="245.06986125975743">245,0699</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200331">2020-03-31</td>
+<td class="col-num" data-order="208.12507333317228">208,1251</td>
+<td class="col-num" data-order="209.3155740859436">209,3156</td>
+<td class="col-num" data-order="192.42388474104504">192,4239</td>
+<td class="col-num" data-order="199.27672463219676">199,2767</td>
+<td class="col-num" data-order="193.9931100885041">193,9931</td>
+<td class="col-num" data-order="201.86125655205296">201,8613</td>
+<td class="col-num" data-order="225.76263527208116">225,7626</td>
+<td class="col-num" data-order="183.1935315204132">183,1935</td>
+<td class="col-num" data-order="188.9202933802103">188,9203</td>
+<td class="col-num" data-order="221.54908393032224">221,5491</td>
+<td class="col-num" data-order="188.80449434028705">188,8045</td>
+<td class="col-num" data-order="200.60599801509255">20060,60%</td>
+<td class="col-num" data-order="219.1613585036167">219,1614</td>
+<td class="col-num" data-order="133.95766809091756">133,9577</td>
+<td class="col-num" data-order="169.69125016510029">169,6913</td>
+<td class="col-num" data-order="226.60594758548552">226,6059</td>
+<td class="col-num" data-order="161.07737537107204">161,0774</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200430">2020-04-30</td>
+<td class="col-num" data-order="230.48105177868595">230,4811</td>
+<td class="col-num" data-order="237.27352839390124">237,2735</td>
+<td class="col-num" data-order="214.48146292753356">214,4815</td>
+<td class="col-num" data-order="225.09486321781836">225,0949</td>
+<td class="col-num" data-order="218.00658710832025">218,0066</td>
+<td class="col-num" data-order="228.7024544252271">228,7025</td>
+<td class="col-num" data-order="276.3637484243705">276,3637</td>
+<td class="col-num" data-order="204.33535504891816">204,3354</td>
+<td class="col-num" data-order="213.1564599793215">213,1565</td>
+<td class="col-num" data-order="247.0530800282893">247,0531</td>
+<td class="col-num" data-order="213.51348659434024">213,5135</td>
+<td class="col-num" data-order="221.45077173990785">22145,08%</td>
+<td class="col-num" data-order="242.39056250104568">242,3906</td>
+<td class="col-num" data-order="149.38644187165718">149,3864</td>
+<td class="col-num" data-order="185.6096110422368">185,6096</td>
+<td class="col-num" data-order="254.7248209559371">254,7248</td>
+<td class="col-num" data-order="182.18754167912687">182,1875</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200531">2020-05-31</td>
+<td class="col-num" data-order="247.26218380338415">247,2622</td>
+<td class="col-num" data-order="251.15799461729037">251,1580</td>
+<td class="col-num" data-order="227.56980983311945">227,5698</td>
+<td class="col-num" data-order="237.06949893796167">237,0695</td>
+<td class="col-num" data-order="232.6098378889417">232,6098</td>
+<td class="col-num" data-order="242.4565496578571">242,4565</td>
+<td class="col-num" data-order="292.2250875766153">292,2251</td>
+<td class="col-num" data-order="217.616095637334">217,6161</td>
+<td class="col-num" data-order="225.31263649988608">225,3126</td>
+<td class="col-num" data-order="263.66687091806074">263,6669</td>
+<td class="col-num" data-order="226.22191801197">226,2219</td>
+<td class="col-num" data-order="234.1068445250773">23410,68%</td>
+<td class="col-num" data-order="249.1460984012003">249,1461</td>
+<td class="col-num" data-order="161.2300383278521">161,2300</td>
+<td class="col-num" data-order="196.73439090485132">196,7344</td>
+<td class="col-num" data-order="272.9166369641601">272,9166</td>
+<td class="col-num" data-order="194.6370072530749">194,6370</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200630">2020-06-30</td>
+<td class="col-num" data-order="261.1938898042488">261,1939</td>
+<td class="col-num" data-order="265.5859389423449">265,5859</td>
+<td class="col-num" data-order="240.5483551450831">240,5484</td>
+<td class="col-num" data-order="250.15473811671245">250,1547</td>
+<td class="col-num" data-order="246.81895380124485">246,8190</td>
+<td class="col-num" data-order="257.1374934928648">257,1375</td>
+<td class="col-num" data-order="298.3470736078038">298,3471</td>
+<td class="col-num" data-order="230.85342414177535">230,8534</td>
+<td class="col-num" data-order="238.8473531215809">238,8474</td>
+<td class="col-num" data-order="272.17097191397227">272,1710</td>
+<td class="col-num" data-order="237.97601813566857">237,9760</td>
+<td class="col-num" data-order="245.9276485544701">24592,76%</td>
+<td class="col-num" data-order="262.93667205193105">262,9367</td>
+<td class="col-num" data-order="168.14819039322555">168,1482</td>
+<td class="col-num" data-order="204.3465708175125">204,3466</td>
+<td class="col-num" data-order="299.28784055054336">299,2878</td>
+<td class="col-num" data-order="216.7967216063192">216,7967</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200731">2020-07-31</td>
+<td class="col-num" data-order="267.37786883100347">267,3779</td>
+<td class="col-num" data-order="270.7563291610742">270,7563</td>
+<td class="col-num" data-order="244.51738677540845">244,5174</td>
+<td class="col-num" data-order="253.7396900103035">253,7397</td>
+<td class="col-num" data-order="249.5544405213001">249,5544</td>
+<td class="col-num" data-order="259.78519793587805">259,7852</td>
+<td class="col-num" data-order="292.7751938453304">292,7752</td>
+<td class="col-num" data-order="232.2712002704071">232,2712</td>
+<td class="col-num" data-order="240.6784339453205">240,6784</td>
+<td class="col-num" data-order="269.9606205266235">269,9606</td>
+<td class="col-num" data-order="237.42311124864636">237,4231</td>
+<td class="col-num" data-order="247.84278300476043">24784,28%</td>
+<td class="col-num" data-order="260.549465289866">260,5495</td>
+<td class="col-num" data-order="169.5947027951854">169,5947</td>
+<td class="col-num" data-order="198.61646169887467">198,6165</td>
+<td class="col-num" data-order="295.49370148404006">295,4937</td>
+<td class="col-num" data-order="236.1279387880748">236,1279</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200831">2020-08-31</td>
+<td class="col-num" data-order="283.28584346602474">283,2858</td>
+<td class="col-num" data-order="286.56945685895784">286,5695</td>
+<td class="col-num" data-order="259.00583729127214">259,0058</td>
+<td class="col-num" data-order="269.3701951130424">269,3702</td>
+<td class="col-num" data-order="265.4826138337109">265,4826</td>
+<td class="col-num" data-order="277.0109971896903">277,0110</td>
+<td class="col-num" data-order="323.0671062908715">323,0671</td>
+<td class="col-num" data-order="247.8614654318883">247,8615</td>
+<td class="col-num" data-order="256.4890232063504">256,4890</td>
+<td class="col-num" data-order="298.1121727955149">298,1122</td>
+<td class="col-num" data-order="256.12138041841115">256,1214</td>
+<td class="col-num" data-order="269.8875288578536">26988,75%</td>
+<td class="col-num" data-order="286.80147357751">286,8015</td>
+<td class="col-num" data-order="173.2388973248031">173,2389</td>
+<td class="col-num" data-order="215.71807127591137">215,7181</td>
+<td class="col-num" data-order="320.7786263498961">320,7786</td>
+<td class="col-num" data-order="229.85804486612503">229,8580</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20200930">2020-09-30</td>
+<td class="col-num" data-order="283.66609513956524">283,6661</td>
+<td class="col-num" data-order="287.1049597904384">287,1050</td>
+<td class="col-num" data-order="259.7321493640827">259,7321</td>
+<td class="col-num" data-order="270.4800412864168">270,4800</td>
+<td class="col-num" data-order="266.2580036619499">266,2580</td>
+<td class="col-num" data-order="278.6118249135305">278,6118</td>
+<td class="col-num" data-order="311.1144909482535">311,1145</td>
+<td class="col-num" data-order="249.2029271056056">249,2029</td>
+<td class="col-num" data-order="258.5954477540333">258,5954</td>
+<td class="col-num" data-order="304.0495181691482">304,0495</td>
+<td class="col-num" data-order="260.1197595913962">260,1198</td>
+<td class="col-num" data-order="278.070445280881">27807,04%</td>
+<td class="col-num" data-order="300.6483581847187">300,6484</td>
+<td class="col-num" data-order="176.25008642688175">176,2501</td>
+<td class="col-num" data-order="216.2160168043001">216,2160</td>
+<td class="col-num" data-order="317.9821091570795">317,9821</td>
+<td class="col-num" data-order="218.67588895829675">218,6759</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20201031">2020-10-31</td>
+<td class="col-num" data-order="287.0563232797919">287,0563</td>
+<td class="col-num" data-order="291.0955907920866">291,0956</td>
+<td class="col-num" data-order="261.76987723736835">261,7699</td>
+<td class="col-num" data-order="273.3753278980975">273,3753</td>
+<td class="col-num" data-order="269.0841092389514">269,0841</td>
+<td class="col-num" data-order="282.43358742704146">282,4336</td>
+<td class="col-num" data-order="309.1394340782965">309,1394</td>
+<td class="col-num" data-order="250.97673055677805">250,9767</td>
+<td class="col-num" data-order="261.5953448082869">261,5953</td>
+<td class="col-num" data-order="303.1165752771734">303,1166</td>
+<td class="col-num" data-order="262.4835919192896">262,4836</td>
+<td class="col-num" data-order="282.0974454817494">28209,74%</td>
+<td class="col-num" data-order="307.1752792129378">307,1753</td>
+<td class="col-num" data-order="182.89797076354975">182,8980</td>
+<td class="col-num" data-order="207.94929222246225">207,9493</td>
+<td class="col-num" data-order="331.90337173112795">331,9034</td>
+<td class="col-num" data-order="215.68094721762176">215,6809</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20201130">2020-11-30</td>
+<td class="col-num" data-order="297.9063411184739">297,9063</td>
+<td class="col-num" data-order="304.35623636246515">304,3562</td>
+<td class="col-num" data-order="271.7359165808488">271,7359</td>
+<td class="col-num" data-order="283.731023916718">283,7310</td>
+<td class="col-num" data-order="287.9509925717784">287,9510</td>
+<td class="col-num" data-order="301.7265313957366">301,7265</td>
+<td class="col-num" data-order="332.96592266247654">332,9659</td>
+<td class="col-num" data-order="267.7317976606136">267,7318</td>
+<td class="col-num" data-order="277.83359179478106">277,8336</td>
+<td class="col-num" data-order="317.2494927600087">317,2495</td>
+<td class="col-num" data-order="276.7106205976066">276,7106</td>
+<td class="col-num" data-order="292.0518211697574">29205,18%</td>
+<td class="col-num" data-order="312.11646885063">312,1165</td>
+<td class="col-num" data-order="198.211312900248">198,2113</td>
+<td class="col-num" data-order="225.0035806063675">225,0036</td>
+<td class="col-num" data-order="348.0422060423574">348,0422</td>
+<td class="col-num" data-order="251.6455253939517">251,6455</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20201231">2020-12-31</td>
+<td class="col-num" data-order="312.06771325211986">312,0677</td>
+<td class="col-num" data-order="318.8787977691981">318,8788</td>
+<td class="col-num" data-order="283.7961064324782">283,7961</td>
+<td class="col-num" data-order="295.7450915626756">295,7451</td>
+<td class="col-num" data-order="301.73403617764285">301,7340</td>
+<td class="col-num" data-order="315.78544220975687">315,7854</td>
+<td class="col-num" data-order="337.3991820691737">337,3992</td>
+<td class="col-num" data-order="279.16838037314164">279,1684</td>
+<td class="col-num" data-order="289.56586823568534">289,5659</td>
+<td class="col-num" data-order="324.3437327142659">324,3437</td>
+<td class="col-num" data-order="287.2014039877358">287,2014</td>
+<td class="col-num" data-order="301.8274053825865">30182,74%</td>
+<td class="col-num" data-order="323.8910940072759">323,8911</td>
+<td class="col-num" data-order="209.8374027507639">209,8374</td>
+<td class="col-num" data-order="229.00656375228712">229,0066</td>
+<td class="col-num" data-order="354.97581633039096">354,9758</td>
+<td class="col-num" data-order="272.828183062528">272,8282</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210131">2021-01-31</td>
+<td class="col-num" data-order="322.26531976613273">322,2653</td>
+<td class="col-num" data-order="329.34617431173166">329,3462</td>
+<td class="col-num" data-order="293.7167266772629">293,7167</td>
+<td class="col-num" data-order="305.2137546890329">305,2138</td>
+<td class="col-num" data-order="313.5471892683815">313,5472</td>
+<td class="col-num" data-order="327.06037998681234">327,0604</td>
+<td class="col-num" data-order="356.55820961983864">356,5582</td>
+<td class="col-num" data-order="289.700844344787">289,7008</td>
+<td class="col-num" data-order="300.19453367302094">300,1945</td>
+<td class="col-num" data-order="338.0998958379447">338,0999</td>
+<td class="col-num" data-order="299.70353979492137">299,7035</td>
+<td class="col-num" data-order="319.6211850583753">31962,12%</td>
+<td class="col-num" data-order="343.8616006295705">343,8616</td>
+<td class="col-num" data-order="210.0646882926881">210,0647</td>
+<td class="col-num" data-order="237.8808082815332">237,8808</td>
+<td class="col-num" data-order="369.31375606635913">369,3138</td>
+<td class="col-num" data-order="261.593521386704">261,5935</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210228">2021-02-28</td>
+<td class="col-num" data-order="331.9106043905151">331,9106</td>
+<td class="col-num" data-order="339.81366151853945">339,8137</td>
+<td class="col-num" data-order="303.1760936667061">303,1761</td>
+<td class="col-num" data-order="313.87598742171616">313,8760</td>
+<td class="col-num" data-order="328.83236276863823">328,8324</td>
+<td class="col-num" data-order="341.0867378668111">341,0867</td>
+<td class="col-num" data-order="392.50798735125903">392,5080</td>
+<td class="col-num" data-order="302.92335751431773">302,9234</td>
+<td class="col-num" data-order="312.2217621056047">312,2218</td>
+<td class="col-num" data-order="352.1376662166654">352,1377</td>
+<td class="col-num" data-order="314.90446334117075">314,9045</td>
+<td class="col-num" data-order="331.1551045743876">33115,51%</td>
+<td class="col-num" data-order="360.34455339752094">360,3446</td>
+<td class="col-num" data-order="218.73774388935277">218,7377</td>
+<td class="col-num" data-order="250.4017504838909">250,4018</td>
+<td class="col-num" data-order="367.1002682074383">367,1003</td>
+<td class="col-num" data-order="252.8564149107312">252,8564</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210331">2021-03-31</td>
+<td class="col-num" data-order="353.3197912562253">353,3198</td>
+<td class="col-num" data-order="363.9201789374484">363,9202</td>
+<td class="col-num" data-order="323.86728058718467">323,8673</td>
+<td class="col-num" data-order="335.1817966500858">335,1818</td>
+<td class="col-num" data-order="353.6047062498511">353,6047</td>
+<td class="col-num" data-order="366.8201405202613">366,8201</td>
+<td class="col-num" data-order="423.07553644404135">423,0755</td>
+<td class="col-num" data-order="324.8616566743257">324,8617</td>
+<td class="col-num" data-order="335.1041414369207">335,1041</td>
+<td class="col-num" data-order="377.9844838315933">377,9845</td>
+<td class="col-num" data-order="338.5179256456683">338,5179</td>
+<td class="col-num" data-order="349.544173613573">34954,42%</td>
+<td class="col-num" data-order="378.5640086219093">378,5640</td>
+<td class="col-num" data-order="243.3507872555908">243,3508</td>
+<td class="col-num" data-order="271.2633975124102">271,2634</td>
+<td class="col-num" data-order="384.637123420115">384,6371</td>
+<td class="col-num" data-order="267.5051406883241">267,5051</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210430">2021-04-30</td>
+<td class="col-num" data-order="338.02377968135136">338,0238</td>
+<td class="col-num" data-order="346.3172826679314">346,3173</td>
+<td class="col-num" data-order="307.8742890921563">307,8743</td>
+<td class="col-num" data-order="319.2681353898656">319,2681</td>
+<td class="col-num" data-order="336.2287871133348">336,2288</td>
+<td class="col-num" data-order="349.3811803418856">349,3812</td>
+<td class="col-num" data-order="406.7411497791725">406,7411</td>
+<td class="col-num" data-order="309.41567270565326">309,4157</td>
+<td class="col-num" data-order="318.61746371275143">318,6175</td>
+<td class="col-num" data-order="362.121433541908">362,1214</td>
+<td class="col-num" data-order="318.6903398675054">318,6903</td>
+<td class="col-num" data-order="330.9098967840671">33090,99%</td>
+<td class="col-num" data-order="352.720534745026">352,7205</td>
+<td class="col-num" data-order="225.65272394669444">225,6527</td>
+<td class="col-num" data-order="260.6733897663925">260,6734</td>
+<td class="col-num" data-order="370.05001564050445">370,0500</td>
+<td class="col-num" data-order="276.67807528262983">276,6781</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210531">2021-05-31</td>
+<td class="col-num" data-order="342.9929435798152">342,9929</td>
+<td class="col-num" data-order="348.687487707732">348,6875</td>
+<td class="col-num" data-order="310.86954218299286">310,8695</td>
+<td class="col-num" data-order="323.554450503217">323,5545</td>
+<td class="col-num" data-order="336.92252027294603">336,9225</td>
+<td class="col-num" data-order="350.86217546170843">350,8622</td>
+<td class="col-num" data-order="406.27703011688726">406,2770</td>
+<td class="col-num" data-order="311.8897270696872">311,8897</td>
+<td class="col-num" data-order="320.864086616607">320,8641</td>
+<td class="col-num" data-order="364.5607967834672">364,5608</td>
+<td class="col-num" data-order="319.7887331742876">319,7887</td>
+<td class="col-num" data-order="333.5561178462952">33355,61%</td>
+<td class="col-num" data-order="353.65387335201046">353,6539</td>
+<td class="col-num" data-order="223.40826988437252">223,4083</td>
+<td class="col-num" data-order="265.9264177810962">265,9264</td>
+<td class="col-num" data-order="361.006183773259">361,0062</td>
+<td class="col-num" data-order="293.68521522092425">293,6852</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210630">2021-06-30</td>
+<td class="col-num" data-order="323.42011329736016">323,4201</td>
+<td class="col-num" data-order="328.8695127119234">328,8695</td>
+<td class="col-num" data-order="293.5618310452176">293,5618</td>
+<td class="col-num" data-order="304.73658017725404">304,7366</td>
+<td class="col-num" data-order="321.3643032170086">321,3643</td>
+<td class="col-num" data-order="333.7025272077872">333,7025</td>
+<td class="col-num" data-order="399.75815128034384">399,7582</td>
+<td class="col-num" data-order="297.68114815957205">297,6811</td>
+<td class="col-num" data-order="304.6073452457969">304,6073</td>
+<td class="col-num" data-order="345.33927017214984">345,3393</td>
+<td class="col-num" data-order="302.00207594578563">302,0021</td>
+<td class="col-num" data-order="315.99895135732345">31599,90%</td>
+<td class="col-num" data-order="332.86042524229214">332,8604</td>
+<td class="col-num" data-order="212.4488739009903">212,4489</td>
+<td class="col-num" data-order="247.0186942474508">247,0187</td>
+<td class="col-num" data-order="337.9736433656791">337,9736</td>
+<td class="col-num" data-order="294.99262567264867">294,9926</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210731">2021-07-31</td>
+<td class="col-num" data-order="328.95876765234664">328,9588</td>
+<td class="col-num" data-order="332.5729514198462">332,5730</td>
+<td class="col-num" data-order="296.5939642750179">296,5940</td>
+<td class="col-num" data-order="307.8760043110627">307,8760</td>
+<td class="col-num" data-order="323.25209684742794">323,2521</td>
+<td class="col-num" data-order="336.0984785510398">336,0985</td>
+<td class="col-num" data-order="406.1712736882863">406,1713</td>
+<td class="col-num" data-order="299.0956365066784">299,0956</td>
+<td class="col-num" data-order="305.5671157333417">305,5671</td>
+<td class="col-num" data-order="356.31490563169893">356,3149</td>
+<td class="col-num" data-order="305.5705894287961">305,5706</td>
+<td class="col-num" data-order="315.666366547229">31566,64%</td>
+<td class="col-num" data-order="332.6515346714027">332,6515</td>
+<td class="col-num" data-order="216.61353533643663">216,6135</td>
+<td class="col-num" data-order="253.78364017542276">253,7836</td>
+<td class="col-num" data-order="344.32052423062163">344,3205</td>
+<td class="col-num" data-order="281.2384022978917">281,2384</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210831">2021-08-31</td>
+<td class="col-num" data-order="341.38348565203256">341,3835</td>
+<td class="col-num" data-order="346.39146627076326">346,3915</td>
+<td class="col-num" data-order="306.9055913942296">306,9056</td>
+<td class="col-num" data-order="318.8823245484661">318,8823</td>
+<td class="col-num" data-order="336.4564359282321">336,4564</td>
+<td class="col-num" data-order="350.4817769319436">350,4818</td>
+<td class="col-num" data-order="421.50975625012575">421,5098</td>
+<td class="col-num" data-order="310.0222825103384">310,0223</td>
+<td class="col-num" data-order="317.3522312675121">317,3522</td>
+<td class="col-num" data-order="369.9063764800362">369,9064</td>
+<td class="col-num" data-order="320.2995100076875">320,2995</td>
+<td class="col-num" data-order="326.39136630270986">32639,14%</td>
+<td class="col-num" data-order="345.08103208945727">345,0810</td>
+<td class="col-num" data-order="235.6458206631696">235,6458</td>
+<td class="col-num" data-order="261.66957693062307">261,6696</td>
+<td class="col-num" data-order="361.0364942259737">361,0365</td>
+<td class="col-num" data-order="272.17569638077487">272,1757</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20210930">2021-09-30</td>
+<td class="col-num" data-order="341.229375873832">341,2294</td>
+<td class="col-num" data-order="344.36466889507886">344,3647</td>
+<td class="col-num" data-order="306.929506425764">306,9295</td>
+<td class="col-num" data-order="318.1265145002174">318,1265</td>
+<td class="col-num" data-order="335.710153526573">335,7102</td>
+<td class="col-num" data-order="348.111067474779">348,1111</td>
+<td class="col-num" data-order="437.7938066762148">437,7938</td>
+<td class="col-num" data-order="309.8792077640932">309,8792</td>
+<td class="col-num" data-order="315.7596552917603">315,7597</td>
+<td class="col-num" data-order="371.8423949012577">371,8424</td>
+<td class="col-num" data-order="322.05613437689215">322,0561</td>
+<td class="col-num" data-order="328.9940293563424">32899,40%</td>
+<td class="col-num" data-order="351.7553885119021">351,7554</td>
+<td class="col-num" data-order="228.1431780930313">228,1432</td>
+<td class="col-num" data-order="263.2214017583817">263,2214</td>
+<td class="col-num" data-order="364.1002326931569">364,1002</td>
+<td class="col-num" data-order="254.20732140068188">254,2073</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20211031">2021-10-31</td>
+<td class="col-num" data-order="359.5107282878533">359,5107</td>
+<td class="col-num" data-order="361.7932903906371">361,7933</td>
+<td class="col-num" data-order="322.3395876080108">322,3396</td>
+<td class="col-num" data-order="334.0992244778108">334,0992</td>
+<td class="col-num" data-order="353.680917336675">353,6809</td>
+<td class="col-num" data-order="366.2566823145547">366,2567</td>
+<td class="col-num" data-order="494.4205009747669">494,4205</td>
+<td class="col-num" data-order="325.8003340677">325,8003</td>
+<td class="col-num" data-order="331.8168363627672">331,8168</td>
+<td class="col-num" data-order="404.115759543837">404,1158</td>
+<td class="col-num" data-order="343.1268429817292">343,1268</td>
+<td class="col-num" data-order="350.403444736">35040,34%</td>
+<td class="col-num" data-order="367.3477704984315">367,3478</td>
+<td class="col-num" data-order="233.09383139407248">233,0938</td>
+<td class="col-num" data-order="286.161547263665">286,1615</td>
+<td class="col-num" data-order="398.57311969254425">398,5731</td>
+<td class="col-num" data-order="229.9167651256424">229,9168</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20211130">2021-11-30</td>
+<td class="col-num" data-order="343.7403787139685">343,7404</td>
+<td class="col-num" data-order="347.45066649406056">347,4507</td>
+<td class="col-num" data-order="309.6946876250385">309,6947</td>
+<td class="col-num" data-order="321.33003511204805">321,3300</td>
+<td class="col-num" data-order="337.1977222689511">337,1977</td>
+<td class="col-num" data-order="349.53750418542467">349,5375</td>
+<td class="col-num" data-order="483.8406941355746">483,8407</td>
+<td class="col-num" data-order="310.5029087175852">310,5029</td>
+<td class="col-num" data-order="316.9810604670692">316,9811</td>
+<td class="col-num" data-order="386.6682801578048">386,6683</td>
+<td class="col-num" data-order="326.7921194944022">326,7921</td>
+<td class="col-num" data-order="333.1566672838157">33315,67%</td>
+<td class="col-num" data-order="352.9111511300832">352,9112</td>
+<td class="col-num" data-order="221.6424730485828">221,6425</td>
+<td class="col-num" data-order="268.6904280951496">268,6904</td>
+<td class="col-num" data-order="364.4324637603094">364,4325</td>
+<td class="col-num" data-order="225.9017982664021">225,9018</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20211231">2021-12-31</td>
+<td class="col-num" data-order="354.76989516112985">354,7699</td>
+<td class="col-num" data-order="355.982766922942">355,9828</td>
+<td class="col-num" data-order="317.91700603131005">317,9170</td>
+<td class="col-num" data-order="330.13551795869785">330,1355</td>
+<td class="col-num" data-order="346.4043953172011">346,4044</td>
+<td class="col-num" data-order="359.35381847302415">359,3538</td>
+<td class="col-num" data-order="496.2062963577289">496,2063</td>
+<td class="col-num" data-order="320.2695806856836">320,2696</td>
+<td class="col-num" data-order="325.9844998548371">325,9845</td>
+<td class="col-num" data-order="400.2925543106719">400,2926</td>
+<td class="col-num" data-order="336.52442324496064">336,5244</td>
+<td class="col-num" data-order="341.5227856845551">34152,28%</td>
+<td class="col-num" data-order="358.21722830992564">358,2172</td>
+<td class="col-num" data-order="234.1198683998435">234,1199</td>
+<td class="col-num" data-order="282.24861736886584">282,2486</td>
+<td class="col-num" data-order="375.3307508038365">375,3308</td>
+<td class="col-num" data-order="233.3872093111989">233,3872</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220131">2022-01-31</td>
+<td class="col-num" data-order="343.56052864675803">343,5605</td>
+<td class="col-num" data-order="344.9584327164836">344,9584</td>
+<td class="col-num" data-order="310.4260778310139">310,4261</td>
+<td class="col-num" data-order="320.0177642964845">320,0178</td>
+<td class="col-num" data-order="338.0710458905326">338,0710</td>
+<td class="col-num" data-order="347.6167727623944">347,6168</td>
+<td class="col-num" data-order="484.8026786146014">484,8027</td>
+<td class="col-num" data-order="312.6605961028185">312,6606</td>
+<td class="col-num" data-order="315.92535549759464">315,9254</td>
+<td class="col-num" data-order="369.160124230842">369,1601</td>
+<td class="col-num" data-order="322.1793485359794">322,1793</td>
+<td class="col-num" data-order="321.6825049772568">32168,25%</td>
+<td class="col-num" data-order="339.0123104578405">339,0123</td>
+<td class="col-num" data-order="230.6336943868579">230,6337</td>
+<td class="col-num" data-order="272.2347018651511">272,2347</td>
+<td class="col-num" data-order="325.7206686235468">325,7207</td>
+<td class="col-num" data-order="245.5101339554957">245,5101</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220228">2022-02-28</td>
+<td class="col-num" data-order="334.57478162844586">334,5748</td>
+<td class="col-num" data-order="333.1469303384817">333,1469</td>
+<td class="col-num" data-order="300.1834912518028">300,1835</td>
+<td class="col-num" data-order="308.86929291942124">308,8693</td>
+<td class="col-num" data-order="324.4092430809135">324,4092</td>
+<td class="col-num" data-order="332.62217891238663">332,6222</td>
+<td class="col-num" data-order="465.69846610816575">465,6985</td>
+<td class="col-num" data-order="299.498542152738">299,4985</td>
+<td class="col-num" data-order="301.9378386876554">301,9378</td>
+<td class="col-num" data-order="345.2939205616295">345,2939</td>
+<td class="col-num" data-order="305.93181929039986">305,9318</td>
+<td class="col-num" data-order="299.2916879464108">29929,17%</td>
+<td class="col-num" data-order="315.97588953785083">315,9759</td>
+<td class="col-num" data-order="226.9353498679677">226,9353</td>
+<td class="col-num" data-order="250.63829618124564">250,6383</td>
+<td class="col-num" data-order="328.942724734078">328,9427</td>
+<td class="col-num" data-order="240.30285370002048">240,3029</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220331">2022-03-31</td>
+<td class="col-num" data-order="323.0504942350438">323,0505</td>
+<td class="col-num" data-order="321.47403982676195">321,4740</td>
+<td class="col-num" data-order="289.5374657155191">289,5375</td>
+<td class="col-num" data-order="296.9779281297078">296,9779</td>
+<td class="col-num" data-order="314.0526106120314">314,0526</td>
+<td class="col-num" data-order="321.03540150402665">321,0354</td>
+<td class="col-num" data-order="455.5393682786466">455,5394</td>
+<td class="col-num" data-order="289.37030795587896">289,3703</td>
+<td class="col-num" data-order="290.5858991717856">290,5859</td>
+<td class="col-num" data-order="323.32573737419807">323,3257</td>
+<td class="col-num" data-order="290.18373489580205">290,1837</td>
+<td class="col-num" data-order="273.5589167760636">27355,89%</td>
+<td class="col-num" data-order="285.8901306218177">285,8901</td>
+<td class="col-num" data-order="231.12784001679452">231,1278</td>
+<td class="col-num" data-order="230.56854141556093">230,5685</td>
+<td class="col-num" data-order="320.8488163203401">320,8488</td>
+<td class="col-num" data-order="258.4074363735481">258,4074</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220430">2022-04-30</td>
+<td class="col-num" data-order="310.5468171210902">310,5468</td>
+<td class="col-num" data-order="305.9498937056284">305,9499</td>
+<td class="col-num" data-order="277.3913866113014">277,3914</td>
+<td class="col-num" data-order="284.0988473090619">284,0988</td>
+<td class="col-num" data-order="297.7427862998557">297,7428</td>
+<td class="col-num" data-order="303.66312998591764">303,6631</td>
+<td class="col-num" data-order="434.5500313798452">434,5500</td>
+<td class="col-num" data-order="275.2849714154688">275,2850</td>
+<td class="col-num" data-order="275.3751203954239">275,3751</td>
+<td class="col-num" data-order="309.8576757575124">309,8577</td>
+<td class="col-num" data-order="277.07755834745467">277,0776</td>
+<td class="col-num" data-order="265.17715494884766">26517,72%</td>
+<td class="col-num" data-order="277.886773926565">277,8868</td>
+<td class="col-num" data-order="212.8059034246979">212,8059</td>
+<td class="col-num" data-order="225.04170243182568">225,0417</td>
+<td class="col-num" data-order="305.285449342957">305,2854</td>
+<td class="col-num" data-order="233.7252264444241">233,7252</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220531">2022-05-31</td>
+<td class="col-num" data-order="304.99517499621345">304,9952</td>
+<td class="col-num" data-order="302.7421233928867">302,7421</td>
+<td class="col-num" data-order="276.4948808384825">276,4949</td>
+<td class="col-num" data-order="281.4826891576316">281,4827</td>
+<td class="col-num" data-order="297.6536665401959">297,6537</td>
+<td class="col-num" data-order="301.6555239592783">301,6555</td>
+<td class="col-num" data-order="438.31387002422736">438,3139</td>
+<td class="col-num" data-order="275.6789190125622">275,6789</td>
+<td class="col-num" data-order="274.66518507607816">274,6652</td>
+<td class="col-num" data-order="301.4069593725624">301,4070</td>
+<td class="col-num" data-order="275.06421260192553">275,0642</td>
+<td class="col-num" data-order="258.1113110478188">25811,13%</td>
+<td class="col-num" data-order="270.8822192155437">270,8822</td>
+<td class="col-num" data-order="222.26223416579583">222,2622</td>
+<td class="col-num" data-order="224.5790941150721">224,5791</td>
+<td class="col-num" data-order="289.68620859856645">289,6862</td>
+<td class="col-num" data-order="236.623772192276">236,6238</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220630">2022-06-30</td>
+<td class="col-num" data-order="300.8933553251694">300,8934</td>
+<td class="col-num" data-order="296.08240162673">296,0824</td>
+<td class="col-num" data-order="272.7746119442992">272,7746</td>
+<td class="col-num" data-order="278.41895871826307">278,4190</td>
+<td class="col-num" data-order="288.7197150469136">288,7197</td>
+<td class="col-num" data-order="293.679114743652">293,6791</td>
+<td class="col-num" data-order="423.9682912181078">423,9683</td>
+<td class="col-num" data-order="269.9550001020053">269,9550</td>
+<td class="col-num" data-order="269.13312621696986">269,1331</td>
+<td class="col-num" data-order="300.1693669951979">300,1694</td>
+<td class="col-num" data-order="271.137168362964">271,1372</td>
+<td class="col-num" data-order="260.6080476383282">26060,80%</td>
+<td class="col-num" data-order="282.3799863378019">282,3800</td>
+<td class="col-num" data-order="209.48033551470792">209,4803</td>
+<td class="col-num" data-order="220.99171737779403">220,9917</td>
+<td class="col-num" data-order="286.92897393538635">286,9290</td>
+<td class="col-num" data-order="203.72709372804255">203,7271</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220731">2022-07-31</td>
+<td class="col-num" data-order="311.7603704868564">311,7604</td>
+<td class="col-num" data-order="309.1527344318488">309,1527</td>
+<td class="col-num" data-order="283.1750318284436">283,1750</td>
+<td class="col-num" data-order="288.83573645509665">288,8357</td>
+<td class="col-num" data-order="302.92396941985845">302,9240</td>
+<td class="col-num" data-order="307.7021988681123">307,7022</td>
+<td class="col-num" data-order="467.7901437263615">467,7901</td>
+<td class="col-num" data-order="281.6764243802625">281,6764</td>
+<td class="col-num" data-order="281.1527532288678">281,1528</td>
+<td class="col-num" data-order="318.745850377935">318,7459</td>
+<td class="col-num" data-order="285.0098814261774">285,0099</td>
+<td class="col-num" data-order="267.5994261260548">26759,94%</td>
+<td class="col-num" data-order="286.9157885535665">286,9158</td>
+<td class="col-num" data-order="221.20677418792525">221,2068</td>
+<td class="col-num" data-order="228.60118330087">228,6012</td>
+<td class="col-num" data-order="309.02344857650564">309,0234</td>
+<td class="col-num" data-order="213.1560096308888">213,1560</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220831">2022-08-31</td>
+<td class="col-num" data-order="303.8917538560222">303,8918</td>
+<td class="col-num" data-order="302.13090689566786">302,1309</td>
+<td class="col-num" data-order="275.88334924759585">275,8833</td>
+<td class="col-num" data-order="281.2963940184393">281,2964</td>
+<td class="col-num" data-order="295.6607018009212">295,6607</td>
+<td class="col-num" data-order="300.0658609614341">300,0659</td>
+<td class="col-num" data-order="452.0822224096007">452,0822</td>
+<td class="col-num" data-order="274.27346526403267">274,2735</td>
+<td class="col-num" data-order="273.5708700168031">273,5709</td>
+<td class="col-num" data-order="299.184661266637">299,1847</td>
+<td class="col-num" data-order="273.67385910396433">273,6739</td>
+<td class="col-num" data-order="255.147992776136">25514,80%</td>
+<td class="col-num" data-order="275.8691124927991">275,8691</td>
+<td class="col-num" data-order="219.06346482371455">219,0635</td>
+<td class="col-num" data-order="210.4845627545156">210,4846</td>
+<td class="col-num" data-order="295.253294569161">295,2533</td>
+<td class="col-num" data-order="232.58850015358647">232,5885</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20220930">2022-09-30</td>
+<td class="col-num" data-order="295.4166337897109">295,4166</td>
+<td class="col-num" data-order="291.8845082378763">291,8845</td>
+<td class="col-num" data-order="265.79701412955285">265,7970</td>
+<td class="col-num" data-order="272.0185016484799">272,0185</td>
+<td class="col-num" data-order="282.9064582328485">282,9065</td>
+<td class="col-num" data-order="288.1941710714818">288,1942</td>
+<td class="col-num" data-order="430.0462493730985">430,0462</td>
+<td class="col-num" data-order="262.62226579204605">262,6223</td>
+<td class="col-num" data-order="261.5389826215636">261,5390</td>
+<td class="col-num" data-order="284.75016102623545">284,7502</td>
+<td class="col-num" data-order="260.6589126760964">260,6589</td>
+<td class="col-num" data-order="240.36074204492684">24036,07%</td>
+<td class="col-num" data-order="259.3138927214754">259,3139</td>
+<td class="col-num" data-order="219.295896024305">219,2959</td>
+<td class="col-num" data-order="201.258161811241">201,2582</td>
+<td class="col-num" data-order="276.5427677691165">276,5428</td>
+<td class="col-num" data-order="231.7998890268088">231,7999</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20221031">2022-10-31</td>
+<td class="col-num" data-order="302.1169427655452">302,1169</td>
+<td class="col-num" data-order="299.47944236989395">299,4794</td>
+<td class="col-num" data-order="272.264763985253">272,2648</td>
+<td class="col-num" data-order="278.5658121579301">278,5658</td>
+<td class="col-num" data-order="293.02414148062803">293,0241</td>
+<td class="col-num" data-order="297.4516586176711">297,4517</td>
+<td class="col-num" data-order="473.6441338955725">473,6441</td>
+<td class="col-num" data-order="271.49850093215684">271,4985</td>
+<td class="col-num" data-order="269.6687311674792">269,6687</td>
+<td class="col-num" data-order="296.4208366138043">296,4208</td>
+<td class="col-num" data-order="270.03275346108063">270,0328</td>
+<td class="col-num" data-order="240.9959262595414">24099,59%</td>
+<td class="col-num" data-order="246.9064278812088">246,9064</td>
+<td class="col-num" data-order="235.17855592539075">235,1786</td>
+<td class="col-num" data-order="214.3831271079009">214,3831</td>
+<td class="col-num" data-order="286.6172777695802">286,6173</td>
+<td class="col-num" data-order="245.75480031406488">245,7548</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20221130">2022-11-30</td>
+<td class="col-num" data-order="326.70308250018525">326,7031</td>
+<td class="col-num" data-order="326.3308696712652">326,3309</td>
+<td class="col-num" data-order="297.10597787037506">297,1060</td>
+<td class="col-num" data-order="304.9975900350135">304,9976</td>
+<td class="col-num" data-order="319.7733505136612">319,7734</td>
+<td class="col-num" data-order="325.9587979054691">325,9588</td>
+<td class="col-num" data-order="491.5360542017871">491,5361</td>
+<td class="col-num" data-order="297.606553945603">297,6066</td>
+<td class="col-num" data-order="298.0438488842758">298,0438</td>
+<td class="col-num" data-order="326.14113351005665">326,1411</td>
+<td class="col-num" data-order="301.5009063508345">301,5009</td>
+<td class="col-num" data-order="272.7350731845751">27273,51%</td>
+<td class="col-num" data-order="288.8702023823386">288,8702</td>
+<td class="col-num" data-order="251.85714049438215">251,8571</td>
+<td class="col-num" data-order="243.9434841807956">243,9435</td>
+<td class="col-num" data-order="322.8715261527111">322,8715</td>
+<td class="col-num" data-order="228.16843649253588">228,1684</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20221231">2022-12-31</td>
+<td class="col-num" data-order="323.5562614920759">323,5563</td>
+<td class="col-num" data-order="322.4998194748868">322,4998</td>
+<td class="col-num" data-order="293.9305665606423">293,9306</td>
+<td class="col-num" data-order="301.2892038721886">301,2892</td>
+<td class="col-num" data-order="313.81924422284885">313,8192</td>
+<td class="col-num" data-order="319.72726424883865">319,7273</td>
+<td class="col-num" data-order="464.4361063733269">464,4361</td>
+<td class="col-num" data-order="291.9129149171478">291,9129</td>
+<td class="col-num" data-order="292.063179189225">292,0632</td>
+<td class="col-num" data-order="316.2233320396725">316,2233</td>
+<td class="col-num" data-order="294.9258259417444">294,9258</td>
+<td class="col-num" data-order="267.1961391298896">26719,61%</td>
+<td class="col-num" data-order="286.3696907082606">286,3697</td>
+<td class="col-num" data-order="248.7572697613056">248,7573</td>
+<td class="col-num" data-order="240.00894012893244">240,0089</td>
+<td class="col-num" data-order="316.82843433796927">316,8284</td>
+<td class="col-num" data-order="221.45699838912284">221,4570</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230131">2023-01-31</td>
+<td class="col-num" data-order="339.7679122930618">339,7679</td>
+<td class="col-num" data-order="339.99978998197025">339,9998</td>
+<td class="col-num" data-order="307.1525105858727">307,1525</td>
+<td class="col-num" data-order="315.6898757287318">315,6899</td>
+<td class="col-num" data-order="330.81449224791083">330,8145</td>
+<td class="col-num" data-order="338.203386702765">338,2034</td>
+<td class="col-num" data-order="478.2839980770615">478,2840</td>
+<td class="col-num" data-order="306.25984807393706">306,2598</td>
+<td class="col-num" data-order="307.6578882117845">307,6579</td>
+<td class="col-num" data-order="331.50207817539246">331,5021</td>
+<td class="col-num" data-order="310.835075492586">310,8351</td>
+<td class="col-num" data-order="281.83906870508173">28183,91%</td>
+<td class="col-num" data-order="296.68214929862984">296,6821</td>
+<td class="col-num" data-order="275.3263524968924">275,3264</td>
+<td class="col-num" data-order="253.4221324604337">253,4221</td>
+<td class="col-num" data-order="336.1004716100442">336,1005</td>
+<td class="col-num" data-order="228.8722961448192">228,8723</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230228">2023-02-28</td>
+<td class="col-num" data-order="327.7654510868083">327,7655</td>
+<td class="col-num" data-order="327.85912667693">327,8591</td>
+<td class="col-num" data-order="296.2938735440316">296,2939</td>
+<td class="col-num" data-order="304.2310071362738">304,2310</td>
+<td class="col-num" data-order="319.04874264684867">319,0487</td>
+<td class="col-num" data-order="326.1605131813897">326,1605</td>
+<td class="col-num" data-order="470.02165107453936">470,0217</td>
+<td class="col-num" data-order="295.31061178521026">295,3106</td>
+<td class="col-num" data-order="296.16915622332294">296,1692</td>
+<td class="col-num" data-order="325.6620352794985">325,6620</td>
+<td class="col-num" data-order="301.8249138360716">301,8249</td>
+<td class="col-num" data-order="271.62130817372525">27162,13%</td>
+<td class="col-num" data-order="283.2685765836592">283,2686</td>
+<td class="col-num" data-order="275.20135415750576">275,2014</td>
+<td class="col-num" data-order="253.97739977611883">253,9774</td>
+<td class="col-num" data-order="317.6449787900873">317,6450</td>
+<td class="col-num" data-order="207.0677444309136">207,0677</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230331">2023-03-31</td>
+<td class="col-num" data-order="332.248105899552">332,2481</td>
+<td class="col-num" data-order="331.81397980294787">331,8140</td>
+<td class="col-num" data-order="299.5828866260529">299,5829</td>
+<td class="col-num" data-order="307.78028832520056">307,7803</td>
+<td class="col-num" data-order="320.63397456869774">320,6340</td>
+<td class="col-num" data-order="328.0280360516662">328,0280</td>
+<td class="col-num" data-order="479.445506064758">479,4455</td>
+<td class="col-num" data-order="296.15705304054944">296,1571</td>
+<td class="col-num" data-order="297.2384883771294">297,2385</td>
+<td class="col-num" data-order="328.1113236382602">328,1113</td>
+<td class="col-num" data-order="303.82517202449606">303,8252</td>
+<td class="col-num" data-order="273.6000832338786">27360,01%</td>
+<td class="col-num" data-order="286.305385538917">286,3054</td>
+<td class="col-num" data-order="275.483069814277">275,4831</td>
+<td class="col-num" data-order="253.66872210278345">253,6687</td>
+<td class="col-num" data-order="314.63063829165463">314,6306</td>
+<td class="col-num" data-order="203.71231655474088">203,7123</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230430">2023-04-30</td>
+<td class="col-num" data-order="329.2094209496926">329,2094</td>
+<td class="col-num" data-order="328.65267737979326">328,6527</td>
+<td class="col-num" data-order="296.5623096459492">296,5623</td>
+<td class="col-num" data-order="305.0678542252071">305,0679</td>
+<td class="col-num" data-order="317.8579918356274">317,8580</td>
+<td class="col-num" data-order="325.468304183934">325,4683</td>
+<td class="col-num" data-order="476.2995440263667">476,2995</td>
+<td class="col-num" data-order="293.8377850625532">293,8378</td>
+<td class="col-num" data-order="294.6256428935216">294,6256</td>
+<td class="col-num" data-order="327.2455340821993">327,2455</td>
+<td class="col-num" data-order="300.8264922286008">300,8265</td>
+<td class="col-num" data-order="270.287456708704">27028,75%</td>
+<td class="col-num" data-order="280.16375332320945">280,1638</td>
+<td class="col-num" data-order="271.1371219268396">271,1371</td>
+<td class="col-num" data-order="258.6579983737746">258,6580</td>
+<td class="col-num" data-order="308.74257014720564">308,7426</td>
+<td class="col-num" data-order="207.5732868194585">207,5733</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230531">2023-05-31</td>
+<td class="col-num" data-order="327.95358921361475">327,9536</td>
+<td class="col-num" data-order="327.1921176798292">327,1921</td>
+<td class="col-num" data-order="294.18499330696824">294,1850</td>
+<td class="col-num" data-order="302.96408856837525">302,9641</td>
+<td class="col-num" data-order="314.7428791908441">314,7429</td>
+<td class="col-num" data-order="322.9803175754344">322,9803</td>
+<td class="col-num" data-order="477.9509668991293">477,9510</td>
+<td class="col-num" data-order="290.47102286335524">290,4710</td>
+<td class="col-num" data-order="290.80184987260435">290,8018</td>
+<td class="col-num" data-order="323.01116157609727">323,0112</td>
+<td class="col-num" data-order="295.90769455303104">295,9077</td>
+<td class="col-num" data-order="265.55322591137485">26555,32%</td>
+<td class="col-num" data-order="278.79864643459536">278,7986</td>
+<td class="col-num" data-order="272.1776084273937">272,1776</td>
+<td class="col-num" data-order="247.26209406303616">247,2621</td>
+<td class="col-num" data-order="296.7976567392548">296,7977</td>
+<td class="col-num" data-order="225.036634397621">225,0366</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230630">2023-06-30</td>
+<td class="col-num" data-order="332.86194465909654">332,8619</td>
+<td class="col-num" data-order="333.6736529648682">333,6737</td>
+<td class="col-num" data-order="298.36976493168885">298,3698</td>
+<td class="col-num" data-order="307.1795834511204">307,1796</td>
+<td class="col-num" data-order="323.63722041312394">323,6372</td>
+<td class="col-num" data-order="331.9608683388461">331,9609</td>
+<td class="col-num" data-order="491.2221935234448">491,2222</td>
+<td class="col-num" data-order="297.7292867653037">297,7293</td>
+<td class="col-num" data-order="298.1775934931985">298,1776</td>
+<td class="col-num" data-order="327.4193992714261">327,4194</td>
+<td class="col-num" data-order="301.3628770678012">301,3629</td>
+<td class="col-num" data-order="267.67897493001743">26767,90%</td>
+<td class="col-num" data-order="279.3233017478959">279,3233</td>
+<td class="col-num" data-order="282.24675445806673">282,2468</td>
+<td class="col-num" data-order="248.94053807508809">248,9405</td>
+<td class="col-num" data-order="298.79604946413275">298,7960</td>
+<td class="col-num" data-order="245.12621849386863">245,1262</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230731">2023-07-31</td>
+<td class="col-num" data-order="338.3931381475208">338,3931</td>
+<td class="col-num" data-order="338.6323363824744">338,6323</td>
+<td class="col-num" data-order="304.0217322484326">304,0217</td>
+<td class="col-num" data-order="311.838536169486">311,8385</td>
+<td class="col-num" data-order="330.5744747103547">330,5745</td>
+<td class="col-num" data-order="337.7301529152284">337,7302</td>
+<td class="col-num" data-order="501.18923147999095">501,1892</td>
+<td class="col-num" data-order="304.3384778673078">304,3385</td>
+<td class="col-num" data-order="304.25856480279407">304,2586</td>
+<td class="col-num" data-order="329.316501078565">329,3165</td>
+<td class="col-num" data-order="306.0035840226914">306,0036</td>
+<td class="col-num" data-order="272.2390562883382">27223,91%</td>
+<td class="col-num" data-order="282.3954392712267">282,3954</td>
+<td class="col-num" data-order="287.3669937554982">287,3670</td>
+<td class="col-num" data-order="248.76465472303173">248,7647</td>
+<td class="col-num" data-order="298.9013960619184">298,9014</td>
+<td class="col-num" data-order="252.9897149263128">252,9897</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230831">2023-08-31</td>
+<td class="col-num" data-order="335.07162173305926">335,0716</td>
+<td class="col-num" data-order="332.77460700002115">332,7746</td>
+<td class="col-num" data-order="299.39610381052535">299,3961</td>
+<td class="col-num" data-order="306.7563147223825">306,7563</td>
+<td class="col-num" data-order="323.4970562479795">323,4971</td>
+<td class="col-num" data-order="329.829155449165">329,8292</td>
+<td class="col-num" data-order="515.9456239343929">515,9456</td>
+<td class="col-num" data-order="297.9032028344054">297,9032</td>
+<td class="col-num" data-order="296.6062935921533">296,6063</td>
+<td class="col-num" data-order="329.1821788822999">329,1822</td>
+<td class="col-num" data-order="301.32072136565324">301,3207</td>
+<td class="col-num" data-order="267.644148981844">26764,41%</td>
+<td class="col-num" data-order="276.09661768782115">276,0966</td>
+<td class="col-num" data-order="281.82494644409115">281,8249</td>
+<td class="col-num" data-order="246.2058750793539">246,2059</td>
+<td class="col-num" data-order="287.0715936051748">287,0716</td>
+<td class="col-num" data-order="237.193511270097">237,1935</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20230930">2023-09-30</td>
+<td class="col-num" data-order="331.3418726460521">331,3419</td>
+<td class="col-num" data-order="327.817327294244">327,8173</td>
+<td class="col-num" data-order="296.33721816106487">296,3372</td>
+<td class="col-num" data-order="302.8638371176124">302,8638</td>
+<td class="col-num" data-order="320.46542800870526">320,4654</td>
+<td class="col-num" data-order="325.5910787781614">325,5911</td>
+<td class="col-num" data-order="517.7002551233217">517,7003</td>
+<td class="col-num" data-order="295.5392012696768">295,5392</td>
+<td class="col-num" data-order="293.22504853338563">293,2250</td>
+<td class="col-num" data-order="325.26948141776654">325,2695</td>
+<td class="col-num" data-order="297.8259320358055">297,8259</td>
+<td class="col-num" data-order="266.20748525934647">26620,75%</td>
+<td class="col-num" data-order="275.8223582067878">275,8224</td>
+<td class="col-num" data-order="268.73669875811663">268,7367</td>
+<td class="col-num" data-order="245.55210445715343">245,5521</td>
+<td class="col-num" data-order="287.7269323946997">287,7269</td>
+<td class="col-num" data-order="235.1668372112924">235,1668</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20231031">2023-10-31</td>
+<td class="col-num" data-order="326.3606661082356">326,3607</td>
+<td class="col-num" data-order="320.670530865441">320,6705</td>
+<td class="col-num" data-order="289.4529157758412">289,4529</td>
+<td class="col-num" data-order="296.40581880522103">296,4058</td>
+<td class="col-num" data-order="308.8296417962614">308,8296</td>
+<td class="col-num" data-order="314.34001322816886">314,3400</td>
+<td class="col-num" data-order="501.9720840733871">501,9721</td>
+<td class="col-num" data-order="284.09464156168315">284,0946</td>
+<td class="col-num" data-order="282.4262368659409">282,4262</td>
+<td class="col-num" data-order="316.1472055795849">316,1472</td>
+<td class="col-num" data-order="287.2699600427868">287,2700</td>
+<td class="col-num" data-order="257.7662253286404">25776,62%</td>
+<td class="col-num" data-order="269.00364539772585">269,0036</td>
+<td class="col-num" data-order="251.6823098701464">251,6823</td>
+<td class="col-num" data-order="238.0298574475569">238,0299</td>
+<td class="col-num" data-order="274.69325486437293">274,6933</td>
+<td class="col-num" data-order="222.89147325106765">222,8915</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20231130">2023-11-30</td>
+<td class="col-num" data-order="346.012890195808">346,0129</td>
+<td class="col-num" data-order="342.4400327145245">342,4400</td>
+<td class="col-num" data-order="305.5750333733795">305,5750</td>
+<td class="col-num" data-order="313.8805242851176">313,8805</td>
+<td class="col-num" data-order="330.25315878554136">330,2532</td>
+<td class="col-num" data-order="337.52011480637753">337,5201</td>
+<td class="col-num" data-order="519.2639775368574">519,2640</td>
+<td class="col-num" data-order="302.3203426456859">302,3203</td>
+<td class="col-num" data-order="301.77368119870414">301,7737</td>
+<td class="col-num" data-order="334.52373196793644">334,5237</td>
+<td class="col-num" data-order="305.93618069720253">305,9362</td>
+<td class="col-num" data-order="271.65902720299783">27165,90%</td>
+<td class="col-num" data-order="276.7661328341888">276,7661</td>
+<td class="col-num" data-order="285.69581848743275">285,6958</td>
+<td class="col-num" data-order="251.33878988897317">251,3388</td>
+<td class="col-num" data-order="293.5159057993775">293,5159</td>
+<td class="col-num" data-order="251.4481817781185">251,4482</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20231231">2023-12-31</td>
+<td class="col-num" data-order="356.82394061841995">356,8239</td>
+<td class="col-num" data-order="354.97746671479047">354,9775</td>
+<td class="col-num" data-order="315.537059009348">315,5371</td>
+<td class="col-num" data-order="325.1442767270096">325,1443</td>
+<td class="col-num" data-order="343.0794668121597">343,0795</td>
+<td class="col-num" data-order="351.92942792102093">351,9294</td>
+<td class="col-num" data-order="531.0665769175746">531,0666</td>
+<td class="col-num" data-order="314.092673106488">314,0927</td>
+<td class="col-num" data-order="314.4017657314934">314,4018</td>
+<td class="col-num" data-order="348.3456144429633">348,3456</td>
+<td class="col-num" data-order="318.0877003276228">318,0877</td>
+<td class="col-num" data-order="281.3893022415232">28138,93%</td>
+<td class="col-num" data-order="286.27844383367">286,2784</td>
+<td class="col-num" data-order="301.6355175864541">301,6355</td>
+<td class="col-num" data-order="259.75329226184687">259,7533</td>
+<td class="col-num" data-order="315.09493572103776">315,0949</td>
+<td class="col-num" data-order="266.4849516229194">266,4850</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240131">2024-01-31</td>
+<td class="col-num" data-order="355.2458989774736">355,2459</td>
+<td class="col-num" data-order="350.88278609528777">350,8828</td>
+<td class="col-num" data-order="312.16251122041587">312,1625</td>
+<td class="col-num" data-order="321.2345727797257">321,2346</td>
+<td class="col-num" data-order="338.9068830710607">338,9069</td>
+<td class="col-num" data-order="347.0299913984387">347,0300</td>
+<td class="col-num" data-order="547.333811404462">547,3338</td>
+<td class="col-num" data-order="310.09232738238086">310,0923</td>
+<td class="col-num" data-order="309.47308592414">309,4731</td>
+<td class="col-num" data-order="353.830341043512">353,8303</td>
+<td class="col-num" data-order="316.6680089574692">316,6680</td>
+<td class="col-num" data-order="279.5906447632688">27959,06%</td>
+<td class="col-num" data-order="282.83605165937286">282,8361</td>
+<td class="col-num" data-order="296.490378305245">296,4904</td>
+<td class="col-num" data-order="261.1728984379159">261,1729</td>
+<td class="col-num" data-order="308.7185547531127">308,7186</td>
+<td class="col-num" data-order="251.8647945078075">251,8648</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240229">2024-02-29</td>
+<td class="col-num" data-order="364.2519776419153">364,2520</td>
+<td class="col-num" data-order="360.24090332726024">360,2409</td>
+<td class="col-num" data-order="319.93888680720147">319,9389</td>
+<td class="col-num" data-order="328.94028786224976">328,9403</td>
+<td class="col-num" data-order="349.04225546870646">349,0423</td>
+<td class="col-num" data-order="357.1385927963161">357,1386</td>
+<td class="col-num" data-order="574.537027232633">574,5370</td>
+<td class="col-num" data-order="318.3541654365057">318,3542</td>
+<td class="col-num" data-order="317.48282979498936">317,4828</td>
+<td class="col-num" data-order="367.87230408148775">367,8723</td>
+<td class="col-num" data-order="326.3350255774507">326,3350</td>
+<td class="col-num" data-order="289.8716733070641">28987,17%</td>
+<td class="col-num" data-order="296.59553907519546">296,5955</td>
+<td class="col-num" data-order="295.18794683288667">295,1879</td>
+<td class="col-num" data-order="269.9212233496865">269,9212</td>
+<td class="col-num" data-order="308.34885020928016">308,3489</td>
+<td class="col-num" data-order="253.33949413217488">253,3395</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240331">2024-03-31</td>
+<td class="col-num" data-order="382.0255955212415">382,0256</td>
+<td class="col-num" data-order="375.7753081587667">375,7753</td>
+<td class="col-num" data-order="333.5454278210298">333,5454</td>
+<td class="col-num" data-order="342.56590902802844">342,5659</td>
+<td class="col-num" data-order="362.0046047577736">362,0046</td>
+<td class="col-num" data-order="369.54358539339023">369,5436</td>
+<td class="col-num" data-order="606.2261083550272">606,2261</td>
+<td class="col-num" data-order="329.09035245071897">329,0904</td>
+<td class="col-num" data-order="328.2581369953279">328,2581</td>
+<td class="col-num" data-order="382.3060212617983">382,3060</td>
+<td class="col-num" data-order="339.0604978820384">339,0605</td>
+<td class="col-num" data-order="300.1853139731368">30018,53%</td>
+<td class="col-num" data-order="301.68013475954024">301,6801</td>
+<td class="col-num" data-order="310.822517579485">310,8225</td>
+<td class="col-num" data-order="282.41577057768296">282,4158</td>
+<td class="col-num" data-order="316.1158016657994">316,1158</td>
+<td class="col-num" data-order="255.3825357435296">255,3825</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240430">2024-04-30</td>
+<td class="col-num" data-order="387.5109017168458">387,5109</td>
+<td class="col-num" data-order="380.0743334012437">380,0743</td>
+<td class="col-num" data-order="337.9101148698877">337,9101</td>
+<td class="col-num" data-order="346.73425016207915">346,7343</td>
+<td class="col-num" data-order="363.9880205958275">363,9880</td>
+<td class="col-num" data-order="371.3021803824702">371,3022</td>
+<td class="col-num" data-order="602.1337766754765">602,1338</td>
+<td class="col-num" data-order="331.0175627179829">331,0176</td>
+<td class="col-num" data-order="330.07170858518464">330,0717</td>
+<td class="col-num" data-order="378.3436206287444">378,3436</td>
+<td class="col-num" data-order="341.6154298992515">341,6154</td>
+<td class="col-num" data-order="302.71026290584786">30271,03%</td>
+<td class="col-num" data-order="306.0880519405961">306,0881</td>
+<td class="col-num" data-order="314.24549593215465">314,2455</td>
+<td class="col-num" data-order="287.05284963613906">287,0528</td>
+<td class="col-num" data-order="311.22671712895294">311,2267</td>
+<td class="col-num" data-order="243.422236787526">243,4222</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240531">2024-05-31</td>
+<td class="col-num" data-order="403.3961168192622">403,3961</td>
+<td class="col-num" data-order="397.6002614499181">397,6003</td>
+<td class="col-num" data-order="352.2302130366213">352,2302</td>
+<td class="col-num" data-order="361.5757145297434">361,5757</td>
+<td class="col-num" data-order="380.2274435502734">380,2274</td>
+<td class="col-num" data-order="388.28519616952633">388,2852</td>
+<td class="col-num" data-order="634.3624205719581">634,3624</td>
+<td class="col-num" data-order="344.76965801243654">344,7697</td>
+<td class="col-num" data-order="345.14266207284624">345,1427</td>
+<td class="col-num" data-order="402.4282258325479">402,4282</td>
+<td class="col-num" data-order="360.0145316349196">360,0145</td>
+<td class="col-num" data-order="317.7210082444561">31772,10%</td>
+<td class="col-num" data-order="320.9725623678795">320,9726</td>
+<td class="col-num" data-order="329.2496953863939">329,2497</td>
+<td class="col-num" data-order="305.89353917837843">305,8935</td>
+<td class="col-num" data-order="333.67416150631806">333,6742</td>
+<td class="col-num" data-order="235.32644554832828">235,3264</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240630">2024-06-30</td>
+<td class="col-num" data-order="422.39131936856086">422,3913</td>
+<td class="col-num" data-order="414.34681957477295">414,3468</td>
+<td class="col-num" data-order="368.8663318090555">368,8663</td>
+<td class="col-num" data-order="377.2636430170901">377,2636</td>
+<td class="col-num" data-order="396.9659616186661">396,9660</td>
+<td class="col-num" data-order="403.4940914414192">403,4941</td>
+<td class="col-num" data-order="689.3146510595673">689,3147</td>
+<td class="col-num" data-order="359.8189512493153">359,8190</td>
+<td class="col-num" data-order="360.15937363568673">360,1594</td>
+<td class="col-num" data-order="425.7789808239472">425,7790</td>
+<td class="col-num" data-order="378.4095677972696">378,4096</td>
+<td class="col-num" data-order="337.82076668981847">33782,08%</td>
+<td class="col-num" data-order="340.7399747640171">340,7400</td>
+<td class="col-num" data-order="314.7647326736385">314,7647</td>
+<td class="col-num" data-order="315.62892042006257">315,6289</td>
+<td class="col-num" data-order="351.4285344175909">351,4285</td>
+<td class="col-num" data-order="236.52183029568823">236,5218</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240731">2024-07-31</td>
+<td class="col-num" data-order="439.1026492010941">439,1026</td>
+<td class="col-num" data-order="430.33452838693165">430,3345</td>
+<td class="col-num" data-order="382.97618415820114">382,9762</td>
+<td class="col-num" data-order="392.0243017177828">392,0243</td>
+<td class="col-num" data-order="409.9148919271785">409,9149</td>
+<td class="col-num" data-order="416.773732048892">416,7737</td>
+<td class="col-num" data-order="708.3334613776143">708,3335</td>
+<td class="col-num" data-order="371.2460985415705">371,2461</td>
+<td class="col-num" data-order="372.56636844317495">372,5664</td>
+<td class="col-num" data-order="444.7315175578608">444,7315</td>
+<td class="col-num" data-order="392.3511119973924">392,3511</td>
+<td class="col-num" data-order="351.1282110660618">35112,82%</td>
+<td class="col-num" data-order="351.7978764588504">351,7979</td>
+<td class="col-num" data-order="321.83184330997386">321,8318</td>
+<td class="col-num" data-order="330.73949710730284">330,7395</td>
+<td class="col-num" data-order="366.3329677257812">366,3330</td>
+<td class="col-num" data-order="242.63099061282745">242,6310</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240831">2024-08-31</td>
+<td class="col-num" data-order="451.6891440590463">451,6891</td>
+<td class="col-num" data-order="443.89302316487135">443,8930</td>
+<td class="col-num" data-order="393.4485270822324">393,4485</td>
+<td class="col-num" data-order="403.2051229993189">403,2051</td>
+<td class="col-num" data-order="421.4188307421711">421,4188</td>
+<td class="col-num" data-order="429.1263192776113">429,1263</td>
+<td class="col-num" data-order="714.4845671288873">714,4846</td>
+<td class="col-num" data-order="381.0156075705104">381,0156</td>
+<td class="col-num" data-order="383.37179435437656">383,3718</td>
+<td class="col-num" data-order="457.9299375612181">457,9299</td>
+<td class="col-num" data-order="402.7888381963928">402,7888</td>
+<td class="col-num" data-order="358.9833777316572">35898,34%</td>
+<td class="col-num" data-order="359.84465684390506">359,8447</td>
+<td class="col-num" data-order="323.4323012192573">323,4323</td>
+<td class="col-num" data-order="344.9460007798139">344,9460</td>
+<td class="col-num" data-order="385.15195216180007">385,1520</td>
+<td class="col-num" data-order="256.2620309427214">256,2620</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20240930">2024-09-30</td>
+<td class="col-num" data-order="448.1436104524139">448,1436</td>
+<td class="col-num" data-order="441.512123100499">441,5121</td>
+<td class="col-num" data-order="390.4802311990316">390,4802</td>
+<td class="col-num" data-order="401.6812273841429">401,6812</td>
+<td class="col-num" data-order="417.6635191522472">417,6635</td>
+<td class="col-num" data-order="427.2232759549729">427,2233</td>
+<td class="col-num" data-order="693.9335705127786">693,9336</td>
+<td class="col-num" data-order="378.1276808175031">378,1277</td>
+<td class="col-num" data-order="381.8864167518393">381,8864</td>
+<td class="col-num" data-order="449.3187748178675">449,3188</td>
+<td class="col-num" data-order="399.39930242334776">399,3993</td>
+<td class="col-num" data-order="357.83221017060606">35783,22%</td>
+<td class="col-num" data-order="367.25668677695097">367,2567</td>
+<td class="col-num" data-order="317.5132742587543">317,5133</td>
+<td class="col-num" data-order="336.0666302613626">336,0666</td>
+<td class="col-num" data-order="381.3939518957392">381,3940</td>
+<td class="col-num" data-order="246.23557611471315">246,2356</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20241031">2024-10-31</td>
+<td class="col-num" data-order="468.9551498599108">468,9551</td>
+<td class="col-num" data-order="457.759824251745">457,7598</td>
+<td class="col-num" data-order="404.3162330203038">404,3162</td>
+<td class="col-num" data-order="415.2859480709708">415,2859</td>
+<td class="col-num" data-order="429.1751674898406">429,1752</td>
+<td class="col-num" data-order="438.1932413158376">438,1932</td>
+<td class="col-num" data-order="733.7004130652768">733,7004</td>
+<td class="col-num" data-order="387.15140184633714">387,1514</td>
+<td class="col-num" data-order="389.4739162212538">389,4739</td>
+<td class="col-num" data-order="459.14891056839247">459,1489</td>
+<td class="col-num" data-order="409.0853094970191">409,0853</td>
+<td class="col-num" data-order="363.85307368881206">36385,31%</td>
+<td class="col-num" data-order="373.14812425538577">373,1481</td>
+<td class="col-num" data-order="330.3356404690593">330,3356</td>
+<td class="col-num" data-order="338.54615970708403">338,5462</td>
+<td class="col-num" data-order="382.32138769161656">382,3214</td>
+<td class="col-num" data-order="243.26300324112103">243,2630</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20241130">2024-11-30</td>
+<td class="col-num" data-order="489.6274085166119">489,6274</td>
+<td class="col-num" data-order="479.31679955821176">479,3168</td>
+<td class="col-num" data-order="419.8353927652306">419,8354</td>
+<td class="col-num" data-order="431.4984622602163">431,4985</td>
+<td class="col-num" data-order="450.3112744366378">450,3113</td>
+<td class="col-num" data-order="459.6225719421821">459,6226</td>
+<td class="col-num" data-order="814.6851519705178">814,6852</td>
+<td class="col-num" data-order="403.3052290349122">403,3052</td>
+<td class="col-num" data-order="405.7474126773752">405,7474</td>
+<td class="col-num" data-order="489.8568723817625">489,8569</td>
+<td class="col-num" data-order="431.2367943134984">431,2368</td>
+<td class="col-num" data-order="376.0260586630751">37602,61%</td>
+<td class="col-num" data-order="385.9799652829559">385,9800</td>
+<td class="col-num" data-order="347.20596539402544">347,2060</td>
+<td class="col-num" data-order="352.0315314587105">352,0315</td>
+<td class="col-num" data-order="414.2760100676192">414,2760</td>
+<td class="col-num" data-order="234.55214649625896">234,5521</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20241231">2024-12-31</td>
+<td class="col-num" data-order="488.0899150872692">488,0899</td>
+<td class="col-num" data-order="475.7395382218052">475,7395</td>
+<td class="col-num" data-order="418.21053788925536">418,2105</td>
+<td class="col-num" data-order="428.0211477143941">428,0211</td>
+<td class="col-num" data-order="446.2881431108632">446,2881</td>
+<td class="col-num" data-order="454.4872037748793">454,4872</td>
+<td class="col-num" data-order="804.2002593046504">804,2003</td>
+<td class="col-num" data-order="399.7372984126271">399,7373</td>
+<td class="col-num" data-order="400.8651654135464">400,8652</td>
+<td class="col-num" data-order="487.3415262580079">487,3415</td>
+<td class="col-num" data-order="428.1695109953762">428,1695</td>
+<td class="col-num" data-order="376.0977257891337">37609,77%</td>
+<td class="col-num" data-order="387.22822616677234">387,2282</td>
+<td class="col-num" data-order="348.74160952109776">348,7416</td>
+<td class="col-num" data-order="353.2626159780577">353,2626</td>
+<td class="col-num" data-order="394.95056513728167">394,9506</td>
+<td class="col-num" data-order="220.44843487715616">220,4484</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250131">2025-01-31</td>
+<td class="col-num" data-order="487.0974946080662">487,0975</td>
+<td class="col-num" data-order="474.62906515169215">474,6291</td>
+<td class="col-num" data-order="417.2000740248458">417,2001</td>
+<td class="col-num" data-order="426.0538030781615">426,0538</td>
+<td class="col-num" data-order="443.2568967824084">443,2569</td>
+<td class="col-num" data-order="450.58724004956383">450,5872</td>
+<td class="col-num" data-order="783.1957525436889">783,1958</td>
+<td class="col-num" data-order="395.9985827137363">395,9986</td>
+<td class="col-num" data-order="397.6889022443041">397,6889</td>
+<td class="col-num" data-order="480.89036475625903">480,8904</td>
+<td class="col-num" data-order="421.7773209856508">421,7773</td>
+<td class="col-num" data-order="368.191366209945">36819,14%</td>
+<td class="col-num" data-order="370.467108947885">370,4671</td>
+<td class="col-num" data-order="351.76185782025965">351,7619</td>
+<td class="col-num" data-order="357.8463109512841">357,8463</td>
+<td class="col-num" data-order="380.542450502913">380,5425</td>
+<td class="col-num" data-order="232.8233789368604">232,8234</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250228">2025-02-28</td>
+<td class="col-num" data-order="485.5300436929798">485,5300</td>
+<td class="col-num" data-order="474.7574521636424">474,7575</td>
+<td class="col-num" data-order="418.6136916989621">418,6137</td>
+<td class="col-num" data-order="428.01080503593647">428,0108</td>
+<td class="col-num" data-order="442.8954973997361">442,8955</td>
+<td class="col-num" data-order="450.6316459930725">450,6316</td>
+<td class="col-num" data-order="778.2143568488901">778,2144</td>
+<td class="col-num" data-order="397.0030619078461">397,0031</td>
+<td class="col-num" data-order="399.44910148562457">399,4491</td>
+<td class="col-num" data-order="482.60733814743">482,6073</td>
+<td class="col-num" data-order="423.7152937844376">423,7153</td>
+<td class="col-num" data-order="371.6606577036868">37166,07%</td>
+<td class="col-num" data-order="374.8112865785965">374,8113</td>
+<td class="col-num" data-order="357.7940440144304">357,7940</td>
+<td class="col-num" data-order="369.8406275855509">369,8406</td>
+<td class="col-num" data-order="362.58359822812656">362,5836</td>
+<td class="col-num" data-order="225.1536587144207">225,1537</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250331">2025-03-31</td>
+<td class="col-num" data-order="491.7333172737672">491,7333</td>
+<td class="col-num" data-order="478.837577195624">478,8376</td>
+<td class="col-num" data-order="423.56871066176">423,5687</td>
+<td class="col-num" data-order="432.5425129999836">432,5425</td>
+<td class="col-num" data-order="442.7120331232813">442,7120</td>
+<td class="col-num" data-order="449.6772525201153">449,6773</td>
+<td class="col-num" data-order="742.6953504832427">742,6954</td>
+<td class="col-num" data-order="396.8843980658753">396,8844</td>
+<td class="col-num" data-order="399.05146667431393">399,0515</td>
+<td class="col-num" data-order="467.4234824882041">467,4235</td>
+<td class="col-num" data-order="420.1946362437002">420,1946</td>
+<td class="col-num" data-order="368.3108941650135">36831,09%</td>
+<td class="col-num" data-order="370.6725582966433">370,6726</td>
+<td class="col-num" data-order="357.6237788551957">357,6238</td>
+<td class="col-num" data-order="369.97676965698935">369,9768</td>
+<td class="col-num" data-order="352.237575909764">352,2376</td>
+<td class="col-num" data-order="239.47155118504017">239,4716</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250430">2025-04-30</td>
+<td class="col-num" data-order="494.66857136061685">494,6686</td>
+<td class="col-num" data-order="483.60189466684494">483,6019</td>
+<td class="col-num" data-order="424.39643250159673">424,3964</td>
+<td class="col-num" data-order="435.7311389158726">435,7311</td>
+<td class="col-num" data-order="442.8167243112716">442,8167</td>
+<td class="col-num" data-order="453.15503974944266">453,1550</td>
+<td class="col-num" data-order="692.9279798718046">692,9280</td>
+<td class="col-num" data-order="396.22297186182647">396,2230</td>
+<td class="col-num" data-order="400.7093751309948">400,7094</td>
+<td class="col-num" data-order="466.6736429997725">466,6736</td>
+<td class="col-num" data-order="420.1883481522604">420,1883</td>
+<td class="col-num" data-order="367.3571173106338">36735,71%</td>
+<td class="col-num" data-order="367.83039841328326">367,8304</td>
+<td class="col-num" data-order="378.34273613821006">378,3427</td>
+<td class="col-num" data-order="372.105280936991">372,1053</td>
+<td class="col-num" data-order="354.9747305274505">354,9747</td>
+<td class="col-num" data-order="253.90034555623467">253,9003</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250531">2025-05-31</td>
+<td class="col-num" data-order="518.3986534406117">518,3987</td>
+<td class="col-num" data-order="507.4717705147085">507,4718</td>
+<td class="col-num" data-order="444.3918653829711">444,3919</td>
+<td class="col-num" data-order="456.69101132240513">456,6910</td>
+<td class="col-num" data-order="467.5032293643629">467,5032</td>
+<td class="col-num" data-order="479.10384904097975">479,1038</td>
+<td class="col-num" data-order="736.8379362385808">736,8379</td>
+<td class="col-num" data-order="418.3633704671089">418,3634</td>
+<td class="col-num" data-order="422.4979565429935">422,4980</td>
+<td class="col-num" data-order="495.9823613225045">495,9824</td>
+<td class="col-num" data-order="444.1156116256107">444,1156</td>
+<td class="col-num" data-order="388.4089887504482">38840,90%</td>
+<td class="col-num" data-order="390.7673552158072">390,7674</td>
+<td class="col-num" data-order="397.1247058750948">397,1247</td>
+<td class="col-num" data-order="394.5400682716405">394,5401</td>
+<td class="col-num" data-order="373.5647913201156">373,5648</td>
+<td class="col-num" data-order="263.8559878686963">263,8560</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250630">2025-06-30</td>
+<td class="col-num" data-order="518.7850443170242">518,7850</td>
+<td class="col-num" data-order="507.70879600268574">507,7088</td>
+<td class="col-num" data-order="445.8924365086604">445,8924</td>
+<td class="col-num" data-order="457.98244516056894">457,9824</td>
+<td class="col-num" data-order="471.2144118236867">471,2144</td>
+<td class="col-num" data-order="482.4915748389394">482,4916</td>
+<td class="col-num" data-order="751.0592123605003">751,0592</td>
+<td class="col-num" data-order="422.7026430931362">422,7026</td>
+<td class="col-num" data-order="425.8758787397636">425,8759</td>
+<td class="col-num" data-order="499.0995385175928">499,0995</td>
+<td class="col-num" data-order="447.19996594297663">447,2000</td>
+<td class="col-num" data-order="395.4718514534011">39547,19%</td>
+<td class="col-num" data-order="400.3928058612363">400,3928</td>
+<td class="col-num" data-order="387.12928531460784">387,1293</td>
+<td class="col-num" data-order="389.20259145213765">389,2026</td>
+<td class="col-num" data-order="374.4117264912061">374,4117</td>
+<td class="col-num" data-order="267.3910045921155">267,3910</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250731">2025-07-31</td>
+<td class="col-num" data-order="523.8760390460415">523,8760</td>
+<td class="col-num" data-order="510.355019322765">510,3550</td>
+<td class="col-num" data-order="449.2971414579838">449,2971</td>
+<td class="col-num" data-order="461.0653844346094">461,0654</td>
+<td class="col-num" data-order="475.1820491260051">475,1820</td>
+<td class="col-num" data-order="485.98665306442126">485,9867</td>
+<td class="col-num" data-order="783.5168288025578">783,5168</td>
+<td class="col-num" data-order="426.79631690128366">426,7963</td>
+<td class="col-num" data-order="428.4209172534949">428,4209</td>
+<td class="col-num" data-order="507.0903785223248">507,0904</td>
+<td class="col-num" data-order="451.6901806209394">451,6902</td>
+<td class="col-num" data-order="400.6911420852659">40069,11%</td>
+<td class="col-num" data-order="408.95696024070605">408,9570</td>
+<td class="col-num" data-order="384.3983658730676">384,3984</td>
+<td class="col-num" data-order="391.6528672008195">391,6529</td>
+<td class="col-num" data-order="376.5301952398916">376,5302</td>
+<td class="col-num" data-order="252.7972111724324">252,7972</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250831">2025-08-31</td>
+<td class="col-num" data-order="526.4727322216886">526,4727</td>
+<td class="col-num" data-order="515.2914158204964">515,2914</td>
+<td class="col-num" data-order="454.0439641753194">454,0440</td>
+<td class="col-num" data-order="466.1178852599829">466,1179</td>
+<td class="col-num" data-order="477.9556001789392">477,9556</td>
+<td class="col-num" data-order="488.8525213881094">488,8525</td>
+<td class="col-num" data-order="777.8503510099424">777,8504</td>
+<td class="col-num" data-order="429.3499206491721">429,3499</td>
+<td class="col-num" data-order="433.3117752820421">433,3118</td>
+<td class="col-num" data-order="510.1918901970229">510,1919</td>
+<td class="col-num" data-order="452.7895860020981">452,7896</td>
+<td class="col-num" data-order="403.3091459263305">40330,91%</td>
+<td class="col-num" data-order="408.7001762181322">408,7002</td>
+<td class="col-num" data-order="388.7612596417178">388,7613</td>
+<td class="col-num" data-order="393.4728968180432">393,4729</td>
+<td class="col-num" data-order="372.2379051213002">372,2379</td>
+<td class="col-num" data-order="268.0195149704306">268,0195</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20250930">2025-09-30</td>
+<td class="col-num" data-order="540.1131159089423">540,1131</td>
+<td class="col-num" data-order="526.4418620059047">526,4419</td>
+<td class="col-num" data-order="465.5592471947352">465,5592</td>
+<td class="col-num" data-order="479.01901035700376">479,0190</td>
+<td class="col-num" data-order="483.9883428666023">483,9883</td>
+<td class="col-num" data-order="495.9951792344441">495,9952</td>
+<td class="col-num" data-order="786.3361333588966">786,3361</td>
+<td class="col-num" data-order="436.0478448667271">436,0478</td>
+<td class="col-num" data-order="441.3671679098608">441,3672</td>
+<td class="col-num" data-order="516.6989340937848">516,6989</td>
+<td class="col-num" data-order="458.47166743857326">458,4717</td>
+<td class="col-num" data-order="413.7908300226706">41379,08%</td>
+<td class="col-num" data-order="417.61697039590297">417,6170</td>
+<td class="col-num" data-order="393.2821516943527">393,2822</td>
+<td class="col-num" data-order="392.4605720244532">392,4606</td>
+<td class="col-num" data-order="369.7833005236777">369,7833</td>
+<td class="col-num" data-order="275.4000531811732">275,4001</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20251031">2025-10-31</td>
+<td class="col-num" data-order="569.1020021507809">569,1020</td>
+<td class="col-num" data-order="553.2176915262105">553,2177</td>
+<td class="col-num" data-order="485.3794221019753">485,3794</td>
+<td class="col-num" data-order="498.8066747365135">498,8067</td>
+<td class="col-num" data-order="505.9163947879511">505,9164</td>
+<td class="col-num" data-order="518.3708269470187">518,3708</td>
+<td class="col-num" data-order="810.0134932141569">810,0135</td>
+<td class="col-num" data-order="452.80001491729">452,8000</td>
+<td class="col-num" data-order="458.2684220129211">458,2684</td>
+<td class="col-num" data-order="532.8097050944626">532,8097</td>
+<td class="col-num" data-order="480.8953334231704">480,8953</td>
+<td class="col-num" data-order="429.6402294398145">42964,02%</td>
+<td class="col-num" data-order="438.2762970527049">438,2763</td>
+<td class="col-num" data-order="427.0044054680513">427,0044</td>
+<td class="col-num" data-order="399.488818836042">399,4888</td>
+<td class="col-num" data-order="372.2175954281508">372,2176</td>
+<td class="col-num" data-order="278.93712533298753">278,9371</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20251130">2025-11-30</td>
+<td class="col-num" data-order="576.3498202668021">576,3498</td>
+<td class="col-num" data-order="560.7384548250903">560,7385</td>
+<td class="col-num" data-order="493.4366431810458">493,4366</td>
+<td class="col-num" data-order="507.06872080500176">507,0687</td>
+<td class="col-num" data-order="509.7580409544364">509,7580</td>
+<td class="col-num" data-order="522.3187221358666">522,3187</td>
+<td class="col-num" data-order="809.9109710586166">809,9110</td>
+<td class="col-num" data-order="457.2098745888525">457,2099</td>
+<td class="col-num" data-order="462.5846504866668">462,5847</td>
+<td class="col-num" data-order="533.1001696411664">533,1002</td>
+<td class="col-num" data-order="481.63519012806006">481,6352</td>
+<td class="col-num" data-order="425.921607466164">42592,16%</td>
+<td class="col-num" data-order="434.4554323254961">434,4554</td>
+<td class="col-num" data-order="439.817201410068">439,8172</td>
+<td class="col-num" data-order="401.3038934499663">401,3039</td>
+<td class="col-num" data-order="362.9643796242132">362,9644</td>
+<td class="col-num" data-order="296.07769562685814">296,0777</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20251231">2025-12-31</td>
+<td class="col-num" data-order="597.8137333061304">597,8137</td>
+<td class="col-num" data-order="583.4312710600346">583,4313</td>
+<td class="col-num" data-order="514.2666125719796">514,2666</td>
+<td class="col-num" data-order="527.7383830826395">527,7384</td>
+<td class="col-num" data-order="529.8100629298135">529,8101</td>
+<td class="col-num" data-order="542.2636071853278">542,2636</td>
+<td class="col-num" data-order="826.0878666572861">826,0879</td>
+<td class="col-num" data-order="474.9533809412495">474,9534</td>
+<td class="col-num" data-order="482.268623332986">482,2686</td>
+<td class="col-num" data-order="556.3227119906112">556,3227</td>
+<td class="col-num" data-order="504.4763626160714">504,4764</td>
+<td class="col-num" data-order="446.6286441709748">44662,86%</td>
+<td class="col-num" data-order="447.3338150199253">447,3338</td>
+<td class="col-num" data-order="466.4660206309149">466,4660</td>
+<td class="col-num" data-order="425.3976673729121">425,3977</td>
+<td class="col-num" data-order="377.6855170233723">377,6855</td>
+<td class="col-num" data-order="292.9857827955684">292,9858</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20260131">2026-01-31</td>
+<td class="col-num" data-order="617.3185195002409">617,3185</td>
+<td class="col-num" data-order="598.7750625387993">598,7751</td>
+<td class="col-num" data-order="530.2080681943488">530,2081</td>
+<td class="col-num" data-order="542.838663499727">542,8387</td>
+<td class="col-num" data-order="541.7490936414183">541,7491</td>
+<td class="col-num" data-order="552.8802577045159">552,8803</td>
+<td class="col-num" data-order="825.7968556546256">825,7969</td>
+<td class="col-num" data-order="486.5334461183533">486,5334</td>
+<td class="col-num" data-order="491.9139881938322">491,9140</td>
+<td class="col-num" data-order="550.816633477624">550,8166</td>
+<td class="col-num" data-order="508.7056361353692">508,7056</td>
+<td class="col-num" data-order="452.66690601802014">45266,69%</td>
+<td class="col-num" data-order="453.2750402799218">453,2750</td>
+<td class="col-num" data-order="483.3859284215943">483,3859</td>
+<td class="col-num" data-order="419.0870476420236">419,0870</td>
+<td class="col-num" data-order="375.1516460012669">375,1516</td>
+<td class="col-num" data-order="326.50070296563285">326,5007</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20260228">2026-02-28</td>
+<td class="col-num" data-order="637.3686423326366">637,3686</td>
+<td class="col-num" data-order="615.1743723161342">615,1744</td>
+<td class="col-num" data-order="547.0477553799625">547,0478</td>
+<td class="col-num" data-order="561.8420444779077">561,8420</td>
+<td class="col-num" data-order="554.7571242490876">554,7571</td>
+<td class="col-num" data-order="566.7833363650481">566,7833</td>
+<td class="col-num" data-order="834.312125112902">834,3121</td>
+<td class="col-num" data-order="500.64631886152495">500,6463</td>
+<td class="col-num" data-order="506.50743598092174">506,5074</td>
+<td class="col-num" data-order="565.9926679400083">565,9927</td>
+<td class="col-num" data-order="525.3007466086433">525,3007</td>
+<td class="col-num" data-order="474.71909659507486">47471,91%</td>
+<td class="col-num" data-order="475.986277551236">475,9863</td>
+<td class="col-num" data-order="483.7486559695303">483,7487</td>
+<td class="col-num" data-order="432.6630242856333">432,6630</td>
+<td class="col-num" data-order="389.1418390185143">389,1418</td>
+<td class="col-num" data-order="336.2789573737756">336,2790</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20260331">2026-03-31</td>
+<td class="col-num" data-order="620.511191794702">620,5112</td>
+<td class="col-num" data-order="585.6056708742314">585,6057</td>
+<td class="col-num" data-order="528.6091938521246">528,6092</td>
+<td class="col-num" data-order="533.5786170125838">533,5786</td>
+<td class="col-num" data-order="539.5089369083486">539,5089</td>
+<td class="col-num" data-order="542.1507697198936">542,1508</td>
+<td class="col-num" data-order="854.8493892074367">854,8494</td>
+<td class="col-num" data-order="487.67556458658873">487,6756</td>
+<td class="col-num" data-order="481.58655554718496">481,5866</td>
+<td class="col-num" data-order="537.0935257839221">537,0935</td>
+<td class="col-num" data-order="497.93469883398586">497,9347</td>
+<td class="col-num" data-order="443.3241748881529">44332,42%</td>
+<td class="col-num" data-order="448.1153394892609">448,1153</td>
+<td class="col-num" data-order="468.01754546147663">468,0175</td>
+<td class="col-num" data-order="408.3896819056955">408,3897</td>
+<td class="col-num" data-order="363.0692919498803">363,0693</td>
+<td class="col-num" data-order="326.99171890735903">326,9917</td>
+</tr>
+<tr>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="622.3581838929458">622,3582</td>
+<td class="col-num" data-order="590.0822749407473">590,0823</td>
+<td class="col-num" data-order="531.8370023872852">531,8370</td>
+<td class="col-num" data-order="536.5977542439665">536,5978</td>
+<td class="col-num" data-order="544.6280876301742">544,6281</td>
+<td class="col-num" data-order="548.0239442269495">548,0239</td>
+<td class="col-num" data-order="834.1700683728851">834,1701</td>
+<td class="col-num" data-order="491.8040807595392">491,8041</td>
+<td class="col-num" data-order="488.0097576412941">488,0098</td>
+<td class="col-num" data-order="545.4843873185135">545,4844</td>
+<td class="col-num" data-order="502.9906708836172">502,9907</td>
+<td class="col-num" data-order="454.2919364881932">45429,19%</td>
+<td class="col-num" data-order="452.90018174019104">452,9002</td>
+<td class="col-num" data-order="471.3665468406079">471,3665</td>
+<td class="col-num" data-order="409.59550267278735">409,5955</td>
+<td class="col-num" data-order="369.646950277048">369,6470</td>
+<td class="col-num" data-order="340.83778879818215">340,8378</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

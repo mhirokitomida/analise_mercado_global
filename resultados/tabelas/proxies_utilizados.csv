@@ -1,0 +1,4 @@
+﻿ticker_original,ticker_proxy,tipo_substituicao,motivo
+SMLL.SA,SMAL11.SA,proxy_etf,Substituição para comparabilidade
+^JN0U.JO,EZA,proxy_etf,Substituição para comparabilidade
+IBIT,BTC-USD,proxy_etf,Substituição para comparabilidade

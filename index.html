@@ -1,0 +1,995 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Global de Mercados em BRL - Relatório Final</title>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css">
+    <link rel="stylesheet" href="assets/css/analise_global_mercados_final.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Análise Global de Mercados em BRL — Relatório Final</h1>
+            <p>
+                Relatório final interativo do projeto, com blocos separados para universo analisado,
+                Equal Weight, Markowitz puro, Markowitz restrito, HRP, comparação consolidada,
+                impacto dos alternativos, testes estatísticos e apêndice navegável.
+            </p>
+            <p>
+                O HTML foi pensado para escala: filtros dropdown, exploradores de gráficos e tabelas,
+                assets externos e carregamento leve para GitHub Pages.
+            </p>
+
+            <div class="nav">
+                <a href="#resumo">Resumo</a>
+                <a href="#metodologia">Metodologia</a>
+                <a href="#universo">Universo</a>
+                <a href="#equal">Equal Weight</a>
+                <a href="#puro">Markowitz puro</a>
+                <a href="#restrito">Markowitz restrito</a>
+                <a href="#hrp">HRP</a>
+                <a href="#comparacao">Comparação</a>
+                <a href="#alternativos">Alternativos</a>
+                <a href="#testes">Testes</a>
+                <a href="#appendix">Apêndice</a>
+                <a href="#conclusao">Conclusão</a>
+            </div>
+        </div>
+
+        <section class="section" id="resumo">
+            
+<section class="executive-summary">
+    <div class="exec-main">
+        <h2>Resumo Executivo</h2>
+        <p>
+            O painel final consolida <b>45 ativos</b>,
+            <b>102 estratégias</b> e
+            <b>6 famílias de estratégia</b>,
+            organizadas a partir de <b>quatro métodos principais</b>: Equal Weight, Markowitz puro,
+            Markowitz restrito e HRP.
+        </p>
+
+        <div class="highlight-grid">
+            <div class="highlight-card">
+                <span class="label">Melhor família em Sharpe</span>
+                <div class="value">Markowitz puro | max sharpe</div>
+                <div class="small">liderança em eficiência risco-retorno</div>
+            </div>
+            <div class="highlight-card">
+                <span class="label">Melhor família em CAGR</span>
+                <div class="value">Markowitz puro | max sharpe</div>
+                <div class="small">liderança em crescimento composto</div>
+            </div>
+            <div class="highlight-card">
+                <span class="label">Melhor família em score</span>
+                <div class="value">Markowitz puro | max sharpe</div>
+                <div class="small">menor score final agregado</div>
+            </div>
+            <div class="highlight-card">
+                <span class="label">Família com mais vitórias</span>
+                <div class="value">Markowitz puro | max sharpe</div>
+                <div class="small">14 vitórias</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exec-side">
+        <h2>Principais aprendizados</h2>
+        <div class="takeaways">
+            
+    <div class="takeaway-card">
+        <h3>Domínio da família max sharpe pura</h3>
+        <p>A família <b>Markowitz puro | max sharpe</b> terminou como destaque em score, Sharpe e CAGR médios.</p>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <h3>Vitórias concentradas no mesmo núcleo</h3>
+        <p>A família com mais vitórias foi <b>Markowitz puro | max sharpe</b>, com <b>14</b> vitórias entre as famílias comparadas.</p>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <h3>Alternativos agregaram valor de forma desigual</h3>
+        <p>O melhor ganho de Sharpe com alternativos veio de <b>Markowitz puro | max sharpe</b>, com delta médio de <b>0.761</b>.</p>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <h3>Restrições ajudaram a disciplinar concentração</h3>
+        <p>No agregado, o Markowitz restrito ficou com peso máximo médio de <b>22.9%</b> contra <b>55.2%</b> no puro.</p>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <h3>Mais diversificação efetiva com limites</h3>
+        <p>O número efetivo médio de ativos no Markowitz restrito ficou em <b>9.42</b>, acima do puro.</p>
+    </div>
+    
+        </div>
+    </div>
+</section>
+
+            <div class="kpis">
+                
+    <div class="kpi-card">
+        <h3>Ativos analisados</h3>
+        <div class="valor">45</div>
+        <div class="small">índices + ETFs + alternativos</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <h3>Estratégias consolidadas</h3>
+        <div class="valor">102</div>
+        <div class="small">comparação final limpa</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <h3>Famílias de estratégia</h3>
+        <div class="valor">6</div>
+        <div class="small">núcleo final do comparativo</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <h3>Melhor família em Sharpe</h3>
+        <div class="valor">Markowitz puro | max sharpe</div>
+        <div class="small">liderança em eficiência</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <h3>Melhor família em CAGR</h3>
+        <div class="valor">Markowitz puro | max sharpe</div>
+        <div class="small">liderança em crescimento</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <h3>Mais vitórias</h3>
+        <div class="valor">Markowitz puro | max sharpe</div>
+        <div class="small">14 vitórias</div>
+    </div>
+    
+            </div>
+            
+<div class="badges">
+    <span class="badge">Índices: 14</span>
+    <span class="badge">ETFs: 25</span>
+    <span class="badge">Alternativos: 6</span>
+    <span class="badge">Wilcoxon significativos: 72</span>
+    <span class="badge">Permutation pareado: 76</span>
+    <span class="badge">Mann-Whitney: 37</span>
+</div>
+
+        </section>
+
+        <section class="section" id="metodologia">
+            <h2>Introdução e metodologia</h2>
+            
+<div class="texto-livre">
+    <p>
+        Este relatório final consolida o projeto de análise global de mercados em BRL, separando
+        claramente <b>índices</b>, <b>ETFs investíveis</b> e <b>alternativos</b>, e comparando
+        <b>quatro métodos principais de construção de carteira</b>: <b>Equal Weight</b>,
+        <b>Markowitz puro</b>, <b>Markowitz restrito</b> e <b>HRP</b>.
+    </p>
+    <p>
+        No fechamento comparativo, esses quatro métodos se desdobram em
+        <b>6 famílias de estratégia</b>,
+        porque os blocos de Markowitz são analisados separadamente entre
+        <b>min vol</b> e <b>max sharpe</b>, preservando a leitura correta entre versões defensivas
+        e ofensivas da otimização.
+    </p>
+    <p>
+        A lógica central do projeto foi preservar consistência metodológica. Índices ficaram no bloco
+        analítico de referência, ETFs ficaram no bloco investível, e o efeito dos alternativos foi
+        tratado explicitamente via cenários com e sem ouro, petróleo e bitcoin.
+    </p>
+    <p>
+        No fechamento da análise, o universo consolidado ficou em <b>45 ativos</b>,
+        sendo <b>14 índices</b>,
+        <b>25 ETFs</b> e
+        <b>6 alternativos</b>,
+        com <b>102 estratégias</b> avaliadas no comparativo final.
+    </p>
+</div>
+
+            
+<div class="texto-livre">
+    <p>
+        A metodologia final foi montada em camadas:
+    </p>
+    <ul>
+        <li>definição do universo global e conversão integral para BRL;</li>
+        <li>separação entre séries de referência e proxies investíveis;</li>
+        <li>construção das famílias Equal Weight;</li>
+        <li>espelhamento dessas mesmas famílias em Markowitz puro, Markowitz restrito e HRP;</li>
+        <li>comparação por família equivalente e por cenário com/sem alternativos;</li>
+        <li>rodagem de testes estatísticos para validar robustez dos resultados.</li>
+    </ul>
+    <p>
+        O HTML foi desenhado para não travar: tabelas grandes ficam em viewers separados por seção,
+        gráficos ficam em exploradores com dropdown, e os dados interativos são exportados em arquivos
+        JS externos, com lógica preparada para divisão automática caso algum arquivo fique grande.
+        Do ponto de vista metodológico, o projeto também foi estruturado para evitar leituras simplistas
+        de diversificação: como o universo investível é composto por ETFs, cada ativo já traz diversificação
+        interna, o que exige avaliar não apenas quantos ETFs entram em uma carteira, mas <b>quais blocos de risco
+        globais</b> estão sendo combinados.
+    </p>
+</div>
+
+        </section>
+
+        <section class="section" id="universo">
+            <h2>Universo analisado</h2>
+            
+<div class="texto-livre">
+    <p>
+        O bloco de universo mostra o pano de fundo do projeto. A leitura correta aqui é que
+        <b>índices e ETFs não foram misturados</b>: os índices aparecem como referência de mercado,
+        enquanto os ETFs compõem o espaço investível das carteiras.
+    </p>
+    <p>
+        Esse desenho evita duplicação conceitual e torna a comparação mais limpa. Além disso,
+        o painel de alternativos em escala log preserva a leitura de ativos com trajetórias muito diferentes,
+        especialmente o bitcoin, sem destruir a visualização do restante do universo.
+    </p>
+    <p>
+        Outro ponto importante é que, neste projeto, a diversificação acontece em <b>duas camadas</b>:
+        dentro de cada ETF, que já é uma cesta de ativos, e entre os próprios ETFs, que combinam
+        exposições de países, regiões, fatores e regimes de risco distintos. Por isso,
+        <b>adicionar mais ETFs não significa automaticamente mais segurança</b>. Em alguns casos,
+        novos ETFs ampliam a diversificação de forma útil; em outros, apenas acrescentam exposições
+        mais voláteis, redundantes ou estruturalmente menos eficientes no fechamento risco-retorno.
+    </p>
+</div>
+
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de gráficos do universo</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione o gráfico</label>
+                <select id="grafico_select_universo"></select>
+            </div>
+            <div class="actions">
+                <a id="grafico_open_universo" class="btn-link-open" href="#" target="_blank">Abrir gráfico</a>
+            </div>
+        </div>
+        <div class="viewer-image-wrap">
+            <img id="grafico_img_universo" class="zoomable-img" src="" alt="" style="display:none;">
+            <div id="grafico_caption_universo" class="viewer-caption"></div>
+        </div>
+    </div>
+    
+                
+    <div class="viewer-card">
+        <h3>Explorador de tabelas do universo</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_universo"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_universo" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_universo" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="equal">
+            <h2>Equal Weight</h2>
+            
+<div class="texto-livre">
+    <p>
+        O <b>Equal Weight</b> funciona aqui como baseline metodológico. Ele distribui peso de forma simples,
+        permitindo medir o ganho real de complexidade trazido por Markowitz e HRP.
+    </p>
+    <p>
+        No agregado, o Equal Weight terminou com Sharpe médio de <b>1.033</b>
+        e CAGR médio de <b>14.8%</b>. Isso é importante porque mostra
+        que a diversificação simples já produz um benchmark interno forte e difícil de bater de forma robusta.
+    </p>
+    <p>
+        Mas essa simplicidade precisa ser lida corretamente: como o projeto trabalha com <b>ETFs</b>, o Equal Weight
+        já parte de ativos que são internamente diversificados. Isso significa que ele não está simplesmente
+        espalhando capital entre ativos isolados, mas entre <b>blocos de risco globais já diversificados</b>.
+        Por isso, quando métodos mais sofisticados removem ou reduzem alguns ETFs, isso não deve ser interpretado
+        automaticamente como perda de qualidade; em muitos casos, trata-se de evitar diversificação redundante
+        ou exposições adicionais que aumentam volatilidade sem compensação proporcional em retorno.
+    </p>
+</div>
+
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de gráficos do Equal Weight</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione o gráfico</label>
+                <select id="grafico_select_equal_weight"></select>
+            </div>
+            <div class="actions">
+                <a id="grafico_open_equal_weight" class="btn-link-open" href="#" target="_blank">Abrir gráfico</a>
+            </div>
+        </div>
+        <div class="viewer-image-wrap">
+            <img id="grafico_img_equal_weight" class="zoomable-img" src="" alt="" style="display:none;">
+            <div id="grafico_caption_equal_weight" class="viewer-caption"></div>
+        </div>
+    </div>
+    
+                
+    <div class="viewer-card">
+        <h3>Explorador de tabelas do Equal Weight</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_equal_weight"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_equal_weight" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_equal_weight" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="puro">
+            <h2>Markowitz puro</h2>
+            
+<div class="texto-livre">
+    <p>
+        O <b>Markowitz puro</b> foi a família mais agressiva do projeto em termos de otimização. Sem limites explícitos
+        de peso, ele pôde concentrar mais capital nas teses com melhor relação estimada entre retorno esperado e risco.
+    </p>
+    <p>
+        No agregado, o método apresentou Sharpe médio de <b>1.262</b>,
+        CAGR médio de <b>16.8%</b> e score médio de
+        <b>221.97</b>. Esse bloco é fundamental para entender
+        onde a otimização realmente cria valor e onde ela apenas aumenta concentração.
+    </p>
+</div>
+
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de gráficos do Markowitz puro</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione o gráfico</label>
+                <select id="grafico_select_markowitz_puro"></select>
+            </div>
+            <div class="actions">
+                <a id="grafico_open_markowitz_puro" class="btn-link-open" href="#" target="_blank">Abrir gráfico</a>
+            </div>
+        </div>
+        <div class="viewer-image-wrap">
+            <img id="grafico_img_markowitz_puro" class="zoomable-img" src="" alt="" style="display:none;">
+            <div id="grafico_caption_markowitz_puro" class="viewer-caption"></div>
+        </div>
+    </div>
+    
+                
+    <div class="viewer-card">
+        <h3>Explorador de tabelas do Markowitz puro</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_markowitz_puro"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_markowitz_puro" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_markowitz_puro" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="restrito">
+            <h2>Markowitz restrito</h2>
+            
+<div class="texto-livre">
+    <p>
+        O <b>Markowitz restrito</b> preserva a lógica do modelo clássico, mas força disciplina de alocação via limites
+        mínimos e máximos. Isso é especialmente útil para evitar soluções excessivamente concentradas.
+    </p>
+    <p>
+        Em média, o método ficou com peso máximo de <b>22.9%</b>
+        e número efetivo de ativos de <b>9.42</b>.
+        Na prática, isso significou menos concentração do que o Markowitz puro.
+    </p>
+    <p>
+        O ponto mais interessante é que o restrito conseguiu capturar boa parte do ganho de eficiência do Markowitz,
+        mas com uma estrutura de pesos mais defensável para implementação real.
+    </p>
+</div>
+
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de gráficos do Markowitz restrito</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione o gráfico</label>
+                <select id="grafico_select_markowitz_restrito"></select>
+            </div>
+            <div class="actions">
+                <a id="grafico_open_markowitz_restrito" class="btn-link-open" href="#" target="_blank">Abrir gráfico</a>
+            </div>
+        </div>
+        <div class="viewer-image-wrap">
+            <img id="grafico_img_markowitz_restrito" class="zoomable-img" src="" alt="" style="display:none;">
+            <div id="grafico_caption_markowitz_restrito" class="viewer-caption"></div>
+        </div>
+    </div>
+    
+                
+    <div class="viewer-card">
+        <h3>Explorador de tabelas do Markowitz restrito</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_markowitz_restrito"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_markowitz_restrito" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_markowitz_restrito" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="hrp">
+            <h2>HRP</h2>
+            
+<div class="texto-livre">
+    <p>
+        O <b>HRP</b> entra como alternativa estrutural ao Markowitz. Em vez de depender diretamente de uma solução
+        clássica de média-variância, ele usa a estrutura hierárquica de correlações para distribuir risco.
+    </p>
+    <p>
+        No agregado, o HRP terminou com Sharpe médio de <b>1.028</b>
+        e CAGR médio de <b>14.0%</b>.
+        O método ficou competitivo, mas sem dominar o baseline em eficiência.
+    </p>
+    <p>
+        A leitura correta do HRP neste projeto é menos sobre “vencer tudo” e mais sobre oferecer
+        uma terceira via entre simplicidade total e concentração estimada da média-variância.
+    </p>
+</div>
+
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de gráficos do HRP</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione o gráfico</label>
+                <select id="grafico_select_hrp"></select>
+            </div>
+            <div class="actions">
+                <a id="grafico_open_hrp" class="btn-link-open" href="#" target="_blank">Abrir gráfico</a>
+            </div>
+        </div>
+        <div class="viewer-image-wrap">
+            <img id="grafico_img_hrp" class="zoomable-img" src="" alt="" style="display:none;">
+            <div id="grafico_caption_hrp" class="viewer-caption"></div>
+        </div>
+    </div>
+    
+                
+    <div class="viewer-card">
+        <h3>Explorador de tabelas do HRP</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_hrp"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_hrp" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_hrp" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="comparacao">
+            <h2>Comparação consolidada entre métodos</h2>
+            
+<div class="texto-livre">
+    <p>
+        A comparação consolidada foi feita em cima de <b>102 estratégias</b>
+        e <b>6 famílias de estratégia</b>.
+        Essas famílias nascem de <b>quatro métodos principais</b>, mas o bloco de Markowitz é
+        corretamente separado entre versões <b>min vol</b> e <b>max sharpe</b>, o que eleva o comparativo
+        final para seis famílias efetivas.
+    </p>
+    <p>
+        A família vencedora no agregado foi <b>Markowitz puro | max sharpe</b>.
+        Já o método campeão pelo score médio agregado foi <b>Markowitz puro</b>,
+        com score médio de <b>221.97</b>.
+        Aqui, <b>score menor significa melhor fechamento agregado</b>, porque o indicador resume
+        ranking conjunto entre CAGR, Sharpe, drawdown, volatilidade e Calmar.
+    </p>
+    <p>
+        Isso resume bem o projeto: o vencedor final não surgiu só por retorno bruto, nem por uma única
+        métrica isolada. O que apareceu foi uma hierarquia multicritério, em que eficiência, crescimento,
+        controle de perdas e concentração aceitável precisaram ser lidos em conjunto. Como o universo investível
+        é formado por ETFs — que já são carteiras diversificadas internamente —, a comparação final também mostra
+        que <b>mais ETFs não significam automaticamente uma carteira mais segura</b>. Em vários casos, remover ou
+        reduzir alguns ETFs fez sentido não por reduzir diversificação de forma ingênua, mas por evitar exposições
+        redundantes ou mercados estruturalmente mais instáveis que pioravam o fechamento risco-retorno.
+    </p>
+    <p>
+        Use os filtros abaixo para trocar métrica, cenário, método e família, sem precisar carregar centenas
+        de tabelas ao mesmo tempo.
+    </p>
+</div>
+
+
+            <div class="interactive-card">
+                <h3>Explorador interativo de estratégias</h3>
+
+                <div class="filter-grid">
+                    <div class="filter-box">
+                        <label>Métodos</label>
+                        <select id="filtro_metodo" multiple></select>
+                    </div>
+                    <div class="filter-box">
+                        <label>Cenários</label>
+                        <select id="filtro_cenario" multiple></select>
+                    </div>
+                    <div class="filter-box">
+                        <label>Famílias (carteiras)</label>
+                        <select id="filtro_familia" multiple></select>
+                    </div>
+                    <div class="filter-box">
+                        <label>Métrica do ranking</label>
+                        <select id="filtro_metrica_ranking">
+                            <option value="score_final">score_final</option>
+                            <option value="sharpe" selected>sharpe</option>
+                            <option value="cagr">cagr</option>
+                            <option value="retorno_total">retorno_total</option>
+                            <option value="calmar">calmar</option>
+                            <option value="sortino">sortino</option>
+                            <option value="vol_anual">vol_anual</option>
+                            <option value="max_drawdown">max_drawdown</option>
+                            <option value="peso_max">peso_max</option>
+                            <option value="top3_peso">top3_peso</option>
+                            <option value="hhi">hhi</option>
+                            <option value="n_efetivo_ativos">n_efetivo_ativos</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label>Top N</label>
+                        <select id="filtro_topn">
+                            <option value="10">10</option>
+                            <option value="15" selected>15</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="actions-row">
+                    <button class="btn-ghost" id="btn_preset_all">Mostrar tudo</button>
+                    <button class="btn-ghost" id="btn_preset_core">Preset principal</button>
+                </div>
+
+                <div class="plotly-wrap" id="plot_ranking"></div>
+
+                <div class="note">
+                    A leitura correta do ranking depende da métrica escolhida.
+                    Para <b>score_final</b>, <b>vol_anual</b>, <b>peso_max</b>, <b>top3_peso</b> e <b>hhi</b>,
+                    valores menores são melhores. Para as demais, valores maiores são melhores.
+                </div>
+            </div>
+
+            <div class="interactive-card">
+                <h3>Mapa risco-retorno-eficiência</h3>
+
+                <div class="filter-grid-4">
+                    <div class="filter-box">
+                        <label>Eixo X</label>
+                        <select id="filtro_scatter_x">
+                            <option value="vol_anual" selected>vol_anual</option>
+                            <option value="max_drawdown">max_drawdown</option>
+                            <option value="peso_max">peso_max</option>
+                            <option value="hhi">hhi</option>
+                            <option value="n_efetivo_ativos">n_efetivo_ativos</option>
+                            <option value="score_final">score_final</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label>Eixo Y</label>
+                        <select id="filtro_scatter_y">
+                            <option value="cagr" selected>cagr</option>
+                            <option value="sharpe">sharpe</option>
+                            <option value="calmar">calmar</option>
+                            <option value="sortino">sortino</option>
+                            <option value="retorno_total">retorno_total</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label>Âncora para séries de família</label>
+                        <select id="filtro_ancora">
+                            <option value="etfs_todos">etfs_todos</option>
+                            <option value="etfs_com_tudo" selected>etfs_com_tudo</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label>Modo da série</label>
+                        <select id="filtro_modo_anchor">
+                            <option value="base100" selected>base100</option>
+                            <option value="drawdown">drawdown</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="plotly-wrap" id="plot_scatter"></div>
+                <div class="plotly-wrap" id="plot_anchor"></div>
+
+                <div class="filter-box" style="margin-top:12px;">
+                    <label>Famílias na série-âncora</label>
+                    <select id="filtro_familia_anchor" multiple></select>
+                </div>
+            </div>
+
+            <div class="interactive-card">
+                <h3>Tabela interativa consolidada</h3>
+                <div class="table-wrap large">
+                    <table id="tabela_comp_interativa" class="display compact stripe nowrap" style="width:100%"></table>
+                </div>
+            </div>
+
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de gráficos da comparação consolidada</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione o gráfico</label>
+                <select id="grafico_select_comparacao"></select>
+            </div>
+            <div class="actions">
+                <a id="grafico_open_comparacao" class="btn-link-open" href="#" target="_blank">Abrir gráfico</a>
+            </div>
+        </div>
+        <div class="viewer-image-wrap">
+            <img id="grafico_img_comparacao" class="zoomable-img" src="" alt="" style="display:none;">
+            <div id="grafico_caption_comparacao" class="viewer-caption"></div>
+        </div>
+    </div>
+    
+                
+    <div class="viewer-card">
+        <h3>Explorador de tabelas da comparação consolidada</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_comparacao"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_comparacao" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_comparacao" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="alternativos">
+            <h2>Impacto dos alternativos</h2>
+            
+<div class="texto-livre">
+    <p>
+        O efeito dos alternativos não foi homogêneo. O maior ganho médio de Sharpe ao incluir alternativos
+        ficou com <b>Markowitz puro | max sharpe</b>,
+        com delta de <b>0.761</b>.
+    </p>
+    <p>
+        Já o melhor ganho de CAGR veio de <b>Markowitz restrito | max sharpe</b>,
+        enquanto a melhor melhora em drawdown apareceu em <b>Markowitz puro | min vol</b>.
+        Isso sugere que o papel dos alternativos depende do objetivo da família: ofensivo, defensivo ou híbrido.
+    </p>
+</div>
+
+
+            <div class="interactive-card">
+                <h3>Delta por família</h3>
+                <div class="filter-grid-4">
+                    <div class="filter-box">
+                        <label>Métrica de delta</label>
+                        <select id="filtro_delta_alt">
+                            <option value="delta_sharpe_medio" selected>delta_sharpe_medio</option>
+                            <option value="delta_cagr_medio">delta_cagr_medio</option>
+                            <option value="delta_max_drawdown_medio">delta_max_drawdown_medio</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="plotly-wrap" id="plot_delta_alt"></div>
+            </div>
+        </section>
+
+        <section class="section" id="testes">
+            <h2>Robustez e testes estatísticos</h2>
+            
+<div class="texto-livre">
+    <p>
+        O bloco de robustez estatística reforça que a leitura final não depende de uma métrica única.
+        Foram avaliadas <b>7 métricas</b>, com
+        <b>105 testes pareados</b> e
+        <b>42 testes de cenário</b>.
+    </p>
+    <p>
+        No agregado, o projeto encontrou <b>72</b> significâncias em Wilcoxon,
+        <b>76</b> em permutation test pareado,
+        <b>37</b> em Mann-Whitney e
+        <b>36</b> em permutation test de cenário.
+    </p>
+   <p>
+        Isso dá sustentação empírica à diferença entre famílias. No fechamento deste projeto, houve
+        convergência relevante entre os critérios centrais, com a mesma família aparecendo na liderança
+        dos principais destaques do comparativo final. Ainda assim, o bloco estatístico continua importante
+        porque mostra que essa superioridade não deve ser lida como um acaso isolado, mas como um resultado
+        que encontrou apoio empírico nas comparações realizadas.
+    </p>
+</div>
+
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de tabelas estatísticas</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_testes"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_testes" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_testes" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="appendix">
+            <h2>Apêndice e catálogos</h2>
+            <div class="texto-livre">
+                <p>
+                    Esta seção centraliza os manifestos, catálogos e tabelas auxiliares do projeto.
+                    O objetivo é manter o HTML principal navegável sem perder o acesso ao material completo.
+                </p>
+            </div>
+            <div class="subsection-grid">
+                
+    <div class="viewer-card">
+        <h3>Explorador de manifestos e catálogos</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela HTML</label>
+                <select id="tabela_select_manifestos"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_manifestos" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_manifestos" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section" id="conclusao">
+            
+<div class="conclusao">
+    <h2>Conclusão</h2>
+
+    <p>
+        Este projeto não foi um exercício simples de “escolher a carteira com maior retorno”.
+        Ele foi construído para responder, de forma metodologicamente consistente, como diferentes
+        arquiteturas de carteira se comportam quando o universo global é convertido integralmente para BRL,
+        quando <b>índices</b> são mantidos como bloco de referência, quando <b>ETFs</b> são tratados como
+        universo investível e quando o papel dos <b>alternativos</b> é avaliado separadamente, sem misturas
+        conceituais que contaminem a leitura final. Essa separação foi essencial porque impede que o relatório
+        trate o mesmo fenômeno sob dois rótulos ao mesmo tempo e preserva a comparação justa entre referência
+        de mercado, proxy investível e fonte adicional de diversificação.
+    </p>
+
+   <p>
+        O projeto consolidou <b>45 ativos</b>,
+        <b>102 estratégias</b> e
+        <b>6 famílias de estratégia</b>.
+        No fechamento consolidado, a família <b>Markowitz puro | max sharpe</b>
+        terminou como principal destaque do estudo, liderando simultaneamente em <b>score final agregado</b>,
+        <b>Sharpe</b> e <b>CAGR</b>. Em vez de uma divisão entre líderes por critério, o que apareceu aqui foi
+        uma liderança convergente: a mesma família conseguiu reunir crescimento, eficiência e força no ranking
+        multicritério. Isso não elimina a importância dos trade-offs analisados ao longo do projeto, mas indica
+        que, nesta amostra e neste desenho metodológico, essa família conseguiu combinar retorno, qualidade de
+        retorno e posição agregada de forma superior às demais.
+    </p>
+
+    <p>
+        O <b>Equal Weight</b> foi mais do que um ponto de partida; ele funcionou como teste de honestidade
+        do projeto. Com Sharpe médio de <b>1.033</b> e CAGR médio
+        de <b>14.8%</b>, ele mostrou que uma diversificação simples
+        e transparente já entrega uma base forte. No comparativo final, sua leitura foi mantida em
+        <b>frequência mensal consistente com os demais métodos</b>, o que tornou a comparação com Markowitz puro,
+        Markowitz restrito e HRP metodologicamente justa. Isso importa porque impede que métodos mais sofisticados
+        pareçam bons apenas por complexidade. Para vencer o Equal Weight, um método precisou realmente produzir
+        ganho empírico, e não apenas uma estética matemática mais elaborada.
+    </p>
+
+    <p>
+        Outro ponto importante é a própria natureza do universo investível analisado. Como as carteiras foram
+        construídas com <b>ETFs</b>, cada ativo já representa internamente uma cesta diversificada de ações.
+        Isso significa que a diversificação do projeto opera em duas camadas: dentro de cada ETF e entre os
+        próprios ETFs. Nesse contexto, <b>mais ETFs não equivalem automaticamente a mais segurança</b>. A inclusão
+        de novos fundos pode ampliar a diversificação de forma útil, mas também pode introduzir mercados mais
+        instáveis, exposições redundantes ou blocos de risco que elevam a volatilidade sem melhorar proporcionalmente
+        o retorno. Por isso, quando alguns métodos reduziram o número de ETFs ou concentraram mais peso em certos
+        fundos, isso não deve ser lido necessariamente como perda de qualidade, mas como tentativa de evitar
+        diversificação redundante ou diversificação que piora o portfólio.
+    </p>
+
+    <p>
+        O <b>Markowitz puro</b> foi a face mais agressiva da otimização. No agregado, ele apresentou Sharpe médio
+        de <b>1.262</b>, CAGR médio de
+        <b>16.8%</b> e score médio de
+        <b>221.97</b>. Mas esse ganho veio acompanhado do preço
+        clássico da média-variância sem amarras: maior tendência à concentração, peso máximo mais elevado e
+        estrutura menos amistosa para implementação. Em outras palavras, o Markowitz puro mostrou a potência da
+        otimização quando deixada livre, mas também escancarou sua fragilidade prática quando a solução ótima
+        converge demais para poucas teses.
+    </p>
+
+    <p>
+        O <b>Markowitz restrito</b> foi justamente a resposta metodológica a esse problema. Com peso máximo médio
+        de <b>22.9%</b> contra
+        <b>55.2%</b> no puro, e número efetivo médio de ativos
+        de <b>9.42</b>, o método mostrou que é possível
+        disciplinar a carteira sem esvaziar completamente o ganho da otimização. Esse ponto é um dos resultados
+        mais maduros do relatório: boa parte do valor do Markowitz pode ser preservada quando a carteira é obrigada
+        a respeitar limites minimamente plausíveis de governança, concentração e capacidade de implementação.
+    </p>
+
+    <p>
+        O <b>HRP</b>, por sua vez, cumpriu um papel estratégico muito importante. Em vez de competir apenas como
+        “mais um otimizador”, ele trouxe uma lógica diferente, baseada em hierarquia de correlações e distribuição
+        de risco. Seu Sharpe médio de <b>1.028</b> e CAGR médio de
+        <b>14.0%</b> mostram que ele permaneceu competitivo,
+        funcionando como alternativa intermediária entre a simplicidade do Equal Weight e a agressividade do
+        Markowitz. Isso é relevante porque o projeto não buscava coroar apenas um vencedor absoluto, mas mapear
+        estilos de construção de carteira coerentes com objetivos distintos.
+    </p>
+
+    <p>
+        A leitura conjunta de <b>concentração, diversificação efetiva, eficiência e drawdown</b> foi uma das maiores
+        qualidades metodológicas do projeto. Não bastava saber quem teve maior CAGR; era necessário observar como
+        esse resultado foi construído. Por isso, métricas como peso máximo, top 3 pesos, HHI, número efetivo de ativos,
+        Sharpe, Sortino, Calmar e drawdown máximo tiveram papel central. Esse conjunto mostrou que retorno alto sem
+        disciplina de pesos pode esconder fragilidade estrutural, enquanto carteiras mais equilibradas podem abrir mão
+        de algum upside para ganhar robustez, estabilidade e governança.
+    </p>
+
+    <p>
+        O bloco de <b>alternativos</b> reforçou exatamente essa visão de trade-off. O melhor ganho médio de Sharpe
+        com alternativos veio de <b>Markowitz puro | max sharpe</b>,
+        com delta de <b>0.761</b>. Já o melhor ganho de CAGR
+        veio de <b>Markowitz restrito | max sharpe</b>, enquanto a melhor melhora
+        em drawdown apareceu em <b>Markowitz puro | min vol</b>.
+        Isso mostra que ouro, petróleo e bitcoin não devem ser tratados como enfeite analítico nem como solução
+        universal: <b>o efeito deles depende da família, da métrica e do objetivo da carteira</b>. Em algumas
+        arquiteturas, eles aumentam eficiência; em outras, ajudam mais no amortecimento de perdas; em outras,
+        acrescentam pouco ou deslocam o perfil de risco de forma menos atraente.
+    </p>
+
+    <p>
+        A comparação entre famílias também mostrou que faz sentido tratar <b>min vol</b> e <b>max sharpe</b> como
+        famílias distintas dentro dos blocos Markowitz, em vez de colapsá-las artificialmente em um único grupo.
+        Essa separação preserva o fato econômico de que uma carteira desenhada para minimizar volatilidade responde
+        a incentivos diferentes de uma carteira desenhada para maximizar eficiência risco-retorno. O relatório final,
+        portanto, não só compara métodos, mas compara <b>filosofias de alocação</b> dentro de cada método.
+    </p>
+
+    <p>
+        Outro mérito do projeto foi não deixar a conclusão refém de impressão visual ou de uma métrica isolada.
+        O bloco de robustez estatística avaliou <b>7 métricas</b>,
+        com <b>105 testes pareados</b> e
+        <b>42 testes de cenário</b>. No agregado, foram encontradas
+        <b>72</b> significâncias em Wilcoxon,
+        <b>76</b> em permutation test pareado,
+        <b>37</b> em Mann-Whitney e
+        <b>36</b> em permutation test de cenário.
+        Isso não transforma o relatório em uma verdade absoluta, mas dá uma base muito mais sólida para afirmar
+        que as diferenças observadas não são mero ruído casual.
+    </p>
+
+    <p>
+        A síntese madura do projeto é a seguinte: embora diferentes métodos continuem oferecendo vantagens
+        distintas em termos de simplicidade, disciplina de pesos, robustez estrutural e controle de concentração,
+        <b>o fechamento deste estudo mostrou convergência relevante entre os critérios centrais</b>. Em vez de uma
+        fragmentação completa entre vencedores por métrica, o comparativo final revelou que uma mesma família
+        conseguiu reunir liderança em <b>score agregado</b>, <b>Sharpe</b> e <b>CAGR</b>. Isso não elimina os
+        trade-offs discutidos ao longo do relatório, mas indica que, nesta amostra e neste desenho metodológico,
+        uma solução conseguiu combinar melhor crescimento, eficiência e qualidade de alocação do que as demais.
+    </p>
+
+    <p>
+        Em termos profissionais, o relatório final sugere que a boa prática não é procurar uma carteira “perfeita”,
+        mas sim escolher conscientemente a família de carteira mais aderente ao objetivo e à tolerância do investidor.
+        O projeto mostra que a sofisticação só vale a pena quando produz ganho real sobre um baseline simples, que
+        restrições não são inimigas da otimização — muitas vezes são o que torna a otimização utilizável — e que
+        alternativos devem entrar como instrumentos funcionais, não como adereços. Essa é uma conclusão compatível
+        com um projeto grande: metodologicamente cuidadosa, empiricamente sustentada e honesta sobre os limites e
+        vantagens de cada abordagem.
+    </p>
+
+    <h3>Principais aprendizados</h3>
+    <ul>
+        <li>índices, ETFs e alternativos precisam permanecer em blocos conceituais separados para evitar leitura contaminada;</li>
+        <li>Equal Weight foi um benchmark forte e útil para testar se a sofisticação realmente agregou valor;</li>
+        <li>Markowitz puro concentrou mais, mas também mostrou o teto de eficiência possível quando a otimização fica livre;</li>
+        <li>Markowitz restrito preservou parte relevante do ganho do puro com melhor disciplina de pesos e maior implementabilidade;</li>
+        <li>HRP ofereceu uma alternativa estruturalmente distinta, especialmente interessante para quem valoriza diversificação por correlação;</li>
+        <li>alternativos ajudaram, mas de forma seletiva e dependente do objetivo da família de carteira;</li>
+        <li>os testes estatísticos reforçaram que as diferenças entre famílias são reais, embora não resumíveis a uma única métrica;</li>
+        <li>a decisão final entre famílias deve ser orientada por objetivo, risco tolerado, concentração aceitável e robustez desejada.</li>
+    </ul>
+</div>
+
+        </section>
+
+        <div class="footer">
+            Relatório final gerado automaticamente pela Etapa 34 do notebook.
+        </div>
+    </div>
+
+    <div id="imgModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img id="modalImg" src="" alt="">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+
+    <script src="resultados/html_support/html_final_meta_data.js"></script>
+<script src="resultados/html_support/html_final_comparacao_data.js"></script>
+<script src="resultados/html_support/html_final_resumos_data.js"></script>
+<script src="resultados/html_support/html_final_series_anchor_data.js"></script>
+<script src="resultados/html_support/html_final_tabelas_catalogo.js"></script>
+<script src="resultados/html_support/html_final_graficos_catalogo.js"></script>
+    <script src="assets/js/analise_global_mercados_final.js"></script>
+</body>
+</html>

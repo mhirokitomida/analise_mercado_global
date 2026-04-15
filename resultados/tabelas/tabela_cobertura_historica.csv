@@ -1,0 +1,50 @@
+﻿nome_ativo,ticker_yahoo,grupo_universo,classe,subclasse,regiao,pais,moeda_original,tipo_ativo,status_download,mensagem_download,data_min,data_max,n_linhas,n_close_na,n_adj_close_na,n_volume_na,pct_close_na,pct_adj_close_na,pct_volume_na,data_download
+USDBRL,BRL=X,alternativos,FX,Cambio,Brasil,Brasil,BRL,cambio,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4237,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:53.686516
+Bitcoin USD,BTC-USD,alternativos,Crypto,Bitcoin,Global,Global,USD,cripto,ok,Download OK na tentativa 1,2014-09-17,2026-04-15,4229,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:51.001326
+DAX,^GDAXI,indices,Equity Index,Broad Market,Europa,Alemanha,EUR,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4131,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:00.314154
+FTSE 100,^FTSE,indices,Equity Index,Broad Market,Europa,Reino Unido,GBP,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4111,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:58.923697
+ASX 200,^AXJO,indices,Equity Index,Broad Market,Oceania,Australia,AUD,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4108,1,1,0,0.00024342745861733204,0.00024342745861733204,0.0,2026-04-15 14:23:09.884351
+S&P 500,^GSPC,indices,Equity Index,Broad Market,America do Norte,Estados Unidos,USD,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:51.945057
+Nasdaq 100,^NDX,indices,Equity Index,Tech/Growth,America do Norte,Estados Unidos,USD,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:53.317925
+Vanguard Total World Stock ETF,VT,etfs,ETF,Global Equity,Global,Global,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:16.875432
+iShares MSCI ACWI ETF,ACWI,etfs,ETF,Global Equity,Global,Global,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:18.196743
+Vanguard FTSE Developed Markets ETF,VEA,etfs,ETF,Developed Markets,Global,Desenvolvidos,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:19.523802
+SPDR S&P 500 ETF,SPY,etfs,ETF,US Broad Market,America do Norte,Estados Unidos,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:22.171125
+Invesco QQQ Trust,QQQ,etfs,ETF,US Tech/Growth,America do Norte,Estados Unidos,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:23.490621
+iShares MSCI Mexico ETF,EWW,etfs,ETF,Mexico,America Latina,Mexico,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:24.832825
+iShares MSCI Chile ETF,ECH,etfs,ETF,Chile,America Latina,Chile,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:26.253897
+SPDR EURO STOXX 50 ETF,FEZ,etfs,ETF,Zona do Euro,Europa,Zona do Euro,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:28.872264
+iShares MSCI United Kingdom ETF,EWU,etfs,ETF,Reino Unido,Europa,Reino Unido,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:30.209810
+iShares MSCI Germany ETF,EWG,etfs,ETF,Alemanha,Europa,Alemanha,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:31.528083
+iShares MSCI Japan ETF,EWJ,etfs,ETF,Japao,Asia,Japao,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:32.866268
+iShares MSCI Hong Kong ETF,EWH,etfs,ETF,Hong Kong,Asia,Hong Kong,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:35.547165
+iShares MSCI South Korea ETF,EWY,etfs,ETF,Coreia do Sul,Asia,Coreia do Sul,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:36.986774
+iShares MSCI Taiwan ETF,EWT,etfs,ETF,Taiwan,Asia,Taiwan,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:39.609817
+iShares MSCI Australia ETF,EWA,etfs,ETF,Australia,Oceania,Australia,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:40.827363
+iShares MSCI South Africa ETF,EZA,etfs,ETF,Africa do Sul,Africa,Africa do Sul,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:43.564732
+SPDR Gold Shares,GLD,etfs,ETF,Ouro,Global,Global,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:44.890141
+United States Oil Fund,USO,etfs,ETF,Petroleo,Global,Global,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:47.204517
+Energy Select Sector SPDR Fund,XLE,etfs,ETF,Energia,America do Norte,Estados Unidos,USD,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4095,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:48.545571
+Ouro Spot/Front,GC=F,alternativos,Commodity,Ouro,Global,Global,USD,commodity,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4094,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:49.594435
+Euro Stoxx 50,^STOXX50E,indices,Equity Index,Broad Market,Europa,Zona do Euro,EUR,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4083,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:57.521508
+Mexico IPC,^MXX,indices,Equity Index,Broad Market,America Latina,Mexico,MXN,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4082,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:54.694241
+Brent Crude Oil,BZ=F,alternativos,Commodity,Petroleo,Global,Global,USD,commodity,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4064,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:52.275139
+Ibovespa,^BVSP,indices,Equity Index,Broad Market,Brasil,Brasil,BRL,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4036,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:49.561986
+iShares Ibovespa ETF,BOVA11.SA,etfs,ETF,Brasil Broad Market,Brasil,Brasil,BRL,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4017,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:14.267410
+Hang Seng,^HSI,indices,Equity Index,Broad Market,Asia,Hong Kong,HKD,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,4006,1,1,0,0.00024962556165751375,0.00024962556165751375,0.0,2026-04-15 14:23:04.364796
+Kospi,^KS11,indices,Equity Index,Broad Market,Asia,Coreia do Sul,KRW,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-14,4003,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:05.854421
+NZX 50,^NZ50,indices,Equity Index,Broad Market,Oceania,Nova Zelandia,NZD,indice,ok,Download OK na tentativa 1,2010-01-05,2026-04-15,4002,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:11.286090
+Nifty 50,^NSEI,indices,Equity Index,Broad Market,Asia,India,INR,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,3997,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:07.429424
+iShares Small Caps ETF,SMAL11.SA,etfs,ETF,Brasil Small Caps,Brasil,Brasil,BRL,etf,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,3992,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:15.544721
+Nikkei 225,^N225,indices,Equity Index,Broad Market,Asia,Japao,JPY,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,3982,1,1,0,0.00025113008538422905,0.00025113008538422905,0.0,2026-04-15 14:23:01.711571
+Taiwan Weighted,^TWII,indices,Equity Index,Broad Market,Asia,Taiwan,TWD,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,3972,1,1,0,0.00025176233635448137,0.00025176233635448137,0.0,2026-04-15 14:23:08.720227
+Shanghai Composite,000001.SS,indices,Equity Index,Broad Market,Asia,China,CNY,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,3948,1,1,0,0.00025329280648429586,0.00025329280648429586,0.0,2026-04-15 14:23:02.982969
+iShares MSCI New Zealand ETF,ENZL,etfs,ETF,Nova Zelandia,Oceania,Nova Zelandia,USD,etf,ok,Download OK na tentativa 1,2010-09-02,2026-04-15,3927,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:42.137494
+Global X MSCI Argentina ETF,ARGT,etfs,ETF,Argentina,America Latina,Argentina,USD,etf,ok,Download OK na tentativa 1,2011-03-03,2026-04-15,3802,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:27.542261
+iShares MSCI China ETF,MCHI,etfs,ETF,China,Asia,China,USD,etf,ok,Download OK na tentativa 1,2011-03-31,2026-04-15,3782,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:34.210300
+iShares MSCI India ETF,INDA,etfs,ETF,India,Asia,India,USD,etf,ok,Download OK na tentativa 1,2012-02-03,2026-04-15,3569,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:38.271948
+iShares Core MSCI Emerging Markets ETF,IEMG,etfs,ETF,Emerging Markets,Emergentes,Emergentes,USD,etf,ok,Download OK na tentativa 1,2012-10-24,2026-04-15,3386,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:20.718835
+Chile IPSA,^IPSA,indices,Equity Index,Broad Market,America Latina,Chile,CLP,indice,ok,Download OK na tentativa 1,2010-01-04,2026-04-15,2349,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:55.942370
+South Africa Top 40,^JN0U.JO,indices,Equity Index,Broad Market,Africa,Africa do Sul,ZAR,indice,ok,Download OK na tentativa 1,2017-09-26,2026-04-15,2138,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:12.540162
+iShares Bitcoin Trust,IBIT,etfs,ETF,Bitcoin,Global,Global,USD,etf,ok,Download OK na tentativa 1,2024-01-11,2026-04-15,566,0,0,0,0.0,0.0,0.0,2026-04-15 14:23:46.035788
+Small Caps Brasil,SMLL.SA,indices,Equity Index,Small Caps,Brasil,Brasil,BRL,indice,ok,Download OK na tentativa 1,2026-04-15,2026-04-15,1,0,0,0,0.0,0.0,0.0,2026-04-15 14:22:50.559064

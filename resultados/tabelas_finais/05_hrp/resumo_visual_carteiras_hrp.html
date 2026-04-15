@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Visual Carteiras Hrp</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Resumo Visual Carteiras Hrp</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>carteira</th>
+<th>tipo</th>
+<th>coluna_retorno</th>
+<th>cagr</th>
+<th>vol_anual</th>
+<th>sharpe</th>
+<th>sortino</th>
+<th>max_drawdown</th>
+<th>calmar</th>
+<th>pct_meses_positivos</th>
+<th>n_ativos_com_peso</th>
+<th>peso_max</th>
+<th>top3_peso</th>
+<th>hhi</th>
+<th>n_efetivo_ativos</th>
+<th>classificacao_concentracao</th>
+<th>n_clusters_finais</th>
+<th>metodo_ligacao</th>
+<th>distancia</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_tudo</td>
+<td class="col-num" data-order="0.1635707372881965">16,36%</td>
+<td class="col-num" data-order="0.1252736942289271">12,53%</td>
+<td class="col-num" data-order="1.367549927968646">1,3675</td>
+<td class="col-num" data-order="2.343587855347907">2,3436</td>
+<td class="col-num" data-order="-0.1782814515811153">-17,83%</td>
+<td class="col-num" data-order="0.9174860078687116">0,9175</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="27.0">27,0000</td>
+<td class="col-num" data-order="0.1879465479924673">18,79%</td>
+<td class="col-num" data-order="0.3038354688510589">30,38%</td>
+<td class="col-num" data-order="0.063853707647227">0,0639</td>
+<td class="col-num" data-order="15.660797733542823">16</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_btc</td>
+<td class="col-num" data-order="0.1571130472132034">15,71%</td>
+<td class="col-num" data-order="0.1327233609423061">13,27%</td>
+<td class="col-num" data-order="1.2615685645733374">1,2616</td>
+<td class="col-num" data-order="2.234639980021948">2,2346</td>
+<td class="col-num" data-order="-0.1979436010113464">-19,79%</td>
+<td class="col-num" data-order="0.7937263261377034">0,7937</td>
+<td class="col-num" data-order="0.6518518518518519">65,19%</td>
+<td class="col-num" data-order="26.0">26,0000</td>
+<td class="col-num" data-order="0.1255026499810123">12,55%</td>
+<td class="col-num" data-order="0.2649217464614796">26,49%</td>
+<td class="col-num" data-order="0.0510377331087586">0,0510</td>
+<td class="col-num" data-order="19.59334670819048">20</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro_petroleo</td>
+<td class="col-num" data-order="0.1467943883047864">14,68%</td>
+<td class="col-num" data-order="0.1290038248656684">12,90%</td>
+<td class="col-num" data-order="1.2219426990274598">1,2219</td>
+<td class="col-num" data-order="2.0744261194610147">2,0744</td>
+<td class="col-num" data-order="-0.1793026648210589">-17,93%</td>
+<td class="col-num" data-order="0.8186960771123215">0,8187</td>
+<td class="col-num" data-order="0.6592592592592592">65,93%</td>
+<td class="col-num" data-order="26.0">26,0000</td>
+<td class="col-num" data-order="0.1465059754499197">14,65%</td>
+<td class="col-num" data-order="0.3028384451538178">30,28%</td>
+<td class="col-num" data-order="0.0564913506515032">0,0565</td>
+<td class="col-num" data-order="17.701824942530198">18</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_ouro</td>
+<td class="col-num" data-order="0.1478002479879085">14,78%</td>
+<td class="col-num" data-order="0.1308364180632788">13,08%</td>
+<td class="col-num" data-order="1.2126275515061589">1,2126</td>
+<td class="col-num" data-order="2.084107408122304">2,0841</td>
+<td class="col-num" data-order="-0.1884448846353832">-18,84%</td>
+<td class="col-num" data-order="0.7843155216119725">0,7843</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="25.0">25,0000</td>
+<td class="col-num" data-order="0.1467642458635856">14,68%</td>
+<td class="col-num" data-order="0.2759871316213194">27,60%</td>
+<td class="col-num" data-order="0.0555366222481859">0,0555</td>
+<td class="col-num" data-order="18.006136482898267">18</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc_petroleo</td>
+<td class="col-num" data-order="0.1476796136536673">14,77%</td>
+<td class="col-num" data-order="0.1414892316529593">14,15%</td>
+<td class="col-num" data-order="1.1410535252365657">1,1411</td>
+<td class="col-num" data-order="1.8734459095517384">1,8734</td>
+<td class="col-num" data-order="-0.2001082208132114">-20,01%</td>
+<td class="col-num" data-order="0.7379987341525416">0,7380</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="26.0">26,0000</td>
+<td class="col-num" data-order="0.0839552403118083">8,40%</td>
+<td class="col-num" data-order="0.1969983393362928">19,70%</td>
+<td class="col-num" data-order="0.043521334618965">0,0435</td>
+<td class="col-num" data-order="22.977236538243385">23</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_btc</td>
+<td class="col-num" data-order="0.1483610811544191">14,84%</td>
+<td class="col-num" data-order="0.1424800412616591">14,25%</td>
+<td class="col-num" data-order="1.1378722058424282">1,1379</td>
+<td class="col-num" data-order="1.9423926663676487">1,9424</td>
+<td class="col-num" data-order="-0.2143447449130361">-21,43%</td>
+<td class="col-num" data-order="0.6921610381192791">0,6922</td>
+<td class="col-num" data-order="0.6518518518518519">65,19%</td>
+<td class="col-num" data-order="25.0">25,0000</td>
+<td class="col-num" data-order="0.0725081668850567">7,25%</td>
+<td class="col-num" data-order="0.2024148616469136">20,24%</td>
+<td class="col-num" data-order="0.0451073210159545">0,0451</td>
+<td class="col-num" data-order="22.16935028454245">22</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_america_norte</td>
+<td class="col-num" data-order="0.1912922176933902">19,13%</td>
+<td class="col-num" data-order="0.1863112709587853">18,63%</td>
+<td class="col-num" data-order="1.1098743484901423">1,1099</td>
+<td class="col-num" data-order="2.127151164474741">2,1272</td>
+<td class="col-num" data-order="-0.2245340034785444">-22,45%</td>
+<td class="col-num" data-order="0.8519521084995454">0,8520</td>
+<td class="col-num" data-order="0.6074074074074074">60,74%</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.3961969248102674">39,62%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.3400491930322312">0,3400</td>
+<td class="col-num" data-order="2.940750986887994">3</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_com_petroleo</td>
+<td class="col-num" data-order="0.1375240700738267">13,75%</td>
+<td class="col-num" data-order="0.1400347760194982">14,00%</td>
+<td class="col-num" data-order="1.0860812402139188">1,0861</td>
+<td class="col-num" data-order="1.7362241258283586">1,7362</td>
+<td class="col-num" data-order="-0.1939165239239004">-19,39%</td>
+<td class="col-num" data-order="0.7091921167470798">0,7092</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="25.0">25,0000</td>
+<td class="col-num" data-order="0.0714261691546334">7,14%</td>
+<td class="col-num" data-order="0.2094878503829006">20,95%</td>
+<td class="col-num" data-order="0.0450978962769976">0,0451</td>
+<td class="col-num" data-order="22.17398332414128">22</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_todos</td>
+<td class="col-num" data-order="0.1364550717510859">13,65%</td>
+<td class="col-num" data-order="0.1427571509090928">14,28%</td>
+<td class="col-num" data-order="1.0628906711849655">1,0629</td>
+<td class="col-num" data-order="1.8057839226643568">1,8058</td>
+<td class="col-num" data-order="-0.2195292439535691">-21,95%</td>
+<td class="col-num" data-order="0.6215803839781204">0,6216</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="24.0">24,0000</td>
+<td class="col-num" data-order="0.0744083285895468">7,44%</td>
+<td class="col-num" data-order="0.2000605162605273">20,01%</td>
+<td class="col-num" data-order="0.0467553800387947">0,0468</td>
+<td class="col-num" data-order="21.387912988200743">21</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="24.0">24</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_global</td>
+<td class="col-num" data-order="0.1466295039119929">14,66%</td>
+<td class="col-num" data-order="0.162971315776058">16,30%</td>
+<td class="col-num" data-order="1.0111657339459452">1,0112</td>
+<td class="col-num" data-order="1.69003727225369">1,6900</td>
+<td class="col-num" data-order="-0.295374767498156">-29,54%</td>
+<td class="col-num" data-order="0.4964185165644126">0,4964</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.5049874362544066">50,50%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.377543489364149">0,3775</td>
+<td class="col-num" data-order="2.648701482534315">3</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_exterior</td>
+<td class="col-num" data-order="0.1386236025164975">13,86%</td>
+<td class="col-num" data-order="0.1555246032128891">15,55%</td>
+<td class="col-num" data-order="1.0052902229562697">1,0053</td>
+<td class="col-num" data-order="1.6579910996820544">1,6580</td>
+<td class="col-num" data-order="-0.2403424039605787">-24,03%</td>
+<td class="col-num" data-order="0.5767754679662551">0,5768</td>
+<td class="col-num" data-order="0.6370370370370371">63,70%</td>
+<td class="col-num" data-order="22.0">22,0000</td>
+<td class="col-num" data-order="0.0702793541119597">7,03%</td>
+<td class="col-num" data-order="0.2020531374931639">20,21%</td>
+<td class="col-num" data-order="0.0497093869948186">0,0497</td>
+<td class="col-num" data-order="20.116924799419344">20</td>
+<td class="col-text">baixa</td>
+<td class="col-num" data-order="22.0">22</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_desenvolvidos_emergentes</td>
+<td class="col-num" data-order="0.1287263255302304">12,87%</td>
+<td class="col-num" data-order="0.1552256849323525">15,52%</td>
+<td class="col-num" data-order="0.9481415842911604">0,9481</td>
+<td class="col-num" data-order="1.4785817279039093">1,4786</td>
+<td class="col-num" data-order="-0.3140457217079622">-31,40%</td>
+<td class="col-num" data-order="0.4098967654459429">0,4099</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.5">0,5000</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_asia</td>
+<td class="col-num" data-order="0.1292862617524468">12,93%</td>
+<td class="col-num" data-order="0.1680168009609007">16,80%</td>
+<td class="col-num" data-order="0.8863759699607032">0,8864</td>
+<td class="col-num" data-order="1.3744068311487896">1,3744</td>
+<td class="col-num" data-order="-0.3477815580513715">-34,78%</td>
+<td class="col-num" data-order="0.3717455936330864">0,3717</td>
+<td class="col-num" data-order="0.6518518518518519">65,19%</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="0.293520558721879">29,35%</td>
+<td class="col-num" data-order="0.6788437363784943">67,88%</td>
+<td class="col-num" data-order="0.1980169072794143">0,1980</td>
+<td class="col-num" data-order="5.050073823185902">5</td>
+<td class="col-text">media</td>
+<td class="col-num" data-order="6.0">6</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_latam</td>
+<td class="col-num" data-order="0.1298187106945429">12,98%</td>
+<td class="col-num" data-order="0.1776426750493104">17,76%</td>
+<td class="col-num" data-order="0.8685327122787815">0,8685</td>
+<td class="col-num" data-order="1.220740509385435">1,2207</td>
+<td class="col-num" data-order="-0.2671711320039612">-26,72%</td>
+<td class="col-num" data-order="0.485900964377462">0,4859</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.4994229987601699">49,94%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.385226461844286">0,3852</td>
+<td class="col-num" data-order="2.5958756706703445">3</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_europa</td>
+<td class="col-num" data-order="0.1175351411229395">11,75%</td>
+<td class="col-num" data-order="0.1673944054596923">16,74%</td>
+<td class="col-num" data-order="0.8351472597885247">0,8351</td>
+<td class="col-num" data-order="1.3267566112711446">1,3268</td>
+<td class="col-num" data-order="-0.2966973944063675">-29,67%</td>
+<td class="col-num" data-order="0.3961448375982672">0,3961</td>
+<td class="col-num" data-order="0.6074074074074074">60,74%</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.5736564784457583">57,37%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.4200862574450225">0,4201</td>
+<td class="col-num" data-order="2.380463493573988">2</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_oceania</td>
+<td class="col-num" data-order="0.1062618432473407">10,63%</td>
+<td class="col-num" data-order="0.1844971870636611">18,45%</td>
+<td class="col-num" data-order="0.723181058613963">0,7232</td>
+<td class="col-num" data-order="1.304928662045875">1,3049</td>
+<td class="col-num" data-order="-0.3108083779551696">-31,08%</td>
+<td class="col-num" data-order="0.3418886065634556">0,3419</td>
+<td class="col-num" data-order="0.5555555555555556">55,56%</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.5">0,5000</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">hrp</td>
+<td class="col-text">etfs_brasil</td>
+<td class="col-num" data-order="0.1086710321069481">10,87%</td>
+<td class="col-num" data-order="0.2287768717831297">22,88%</td>
+<td class="col-num" data-order="0.5981323884299005">0,5981</td>
+<td class="col-num" data-order="0.7922275587952731">0,7922</td>
+<td class="col-num" data-order="-0.3995060129206411">-39,95%</td>
+<td class="col-num" data-order="0.27201350816348">0,2720</td>
+<td class="col-num" data-order="0.5703703703703704">57,04%</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.5">0,5000</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-text">single</td>
+<td class="col-text">correlacao</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

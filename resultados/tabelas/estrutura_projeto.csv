@@ -1,0 +1,12 @@
+﻿ordem,diretorio,descricao
+1,dados,Pasta principal de dados
+2,dados\raw,Dados brutos baixados das fontes
+3,dados\processed,Dados tratados e padronizados
+4,resultados,Pasta principal de resultados
+5,resultados\tabelas,Tabelas finais e intermediárias
+6,resultados\graficos,Gráficos finais e intermediários
+7,resultados\dados_intermediarios,Arquivos auxiliares em parquet/csv
+8,resultados\html_support,Arquivos de apoio ao HTML final
+9,assets,Assets gerais do projeto
+10,assets\css,CSS do HTML final
+11,assets\js,JavaScript do HTML final

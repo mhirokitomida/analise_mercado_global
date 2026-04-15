@@ -1,0 +1,28 @@
+﻿nome_ativo,ticker_yahoo,classe,subclasse,regiao,pais,moeda_original,tipo_ativo,categoria_html,observacoes,grupo_universo
+iShares Ibovespa ETF,BOVA11.SA,ETF,Brasil Broad Market,Brasil,Brasil,BRL,etf,ETFs Investiveis,ETF do Ibovespa,etfs
+iShares Small Caps ETF,SMAL11.SA,ETF,Brasil Small Caps,Brasil,Brasil,BRL,etf,ETFs Investiveis,ETF de Small Caps Brasil,etfs
+Vanguard Total World Stock ETF,VT,ETF,Global Equity,Global,Global,USD,etf,ETFs Investiveis,ETF global amplo,etfs
+iShares MSCI ACWI ETF,ACWI,ETF,Global Equity,Global,Global,USD,etf,ETFs Investiveis,ETF global amplo alternativo,etfs
+Vanguard FTSE Developed Markets ETF,VEA,ETF,Developed Markets,Global,Desenvolvidos,USD,etf,ETFs Investiveis,Mercados desenvolvidos ex-EUA,etfs
+iShares Core MSCI Emerging Markets ETF,IEMG,ETF,Emerging Markets,Emergentes,Emergentes,USD,etf,ETFs Investiveis,ETF amplo de mercados emergentes,etfs
+SPDR S&P 500 ETF,SPY,ETF,US Broad Market,America do Norte,Estados Unidos,USD,etf,ETFs Investiveis,ETF clássico do S&P 500,etfs
+Invesco QQQ Trust,QQQ,ETF,US Tech/Growth,America do Norte,Estados Unidos,USD,etf,ETFs Investiveis,ETF Nasdaq/tecnologia,etfs
+iShares MSCI Mexico ETF,EWW,ETF,Mexico,America Latina,Mexico,USD,etf,ETFs Investiveis,ETF do México,etfs
+iShares MSCI Chile ETF,ECH,ETF,Chile,America Latina,Chile,USD,etf,ETFs Investiveis,ETF do Chile,etfs
+Global X MSCI Argentina ETF,ARGT,ETF,Argentina,America Latina,Argentina,USD,etf,ETFs Investiveis,ETF da Argentina,etfs
+SPDR EURO STOXX 50 ETF,FEZ,ETF,Zona do Euro,Europa,Zona do Euro,USD,etf,ETFs Investiveis,ETF amplo da zona do euro,etfs
+iShares MSCI United Kingdom ETF,EWU,ETF,Reino Unido,Europa,Reino Unido,USD,etf,ETFs Investiveis,ETF do Reino Unido,etfs
+iShares MSCI Germany ETF,EWG,ETF,Alemanha,Europa,Alemanha,USD,etf,ETFs Investiveis,ETF da Alemanha,etfs
+iShares MSCI Japan ETF,EWJ,ETF,Japao,Asia,Japao,USD,etf,ETFs Investiveis,ETF amplo do Japão,etfs
+iShares MSCI China ETF,MCHI,ETF,China,Asia,China,USD,etf,ETFs Investiveis,ETF amplo da China,etfs
+iShares MSCI Hong Kong ETF,EWH,ETF,Hong Kong,Asia,Hong Kong,USD,etf,ETFs Investiveis,ETF de Hong Kong,etfs
+iShares MSCI South Korea ETF,EWY,ETF,Coreia do Sul,Asia,Coreia do Sul,USD,etf,ETFs Investiveis,ETF da Coreia do Sul,etfs
+iShares MSCI India ETF,INDA,ETF,India,Asia,India,USD,etf,ETFs Investiveis,ETF da Índia,etfs
+iShares MSCI Taiwan ETF,EWT,ETF,Taiwan,Asia,Taiwan,USD,etf,ETFs Investiveis,ETF de Taiwan,etfs
+iShares MSCI Australia ETF,EWA,ETF,Australia,Oceania,Australia,USD,etf,ETFs Investiveis,ETF da Austrália,etfs
+iShares MSCI New Zealand ETF,ENZL,ETF,Nova Zelandia,Oceania,Nova Zelandia,USD,etf,ETFs Investiveis,ETF da Nova Zelândia,etfs
+iShares MSCI South Africa ETF,EZA,ETF,Africa do Sul,Africa,Africa do Sul,USD,etf,ETFs Investiveis,ETF da África do Sul,etfs
+SPDR Gold Shares,GLD,ETF,Ouro,Global,Global,USD,etf,ETFs Investiveis,ETF de ouro físico/proxy,etfs
+iShares Bitcoin Trust,IBIT,ETF,Bitcoin,Global,Global,USD,etf,ETFs Investiveis,ETF spot de bitcoin; histórico será mais curto,etfs
+United States Oil Fund,USO,ETF,Petroleo,Global,Global,USD,etf,ETFs Investiveis,ETF proxy para petróleo,etfs
+Energy Select Sector SPDR Fund,XLE,ETF,Energia,America do Norte,Estados Unidos,USD,etf,ETFs Investiveis,ETF de energia para comparação com petróleo,etfs

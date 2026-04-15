@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Markowitz Puro Cagr</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Ranking Markowitz Puro Cagr</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>carteira</th>
+<th>tipo</th>
+<th>coluna_retorno</th>
+<th>data_inicio</th>
+<th>data_fim</th>
+<th>n_meses</th>
+<th>retorno_total</th>
+<th>retorno_anualizado_media</th>
+<th>cagr</th>
+<th>vol_anual</th>
+<th>sharpe</th>
+<th>sortino</th>
+<th>max_drawdown</th>
+<th>calmar</th>
+<th>pct_meses_positivos</th>
+<th>melhor_mes</th>
+<th>pior_mes</th>
+<th>n_ativos_total</th>
+<th>n_ativos_com_peso</th>
+<th>peso_max</th>
+<th>peso_min</th>
+<th>peso_medio</th>
+<th>peso_mediano</th>
+<th>top1_peso</th>
+<th>top3_peso</th>
+<th>top5_peso</th>
+<th>hhi</th>
+<th>n_efetivo_ativos</th>
+<th>gini_pesos</th>
+<th>classificacao_concentracao</th>
+<th>n_ativos_universo</th>
+<th>n_ativos_validos</th>
+<th>n_ativos_com_peso_manifesto</th>
+<th>periodo_inicio</th>
+<th>periodo_fim</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="14.280969445044404">1428,10%</td>
+<td class="col-num" data-order="0.2714119878526477">27,14%</td>
+<td class="col-num" data-order="0.2765662691529749">27,66%</td>
+<td class="col-num" data-order="0.1598415180226567">15,98%</td>
+<td class="col-num" data-order="1.6980068208197094">1,6980</td>
+<td class="col-num" data-order="3.1646073573921223">3,1646</td>
+<td class="col-num" data-order="-0.2724909206033605">-27,25%</td>
+<td class="col-num" data-order="1.0149559058356532">1,0150</td>
+<td class="col-num" data-order="0.6962962962962963">69,63%</td>
+<td class="col-num" data-order="0.1715034406430474">17,15%</td>
+<td class="col-num" data-order="-0.1018255139503937">-10,18%</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="0.3546885390421981">35,47%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.04">4,00%</td>
+<td class="col-num" data-order="8.706855717490838e-18">0,00%</td>
+<td class="col-num" data-order="0.3546885390421981">35,47%</td>
+<td class="col-num" data-order="0.8583288041731879">85,83%</td>
+<td class="col-num" data-order="0.9912393747361008">99,12%</td>
+<td class="col-num" data-order="0.2705293626060396">0,2705</td>
+<td class="col-num" data-order="3.696456422943847">4</td>
+<td class="col-num" data-order="0.8664041027512812">86,64%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_btc_petroleo__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="13.614893002468516">1361,49%</td>
+<td class="col-num" data-order="0.2666640450343489">26,67%</td>
+<td class="col-num" data-order="0.2714815343634773">27,15%</td>
+<td class="col-num" data-order="0.1558735327834133">15,59%</td>
+<td class="col-num" data-order="1.7107718050175926">1,7108</td>
+<td class="col-num" data-order="2.9547719093345157">2,9548</td>
+<td class="col-num" data-order="-0.2513574471439194">-25,14%</td>
+<td class="col-num" data-order="1.0800616311480735">1,0801</td>
+<td class="col-num" data-order="0.6888888888888889">68,89%</td>
+<td class="col-num" data-order="0.1674833841271426">16,75%</td>
+<td class="col-num" data-order="-0.1201270953721201">-12,01%</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-num" data-order="0.3405481012472741">34,05%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0384615384615384">3,85%</td>
+<td class="col-num" data-order="7.180331855567786e-17">0,00%</td>
+<td class="col-num" data-order="0.3405481012472741">34,05%</td>
+<td class="col-num" data-order="0.8312320440227381">83,12%</td>
+<td class="col-num" data-order="0.98735957833649">98,74%</td>
+<td class="col-num" data-order="0.254653882256873">0,2547</td>
+<td class="col-num" data-order="3.9268987032025127">4</td>
+<td class="col-num" data-order="0.8637846617798464">86,38%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_btc__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="10.206833835264389">1020,68%</td>
+<td class="col-num" data-order="0.2332477904564867">23,32%</td>
+<td class="col-num" data-order="0.2416052669265747">24,16%</td>
+<td class="col-num" data-order="0.1175504000241898">11,76%</td>
+<td class="col-num" data-order="1.984236467153564">1,9842</td>
+<td class="col-num" data-order="4.647093718569822">4,6471</td>
+<td class="col-num" data-order="-0.1645278048839999">-16,45%</td>
+<td class="col-num" data-order="1.4684768151919247">1,4685</td>
+<td class="col-num" data-order="0.7037037037037037">70,37%</td>
+<td class="col-num" data-order="0.1461887187723214">14,62%</td>
+<td class="col-num" data-order="-0.0570193870984689">-5,70%</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="0.3961248461656212">39,61%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0384615384615384">3,85%</td>
+<td class="col-num" data-order="4.615366043724114e-17">0,00%</td>
+<td class="col-num" data-order="0.3961248461656212">39,61%</td>
+<td class="col-num" data-order="0.8894860544201104">88,95%</td>
+<td class="col-num" data-order="0.9874088476115092">98,74%</td>
+<td class="col-num" data-order="0.2942434994805478">0,2942</td>
+<td class="col-num" data-order="3.398545768268057">3</td>
+<td class="col-num" data-order="0.8803920214748195">88,04%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_tudo__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="9.568789111436004">956,88%</td>
+<td class="col-num" data-order="0.2270753154305952">22,71%</td>
+<td class="col-num" data-order="0.235104636777127">23,51%</td>
+<td class="col-num" data-order="0.1117069081112741">11,17%</td>
+<td class="col-num" data-order="2.0327777329974936">2,0328</td>
+<td class="col-num" data-order="4.382137647458068">4,3821</td>
+<td class="col-num" data-order="-0.142545072162764">-14,25%</td>
+<td class="col-num" data-order="1.649335422193161">1,6493</td>
+<td class="col-num" data-order="0.7111111111111111">71,11%</td>
+<td class="col-num" data-order="0.111780067891353">11,18%</td>
+<td class="col-num" data-order="-0.061668386645344">-6,17%</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="0.3986233274723388">39,86%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.037037037037037">3,70%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.3986233274723388">39,86%</td>
+<td class="col-num" data-order="0.8655149780748328">86,55%</td>
+<td class="col-num" data-order="0.9982841113608172">99,83%</td>
+<td class="col-num" data-order="0.2867969934267607">0,2868</td>
+<td class="col-num" data-order="3.4867869012558868">3</td>
+<td class="col-num" data-order="0.8813612021397994">88,14%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_exterior__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="8.983174309406932">898,32%</td>
+<td class="col-num" data-order="0.2384363485113031">23,84%</td>
+<td class="col-num" data-order="0.2288156820162947">22,88%</td>
+<td class="col-num" data-order="0.1813504535070128">18,14%</td>
+<td class="col-num" data-order="1.314782201534902">1,3148</td>
+<td class="col-num" data-order="2.5356889557263558">2,5357</td>
+<td class="col-num" data-order="-0.2768562150089402">-27,69%</td>
+<td class="col-num" data-order="0.8264784014652006">0,8265</td>
+<td class="col-num" data-order="0.6222222222222222">62,22%</td>
+<td class="col-num" data-order="0.1959939928348006">19,60%</td>
+<td class="col-num" data-order="-0.1608820608342457">-16,09%</td>
+<td class="col-num" data-order="22.0">22</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-num" data-order="0.4365103162288056">43,65%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0454545454545454">4,55%</td>
+<td class="col-num" data-order="2.2198119357189233e-18">0,00%</td>
+<td class="col-num" data-order="0.4365103162288056">43,65%</td>
+<td class="col-num" data-order="0.9354961086487732">93,55%</td>
+<td class="col-num" data-order="0.9999999999999998">100,00%</td>
+<td class="col-num" data-order="0.3200984665185118">0,3201</td>
+<td class="col-num" data-order="3.124038708702056">3</td>
+<td class="col-num" data-order="0.8708417026702031">87,08%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="22.0">22</td>
+<td class="col-num" data-order="22.0">22</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_america_norte__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="8.855338380453418">885,53%</td>
+<td class="col-num" data-order="0.2402997275610743">24,03%</td>
+<td class="col-num" data-order="0.2273982820150368">22,74%</td>
+<td class="col-num" data-order="0.1990884836708697">19,91%</td>
+<td class="col-num" data-order="1.2069996371981742">1,2070</td>
+<td class="col-num" data-order="2.159589012477888">2,1596</td>
+<td class="col-num" data-order="-0.270202863140942">-27,02%</td>
+<td class="col-num" data-order="0.8415835397585051">0,8416</td>
+<td class="col-num" data-order="0.6148148148148148">61,48%</td>
+<td class="col-num" data-order="0.2060861046598624">20,61%</td>
+<td class="col-num" data-order="-0.1621297258290635">-16,21%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.846594985775639">84,66%</td>
+<td class="col-num" data-order="5.219763095781487e-17">0,00%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="0.1534050142243609">15,34%</td>
+<td class="col-num" data-order="0.846594985775639">84,66%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.7402561683296307">0,7403</td>
+<td class="col-num" data-order="1.3508837113191163">1</td>
+<td class="col-num" data-order="0.5643966571837593">56,44%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_todos__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="7.3081086096251">730,81%</td>
+<td class="col-num" data-order="0.2128012885009229">21,28%</td>
+<td class="col-num" data-order="0.2087694561845063">20,88%</td>
+<td class="col-num" data-order="0.1410907085932787">14,11%</td>
+<td class="col-num" data-order="1.508258698411982">1,5083</td>
+<td class="col-num" data-order="2.737829659525492">2,7378</td>
+<td class="col-num" data-order="-0.233324063982924">-23,33%</td>
+<td class="col-num" data-order="0.8947617859072834">0,8948</td>
+<td class="col-num" data-order="0.6888888888888889">68,89%</td>
+<td class="col-num" data-order="0.1605405240058584">16,05%</td>
+<td class="col-num" data-order="-0.0968278603760117">-9,68%</td>
+<td class="col-num" data-order="24.0">24</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-num" data-order="0.4395696557765752">43,96%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0416666666666666">4,17%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.4395696557765752">43,96%</td>
+<td class="col-num" data-order="0.9372554434852978">93,73%</td>
+<td class="col-num" data-order="0.9999999999999996">100,00%</td>
+<td class="col-num" data-order="0.3418948504403244">0,3419</td>
+<td class="col-num" data-order="2.9248758754690383">3</td>
+<td class="col-num" data-order="0.8889533895943409">88,90%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="24.0">24</td>
+<td class="col-num" data-order="24.0">24</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_petroleo__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="7.04100009777267">704,10%</td>
+<td class="col-num" data-order="0.2093561318695256">20,94%</td>
+<td class="col-num" data-order="0.2052372430541111">20,52%</td>
+<td class="col-num" data-order="0.1380002079104703">13,80%</td>
+<td class="col-num" data-order="1.5170711337286424">1,5171</td>
+<td class="col-num" data-order="2.5760064138812093">2,5760</td>
+<td class="col-num" data-order="-0.2152647918133072">-21,53%</td>
+<td class="col-num" data-order="0.9534176087286363">0,9534</td>
+<td class="col-num" data-order="0.6814814814814815">68,15%</td>
+<td class="col-num" data-order="0.1591283960185464">15,91%</td>
+<td class="col-num" data-order="-0.0986747093295036">-9,87%</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-num" data-order="0.4273260500831274">42,73%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.04">4,00%</td>
+<td class="col-num" data-order="3.8538826572022767e-17">0,00%</td>
+<td class="col-num" data-order="0.4273260500831274">42,73%</td>
+<td class="col-num" data-order="0.9090201957263112">90,90%</td>
+<td class="col-num" data-order="0.9999999999999988">100,00%</td>
+<td class="col-num" data-order="0.322595901536185">0,3226</td>
+<td class="col-num" data-order="3.0998533931709966">3</td>
+<td class="col-num" data-order="0.8852946399006987">88,53%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="6.473892165704683">647,39%</td>
+<td class="col-num" data-order="0.1951760654355454">19,52%</td>
+<td class="col-num" data-order="0.1973691766597793">19,74%</td>
+<td class="col-num" data-order="0.1073026943534211">10,73%</td>
+<td class="col-num" data-order="1.8189297725618816">1,8189</td>
+<td class="col-num" data-order="3.98607625773769">3,9861</td>
+<td class="col-num" data-order="-0.1351632743338281">-13,52%</td>
+<td class="col-num" data-order="1.4602278439357297">1,4602</td>
+<td class="col-num" data-order="0.6814814814814815">68,15%</td>
+<td class="col-num" data-order="0.1324171400598129">13,24%</td>
+<td class="col-num" data-order="-0.0551943946795982">-5,52%</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-num" data-order="0.3830226012761362">38,30%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.04">4,00%</td>
+<td class="col-num" data-order="5.0568266064469685e-16">0,00%</td>
+<td class="col-num" data-order="0.3830226012761362">38,30%</td>
+<td class="col-num" data-order="0.9328329282046484">93,28%</td>
+<td class="col-num" data-order="0.99999999999999">100,00%</td>
+<td class="col-num" data-order="0.3026590343065454">0,3027</td>
+<td class="col-num" data-order="3.304048076051016">3</td>
+<td class="col-num" data-order="0.8784241610674479">87,84%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_com_ouro_petroleo__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="6.195527017347429">619,55%</td>
+<td class="col-num" data-order="0.191107954554193">19,11%</td>
+<td class="col-num" data-order="0.1933061403439888">19,33%</td>
+<td class="col-num" data-order="0.1028280122847139">10,28%</td>
+<td class="col-num" data-order="1.858520361407419">1,8585</td>
+<td class="col-num" data-order="3.937692591276147">3,9377</td>
+<td class="col-num" data-order="-0.1169142555967319">-11,69%</td>
+<td class="col-num" data-order="1.6534009420609288">1,6534</td>
+<td class="col-num" data-order="0.6888888888888889">68,89%</td>
+<td class="col-num" data-order="0.1080081907619757">10,80%</td>
+<td class="col-num" data-order="-0.0501815676973172">-5,02%</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-num" data-order="0.385592789231758">38,56%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0384615384615384">3,85%</td>
+<td class="col-num" data-order="1.3173942724896084e-16">0,00%</td>
+<td class="col-num" data-order="0.385592789231758">38,56%</td>
+<td class="col-num" data-order="0.9138188089199704">91,38%</td>
+<td class="col-num" data-order="0.9999999999999952">100,00%</td>
+<td class="col-num" data-order="0.2950432100187186">0,2950</td>
+<td class="col-num" data-order="3.3893340569896746">3</td>
+<td class="col-num" data-order="0.8813359958167186">88,13%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="5.0">5,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_america_norte</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_america_norte__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="5.603338156864044">560,33%</td>
+<td class="col-num" data-order="0.1990516889700411">19,91%</td>
+<td class="col-num" data-order="0.184163471710824">18,42%</td>
+<td class="col-num" data-order="0.1777097577392228">17,77%</td>
+<td class="col-num" data-order="1.120094312784648">1,1201</td>
+<td class="col-num" data-order="2.1732469052365464">2,1732</td>
+<td class="col-num" data-order="-0.201942854282454">-20,19%</td>
+<td class="col-num" data-order="0.9119583476483782">0,9120</td>
+<td class="col-num" data-order="0.5777777777777777">57,78%</td>
+<td class="col-num" data-order="0.1819301417184887">18,19%</td>
+<td class="col-num" data-order="-0.1480340069700924">-14,80%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.8701150407036536">87,01%</td>
+<td class="col-num" data-order="2.262033256791786e-16">0,00%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="0.1298849592963461">12,99%</td>
+<td class="col-num" data-order="0.8701150407036536">87,01%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.7739702867101343">0,7740</td>
+<td class="col-num" data-order="1.292039264518326">1</td>
+<td class="col-num" data-order="0.5800766938024358">58,01%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_asia__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="5.598443823221643">559,84%</td>
+<td class="col-num" data-order="0.2011553930076663">20,12%</td>
+<td class="col-num" data-order="0.1840848459755082">18,41%</td>
+<td class="col-num" data-order="0.1882278053524226">18,82%</td>
+<td class="col-num" data-order="1.0686805418096392">1,0687</td>
+<td class="col-num" data-order="1.838823880267788">1,8388</td>
+<td class="col-num" data-order="-0.3815403226141446">-38,15%</td>
+<td class="col-num" data-order="0.4824780896400168">0,4825</td>
+<td class="col-num" data-order="0.6222222222222222">62,22%</td>
+<td class="col-num" data-order="0.1932736827033564">19,33%</td>
+<td class="col-num" data-order="-0.1845399601206387">-18,45%</td>
+<td class="col-num" data-order="6.0">6</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.7877178021579947">78,77%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.1666666666666666">16,67%</td>
+<td class="col-num" data-order="5.860994746641176e-17">0,00%</td>
+<td class="col-num" data-order="0.7877178021579947">78,77%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.6655630673572539">0,6656</td>
+<td class="col-num" data-order="1.5024872157806055">2</td>
+<td class="col-num" data-order="0.7625726007193312">76,26%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="6.0">6</td>
+<td class="col-num" data-order="6.0">6</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_latam__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="4.7923494638996">479,23%</td>
+<td class="col-num" data-order="0.1947577744276696">19,48%</td>
+<td class="col-num" data-order="0.1703488999631344">17,03%</td>
+<td class="col-num" data-order="0.2037550687802227">20,38%</td>
+<td class="col-num" data-order="0.9558425986336668">0,9558</td>
+<td class="col-num" data-order="1.5541930317965569">1,5542</td>
+<td class="col-num" data-order="-0.2189469623546641">-21,89%</td>
+<td class="col-num" data-order="0.7780372841491743">0,7780</td>
+<td class="col-num" data-order="0.6370370370370371">63,70%</td>
+<td class="col-num" data-order="0.2129249346778867">21,29%</td>
+<td class="col-num" data-order="-0.1734780706174674">-17,35%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.4911166784624028">49,11%</td>
+<td class="col-num" data-order="0.13059683298543">13,06%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="0.3782864885521672">37,83%</td>
+<td class="col-num" data-order="0.4911166784624028">49,11%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.4013517920708964">0,4014</td>
+<td class="col-num" data-order="2.491579755605915">2</td>
+<td class="col-num" data-order="0.2403465636513153">24,03%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_tudo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_tudo__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="4.552187780038707">455,22%</td>
+<td class="col-num" data-order="0.1667003495949219">16,67%</td>
+<td class="col-num" data-order="0.1659191376918878">16,59%</td>
+<td class="col-num" data-order="0.0974189937341108">9,74%</td>
+<td class="col-num" data-order="1.7111688717490054">1,7112</td>
+<td class="col-num" data-order="2.852687404823968">2,8527</td>
+<td class="col-num" data-order="-0.0898325857980363">-8,98%</td>
+<td class="col-num" data-order="1.846981651679392">1,8470</td>
+<td class="col-num" data-order="0.6592592592592592">65,93%</td>
+<td class="col-num" data-order="0.1015622999012496">10,16%</td>
+<td class="col-num" data-order="-0.0690599431848843">-6,91%</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-num" data-order="0.3637892986782263">36,38%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.037037037037037">3,70%</td>
+<td class="col-num" data-order="9.203270806758244e-18">0,00%</td>
+<td class="col-num" data-order="0.3637892986782263">36,38%</td>
+<td class="col-num" data-order="0.7914068316543407">79,14%</td>
+<td class="col-num" data-order="0.9291292144590708">92,91%</td>
+<td class="col-num" data-order="0.2616552849602276">0,2617</td>
+<td class="col-num" data-order="3.821822288634464">4</td>
+<td class="col-num" data-order="0.8609413087097115">86,09%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-num" data-order="27.0">27</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_petroleo__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="4.487161146408211">448,72%</td>
+<td class="col-num" data-order="0.1656245744773112">16,56%</td>
+<td class="col-num" data-order="0.1646897223324503">16,47%</td>
+<td class="col-num" data-order="0.097427635801442">9,74%</td>
+<td class="col-num" data-order="1.6999753007950935">1,7000</td>
+<td class="col-num" data-order="2.83820558760979">2,8382</td>
+<td class="col-num" data-order="-0.089200116774764">-8,92%</td>
+<td class="col-num" data-order="1.846294918517903">1,8463</td>
+<td class="col-num" data-order="0.6592592592592592">65,93%</td>
+<td class="col-num" data-order="0.10137539409235">10,14%</td>
+<td class="col-num" data-order="-0.0688116489077825">-6,88%</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-num" data-order="0.363511507131852">36,35%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0384615384615384">3,85%</td>
+<td class="col-num" data-order="4.9966897343958596e-18">0,00%</td>
+<td class="col-num" data-order="0.363511507131852">36,35%</td>
+<td class="col-num" data-order="0.7903225528373413">79,03%</td>
+<td class="col-num" data-order="0.9316233562506694">93,16%</td>
+<td class="col-num" data-order="0.2617834264998039">0,2618</td>
+<td class="col-num" data-order="3.819951527759336">4</td>
+<td class="col-num" data-order="0.856095085981855">85,61%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="4.392656078055301">439,27%</td>
+<td class="col-num" data-order="0.164796911044433">16,48%</td>
+<td class="col-num" data-order="0.1628791189850089">16,29%</td>
+<td class="col-num" data-order="0.1007049747326898">10,07%</td>
+<td class="col-num" data-order="1.6364326735781236">1,6364</td>
+<td class="col-num" data-order="3.0609485311335045">3,0609</td>
+<td class="col-num" data-order="-0.1231700081264">-12,32%</td>
+<td class="col-num" data-order="1.3223926949640088">1,3224</td>
+<td class="col-num" data-order="0.674074074074074">67,41%</td>
+<td class="col-num" data-order="0.1066895989501774">10,67%</td>
+<td class="col-num" data-order="-0.0596882089305316">-5,97%</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-num" data-order="0.3443564903103713">34,44%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0399999999999999">4,00%</td>
+<td class="col-num" data-order="2.6636364507657446e-18">0,00%</td>
+<td class="col-num" data-order="0.3443564903103713">34,44%</td>
+<td class="col-num" data-order="0.8050314295393959">80,50%</td>
+<td class="col-num" data-order="0.947785202257507">94,78%</td>
+<td class="col-num" data-order="0.2602179770776466">0,2602</td>
+<td class="col-num" data-order="3.842932034252228">4</td>
+<td class="col-num" data-order="0.8519856582359546">85,20%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_ouro_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_ouro_btc__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="4.392655802312393">439,27%</td>
+<td class="col-num" data-order="0.1647969065805853">16,48%</td>
+<td class="col-num" data-order="0.1628791136600942">16,29%</td>
+<td class="col-num" data-order="0.1007049747327044">10,07%</td>
+<td class="col-num" data-order="1.6364326292518956">1,6364</td>
+<td class="col-num" data-order="3.060948530817833">3,0609</td>
+<td class="col-num" data-order="-0.1231700054121148">-12,32%</td>
+<td class="col-num" data-order="1.3223926808732087">1,3224</td>
+<td class="col-num" data-order="0.674074074074074">67,41%</td>
+<td class="col-num" data-order="0.1066896005587101">10,67%</td>
+<td class="col-num" data-order="-0.0596882122316732">-5,97%</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-num" data-order="0.344356503799996">34,44%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0384615384615384">3,85%</td>
+<td class="col-num" data-order="8.200254033034768e-18">0,00%</td>
+<td class="col-num" data-order="0.344356503799996">34,44%</td>
+<td class="col-num" data-order="0.8050316759536749">80,50%</td>
+<td class="col-num" data-order="0.9477852979928506">94,78%</td>
+<td class="col-num" data-order="0.2602180137912834">0,2602</td>
+<td class="col-num" data-order="3.8429314920606665">4</td>
+<td class="col-num" data-order="0.8576785556951101">85,77%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_global__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="4.196940096680337">419,69%</td>
+<td class="col-num" data-order="0.1755187820476464">17,55%</td>
+<td class="col-num" data-order="0.1590356916031268">15,90%</td>
+<td class="col-num" data-order="0.1650196372808845">16,50%</td>
+<td class="col-num" data-order="1.0636236083157242">1,0636</td>
+<td class="col-num" data-order="1.8643215585024544">1,8643</td>
+<td class="col-num" data-order="-0.2805814318537589">-28,06%</td>
+<td class="col-num" data-order="0.5668076128644798">0,5668</td>
+<td class="col-num" data-order="0.6148148148148148">61,48%</td>
+<td class="col-num" data-order="0.1787624533442804">17,88%</td>
+<td class="col-num" data-order="-0.1475656196584599">-14,76%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="0.9999999999999996">100,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="4.440892098500625e-16">0,00%</td>
+<td class="col-num" data-order="0.9999999999999996">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.9999999999999992">1,0000</td>
+<td class="col-num" data-order="1.0000000000000009">1</td>
+<td class="col-num" data-order="0.6666666666666665">66,67%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_global</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_global__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="3.5573616056973645">355,74%</td>
+<td class="col-num" data-order="0.163650038095404">16,37%</td>
+<td class="col-num" data-order="0.1454846338178888">14,55%</td>
+<td class="col-num" data-order="0.1624888942998651">16,25%</td>
+<td class="col-num" data-order="1.0071459886568992">1,0071</td>
+<td class="col-num" data-order="1.674451723426052">1,6745</td>
+<td class="col-num" data-order="-0.2967296468266187">-29,67%</td>
+<td class="col-num" data-order="0.4902935563526502">0,4903</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1827913221692991">18,28%</td>
+<td class="col-num" data-order="-0.1534974690002123">-15,35%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.5534861353725006">55,35%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="0.4465138646274994">44,65%</td>
+<td class="col-num" data-order="0.5534861353725006">55,35%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.5057215333541709">0,5057</td>
+<td class="col-num" data-order="1.9773727912425516">2</td>
+<td class="col-num" data-order="0.3689907569150001">36,90%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_petroleo__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="3.3568511700938317">335,69%</td>
+<td class="col-num" data-order="0.1504630004158663">15,05%</td>
+<td class="col-num" data-order="0.1408783755001514">14,09%</td>
+<td class="col-num" data-order="0.1167600574534177">11,68%</td>
+<td class="col-num" data-order="1.2886513050569082">1,2887</td>
+<td class="col-num" data-order="1.923477349929392">1,9235</td>
+<td class="col-num" data-order="-0.1612354707457663">-16,12%</td>
+<td class="col-num" data-order="0.8737430718473005">0,8737</td>
+<td class="col-num" data-order="0.6888888888888889">68,89%</td>
+<td class="col-num" data-order="0.1455716546203826">14,56%</td>
+<td class="col-num" data-order="-0.1108220647594855">-11,08%</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-num" data-order="0.3609779007925576">36,10%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.04">4,00%</td>
+<td class="col-num" data-order="4.9200474796207545e-18">0,00%</td>
+<td class="col-num" data-order="0.3609779007925576">36,10%</td>
+<td class="col-num" data-order="0.7913391142102693">79,13%</td>
+<td class="col-num" data-order="0.947253918235916">94,73%</td>
+<td class="col-num" data-order="0.2489937884886039">0,2490</td>
+<td class="col-num" data-order="4.016164443579156">4</td>
+<td class="col-num" data-order="0.8503083963466602">85,03%</td>
+<td class="col-text">media</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc_petroleo</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc_petroleo__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="3.356850769370645">335,69%</td>
+<td class="col-num" data-order="0.1504629923395494">15,05%</td>
+<td class="col-num" data-order="0.1408783661031873">14,09%</td>
+<td class="col-num" data-order="0.1167600574534392">11,68%</td>
+<td class="col-num" data-order="1.2886512358864672">1,2887</td>
+<td class="col-num" data-order="1.9234773084857448">1,9235</td>
+<td class="col-num" data-order="-0.1612355646405104">-16,12%</td>
+<td class="col-num" data-order="0.8737425047463235">0,8737</td>
+<td class="col-num" data-order="0.6888888888888889">68,89%</td>
+<td class="col-num" data-order="0.1455716577481822">14,56%</td>
+<td class="col-num" data-order="-0.1108220183128348">-11,08%</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-num" data-order="0.3609779114781971">36,10%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0384615384615384">3,85%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.3609779114781971">36,10%</td>
+<td class="col-num" data-order="0.7913397262877666">79,13%</td>
+<td class="col-num" data-order="0.9472538582760388">94,73%</td>
+<td class="col-num" data-order="0.2489940311375958">0,2490</td>
+<td class="col-num" data-order="4.016160529757411">4</td>
+<td class="col-num" data-order="0.8560658782693733">85,61%</td>
+<td class="col-text">media</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="26.0">26</td>
+<td class="col-num" data-order="7.0">7,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_todos</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_todos__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="3.3379841200466016">333,80%</td>
+<td class="col-num" data-order="0.1504003431094944">15,04%</td>
+<td class="col-num" data-order="0.1404350683606363">14,04%</td>
+<td class="col-num" data-order="0.1178510679385345">11,79%</td>
+<td class="col-num" data-order="1.2761899042606557">1,2762</td>
+<td class="col-num" data-order="2.13477227119284">2,1348</td>
+<td class="col-num" data-order="-0.1808823024077189">-18,09%</td>
+<td class="col-num" data-order="0.7763892127162764">0,7764</td>
+<td class="col-num" data-order="0.6962962962962963">69,63%</td>
+<td class="col-num" data-order="0.1485322168677794">14,85%</td>
+<td class="col-num" data-order="-0.0981991874049068">-9,82%</td>
+<td class="col-num" data-order="24.0">24</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="0.3694517288892101">36,95%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0416666666666666">4,17%</td>
+<td class="col-num" data-order="2.702047183447378e-17">0,00%</td>
+<td class="col-num" data-order="0.3694517288892101">36,95%</td>
+<td class="col-num" data-order="0.7734855371782041">77,35%</td>
+<td class="col-num" data-order="0.9703598481346494">97,04%</td>
+<td class="col-num" data-order="0.2455076808437321">0,2455</td>
+<td class="col-num" data-order="4.073192319536874">4</td>
+<td class="col-num" data-order="0.8435242930603686">84,35%</td>
+<td class="col-text">media</td>
+<td class="col-num" data-order="24.0">24</td>
+<td class="col-num" data-order="24.0">24</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_com_btc</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_com_btc__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="3.3379840064009123">333,80%</td>
+<td class="col-num" data-order="0.1504003406973105">15,04%</td>
+<td class="col-num" data-order="0.1404350656850927">14,04%</td>
+<td class="col-num" data-order="0.1178510679385486">11,79%</td>
+<td class="col-num" data-order="1.276189883792433">1,2762</td>
+<td class="col-num" data-order="2.1347723202892888">2,1348</td>
+<td class="col-num" data-order="-0.1808823527112083">-18,09%</td>
+<td class="col-num" data-order="0.7763889820103537">0,7764</td>
+<td class="col-num" data-order="0.6962962962962963">69,63%</td>
+<td class="col-num" data-order="0.1485322164491722">14,85%</td>
+<td class="col-num" data-order="-0.0981991618699315">-9,82%</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-num" data-order="0.3694517751455736">36,95%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.04">4,00%</td>
+<td class="col-num" data-order="1.1627809237491608e-17">0,00%</td>
+<td class="col-num" data-order="0.3694517751455736">36,95%</td>
+<td class="col-num" data-order="0.7734856367955305">77,35%</td>
+<td class="col-num" data-order="0.9703598685968098">97,04%</td>
+<td class="col-num" data-order="0.2455077953547239">0,2455</td>
+<td class="col-num" data-order="4.073190419697842">4</td>
+<td class="col-num" data-order="0.849783376890366">84,98%</td>
+<td class="col-text">media</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="25.0">25</td>
+<td class="col-num" data-order="6.0">6,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.9504329285622983">295,04%</td>
+<td class="col-num" data-order="0.1496912487275182">14,97%</td>
+<td class="col-num" data-order="0.1309173529576839">13,09%</td>
+<td class="col-num" data-order="0.1569731825591167">15,70%</td>
+<td class="col-num" data-order="0.9536103319504526">0,9536</td>
+<td class="col-num" data-order="1.490898711039809">1,4909</td>
+<td class="col-num" data-order="-0.3125858003630424">-31,26%</td>
+<td class="col-num" data-order="0.4188205376112232">0,4188</td>
+<td class="col-num" data-order="0.6370370370370371">63,70%</td>
+<td class="col-num" data-order="0.179123839439544">17,91%</td>
+<td class="col-num" data-order="-0.1586692853669652">-15,87%</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.6822897921231563">68,23%</td>
+<td class="col-num" data-order="0.3177102078768436">31,77%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.6822897921231563">68,23%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.566459136624607">0,5665</td>
+<td class="col-num" data-order="1.7653524064573451">2</td>
+<td class="col-num" data-order="0.1822897921231563">18,23%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_brasil__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.871025851535272">287,10%</td>
+<td class="col-num" data-order="0.153726636578834">15,37%</td>
+<td class="col-num" data-order="0.1288627454128812">12,89%</td>
+<td class="col-num" data-order="0.2185817372381942">21,86%</td>
+<td class="col-num" data-order="0.7032913111643637">0,7033</td>
+<td class="col-num" data-order="0.9673559858090012">0,9674</td>
+<td class="col-num" data-order="-0.3765171592094706">-37,65%</td>
+<td class="col-num" data-order="0.3422493298404763">0,3422</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1734619660884924">17,35%</td>
+<td class="col-num" data-order="-0.3106361876142466">-31,06%</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="4.163336342344337e-17">0,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_brasil</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_brasil__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.871025851535272">287,10%</td>
+<td class="col-num" data-order="0.153726636578834">15,37%</td>
+<td class="col-num" data-order="0.1288627454128812">12,89%</td>
+<td class="col-num" data-order="0.2185817372381942">21,86%</td>
+<td class="col-num" data-order="0.7032913111643635">0,7033</td>
+<td class="col-num" data-order="0.9673559858090008">0,9674</td>
+<td class="col-num" data-order="-0.3765171592094706">-37,65%</td>
+<td class="col-num" data-order="0.3422493298404763">0,3422</td>
+<td class="col-num" data-order="0.6">60,00%</td>
+<td class="col-num" data-order="0.1734619660884924">17,35%</td>
+<td class="col-num" data-order="-0.3106361876142466">-31,06%</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.1102230246251563e-16">0,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_desenvolvidos_emergentes</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_desenvolvidos_emergentes__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.823007140321202">282,30%</td>
+<td class="col-num" data-order="0.1460049895420149">14,60%</td>
+<td class="col-num" data-order="0.127601594753431">12,76%</td>
+<td class="col-num" data-order="0.1550283432556489">15,50%</td>
+<td class="col-num" data-order="0.9417954580166408">0,9418</td>
+<td class="col-num" data-order="1.490770521598888">1,4908</td>
+<td class="col-num" data-order="-0.3211093374755471">-32,11%</td>
+<td class="col-num" data-order="0.3973774034619844">0,3974</td>
+<td class="col-num" data-order="0.6592592592592592">65,93%</td>
+<td class="col-num" data-order="0.1733070318003357">17,33%</td>
+<td class="col-num" data-order="-0.1589942066310586">-15,90%</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.5848598806431536">58,49%</td>
+<td class="col-num" data-order="0.4151401193568463">41,51%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.5848598806431536">58,49%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.5144023986855406">0,5144</td>
+<td class="col-num" data-order="1.944003376646986">2</td>
+<td class="col-num" data-order="0.0848598806431537">8,49%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_exterior</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_exterior__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.741826524644859">274,18%</td>
+<td class="col-num" data-order="0.1434745639249558">14,35%</td>
+<td class="col-num" data-order="0.1254363128691962">12,54%</td>
+<td class="col-num" data-order="0.1461476746561831">14,61%</td>
+<td class="col-num" data-order="0.9817095226624996">0,9817</td>
+<td class="col-num" data-order="1.5222436854746475">1,5222</td>
+<td class="col-num" data-order="-0.2330032667991236">-23,30%</td>
+<td class="col-num" data-order="0.5383457261881961">0,5383</td>
+<td class="col-num" data-order="0.6370370370370371">63,70%</td>
+<td class="col-num" data-order="0.1827254730307365">18,27%</td>
+<td class="col-num" data-order="-0.1620031465433261">-16,20%</td>
+<td class="col-num" data-order="22.0">22</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-num" data-order="0.3371273920822371">33,71%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.0454545454545454">4,55%</td>
+<td class="col-num" data-order="2.1501366896974224e-17">0,00%</td>
+<td class="col-num" data-order="0.3371273920822371">33,71%</td>
+<td class="col-num" data-order="0.7281382438637695">72,81%</td>
+<td class="col-num" data-order="0.9108057152279622">91,08%</td>
+<td class="col-num" data-order="0.2252789417713939">0,2253</td>
+<td class="col-num" data-order="4.43894130599552">4</td>
+<td class="col-num" data-order="0.8069902860682432">80,70%</td>
+<td class="col-text">media</td>
+<td class="col-num" data-order="22.0">22</td>
+<td class="col-num" data-order="22.0">22</td>
+<td class="col-num" data-order="8.0">8,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_asia</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_asia__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.7348468595419098">273,48%</td>
+<td class="col-num" data-order="0.145119451775971">14,51%</td>
+<td class="col-num" data-order="0.1252481571763348">12,52%</td>
+<td class="col-num" data-order="0.1639583217980653">16,40%</td>
+<td class="col-num" data-order="0.8850996410825878">0,8851</td>
+<td class="col-num" data-order="1.346932795552909">1,3469</td>
+<td class="col-num" data-order="-0.2989040078109621">-29,89%</td>
+<td class="col-num" data-order="0.4190246831870731">0,4190</td>
+<td class="col-num" data-order="0.6444444444444445">64,44%</td>
+<td class="col-num" data-order="0.1709333746274007">17,09%</td>
+<td class="col-num" data-order="-0.1652352468475231">-16,52%</td>
+<td class="col-num" data-order="6.0">6</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-num" data-order="0.4789825791504836">47,90%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.1666666666666666">16,67%</td>
+<td class="col-num" data-order="0.1293564172926456">12,94%</td>
+<td class="col-num" data-order="0.4789825791504836">47,90%</td>
+<td class="col-num" data-order="0.9112273718305852">91,12%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.3349882603736715">0,3350</td>
+<td class="col-num" data-order="2.98517923847398">3</td>
+<td class="col-num" data-order="0.5438323721319265">54,38%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="6.0">6</td>
+<td class="col-num" data-order="6.0">6</td>
+<td class="col-num" data-order="4.0">4,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_europa__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.6787073797125016">267,87%</td>
+<td class="col-num" data-order="0.145724395326821">14,57%</td>
+<td class="col-num" data-order="0.1237230144562013">12,37%</td>
+<td class="col-num" data-order="0.1689584056034928">16,90%</td>
+<td class="col-num" data-order="0.8624868044079637">0,8625</td>
+<td class="col-num" data-order="1.3759447766427235">1,3759</td>
+<td class="col-num" data-order="-0.2938441759311987">-29,38%</td>
+<td class="col-num" data-order="0.4210497419733449">0,4210</td>
+<td class="col-num" data-order="0.6148148148148148">61,48%</td>
+<td class="col-num" data-order="0.1860000107064437">18,60%</td>
+<td class="col-num" data-order="-0.1480869217699054">-14,81%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.5109960391213241">51,10%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="0.489003960878676">48,90%</td>
+<td class="col-num" data-order="0.5109960391213241">51,10%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.5002418257527155">0,5002</td>
+<td class="col-num" data-order="1.9990331646005344">2</td>
+<td class="col-num" data-order="0.3406640260808831">34,07%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_latam</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_latam__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.5977325983761914">259,77%</td>
+<td class="col-num" data-order="0.1466742595749216">14,67%</td>
+<td class="col-num" data-order="0.1214854181837379">12,15%</td>
+<td class="col-num" data-order="0.1768226205413082">17,68%</td>
+<td class="col-num" data-order="0.8294994109119455">0,8295</td>
+<td class="col-num" data-order="1.169462957591873">1,1695</td>
+<td class="col-num" data-order="-0.2796296308475949">-27,96%</td>
+<td class="col-num" data-order="0.4344511624733734">0,4345</td>
+<td class="col-num" data-order="0.6222222222222222">62,22%</td>
+<td class="col-num" data-order="0.205457191041058">20,55%</td>
+<td class="col-num" data-order="-0.1952950956375309">-19,53%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-num" data-order="0.4922782318921021">49,23%</td>
+<td class="col-num" data-order="0.1214990299423263">12,15%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="0.3862227381655715">38,62%</td>
+<td class="col-num" data-order="0.4922782318921021">49,23%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.4062678753478522">0,4063</td>
+<td class="col-num" data-order="2.461430156503972">2</td>
+<td class="col-num" data-order="0.2471861346331838">24,72%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">max_sharpe</td>
+<td class="col-text">etfs_oceania__max_sharpe</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.490446647267056">249,04%</td>
+<td class="col-num" data-order="0.1454751858506955">14,55%</td>
+<td class="col-num" data-order="0.1184490612075008">11,84%</td>
+<td class="col-num" data-order="0.1862658829401062">18,63%</td>
+<td class="col-num" data-order="0.7810082209068475">0,7810</td>
+<td class="col-num" data-order="1.4817734054322076">1,4818</td>
+<td class="col-num" data-order="-0.2425331775402354">-24,25%</td>
+<td class="col-num" data-order="0.4883829190249676">0,4884</td>
+<td class="col-num" data-order="0.5925925925925926">59,26%</td>
+<td class="col-num" data-order="0.2069260277290354">20,69%</td>
+<td class="col-num" data-order="-0.1423925057291167">-14,24%</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_europa</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_europa__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.301179736627323">230,12%</td>
+<td class="col-num" data-order="0.1345518128963708">13,46%</td>
+<td class="col-num" data-order="0.1128790975488158">11,29%</td>
+<td class="col-num" data-order="0.1616562843787483">16,17%</td>
+<td class="col-num" data-order="0.8323327077166156">0,8323</td>
+<td class="col-num" data-order="1.3765336019816872">1,3765</td>
+<td class="col-num" data-order="-0.2521339470712054">-25,21%</td>
+<td class="col-num" data-order="0.4476949607937465">0,4477</td>
+<td class="col-num" data-order="0.5777777777777777">57,78%</td>
+<td class="col-num" data-order="0.182867599627325">18,29%</td>
+<td class="col-num" data-order="-0.1414587779325166">-14,15%</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="0.3333333333333333">33,33%</td>
+<td class="col-num" data-order="0.0">0,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-num" data-order="1.0">1</td>
+<td class="col-num" data-order="0.6666666666666667">66,67%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="3.0">3</td>
+<td class="col-num" data-order="1.0">1,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+<tr>
+<td class="col-text col-first">etfs_oceania</td>
+<td class="col-text">min_vol</td>
+<td class="col-text">etfs_oceania__min_vol</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+<td class="col-num" data-order="135.0">135</td>
+<td class="col-num" data-order="2.25633575693725">225,63%</td>
+<td class="col-num" data-order="0.1382192556254226">13,82%</td>
+<td class="col-num" data-order="0.1115168373182542">11,15%</td>
+<td class="col-num" data-order="0.1831148319396734">18,31%</td>
+<td class="col-num" data-order="0.7548228298129255">0,7548</td>
+<td class="col-num" data-order="1.3819943127086365">1,3820</td>
+<td class="col-num" data-order="-0.2812168049560164">-28,12%</td>
+<td class="col-num" data-order="0.3965511141330831">0,3966</td>
+<td class="col-num" data-order="0.5851851851851851">58,52%</td>
+<td class="col-num" data-order="0.2008596891805311">20,09%</td>
+<td class="col-num" data-order="-0.1420524523717846">-14,21%</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-num" data-order="0.6989319222574816">69,89%</td>
+<td class="col-num" data-order="0.3010680777425184">30,11%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.5">50,00%</td>
+<td class="col-num" data-order="0.6989319222574816">69,89%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="1.0">100,00%</td>
+<td class="col-num" data-order="0.5791478193861134">0,5791</td>
+<td class="col-num" data-order="1.7266748946063246">2</td>
+<td class="col-num" data-order="0.1989319222574814">19,89%</td>
+<td class="col-text">alta</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2</td>
+<td class="col-num" data-order="2.0">2,0000</td>
+<td class="col-data" data-order="20150228">2015-02-28</td>
+<td class="col-data" data-order="20260430">2026-04-30</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

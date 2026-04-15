@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metricas Pos Alinhamento</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Metricas Pos Alinhamento</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>ticker_yahoo</th>
+<th>nome_ativo</th>
+<th>moeda_original</th>
+<th>tipo_ativo</th>
+<th>grupo_universo</th>
+<th>data_min</th>
+<th>data_max</th>
+<th>n_linhas</th>
+<th>adj_close_brl_min</th>
+<th>adj_close_brl_max</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">000001.SS</td>
+<td class="col-text">Shanghai Composite</td>
+<td class="col-text">CNY</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150501">2015-05-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2738.0">2.738</td>
+<td class="col-num" data-order="1315.9881896440104">1.315,9882</td>
+<td class="col-num" data-order="3278.396005190197">3.278,3960</td>
+</tr>
+<tr>
+<td class="col-text col-first">ACWI</td>
+<td class="col-text">iShares MSCI ACWI ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="119.95921874079158">119,9592</td>
+<td class="col-num" data-order="796.3514592681895">796,3515</td>
+</tr>
+<tr>
+<td class="col-text col-first">ARGT</td>
+<td class="col-text">Global X MSCI Argentina ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="41.30431022730159">41,3043</td>
+<td class="col-num" data-order="546.4320104094004">546,4320</td>
+</tr>
+<tr>
+<td class="col-text col-first">BOVA11.SA</td>
+<td class="col-text">iShares Ibovespa ETF</td>
+<td class="col-text">BRL</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2781.0">2.781</td>
+<td class="col-num" data-order="36.45000076293945">36,4500</td>
+<td class="col-num" data-order="195.16000366210935">195,1600</td>
+</tr>
+<tr>
+<td class="col-text col-first">BRL=X</td>
+<td class="col-text">USDBRL</td>
+<td class="col-text">BRL</td>
+<td class="col-text">cambio</td>
+<td class="col-text">alternativos</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2933.0">2.933</td>
+<td class="col-num" data-order="2.569299936294556">2,5693</td>
+<td class="col-num" data-order="6.300000190734863">6,3000</td>
+</tr>
+<tr>
+<td class="col-text col-first">BTC-USD</td>
+<td class="col-text">Bitcoin USD</td>
+<td class="col-text">USD</td>
+<td class="col-text">cripto</td>
+<td class="col-text">alternativos</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2942.0">2.942</td>
+<td class="col-num" data-order="470.12067728439433">470,1207</td>
+<td class="col-num" data-order="667834.4508733116">667.834,4509</td>
+</tr>
+<tr>
+<td class="col-text col-first">BZ=F</td>
+<td class="col-text">Brent Crude Oil</td>
+<td class="col-text">USD</td>
+<td class="col-text">commodity</td>
+<td class="col-text">alternativos</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2838.0">2.838</td>
+<td class="col-num" data-order="102.74668398358152">102,7467</td>
+<td class="col-num" data-order="654.0417890920253">654,0418</td>
+</tr>
+<tr>
+<td class="col-text col-first">ECH</td>
+<td class="col-text">iShares MSCI Chile ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="70.36170687709273">70,3617</td>
+<td class="col-num" data-order="250.0709585784989">250,0710</td>
+</tr>
+<tr>
+<td class="col-text col-first">ENZL</td>
+<td class="col-text">iShares MSCI New Zealand ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="71.80790068400893">71,8079</td>
+<td class="col-num" data-order="341.9799743089243">341,9800</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWA</td>
+<td class="col-text">iShares MSCI Australia ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="35.53244761388896">35,5324</td>
+<td class="col-num" data-order="155.3843177182007">155,3843</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWG</td>
+<td class="col-text">iShares MSCI Germany ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="54.47809209176648">54,4781</td>
+<td class="col-num" data-order="240.4161136423645">240,4161</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWH</td>
+<td class="col-text">iShares MSCI Hong Kong ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="37.42690482519652">37,4269</td>
+<td class="col-num" data-order="129.43935737576703">129,4394</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWJ</td>
+<td class="col-text">iShares MSCI Japan ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="94.0809131480637">94,0809</td>
+<td class="col-num" data-order="489.3245154216384">489,3245</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWT</td>
+<td class="col-text">iShares MSCI Taiwan ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="44.9099380593907">44,9099</td>
+<td class="col-num" data-order="402.3649492395634">402,3649</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWU</td>
+<td class="col-text">iShares MSCI United Kingdom ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="59.57763260910406">59,5776</td>
+<td class="col-num" data-order="250.696316800766">250,6963</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWW</td>
+<td class="col-text">iShares MSCI Mexico ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="104.7209207296255">104,7209</td>
+<td class="col-num" data-order="423.49736084588585">423,4974</td>
+</tr>
+<tr>
+<td class="col-text col-first">EWY</td>
+<td class="col-text">iShares MSCI South Korea ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="116.9890104660999">116,9890</td>
+<td class="col-num" data-order="777.5271195751266">777,5271</td>
+</tr>
+<tr>
+<td class="col-text col-first">EZA</td>
+<td class="col-text">iShares MSCI South Africa ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="93.70463029197708">93,7046</td>
+<td class="col-num" data-order="419.1465535940552">419,1466</td>
+</tr>
+<tr>
+<td class="col-text col-first">FEZ</td>
+<td class="col-text">SPDR EURO STOXX 50 ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="67.73552733592896">67,7355</td>
+<td class="col-num" data-order="360.2204751746285">360,2205</td>
+</tr>
+<tr>
+<td class="col-text col-first">GC=F</td>
+<td class="col-text">Ouro Spot/Front</td>
+<td class="col-text">USD</td>
+<td class="col-text">commodity</td>
+<td class="col-text">alternativos</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2836.0">2.836</td>
+<td class="col-num" data-order="3146.6950945854187">3.146,6951</td>
+<td class="col-num" data-order="27640.25699674315">27.640,2570</td>
+</tr>
+<tr>
+<td class="col-text col-first">GLD</td>
+<td class="col-text">SPDR Gold Shares</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="302.67705071844466">302,6771</td>
+<td class="col-num" data-order="2577.2419388661947">2.577,2419</td>
+</tr>
+<tr>
+<td class="col-text col-first">IEMG</td>
+<td class="col-text">iShares Core MSCI Emerging Markets ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="91.01038019439238">91,0104</td>
+<td class="col-num" data-order="399.6406345809555">399,6406</td>
+</tr>
+<tr>
+<td class="col-text col-first">INDA</td>
+<td class="col-text">iShares MSCI India ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="69.02514723351896">69,0251</td>
+<td class="col-num" data-order="338.1541504227371">338,1542</td>
+</tr>
+<tr>
+<td class="col-text col-first">MCHI</td>
+<td class="col-text">iShares MSCI China ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="106.4879596285009">106,4880</td>
+<td class="col-num" data-order="468.01904703769833">468,0190</td>
+</tr>
+<tr>
+<td class="col-text col-first">QQQ</td>
+<td class="col-text">Invesco QQQ Trust</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="238.45015407682692">238,4502</td>
+<td class="col-num" data-order="3473.2154427072965">3.473,2154</td>
+</tr>
+<tr>
+<td class="col-text col-first">SMAL11.SA</td>
+<td class="col-text">iShares Small Caps ETF</td>
+<td class="col-text">BRL</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2779.0">2.779</td>
+<td class="col-num" data-order="35.470001220703125">35,4700</td>
+<td class="col-num" data-order="154.5">154,5000</td>
+</tr>
+<tr>
+<td class="col-text col-first">SPY</td>
+<td class="col-text">SPDR S&amp;P 500 ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="425.8465667666314">425,8466</td>
+<td class="col-num" data-order="3835.2225424326025">3.835,2225</td>
+</tr>
+<tr>
+<td class="col-text col-first">USO</td>
+<td class="col-text">United States Oil Fund</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="96.32030596398909">96,3203</td>
+<td class="col-num" data-order="716.6386186640011">716,6386</td>
+</tr>
+<tr>
+<td class="col-text col-first">VEA</td>
+<td class="col-text">Vanguard FTSE Developed Markets ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="69.74169318356871">69,7417</td>
+<td class="col-num" data-order="361.50057229324375">361,5006</td>
+</tr>
+<tr>
+<td class="col-text col-first">VT</td>
+<td class="col-text">Vanguard Total World Stock ETF</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="119.8894054952234">119,8894</td>
+<td class="col-num" data-order="791.9757419856614">791,9757</td>
+</tr>
+<tr>
+<td class="col-text col-first">XLE</td>
+<td class="col-text">Energy Select Sector SPDR Fund</td>
+<td class="col-text">USD</td>
+<td class="col-text">etf</td>
+<td class="col-text">etfs</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="46.31606934183492">46,3161</td>
+<td class="col-num" data-order="327.50785020689364">327,5079</td>
+</tr>
+<tr>
+<td class="col-text col-first">^AXJO</td>
+<td class="col-text">ASX 200</td>
+<td class="col-text">AUD</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2853.0">2.853</td>
+<td class="col-num" data-order="11304.389732235111">11.304,3897</td>
+<td class="col-num" data-order="33523.25689679058">33.523,2569</td>
+</tr>
+<tr>
+<td class="col-text col-first">^BVSP</td>
+<td class="col-text">Ibovespa</td>
+<td class="col-text">BRL</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2800.0">2.800</td>
+<td class="col-num" data-order="37497.0">37.497,0000</td>
+<td class="col-num" data-order="198657.0">198.657,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">^FTSE</td>
+<td class="col-text">FTSE 100</td>
+<td class="col-text">GBP</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2850.0">2.850</td>
+<td class="col-num" data-order="25535.474083542824">25.535,4741</td>
+<td class="col-num" data-order="75664.32463550521">75.664,3246</td>
+</tr>
+<tr>
+<td class="col-text col-first">^GDAXI</td>
+<td class="col-text">DAX</td>
+<td class="col-text">EUR</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2862.0">2.862</td>
+<td class="col-num" data-order="30256.731348752972">30.256,7313</td>
+<td class="col-num" data-order="160382.50587727877">160.382,5059</td>
+</tr>
+<tr>
+<td class="col-text col-first">^GSPC</td>
+<td class="col-text">S&amp;P 500</td>
+<td class="col-text">USD</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="5144.1496482693765">5.144,1496</td>
+<td class="col-num" data-order="38625.72737270966">38.625,7274</td>
+</tr>
+<tr>
+<td class="col-text col-first">^HSI</td>
+<td class="col-text">Hang Seng</td>
+<td class="col-text">HKD</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2774.0">2.774</td>
+<td class="col-num" data-order="8016.725373825117">8.016,7254</td>
+<td class="col-num" data-order="21850.954341623583">21.850,9543</td>
+</tr>
+<tr>
+<td class="col-text col-first">^KS11</td>
+<td class="col-text">Kospi</td>
+<td class="col-text">KRW</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260414">2026-04-14</td>
+<td class="col-num" data-order="2765.0">2.765</td>
+<td class="col-num" data-order="4.588463748104284">4,5885</td>
+<td class="col-num" data-order="22.649823010638176">22,6498</td>
+</tr>
+<tr>
+<td class="col-text col-first">^MXX</td>
+<td class="col-text">Mexico IPC</td>
+<td class="col-text">MXN</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2836.0">2.836</td>
+<td class="col-num" data-order="6717.073030824889">6.717,0730</td>
+<td class="col-num" data-order="21801.658795606345">21.801,6588</td>
+</tr>
+<tr>
+<td class="col-text col-first">^N225</td>
+<td class="col-text">Nikkei 225</td>
+<td class="col-text">JPY</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150501">2015-05-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2757.0">2.757</td>
+<td class="col-num" data-order="376.0615741604124">376,0616</td>
+<td class="col-num" data-order="1954.9703704320564">1.954,9704</td>
+</tr>
+<tr>
+<td class="col-text col-first">^NDX</td>
+<td class="col-text">Nasdaq 100</td>
+<td class="col-text">USD</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2837.0">2.837</td>
+<td class="col-num" data-order="10637.877769145416">10.637,8778</td>
+<td class="col-num" data-order="143035.97404111177">143.035,9740</td>
+</tr>
+<tr>
+<td class="col-text col-first">^NSEI</td>
+<td class="col-text">Nifty 50</td>
+<td class="col-text">INR</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150201">2015-02-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2776.0">2.776</td>
+<td class="col-num" data-order="343.69687643972367">343,6969</td>
+<td class="col-num" data-order="1776.3858936040756">1.776,3859</td>
+</tr>
+<tr>
+<td class="col-text col-first">^NZ50</td>
+<td class="col-text">NZX 50</td>
+<td class="col-text">NZD</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150501">2015-05-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2824.0">2.824</td>
+<td class="col-num" data-order="10855.172171244394">10.855,1722</td>
+<td class="col-num" data-order="53280.40071308108">53.280,4007</td>
+</tr>
+<tr>
+<td class="col-text col-first">^STOXX50E</td>
+<td class="col-text">Euro Stoxx 50</td>
+<td class="col-text">EUR</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150501">2015-05-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2834.0">2.834</td>
+<td class="col-num" data-order="9542.229866441572">9.542,2299</td>
+<td class="col-num" data-order="37958.217797995545">37.958,2178</td>
+</tr>
+<tr>
+<td class="col-text col-first">^TWII</td>
+<td class="col-text">Taiwan Weighted</td>
+<td class="col-text">TWD</td>
+<td class="col-text">indice</td>
+<td class="col-text">indices</td>
+<td class="col-data" data-order="20150501">2015-05-01</td>
+<td class="col-data" data-order="20260415">2026-04-15</td>
+<td class="col-num" data-order="2737.0">2.737</td>
+<td class="col-num" data-order="752.2394074908732">752,2394</td>
+<td class="col-num" data-order="5814.690768702598">5.814,6908</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

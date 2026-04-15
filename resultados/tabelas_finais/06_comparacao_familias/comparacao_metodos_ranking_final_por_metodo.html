@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparacao Metodos Ranking Final Por Metodo</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    .table-page {
+        width: 100%;
+    }
+
+    .table-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+    }
+
+    .table-wrap-external {
+        border: 1px solid #dbe3ee;
+        border-radius: 16px;
+        overflow: auto;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        padding: 10px;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        table-layout: auto !important;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 !important;
+    }
+
+    table.dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid #cfd8e3 !important;
+        border-right: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    table.dataTable thead th:first-child {
+        border-left: 1px solid #e2e8f0 !important;
+        min-width: 180px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 10px 14px !important;
+        border-bottom: 1px solid #e7edf5 !important;
+        border-right: 1px solid #edf2f7 !important;
+        vertical-align: top;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    table.dataTable tbody td:first-child {
+        border-left: 1px solid #edf2f7 !important;
+        min-width: 180px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    table.dataTable tbody tr:nth-child(even) td {
+        background: #fafcff !important;
+    }
+
+    table.dataTable tbody tr:hover td {
+        background: #eef6ff !important;
+    }
+
+    td.col-num {
+        text-align: right !important;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap !important;
+    }
+
+    td.col-data {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+
+    td.col-text {
+        text-align: left !important;
+    }
+
+    .dataTables_wrapper {
+        width: 100%;
+        color: #0f172a;
+        font-size: 0.94rem;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .dataTables_wrapper .dataTables_length select,
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #0f172a;
+        padding: 7px 10px;
+        min-height: 36px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #d6dde8 !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border-radius: 8px !important;
+        margin-left: 4px !important;
+        padding: 6px 10px !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML_FINAL_EXTERNAL_TABLE_READY -->
+    <div class="table-page">
+        <div class="table-title">Comparacao Metodos Ranking Final Por Metodo</div>
+        <div class="table-wrap-external">
+            <table id="tabela_externa" class="display compact stripe nowrap order-column">
+<thead><tr>
+<th>metodo</th>
+<th>qtd_estrategias</th>
+<th>retorno_total_medio</th>
+<th>cagr_medio</th>
+<th>vol_anual_media</th>
+<th>sharpe_medio</th>
+<th>sortino_medio</th>
+<th>max_drawdown_medio</th>
+<th>calmar_medio</th>
+<th>pct_meses_positivos_medio</th>
+<th>peso_max_medio</th>
+<th>top3_peso_medio</th>
+<th>hhi_medio</th>
+<th>n_efetivo_medio</th>
+<th>score_medio</th>
+<th>vitorias_em_familias</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="col-text col-first">markowitz_puro</td>
+<td class="col-num" data-order="34.0">34</td>
+<td class="col-num" data-order="5.200231096137479">520,02%</td>
+<td class="col-num" data-order="0.16772786871117">16,77%</td>
+<td class="col-num" data-order="0.150394174548457">15,04%</td>
+<td class="col-num" data-order="1.262011206917639">1,2620</td>
+<td class="col-num" data-order="2.2555025490156604">2,2555</td>
+<td class="col-num" data-order="-0.2304703176597866">-23,05%</td>
+<td class="col-num" data-order="0.8634352180224267">0,8634</td>
+<td class="col-num" data-order="0.6481481481481481">64,81%</td>
+<td class="col-num" data-order="0.5521581124262337">55,22%</td>
+<td class="col-num" data-order="0.9127586319360808">91,28%</td>
+<td class="col-num" data-order="0.4686777148384736">0,4687</td>
+<td class="col-num" data-order="2.729181183620066">3</td>
+<td class="col-num" data-order="221.9705882352941">221,9706</td>
+<td class="col-num" data-order="17.0">17,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">markowitz_restrito</td>
+<td class="col-num" data-order="34.0">34</td>
+<td class="col-num" data-order="4.356938765925444">435,69%</td>
+<td class="col-num" data-order="0.1556249947893948">15,56%</td>
+<td class="col-num" data-order="0.157974900565353">15,80%</td>
+<td class="col-num" data-order="1.1138870385113513">1,1139</td>
+<td class="col-num" data-order="1.927531579198093">1,9275</td>
+<td class="col-num" data-order="-0.2609580030078456">-26,10%</td>
+<td class="col-num" data-order="0.6428372404795394">0,6428</td>
+<td class="col-num" data-order="0.6302832244008715">63,03%</td>
+<td class="col-num" data-order="0.2294117647058822">22,94%</td>
+<td class="col-num" data-order="0.5999999999999996">60,00%</td>
+<td class="col-num" data-order="0.2115278399559121">0,2115</td>
+<td class="col-num" data-order="9.42490447746524">9</td>
+<td class="col-num" data-order="261.1764705882353">261,1765</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">equal_weight</td>
+<td class="col-num" data-order="17.0">17</td>
+<td class="col-num" data-order="3.765361189183601">376,54%</td>
+<td class="col-num" data-order="0.1477287114820381">14,77%</td>
+<td class="col-num" data-order="0.1629739414753505">16,30%</td>
+<td class="col-num" data-order="1.0334647933107224">1,0335</td>
+<td class="col-num" data-order="1.751314951108683">1,7513</td>
+<td class="col-num" data-order="-0.2723227189495453">-27,23%</td>
+<td class="col-num" data-order="0.5709684972748337">0,5710</td>
+<td class="col-num" data-order="0.6235294117647059">62,35%</td>
+<td class="col-num"></td>
+<td class="col-num"></td>
+<td class="col-num"></td>
+<td class="col-num"></td>
+<td class="col-num" data-order="293.47058823529414">293,4706</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+<tr>
+<td class="col-text col-first">hrp</td>
+<td class="col-num" data-order="17.0">17</td>
+<td class="col-num" data-order="3.4024391492901014">340,24%</td>
+<td class="col-num" data-order="0.1401260527060837">14,01%</td>
+<td class="col-num" data-order="0.1571152537141276">15,71%</td>
+<td class="col-num" data-order="1.028083980253463">1,0281</td>
+<td class="col-num" data-order="1.7098487896662464">1,7098</td>
+<td class="col-num" data-order="-0.2510666298609043">-25,11%</td>
+<td class="col-num" data-order="0.6045819161493904">0,6046</td>
+<td class="col-num" data-order="0.6296296296296297">62,96%</td>
+<td class="col-num" data-order="0.2792400632548513">27,92%</td>
+<td class="col-num" data-order="0.5786730137403511">57,87%</td>
+<td class="col-num" data-order="0.2163548847980181">0,2164</td>
+<td class="col-num" data-order="11.847257603444794">12</td>
+<td class="col-num" data-order="280.94117647058823">280,9412</td>
+<td class="col-num" data-order="0.0">0,0000</td>
+</tr>
+</tbody></table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tabela_externa').DataTable({
+            pageLength: 25,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            order: [],
+            ordering: true,
+            searching: true,
+            info: true,
+            paging: true,
+            scrollX: true,
+            autoWidth: false,
+            deferRender: true,
+            language: {
+                search: "Buscar:",
+                lengthMenu: "Mostrar _MENU_ linhas",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ linhas",
+                infoEmpty: "Mostrando 0 a 0 de 0 linhas",
+                zeroRecords: "Nenhum registro encontrado",
+                paginate: {
+                    first: "Primeira",
+                    last: "Última",
+                    next: "Próxima",
+                    previous: "Anterior"
+                }
+            },
+            columnDefs: [
+                { targets: 0, width: "180px" }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

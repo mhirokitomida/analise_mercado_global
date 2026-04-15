@@ -1,0 +1,756 @@
+<table class="dataframe tabela-projeto table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>nome_ativo</th>
+      <th>ticker_yahoo</th>
+      <th>classe</th>
+      <th>subclasse</th>
+      <th>regiao</th>
+      <th>pais</th>
+      <th>moeda_original</th>
+      <th>tipo_ativo</th>
+      <th>categoria_html</th>
+      <th>observacoes</th>
+      <th>grupo_universo</th>
+      <th>nome_ativo_slug</th>
+      <th>ticker_slug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ibovespa</td>
+      <td>^BVSP</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice de ações do Brasil</td>
+      <td>indices</td>
+      <td>ibovespa</td>
+      <td>bvsp</td>
+    </tr>
+    <tr>
+      <td>Small Caps Brasil</td>
+      <td>SMLL.SA</td>
+      <td>Equity Index</td>
+      <td>Small Caps</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Proxy de small caps brasileiras</td>
+      <td>indices</td>
+      <td>small_caps_brasil</td>
+      <td>smllsa</td>
+    </tr>
+    <tr>
+      <td>S&amp;P 500</td>
+      <td>^GSPC</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice amplo dos EUA</td>
+      <td>indices</td>
+      <td>sp_500</td>
+      <td>gspc</td>
+    </tr>
+    <tr>
+      <td>Nasdaq 100</td>
+      <td>^NDX</td>
+      <td>Equity Index</td>
+      <td>Tech/Growth</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Índice concentrado em tecnologia e growth</td>
+      <td>indices</td>
+      <td>nasdaq_100</td>
+      <td>ndx</td>
+    </tr>
+    <tr>
+      <td>Mexico IPC</td>
+      <td>^MXX</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>America Latina</td>
+      <td>Mexico</td>
+      <td>MXN</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice do México</td>
+      <td>indices</td>
+      <td>mexico_ipc</td>
+      <td>mxx</td>
+    </tr>
+    <tr>
+      <td>Chile IPSA</td>
+      <td>^IPSA</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>America Latina</td>
+      <td>Chile</td>
+      <td>CLP</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice do Chile</td>
+      <td>indices</td>
+      <td>chile_ipsa</td>
+      <td>ipsa</td>
+    </tr>
+    <tr>
+      <td>Euro Stoxx 50</td>
+      <td>^STOXX50E</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Europa</td>
+      <td>Zona do Euro</td>
+      <td>EUR</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Índice de grandes empresas da zona do euro</td>
+      <td>indices</td>
+      <td>euro_stoxx_50</td>
+      <td>stoxx50e</td>
+    </tr>
+    <tr>
+      <td>FTSE 100</td>
+      <td>^FTSE</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Europa</td>
+      <td>Reino Unido</td>
+      <td>GBP</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice do Reino Unido</td>
+      <td>indices</td>
+      <td>ftse_100</td>
+      <td>ftse</td>
+    </tr>
+    <tr>
+      <td>DAX</td>
+      <td>^GDAXI</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Europa</td>
+      <td>Alemanha</td>
+      <td>EUR</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice da Alemanha</td>
+      <td>indices</td>
+      <td>dax</td>
+      <td>gdaxi</td>
+    </tr>
+    <tr>
+      <td>Nikkei 225</td>
+      <td>^N225</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Japao</td>
+      <td>JPY</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice do Japão</td>
+      <td>indices</td>
+      <td>nikkei_225</td>
+      <td>n225</td>
+    </tr>
+    <tr>
+      <td>Shanghai Composite</td>
+      <td>000001.SS</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>China</td>
+      <td>CNY</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Índice amplo da bolsa de Xangai</td>
+      <td>indices</td>
+      <td>shanghai_composite</td>
+      <td>000001ss</td>
+    </tr>
+    <tr>
+      <td>Hang Seng</td>
+      <td>^HSI</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Hong Kong</td>
+      <td>HKD</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice de Hong Kong</td>
+      <td>indices</td>
+      <td>hang_seng</td>
+      <td>hsi</td>
+    </tr>
+    <tr>
+      <td>Kospi</td>
+      <td>^KS11</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Coreia do Sul</td>
+      <td>KRW</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice da Coreia do Sul</td>
+      <td>indices</td>
+      <td>kospi</td>
+      <td>ks11</td>
+    </tr>
+    <tr>
+      <td>Nifty 50</td>
+      <td>^NSEI</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>India</td>
+      <td>INR</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice da Índia</td>
+      <td>indices</td>
+      <td>nifty_50</td>
+      <td>nsei</td>
+    </tr>
+    <tr>
+      <td>Taiwan Weighted</td>
+      <td>^TWII</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Asia</td>
+      <td>Taiwan</td>
+      <td>TWD</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice de Taiwan</td>
+      <td>indices</td>
+      <td>taiwan_weighted</td>
+      <td>twii</td>
+    </tr>
+    <tr>
+      <td>ASX 200</td>
+      <td>^AXJO</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Oceania</td>
+      <td>Australia</td>
+      <td>AUD</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice amplo da Austrália</td>
+      <td>indices</td>
+      <td>asx_200</td>
+      <td>axjo</td>
+    </tr>
+    <tr>
+      <td>NZX 50</td>
+      <td>^NZ50</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Oceania</td>
+      <td>Nova Zelandia</td>
+      <td>NZD</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Principal índice da Nova Zelândia</td>
+      <td>indices</td>
+      <td>nzx_50</td>
+      <td>nz50</td>
+    </tr>
+    <tr>
+      <td>South Africa Top 40</td>
+      <td>^JN0U.JO</td>
+      <td>Equity Index</td>
+      <td>Broad Market</td>
+      <td>Africa</td>
+      <td>Africa do Sul</td>
+      <td>ZAR</td>
+      <td>indice</td>
+      <td>Indices Globais</td>
+      <td>Proxy do mercado acionário sul-africano</td>
+      <td>indices</td>
+      <td>south_africa_top_40</td>
+      <td>jn0ujo</td>
+    </tr>
+    <tr>
+      <td>iShares Ibovespa ETF</td>
+      <td>BOVA11.SA</td>
+      <td>ETF</td>
+      <td>Brasil Broad Market</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF do Ibovespa</td>
+      <td>etfs</td>
+      <td>ishares_ibovespa_etf</td>
+      <td>bova11sa</td>
+    </tr>
+    <tr>
+      <td>iShares Small Caps ETF</td>
+      <td>SMAL11.SA</td>
+      <td>ETF</td>
+      <td>Brasil Small Caps</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF de Small Caps Brasil</td>
+      <td>etfs</td>
+      <td>ishares_small_caps_etf</td>
+      <td>smal11sa</td>
+    </tr>
+    <tr>
+      <td>Vanguard Total World Stock ETF</td>
+      <td>VT</td>
+      <td>ETF</td>
+      <td>Global Equity</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF global amplo</td>
+      <td>etfs</td>
+      <td>vanguard_total_world_stock_etf</td>
+      <td>vt</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI ACWI ETF</td>
+      <td>ACWI</td>
+      <td>ETF</td>
+      <td>Global Equity</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF global amplo alternativo</td>
+      <td>etfs</td>
+      <td>ishares_msci_acwi_etf</td>
+      <td>acwi</td>
+    </tr>
+    <tr>
+      <td>Vanguard FTSE Developed Markets ETF</td>
+      <td>VEA</td>
+      <td>ETF</td>
+      <td>Developed Markets</td>
+      <td>Global</td>
+      <td>Desenvolvidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>Mercados desenvolvidos ex-EUA</td>
+      <td>etfs</td>
+      <td>vanguard_ftse_developed_markets_etf</td>
+      <td>vea</td>
+    </tr>
+    <tr>
+      <td>iShares Core MSCI Emerging Markets ETF</td>
+      <td>IEMG</td>
+      <td>ETF</td>
+      <td>Emerging Markets</td>
+      <td>Emergentes</td>
+      <td>Emergentes</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF amplo de mercados emergentes</td>
+      <td>etfs</td>
+      <td>ishares_core_msci_emerging_markets_etf</td>
+      <td>iemg</td>
+    </tr>
+    <tr>
+      <td>SPDR S&amp;P 500 ETF</td>
+      <td>SPY</td>
+      <td>ETF</td>
+      <td>US Broad Market</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF clássico do S&amp;P 500</td>
+      <td>etfs</td>
+      <td>spdr_sp_500_etf</td>
+      <td>spy</td>
+    </tr>
+    <tr>
+      <td>Invesco QQQ Trust</td>
+      <td>QQQ</td>
+      <td>ETF</td>
+      <td>US Tech/Growth</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF Nasdaq/tecnologia</td>
+      <td>etfs</td>
+      <td>invesco_qqq_trust</td>
+      <td>qqq</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Mexico ETF</td>
+      <td>EWW</td>
+      <td>ETF</td>
+      <td>Mexico</td>
+      <td>America Latina</td>
+      <td>Mexico</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF do México</td>
+      <td>etfs</td>
+      <td>ishares_msci_mexico_etf</td>
+      <td>eww</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Chile ETF</td>
+      <td>ECH</td>
+      <td>ETF</td>
+      <td>Chile</td>
+      <td>America Latina</td>
+      <td>Chile</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF do Chile</td>
+      <td>etfs</td>
+      <td>ishares_msci_chile_etf</td>
+      <td>ech</td>
+    </tr>
+    <tr>
+      <td>Global X MSCI Argentina ETF</td>
+      <td>ARGT</td>
+      <td>ETF</td>
+      <td>Argentina</td>
+      <td>America Latina</td>
+      <td>Argentina</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF da Argentina</td>
+      <td>etfs</td>
+      <td>global_x_msci_argentina_etf</td>
+      <td>argt</td>
+    </tr>
+    <tr>
+      <td>SPDR EURO STOXX 50 ETF</td>
+      <td>FEZ</td>
+      <td>ETF</td>
+      <td>Zona do Euro</td>
+      <td>Europa</td>
+      <td>Zona do Euro</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF amplo da zona do euro</td>
+      <td>etfs</td>
+      <td>spdr_euro_stoxx_50_etf</td>
+      <td>fez</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI United Kingdom ETF</td>
+      <td>EWU</td>
+      <td>ETF</td>
+      <td>Reino Unido</td>
+      <td>Europa</td>
+      <td>Reino Unido</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF do Reino Unido</td>
+      <td>etfs</td>
+      <td>ishares_msci_united_kingdom_etf</td>
+      <td>ewu</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Germany ETF</td>
+      <td>EWG</td>
+      <td>ETF</td>
+      <td>Alemanha</td>
+      <td>Europa</td>
+      <td>Alemanha</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF da Alemanha</td>
+      <td>etfs</td>
+      <td>ishares_msci_germany_etf</td>
+      <td>ewg</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Japan ETF</td>
+      <td>EWJ</td>
+      <td>ETF</td>
+      <td>Japao</td>
+      <td>Asia</td>
+      <td>Japao</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF amplo do Japão</td>
+      <td>etfs</td>
+      <td>ishares_msci_japan_etf</td>
+      <td>ewj</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI China ETF</td>
+      <td>MCHI</td>
+      <td>ETF</td>
+      <td>China</td>
+      <td>Asia</td>
+      <td>China</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF amplo da China</td>
+      <td>etfs</td>
+      <td>ishares_msci_china_etf</td>
+      <td>mchi</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Hong Kong ETF</td>
+      <td>EWH</td>
+      <td>ETF</td>
+      <td>Hong Kong</td>
+      <td>Asia</td>
+      <td>Hong Kong</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF de Hong Kong</td>
+      <td>etfs</td>
+      <td>ishares_msci_hong_kong_etf</td>
+      <td>ewh</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI South Korea ETF</td>
+      <td>EWY</td>
+      <td>ETF</td>
+      <td>Coreia do Sul</td>
+      <td>Asia</td>
+      <td>Coreia do Sul</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF da Coreia do Sul</td>
+      <td>etfs</td>
+      <td>ishares_msci_south_korea_etf</td>
+      <td>ewy</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI India ETF</td>
+      <td>INDA</td>
+      <td>ETF</td>
+      <td>India</td>
+      <td>Asia</td>
+      <td>India</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF da Índia</td>
+      <td>etfs</td>
+      <td>ishares_msci_india_etf</td>
+      <td>inda</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Taiwan ETF</td>
+      <td>EWT</td>
+      <td>ETF</td>
+      <td>Taiwan</td>
+      <td>Asia</td>
+      <td>Taiwan</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF de Taiwan</td>
+      <td>etfs</td>
+      <td>ishares_msci_taiwan_etf</td>
+      <td>ewt</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI Australia ETF</td>
+      <td>EWA</td>
+      <td>ETF</td>
+      <td>Australia</td>
+      <td>Oceania</td>
+      <td>Australia</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF da Austrália</td>
+      <td>etfs</td>
+      <td>ishares_msci_australia_etf</td>
+      <td>ewa</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI New Zealand ETF</td>
+      <td>ENZL</td>
+      <td>ETF</td>
+      <td>Nova Zelandia</td>
+      <td>Oceania</td>
+      <td>Nova Zelandia</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF da Nova Zelândia</td>
+      <td>etfs</td>
+      <td>ishares_msci_new_zealand_etf</td>
+      <td>enzl</td>
+    </tr>
+    <tr>
+      <td>iShares MSCI South Africa ETF</td>
+      <td>EZA</td>
+      <td>ETF</td>
+      <td>Africa do Sul</td>
+      <td>Africa</td>
+      <td>Africa do Sul</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF da África do Sul</td>
+      <td>etfs</td>
+      <td>ishares_msci_south_africa_etf</td>
+      <td>eza</td>
+    </tr>
+    <tr>
+      <td>SPDR Gold Shares</td>
+      <td>GLD</td>
+      <td>ETF</td>
+      <td>Ouro</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF de ouro físico/proxy</td>
+      <td>etfs</td>
+      <td>spdr_gold_shares</td>
+      <td>gld</td>
+    </tr>
+    <tr>
+      <td>iShares Bitcoin Trust</td>
+      <td>IBIT</td>
+      <td>ETF</td>
+      <td>Bitcoin</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF spot de bitcoin; histórico será mais curto</td>
+      <td>etfs</td>
+      <td>ishares_bitcoin_trust</td>
+      <td>ibit</td>
+    </tr>
+    <tr>
+      <td>United States Oil Fund</td>
+      <td>USO</td>
+      <td>ETF</td>
+      <td>Petroleo</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF proxy para petróleo</td>
+      <td>etfs</td>
+      <td>united_states_oil_fund</td>
+      <td>uso</td>
+    </tr>
+    <tr>
+      <td>Energy Select Sector SPDR Fund</td>
+      <td>XLE</td>
+      <td>ETF</td>
+      <td>Energia</td>
+      <td>America do Norte</td>
+      <td>Estados Unidos</td>
+      <td>USD</td>
+      <td>etf</td>
+      <td>ETFs Investiveis</td>
+      <td>ETF de energia para comparação com petróleo</td>
+      <td>etfs</td>
+      <td>energy_select_sector_spdr_fund</td>
+      <td>xle</td>
+    </tr>
+    <tr>
+      <td>Ouro Spot/Front</td>
+      <td>GC=F</td>
+      <td>Commodity</td>
+      <td>Ouro</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>commodity</td>
+      <td>Alternativos</td>
+      <td>Contrato futuro/proxy de ouro no Yahoo</td>
+      <td>alternativos</td>
+      <td>ouro_spotfront</td>
+      <td>gcf</td>
+    </tr>
+    <tr>
+      <td>Bitcoin USD</td>
+      <td>BTC-USD</td>
+      <td>Crypto</td>
+      <td>Bitcoin</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>cripto</td>
+      <td>Alternativos</td>
+      <td>Preço do bitcoin em USD</td>
+      <td>alternativos</td>
+      <td>bitcoin_usd</td>
+      <td>btcusd</td>
+    </tr>
+    <tr>
+      <td>Brent Crude Oil</td>
+      <td>BZ=F</td>
+      <td>Commodity</td>
+      <td>Petroleo</td>
+      <td>Global</td>
+      <td>Global</td>
+      <td>USD</td>
+      <td>commodity</td>
+      <td>Alternativos</td>
+      <td>Contrato/proxy do Brent no Yahoo</td>
+      <td>alternativos</td>
+      <td>brent_crude_oil</td>
+      <td>bzf</td>
+    </tr>
+    <tr>
+      <td>USDBRL</td>
+      <td>BRL=X</td>
+      <td>FX</td>
+      <td>Cambio</td>
+      <td>Brasil</td>
+      <td>Brasil</td>
+      <td>BRL</td>
+      <td>cambio</td>
+      <td>Cambio</td>
+      <td>Série de câmbio no Yahoo; normalmente BRL por USD</td>
+      <td>alternativos</td>
+      <td>usdbrl</td>
+      <td>brlx</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,14 @@
+﻿moeda_original,status_fx,metodo_conversao,ticker_fx_1,ticker_fx_2,data_min_fx,data_max_fx,n_linhas_fx,mensagem_fx
+AUD,ok,direto_ccy_brl,AUDBRL=X,,2015-01-01,2026-04-15,2940,Conversão direta via AUDBRL=X
+BRL,ok,identidade_brl,BRL=X,,2015-01-01,2026-04-15,2937,Moeda já está em BRL; calendário baseado em BRL=X
+CNY,ok,ccyusd_x_usdbrl,CNYUSD=X,BRL=X,2015-01-01,2026-04-15,2936,Conversão via CNYUSD=X x BRL=X
+EUR,ok,direto_ccy_brl,EURBRL=X,,2015-01-01,2026-04-15,2937,Conversão direta via EURBRL=X
+GBP,ok,direto_ccy_brl,GBPBRL=X,,2015-01-01,2026-04-15,2938,Conversão direta via GBPBRL=X
+HKD,ok,direto_ccy_brl,HKDBRL=X,,2015-01-01,2026-04-15,2938,Conversão direta via HKDBRL=X
+INR,ok,ccyusd_x_usdbrl,INRUSD=X,BRL=X,2015-01-01,2026-04-15,2937,Conversão via INRUSD=X x BRL=X
+JPY,ok,direto_ccy_brl,JPYBRL=X,,2015-01-01,2026-04-15,2937,Conversão direta via JPYBRL=X
+KRW,ok,ccyusd_x_usdbrl,KRWUSD=X,BRL=X,2015-01-01,2026-04-15,2937,Conversão via KRWUSD=X x BRL=X
+MXN,ok,direto_ccy_brl,MXNBRL=X,,2015-01-01,2026-04-15,2937,Conversão direta via MXNBRL=X
+NZD,ok,ccyusd_x_usdbrl,NZDUSD=X,BRL=X,2015-01-01,2026-04-15,2937,Conversão via NZDUSD=X x BRL=X
+TWD,ok,ccyusd_x_usdbrl,TWDUSD=X,BRL=X,2015-01-01,2026-04-15,2937,Conversão via TWDUSD=X x BRL=X
+USD,ok,usd_direto_brlx,BRL=X,,2015-01-01,2026-04-15,2937,Conversão USD -> BRL via BRL=X

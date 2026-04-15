@@ -1,0 +1,46 @@
+﻿ticker,cluster,nome_ativo,classe,regiao,tipo_ativo
+000001.SS,4,Shanghai Composite,Equity Index,Asia,indice
+ACWI,2,iShares MSCI ACWI ETF,ETF,Global,etf
+ARGT,2,Global X MSCI Argentina ETF,ETF,America Latina,etf
+BOVA11.SA,3,iShares Ibovespa ETF,ETF,Brasil,etf
+BRL=X,4,USDBRL,FX,Brasil,cambio
+BTC-USD,5,Bitcoin USD,Crypto,Global,cripto
+BZ=F,1,Brent Crude Oil,Commodity,Global,commodity
+ECH,2,iShares MSCI Chile ETF,ETF,America Latina,etf
+ENZL,2,iShares MSCI New Zealand ETF,ETF,Oceania,etf
+EWA,2,iShares MSCI Australia ETF,ETF,Oceania,etf
+EWG,2,iShares MSCI Germany ETF,ETF,Europa,etf
+EWH,2,iShares MSCI Hong Kong ETF,ETF,Asia,etf
+EWJ,2,iShares MSCI Japan ETF,ETF,Asia,etf
+EWT,2,iShares MSCI Taiwan ETF,ETF,Asia,etf
+EWU,2,iShares MSCI United Kingdom ETF,ETF,Europa,etf
+EWW,2,iShares MSCI Mexico ETF,ETF,America Latina,etf
+EWY,2,iShares MSCI South Korea ETF,ETF,Asia,etf
+EZA,2,iShares MSCI South Africa ETF,ETF,Africa,etf
+FEZ,2,SPDR EURO STOXX 50 ETF,ETF,Europa,etf
+GC=F,4,Ouro Spot/Front,Commodity,Global,commodity
+GLD,4,SPDR Gold Shares,ETF,Global,etf
+IEMG,2,iShares Core MSCI Emerging Markets ETF,ETF,Emergentes,etf
+INDA,4,iShares MSCI India ETF,ETF,Asia,etf
+MCHI,2,iShares MSCI China ETF,ETF,Asia,etf
+QQQ,2,Invesco QQQ Trust,ETF,America do Norte,etf
+SMAL11.SA,3,iShares Small Caps ETF,ETF,Brasil,etf
+SPY,2,SPDR S&P 500 ETF,ETF,America do Norte,etf
+USO,1,United States Oil Fund,ETF,Global,etf
+VEA,2,Vanguard FTSE Developed Markets ETF,ETF,Global,etf
+VT,2,Vanguard Total World Stock ETF,ETF,Global,etf
+XLE,2,Energy Select Sector SPDR Fund,ETF,America do Norte,etf
+^AXJO,4,ASX 200,Equity Index,Oceania,indice
+^BVSP,3,Ibovespa,Equity Index,Brasil,indice
+^FTSE,4,FTSE 100,Equity Index,Europa,indice
+^GDAXI,4,DAX,Equity Index,Europa,indice
+^GSPC,2,S&P 500,Equity Index,America do Norte,indice
+^HSI,4,Hang Seng,Equity Index,Asia,indice
+^KS11,4,Kospi,Equity Index,Asia,indice
+^MXX,2,Mexico IPC,Equity Index,America Latina,indice
+^N225,4,Nikkei 225,Equity Index,Asia,indice
+^NDX,2,Nasdaq 100,Equity Index,America do Norte,indice
+^NSEI,4,Nifty 50,Equity Index,Asia,indice
+^NZ50,4,NZX 50,Equity Index,Oceania,indice
+^STOXX50E,4,Euro Stoxx 50,Equity Index,Europa,indice
+^TWII,4,Taiwan Weighted,Equity Index,Asia,indice
