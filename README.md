@@ -43,7 +43,7 @@ Além disso, o projeto busca entender:
 - A diferença entre **retorno absoluto** e **qualidade do retorno**  
 - O papel da **concentração** na aparente superioridade de algumas soluções  
 - A importância de comparar métodos em uma base metodológica coerente  
-- Se os resultados observados são **robustos ou sensíveis ao critério analisado**  
+- Se os resultados observados são **robustos dentro do desenho adotado** ou sensíveis ao critério analisado  
 
 ---
 
@@ -147,9 +147,9 @@ Foram calculadas métricas de retorno, risco, eficiência e concentração:
 - 📈 Retorno total
 - 📈 CAGR
 - 📊 Volatilidade anual
-- ⚖️ Sharpe Ratio
+- ⚖️ **Sharpe simplificado**
 - 📉 Drawdown máximo
-- 📊 Sortino
+- 📊 **Sortino simplificado**
 - 📊 Calmar
 - ✅ Percentual de meses positivos
 - 📆 Melhor mês / pior mês
@@ -158,6 +158,8 @@ Foram calculadas métricas de retorno, risco, eficiência e concentração:
 - 🧱 HHI
 - 🧱 Número efetivo de ativos
 - 🏆 Score agregado multicritério
+
+> **Observação:** as métricas de **Sharpe** e **Sortino** foram utilizadas em versões **simplificadas**, aplicadas de forma padronizada entre as famílias de estratégia. Isso preserva a comparabilidade relativa entre os métodos, embora não corresponda exatamente às formulações clássicas com taxa livre de risco explícita ou alvo formal de retorno.
 
 ---
 
@@ -178,27 +180,27 @@ Essa separação foi importante para evitar misturar versões defensivas e ofens
 
 ### 8. Testes estatísticos e robustez
 
-Para validar os resultados observados:
+Para qualificar os resultados observados:
 
 - Testes pareados entre famílias
 - Comparações entre cenários com e sem alternativos
 - Avaliação de robustez entre métricas
 - Verificação de consistência dos resultados agregados
 
-O objetivo não foi apenas apontar “vencedores”, mas entender se as diferenças observadas encontravam sustentação empírica e se permaneciam consistentes quando avaliadas por mais de uma dimensão.
+O objetivo não foi apenas apontar “vencedores”, mas entender se as diferenças observadas encontravam **evidência comparativa dentro do desenho adotado** e se permaneciam consistentes quando avaliadas por mais de uma dimensão.
 
 ---
 
 ## 📈 Principais Resultados
 
 - O **Equal Weight** se mostrou um benchmark forte e competitivo, provando que a diversificação simples já entrega uma base robusta  
-- O **Markowitz puro**, especialmente nas versões orientadas a **max Sharpe**, apareceu como a abordagem mais capaz de empurrar eficiência e crescimento composto  
+- O **Markowitz puro**, especialmente na família **max sharpe**, apareceu como a abordagem mais capaz de empurrar eficiência e crescimento composto  
 - O **Markowitz restrito** mostrou ganhos claros em disciplina de alocação, reduzindo concentração excessiva em relação ao modelo puro  
 - O **HRP** apareceu como uma alternativa sólida em robustez e diversificação estrutural  
 - Os **alternativos** tiveram impacto heterogêneo: ajudaram em alguns cenários, mas não melhoraram todas as famílias de forma uniforme  
 - Métricas de concentração mostraram que parte da superioridade de algumas carteiras vinha acompanhada de maior dependência de poucos ativos  
 - Em um universo de ETFs, a remoção de alguns fundos em certas soluções não significou perda automática de diversificação, mas frequentemente eliminação de exposições redundantes ou pouco eficientes  
-- No fechamento final, houve **convergência relevante entre os critérios centrais**, com uma mesma família se destacando simultaneamente nos principais indicadores agregados  
+- No fechamento final, houve **convergência relevante entre os critérios centrais**, com a família **Markowitz puro | max sharpe** se destacando simultaneamente nos principais indicadores agregados  
 
 👉 Isso sugere que:
 
@@ -217,7 +219,7 @@ O projeto inclui um relatório HTML interativo com:
 - 🌍 Comparações entre índices, ETFs e alternativos  
 - 🎛️ Dropdowns e viewers por seção  
 - 📊 Tabelas interativas com busca, ordenação e paginação  
-- 🧱 Rankings de Sharpe, CAGR, drawdown e concentração  
+- 🧱 Rankings de **Sharpe simplificado**, CAGR, drawdown e concentração  
 - 📦 Comparação entre cenários com e sem alternativos  
 - 🌲 Visualizações específicas para HRP  
 - ⚖️ Comparação consolidada entre famílias  
@@ -239,7 +241,7 @@ O projeto inclui um relatório HTML interativo com:
 - Alternativos não melhoram necessariamente todas as carteiras  
 - Parte da eficiência observada pode vir acompanhada de maior concentração  
 - Em um universo de ETFs, mais fundos não significam automaticamente mais segurança  
-- O estudo busca identificar **evidência empírica**, não causalidade  
+- O estudo busca identificar **evidência empírica comparativa**, não causalidade  
 - Índices e ETFs foram tratados separadamente para evitar distorções metodológicas  
 - Todos os resultados foram analisados em **BRL**, incluindo ativos originalmente cotados em outras moedas  
 
@@ -257,6 +259,7 @@ O projeto inclui um relatório HTML interativo com:
 - Em um universo de ETFs, **mais diversificação não equivale automaticamente a mais segurança**, porque novos fundos podem adicionar exposições redundantes ou estruturalmente mais voláteis  
 - O fechamento final mostrou que, embora diferentes objetivos continuem relevantes, **uma mesma família conseguiu convergir liderança em critérios centrais**  
 - Não basta perguntar “qual rendeu mais?”; é preciso perguntar **como esse retorno foi obtido**  
+- **Sharpe** e **Sortino** foram utilizados em versões **simplificadas**, preservando a comparabilidade relativa entre os métodos  
 - A escolha da estratégia depende do objetivo do investidor e do equilíbrio desejado entre desempenho, risco, concentração e implementabilidade  
 
 ---
@@ -269,7 +272,7 @@ O estudo reforça uma ideia central:
 
 Ao longo do projeto, ficou evidente que diferentes métodos resolvem problemas diferentes. O **Equal Weight** oferece simplicidade e força como benchmark. O **Markowitz puro** empurra a fronteira de eficiência, mas pode concentrar demais. O **Markowitz restrito** melhora a disciplina e a implementabilidade da alocação. O **HRP** oferece uma alternativa robusta e estruturalmente diversificada. Já os **alternativos** funcionam como instrumentos contextuais, e não como solução automática.
 
-Ao mesmo tempo, o fechamento deste estudo mostrou algo importante: **não houve uma divisão completa entre vencedores por critério**. Pelo contrário, uma mesma família conseguiu se destacar simultaneamente nos principais indicadores do comparativo final, reunindo crescimento, eficiência e força no score agregado. Isso torna a conclusão mais forte, porque sugere que sua liderança não ficou restrita a uma dimensão isolada, mas apareceu de forma mais ampla no fechamento do projeto.
+Ao mesmo tempo, o fechamento deste estudo mostrou algo importante: **não houve uma divisão completa entre vencedores por critério**. Pelo contrário, a família **Markowitz puro | max sharpe** conseguiu se destacar simultaneamente nos principais indicadores do comparativo final, reunindo crescimento, eficiência e força no score agregado. Isso torna a conclusão mais forte, porque sugere que sua liderança não ficou restrita a uma dimensão isolada, mas apareceu de forma mais ampla no fechamento do projeto.
 
 Outro aprendizado importante é que, em um universo composto por ETFs, a diversificação precisa ser interpretada com mais cuidado. Como cada ETF já é uma cesta diversificada internamente, a adição de mais fundos não implica automaticamente mais segurança. Em muitos casos, uma carteira melhor não é a que simplesmente acumula mais ETFs, mas a que seleciona melhor quais exposições globais fazem sentido em conjunto. Isso ajuda a explicar por que soluções mais enxutas puderam, em alguns casos, melhorar o fechamento risco-retorno sem que isso significasse empobrecimento da diversificação.
 
@@ -280,4 +283,4 @@ Em termos práticos:
 > A diversificação simples continua poderosa —  
 > a otimização pode melhorar bastante a eficiência —  
 > as restrições tornam a carteira mais robusta —  
-> e, nesta amostra, uma mesma família conseguiu combinar melhor retorno, qualidade do retorno e fechamento multicritério.
+> e, nesta amostra, a família **Markowitz puro | max sharpe** foi a que melhor combinou retorno, qualidade do retorno e fechamento multicritério.
