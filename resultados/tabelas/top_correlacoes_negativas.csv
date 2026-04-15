@@ -1,21 +1,21 @@
 ﻿ticker_1,ticker_2,correlacao,frequencia,universo,nome_ativo_1,classe_1,subclasse_1,regiao_1,pais_1,tipo_ativo_1,grupo_universo_1,nome_ativo_2,classe_2,subclasse_2,regiao_2,pais_2,tipo_ativo_2,grupo_universo_2
-^BVSP,BRL=X,-0.6345266865860506,mensal,equities_alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
-BRL=X,^BVSP,-0.6345266865860505,mensal,total,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
-BOVA11.SA,BRL=X,-0.6344289251586512,mensal,equities_alternativos,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
-BOVA11.SA,BRL=X,-0.6344289251586512,mensal,total,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
-SMAL11.SA,BRL=X,-0.5769657950873426,mensal,equities_alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
-BRL=X,SMAL11.SA,-0.5769657950873425,mensal,total,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs
-BOVA11.SA,GC=F,-0.3580145943909003,mensal,total,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
-BOVA11.SA,GC=F,-0.3580145943909003,mensal,equities_alternativos,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
-GC=F,^BVSP,-0.35697106018237296,mensal,total,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
-^BVSP,GC=F,-0.35697106018237296,mensal,equities_alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
-GLD,^BVSP,-0.337784520040607,mensal,equities_alternativos,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
-GLD,^BVSP,-0.337784520040607,mensal,total,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
-GLD,^BVSP,-0.337784520040607,mensal,equities,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
-BOVA11.SA,GLD,-0.3374722246514951,mensal,equities,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs
-BOVA11.SA,GLD,-0.3374722246514951,mensal,equities_alternativos,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs
-BOVA11.SA,GLD,-0.3374722246514951,mensal,total,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs
-SMAL11.SA,GC=F,-0.3051078088302573,mensal,equities_alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
-GC=F,SMAL11.SA,-0.3051078088302572,mensal,total,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs
-GLD,SMAL11.SA,-0.28868925273155327,mensal,total,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs
-GLD,SMAL11.SA,-0.28868925273155327,mensal,equities_alternativos,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs
+BRL=X,^BVSP,-0.6347527534039477,mensal,total,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
+^BVSP,BRL=X,-0.6347527534039477,mensal,equities_alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
+BOVA11.SA,BRL=X,-0.6345189994033446,mensal,equities_alternativos,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
+BOVA11.SA,BRL=X,-0.6345189994033446,mensal,total,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
+SMAL11.SA,BRL=X,-0.5775234615360331,mensal,equities_alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos
+BRL=X,SMAL11.SA,-0.577523461536033,mensal,total,USDBRL,FX,Cambio,Brasil,Brasil,cambio,alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs
+BOVA11.SA,GC=F,-0.3582236817519388,mensal,total,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
+BOVA11.SA,GC=F,-0.3582236817519388,mensal,equities_alternativos,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
+GC=F,^BVSP,-0.35725432777645066,mensal,total,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
+^BVSP,GC=F,-0.35725432777645066,mensal,equities_alternativos,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
+GLD,^BVSP,-0.3381835138009865,mensal,equities_alternativos,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
+GLD,^BVSP,-0.3381835138009865,mensal,total,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
+GLD,^BVSP,-0.3381835138009865,mensal,equities,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,Ibovespa,Equity Index,Broad Market,Brasil,Brasil,indice,indices
+BOVA11.SA,GLD,-0.33775551498325995,mensal,equities,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs
+BOVA11.SA,GLD,-0.33775551498325995,mensal,equities_alternativos,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs
+BOVA11.SA,GLD,-0.33775551498325995,mensal,total,iShares Ibovespa ETF,ETF,Brasil Broad Market,Brasil,Brasil,etf,etfs,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs
+SMAL11.SA,GC=F,-0.3055092981868866,mensal,equities_alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos
+GC=F,SMAL11.SA,-0.3055092981868865,mensal,total,Ouro Spot/Front,Commodity,Ouro,Global,Global,commodity,alternativos,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs
+GLD,SMAL11.SA,-0.2892374205943353,mensal,total,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs
+GLD,SMAL11.SA,-0.2892374205943353,mensal,equities_alternativos,SPDR Gold Shares,ETF,Ouro,Global,Global,etf,etfs,iShares Small Caps ETF,ETF,Brasil Small Caps,Brasil,Brasil,etf,etfs

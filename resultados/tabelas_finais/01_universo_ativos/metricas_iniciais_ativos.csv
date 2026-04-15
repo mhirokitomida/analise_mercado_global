@@ -3,9 +3,9 @@ ASX 200,^AXJO,indices,Equity Index,Broad Market,Oceania,Australia,AUD,indice,201
 Bitcoin USD,BTC-USD,alternativos,Crypto,Bitcoin,Global,Global,USD,cripto,2014-09-17,2026-04-15,4229,0,0.0,True,True,True,
 Brent Crude Oil,BZ=F,alternativos,Commodity,Petroleo,Global,Global,USD,commodity,2010-01-04,2026-04-15,4064,0,0.0,True,True,True,
 Chile IPSA,^IPSA,indices,Equity Index,Broad Market,America Latina,Chile,CLP,indice,2010-01-04,2026-04-15,2349,0,0.0,False,True,False,historico_insuficiente
-DAX,^GDAXI,indices,Equity Index,Broad Market,Europa,Alemanha,EUR,indice,2010-01-04,2026-04-15,4131,0,0.0,True,True,True,
+DAX,^GDAXI,indices,Equity Index,Broad Market,Europa,Alemanha,EUR,indice,2010-01-04,2026-04-15,4131,1,0.0002420721374969741,True,True,True,
 Energy Select Sector SPDR Fund,XLE,etfs,ETF,Energia,America do Norte,Estados Unidos,USD,etf,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,
-Euro Stoxx 50,^STOXX50E,indices,Equity Index,Broad Market,Europa,Zona do Euro,EUR,indice,2010-01-04,2026-04-15,4083,0,0.0,True,True,True,
+Euro Stoxx 50,^STOXX50E,indices,Equity Index,Broad Market,Europa,Zona do Euro,EUR,indice,2010-01-04,2026-04-14,4082,0,0.0,True,True,True,
 FTSE 100,^FTSE,indices,Equity Index,Broad Market,Europa,Reino Unido,GBP,indice,2010-01-04,2026-04-15,4111,0,0.0,True,True,True,
 Global X MSCI Argentina ETF,ARGT,etfs,ETF,Argentina,America Latina,Argentina,USD,etf,2011-03-03,2026-04-15,3802,0,0.0,True,True,True,
 Hang Seng,^HSI,indices,Equity Index,Broad Market,Asia,Hong Kong,HKD,indice,2010-01-04,2026-04-15,4006,1,0.00024962556165751375,True,True,True,
@@ -13,9 +13,9 @@ Ibovespa,^BVSP,indices,Equity Index,Broad Market,Brasil,Brasil,BRL,indice,2010-0
 Invesco QQQ Trust,QQQ,etfs,ETF,US Tech/Growth,America do Norte,Estados Unidos,USD,etf,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,
 Kospi,^KS11,indices,Equity Index,Broad Market,Asia,Coreia do Sul,KRW,indice,2010-01-04,2026-04-14,4003,0,0.0,True,True,True,
 Mexico IPC,^MXX,indices,Equity Index,Broad Market,America Latina,Mexico,MXN,indice,2010-01-04,2026-04-15,4082,0,0.0,True,True,True,
-NZX 50,^NZ50,indices,Equity Index,Broad Market,Oceania,Nova Zelandia,NZD,indice,2010-01-05,2026-04-15,4002,0,0.0,True,True,True,
+NZX 50,^NZ50,indices,Equity Index,Broad Market,Oceania,Nova Zelandia,NZD,indice,2010-01-05,2026-04-14,4001,0,0.0,True,True,True,
 Nasdaq 100,^NDX,indices,Equity Index,Tech/Growth,America do Norte,Estados Unidos,USD,indice,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,
-Nifty 50,^NSEI,indices,Equity Index,Broad Market,Asia,India,INR,indice,2010-01-04,2026-04-15,3997,0,0.0,True,True,True,
+Nifty 50,^NSEI,indices,Equity Index,Broad Market,Asia,India,INR,indice,2010-01-04,2026-04-15,3997,1,0.0002501876407305479,True,True,True,
 Nikkei 225,^N225,indices,Equity Index,Broad Market,Asia,Japao,JPY,indice,2010-01-04,2026-04-15,3982,1,0.00025113008538422905,True,True,True,
 Ouro Spot/Front,GC=F,alternativos,Commodity,Ouro,Global,Global,USD,commodity,2010-01-04,2026-04-15,4094,0,0.0,True,True,True,
 S&P 500,^GSPC,indices,Equity Index,Broad Market,America do Norte,Estados Unidos,USD,indice,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,
@@ -24,9 +24,9 @@ SPDR Gold Shares,GLD,etfs,ETF,Ouro,Global,Global,USD,etf,2010-01-04,2026-04-15,4
 SPDR S&P 500 ETF,SPY,etfs,ETF,US Broad Market,America do Norte,Estados Unidos,USD,etf,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,
 Shanghai Composite,000001.SS,indices,Equity Index,Broad Market,Asia,China,CNY,indice,2010-01-04,2026-04-15,3948,1,0.00025329280648429586,True,True,True,
 Small Caps Brasil,SMLL.SA,indices,Equity Index,Small Caps,Brasil,Brasil,BRL,indice,2026-04-15,2026-04-15,1,0,0.0,False,True,False,historico_insuficiente
-South Africa Top 40,^JN0U.JO,indices,Equity Index,Broad Market,Africa,Africa do Sul,ZAR,indice,2017-09-26,2026-04-15,2138,0,0.0,False,True,False,historico_insuficiente
+South Africa Top 40,^JN0U.JO,indices,Equity Index,Broad Market,Africa,Africa do Sul,ZAR,indice,2017-09-26,2026-04-15,2138,1,0.0004677268475210477,False,True,False,historico_insuficiente
 Taiwan Weighted,^TWII,indices,Equity Index,Broad Market,Asia,Taiwan,TWD,indice,2010-01-04,2026-04-15,3972,1,0.00025176233635448137,True,True,True,
-USDBRL,BRL=X,alternativos,FX,Cambio,Brasil,Brasil,BRL,cambio,2010-01-04,2026-04-15,4237,0,0.0,True,True,True,
+USDBRL,BRL=X,alternativos,FX,Cambio,Brasil,Brasil,BRL,cambio,2010-01-04,2026-04-16,4238,0,0.0,True,True,True,
 United States Oil Fund,USO,etfs,ETF,Petroleo,Global,Global,USD,etf,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,
 Vanguard FTSE Developed Markets ETF,VEA,etfs,ETF,Developed Markets,Global,Desenvolvidos,USD,etf,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,
 Vanguard Total World Stock ETF,VT,etfs,ETF,Global Equity,Global,Global,USD,etf,2010-01-04,2026-04-15,4095,0,0.0,True,True,True,

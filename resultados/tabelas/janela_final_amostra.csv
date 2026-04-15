@@ -3,7 +3,7 @@ minimo_observacoes,3000
 maximo_pct_na_adj_close,0.05
 maior_data_minima_entre_aprovados,2014-09-17
 data_inicio_final_amostra,2015-01-01
-data_max_final_amostra,2026-04-15
+data_max_final_amostra,2026-04-16
 quantidade_ativos_iniciais,49
 quantidade_ativos_aprovados_filtro_inicial,45
 quantidade_ativos_excluidos_filtro_inicial,4

@@ -1,5 +1,5 @@
 ﻿nome_ativo,ticker_yahoo,grupo_universo,classe,subclasse,regiao,pais,moeda_original,tipo_ativo,data_min,data_max,n_linhas,n_adj_close_na,pct_adj_close_na,flag_min_obs,flag_max_na,flag_aprovado_inicial,motivo_exclusao_inicial
 Chile IPSA,^IPSA,indices,Equity Index,Broad Market,America Latina,Chile,CLP,indice,2010-01-04,2026-04-15,2349,0,0.0,False,True,False,historico_insuficiente
 Small Caps Brasil,SMLL.SA,indices,Equity Index,Small Caps,Brasil,Brasil,BRL,indice,2026-04-15,2026-04-15,1,0,0.0,False,True,False,historico_insuficiente
-South Africa Top 40,^JN0U.JO,indices,Equity Index,Broad Market,Africa,Africa do Sul,ZAR,indice,2017-09-26,2026-04-15,2138,0,0.0,False,True,False,historico_insuficiente
+South Africa Top 40,^JN0U.JO,indices,Equity Index,Broad Market,Africa,Africa do Sul,ZAR,indice,2017-09-26,2026-04-15,2138,1,0.0004677268475210477,False,True,False,historico_insuficiente
 iShares Bitcoin Trust,IBIT,etfs,ETF,Bitcoin,Global,Global,USD,etf,2024-01-11,2026-04-15,566,0,0.0,False,True,False,historico_insuficiente

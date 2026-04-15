@@ -2,9 +2,9 @@
 ASX 200,^AXJO,indices,Equity Index,Broad Market,Oceania,Australia,AUD,indice,2015-01-02,2026-04-15,2853,1,0.0003505082369435682,True
 Bitcoin USD,BTC-USD,alternativos,Crypto,Bitcoin,Global,Global,USD,cripto,2015-01-01,2026-04-15,4123,0,0.0,True
 Brent Crude Oil,BZ=F,alternativos,Commodity,Petroleo,Global,Global,USD,commodity,2015-01-02,2026-04-15,2838,0,0.0,True
-DAX,^GDAXI,indices,Equity Index,Broad Market,Europa,Alemanha,EUR,indice,2015-01-02,2026-04-15,2862,0,0.0,True
+DAX,^GDAXI,indices,Equity Index,Broad Market,Europa,Alemanha,EUR,indice,2015-01-02,2026-04-15,2862,1,0.00034940600978336826,True
 Energy Select Sector SPDR Fund,XLE,etfs,ETF,Energia,America do Norte,Estados Unidos,USD,etf,2015-01-02,2026-04-15,2837,0,0.0,True
-Euro Stoxx 50,^STOXX50E,indices,Equity Index,Broad Market,Europa,Zona do Euro,EUR,indice,2015-01-05,2026-04-15,2834,0,0.0,True
+Euro Stoxx 50,^STOXX50E,indices,Equity Index,Broad Market,Europa,Zona do Euro,EUR,indice,2015-01-05,2026-04-14,2833,0,0.0,True
 FTSE 100,^FTSE,indices,Equity Index,Broad Market,Europa,Reino Unido,GBP,indice,2015-01-02,2026-04-15,2850,0,0.0,True
 Global X MSCI Argentina ETF,ARGT,etfs,ETF,Argentina,America Latina,Argentina,USD,etf,2015-01-02,2026-04-15,2837,0,0.0,True
 Hang Seng,^HSI,indices,Equity Index,Broad Market,Asia,Hong Kong,HKD,indice,2015-01-02,2026-04-15,2774,1,0.0003604902667627974,True
@@ -12,9 +12,9 @@ Ibovespa,^BVSP,indices,Equity Index,Broad Market,Brasil,Brasil,BRL,indice,2015-0
 Invesco QQQ Trust,QQQ,etfs,ETF,US Tech/Growth,America do Norte,Estados Unidos,USD,etf,2015-01-02,2026-04-15,2837,0,0.0,True
 Kospi,^KS11,indices,Equity Index,Broad Market,Asia,Coreia do Sul,KRW,indice,2015-01-02,2026-04-14,2765,0,0.0,True
 Mexico IPC,^MXX,indices,Equity Index,Broad Market,America Latina,Mexico,MXN,indice,2015-01-02,2026-04-15,2836,0,0.0,True
-NZX 50,^NZ50,indices,Equity Index,Broad Market,Oceania,Nova Zelandia,NZD,indice,2015-01-05,2026-04-15,2824,0,0.0,True
+NZX 50,^NZ50,indices,Equity Index,Broad Market,Oceania,Nova Zelandia,NZD,indice,2015-01-05,2026-04-14,2823,0,0.0,True
 Nasdaq 100,^NDX,indices,Equity Index,Tech/Growth,America do Norte,Estados Unidos,USD,indice,2015-01-02,2026-04-15,2837,0,0.0,True
-Nifty 50,^NSEI,indices,Equity Index,Broad Market,Asia,India,INR,indice,2015-01-02,2026-04-15,2776,0,0.0,True
+Nifty 50,^NSEI,indices,Equity Index,Broad Market,Asia,India,INR,indice,2015-01-02,2026-04-15,2776,1,0.00036023054755043225,True
 Nikkei 225,^N225,indices,Equity Index,Broad Market,Asia,Japao,JPY,indice,2015-01-05,2026-04-15,2757,1,0.0003627130939426913,True
 Ouro Spot/Front,GC=F,alternativos,Commodity,Ouro,Global,Global,USD,commodity,2015-01-02,2026-04-15,2836,0,0.0,True
 S&P 500,^GSPC,indices,Equity Index,Broad Market,America do Norte,Estados Unidos,USD,indice,2015-01-02,2026-04-15,2837,0,0.0,True
@@ -23,7 +23,7 @@ SPDR Gold Shares,GLD,etfs,ETF,Ouro,Global,Global,USD,etf,2015-01-02,2026-04-15,2
 SPDR S&P 500 ETF,SPY,etfs,ETF,US Broad Market,America do Norte,Estados Unidos,USD,etf,2015-01-02,2026-04-15,2837,0,0.0,True
 Shanghai Composite,000001.SS,indices,Equity Index,Broad Market,Asia,China,CNY,indice,2015-01-05,2026-04-15,2738,1,0.0003652300949598247,True
 Taiwan Weighted,^TWII,indices,Equity Index,Broad Market,Asia,Taiwan,TWD,indice,2015-01-05,2026-04-15,2737,1,0.00036536353671903543,True
-USDBRL,BRL=X,alternativos,FX,Cambio,Brasil,Brasil,BRL,cambio,2015-01-01,2026-04-15,2937,0,0.0,True
+USDBRL,BRL=X,alternativos,FX,Cambio,Brasil,Brasil,BRL,cambio,2015-01-01,2026-04-16,2938,0,0.0,True
 United States Oil Fund,USO,etfs,ETF,Petroleo,Global,Global,USD,etf,2015-01-02,2026-04-15,2837,0,0.0,True
 Vanguard FTSE Developed Markets ETF,VEA,etfs,ETF,Developed Markets,Global,Desenvolvidos,USD,etf,2015-01-02,2026-04-15,2837,0,0.0,True
 Vanguard Total World Stock ETF,VT,etfs,ETF,Global Equity,Global,Global,USD,etf,2015-01-02,2026-04-15,2837,0,0.0,True

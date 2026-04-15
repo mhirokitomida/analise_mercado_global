@@ -56,47 +56,50 @@
 
         <div class="highlight-grid">
             <div class="highlight-card">
-                <span class="label">Melhor família em Sharpe</span>
+                <span class="label">Melhor família em Sharpe simplificado</span>
                 <div class="value">Markowitz puro | max sharpe</div>
                 <div class="small">liderança em eficiência risco-retorno</div>
             </div>
+
             <div class="highlight-card">
                 <span class="label">Melhor família em CAGR</span>
                 <div class="value">Markowitz puro | max sharpe</div>
-                <div class="small">liderança em crescimento composto</div>
+                <div class="small">crescimento anual composto</div>
             </div>
+
             <div class="highlight-card">
                 <span class="label">Melhor família em score</span>
                 <div class="value">Markowitz puro | max sharpe</div>
-                <div class="small">menor score final agregado</div>
+                <div class="small">fechamento agregado multicritério</div>
             </div>
+
             <div class="highlight-card">
                 <span class="label">Família com mais vitórias</span>
                 <div class="value">Markowitz puro | max sharpe</div>
-                <div class="small">14 vitórias</div>
+                <div class="small">15 vitórias entre as famílias comparadas</div>
             </div>
         </div>
     </div>
 
     <div class="exec-side">
-        <h2>Principais aprendizados</h2>
+        <h2>Key Takeaways</h2>
         <div class="takeaways">
             
     <div class="takeaway-card">
-        <h3>Domínio da família max sharpe pura</h3>
-        <p>A família <b>Markowitz puro | max sharpe</b> terminou como destaque em score, Sharpe e CAGR médios.</p>
+        <h3>Convergência relevante no fechamento final</h3>
+        <p>A família <b>Markowitz puro | max sharpe</b> terminou como destaque em <b>score</b>, <b>Sharpe simplificado</b> e <b>CAGR</b> médios.</p>
     </div>
     
 
     <div class="takeaway-card">
         <h3>Vitórias concentradas no mesmo núcleo</h3>
-        <p>A família com mais vitórias foi <b>Markowitz puro | max sharpe</b>, com <b>14</b> vitórias entre as famílias comparadas.</p>
+        <p>A família com mais vitórias foi <b>Markowitz puro | max sharpe</b>, com <b>15</b> vitórias entre as famílias comparadas.</p>
     </div>
     
 
     <div class="takeaway-card">
         <h3>Alternativos agregaram valor de forma desigual</h3>
-        <p>O melhor ganho de Sharpe com alternativos veio de <b>Markowitz puro | max sharpe</b>, com delta médio de <b>0.761</b>.</p>
+        <p>O melhor ganho de Sharpe simplificado com alternativos veio de <b>Markowitz puro | max sharpe</b>, com delta médio de <b>0.761</b>.</p>
     </div>
     
 
@@ -108,7 +111,7 @@
 
     <div class="takeaway-card">
         <h3>Mais diversificação efetiva com limites</h3>
-        <p>O número efetivo médio de ativos no Markowitz restrito ficou em <b>9.42</b>, acima do puro.</p>
+        <p>O número efetivo médio de ativos no Markowitz restrito ficou em <b>9.43</b>, acima do puro.</p>
     </div>
     
         </div>
@@ -139,23 +142,23 @@
     
 
     <div class="kpi-card">
-        <h3>Melhor família em Sharpe</h3>
+        <h3>Melhor família em Sharpe simplificado</h3>
         <div class="valor">Markowitz puro | max sharpe</div>
-        <div class="small">liderança em eficiência</div>
+        <div class="small">família líder em eficiência risco-retorno</div>
     </div>
     
 
     <div class="kpi-card">
         <h3>Melhor família em CAGR</h3>
         <div class="valor">Markowitz puro | max sharpe</div>
-        <div class="small">liderança em crescimento</div>
+        <div class="small">crescimento anual composto</div>
     </div>
     
 
     <div class="kpi-card">
-        <h3>Mais vitórias</h3>
+        <h3>Melhor família em score</h3>
         <div class="valor">Markowitz puro | max sharpe</div>
-        <div class="small">14 vitórias</div>
+        <div class="small">fechamento agregado multicritério</div>
     </div>
     
             </div>
@@ -164,8 +167,8 @@
     <span class="badge">Índices: 14</span>
     <span class="badge">ETFs: 25</span>
     <span class="badge">Alternativos: 6</span>
-    <span class="badge">Wilcoxon significativos: 72</span>
-    <span class="badge">Permutation pareado: 76</span>
+    <span class="badge">Wilcoxon significativos: 73</span>
+    <span class="badge">Permutation pareado: 75</span>
     <span class="badge">Mann-Whitney: 37</span>
 </div>
 
@@ -223,6 +226,18 @@
         de diversificação: como o universo investível é composto por ETFs, cada ativo já traz diversificação
         interna, o que exige avaliar não apenas quantos ETFs entram em uma carteira, mas <b>quais blocos de risco
         globais</b> estão sendo combinados.
+    </p>
+    <p>
+        As métricas de <b>Sharpe</b> e <b>Sortino</b> utilizadas no projeto devem ser entendidas como versões
+        <b>simplificadas</b>, aplicadas de forma padronizada entre as famílias de estratégia.
+        Isso preserva a comparabilidade relativa entre os métodos, embora não corresponda exatamente
+        às formulações clássicas com taxa livre de risco explícita ou alvo formal de retorno.
+    </p>
+    <p>
+        A bateria de testes estatísticos teve papel importante para qualificar as diferenças observadas,
+        mas deve ser interpretada como <b>evidência comparativa dentro do desenho adotado</b>, e não como
+        prova absoluta fora da amostra. Como o projeto compara múltiplas famílias, métricas e cenários,
+        a leitura correta é de robustez relativa dos resultados, e não de certeza irrestrita.
     </p>
 </div>
 
@@ -298,7 +313,7 @@
         permitindo medir o ganho real de complexidade trazido por Markowitz e HRP.
     </p>
     <p>
-        No agregado, o Equal Weight terminou com Sharpe médio de <b>1.033</b>
+        No agregado, o Equal Weight terminou com <b>Sharpe simplificado médio</b> de <b>1.034</b>
         e CAGR médio de <b>14.8%</b>. Isso é importante porque mostra
         que a diversificação simples já produz um benchmark interno forte e difícil de bater de forma robusta.
     </p>
@@ -358,7 +373,7 @@
         de peso, ele pôde concentrar mais capital nas teses com melhor relação estimada entre retorno esperado e risco.
     </p>
     <p>
-        No agregado, o método apresentou Sharpe médio de <b>1.262</b>,
+        No agregado, o método apresentou <b>Sharpe simplificado médio</b> de <b>1.262</b>,
         CAGR médio de <b>16.8%</b> e score médio de
         <b>221.97</b>. Esse bloco é fundamental para entender
         onde a otimização realmente cria valor e onde ela apenas aumenta concentração.
@@ -412,7 +427,7 @@
     </p>
     <p>
         Em média, o método ficou com peso máximo de <b>22.9%</b>
-        e número efetivo de ativos de <b>9.42</b>.
+        e número efetivo de ativos de <b>9.43</b>.
         Na prática, isso significou menos concentração do que o Markowitz puro.
     </p>
     <p>
@@ -463,17 +478,28 @@
             
 <div class="texto-livre">
     <p>
-        O <b>HRP</b> entra como alternativa estrutural ao Markowitz. Em vez de depender diretamente de uma solução
-        clássica de média-variância, ele usa a estrutura hierárquica de correlações para distribuir risco.
+        O <b>HRP</b> apareceu como uma solução intermediária bastante interessante no projeto.
+        Em vez de depender da otimização média-variância tradicional, ele organiza os ativos
+        por estrutura de correlação e distribui risco de forma hierárquica, o que tende a gerar
+        carteiras mais equilibradas em termos de concentração.
     </p>
+
     <p>
-        No agregado, o HRP terminou com Sharpe médio de <b>1.028</b>
-        e CAGR médio de <b>14.0%</b>.
-        O método ficou competitivo, mas sem dominar o baseline em eficiência.
+        No agregado, o HRP entregou Sharpe simplificado médio de
+        <b>1.028</b> e CAGR médio de
+        <b>14.0%</b>, permanecendo competitivo no comparativo final.
     </p>
+
     <p>
-        A leitura correta do HRP neste projeto é menos sobre “vencer tudo” e mais sobre oferecer
-        uma terceira via entre simplicidade total e concentração estimada da média-variância.
+        Isso é relevante porque o método não depende da mesma liberdade extrema do Markowitz puro
+        nem da simplicidade do Equal Weight. Na prática, ele funcionou como uma alternativa
+        intermediária entre <b>simplicidade</b>, <b>robustez estrutural</b> e <b>controle de concentração</b>.
+    </p>
+
+    <p>
+        Mesmo quando não liderou isoladamente, o HRP manteve-se próximo do Equal Weight em eficiência, com Sharpe simplificado médio de <b>1.028</b>.
+        Isso reforça seu valor como abordagem para investidores que preferem uma carteira
+        mais distribuída e menos sensível a soluções extremamente concentradas.
     </p>
 </div>
 
@@ -519,31 +545,32 @@
             
 <div class="texto-livre">
     <p>
-        A comparação consolidada foi feita em cima de <b>102 estratégias</b>
-        e <b>6 famílias de estratégia</b>.
-        Essas famílias nascem de <b>quatro métodos principais</b>, mas o bloco de Markowitz é
-        corretamente separado entre versões <b>min vol</b> e <b>max sharpe</b>, o que eleva o comparativo
-        final para seis famílias efetivas.
+        A etapa de comparação consolidada foi o núcleo do projeto. Em vez de olhar apenas para uma métrica,
+        o relatório reuniu <b>retorno</b>, <b>volatilidade</b>, <b>drawdown</b>, <b>Sharpe simplificado</b>,
+        <b>Sortino simplificado</b>, <b>Calmar</b> e métricas de <b>concentração</b> para avaliar as famílias
+        de estratégia de forma multicritério.
     </p>
+
     <p>
-        A família vencedora no agregado foi <b>Markowitz puro | max sharpe</b>.
-        Já o método campeão pelo score médio agregado foi <b>Markowitz puro</b>,
-        com score médio de <b>221.97</b>.
-        Aqui, <b>score menor significa melhor fechamento agregado</b>, porque o indicador resume
-        ranking conjunto entre CAGR, Sharpe, drawdown, volatilidade e Calmar.
+        O fechamento final mostrou que a família
+        <b>Markowitz puro | max sharpe</b> terminou como principal destaque
+        do estudo, liderando em <b>score agregado</b>, <b>Sharpe simplificado</b> e <b>CAGR</b>.
+        Em vez de uma fragmentação completa entre vencedores por critério, houve
+        <b>convergência relevante no comparativo final</b>.
     </p>
+
     <p>
-        Isso resume bem o projeto: o vencedor final não surgiu só por retorno bruto, nem por uma única
-        métrica isolada. O que apareceu foi uma hierarquia multicritério, em que eficiência, crescimento,
-        controle de perdas e concentração aceitável precisaram ser lidos em conjunto. Como o universo investível
-        é formado por ETFs — que já são carteiras diversificadas internamente —, a comparação final também mostra
-        que <b>mais ETFs não significam automaticamente uma carteira mais segura</b>. Em vários casos, remover ou
-        reduzir alguns ETFs fez sentido não por reduzir diversificação de forma ingênua, mas por evitar exposições
-        redundantes ou mercados estruturalmente mais instáveis que pioravam o fechamento risco-retorno.
+        Isso não elimina os trade-offs entre os métodos. O Equal Weight continuou funcionando como benchmark forte,
+        o Markowitz puro apareceu como a forma mais agressiva de empurrar eficiência e crescimento,
+        o Markowitz restrito disciplinou a concentração e o HRP se manteve como alternativa robusta.
+        Mas, no fechamento agregado, uma mesma família conseguiu combinar melhor crescimento,
+        eficiência e posição multicritério do que as demais.
     </p>
+
     <p>
-        Use os filtros abaixo para trocar métrica, cenário, método e família, sem precisar carregar centenas
-        de tabelas ao mesmo tempo.
+        O ranking final deve ser lido exatamente nesse espírito: não como um veredito simplista sobre
+        “qual carteira venceu”, mas como uma síntese entre <b>retorno</b>, <b>qualidade do retorno</b>,
+        <b>estrutura de risco</b> e <b>viabilidade prática</b>.
     </p>
 </div>
 
@@ -706,7 +733,7 @@
             
 <div class="texto-livre">
     <p>
-        O efeito dos alternativos não foi homogêneo. O maior ganho médio de Sharpe ao incluir alternativos
+        O efeito dos alternativos não foi homogêneo. O maior ganho médio de Sharpe simplificado ao incluir alternativos
         ficou com <b>Markowitz puro | max sharpe</b>,
         com delta de <b>0.761</b>.
     </p>
@@ -745,17 +772,17 @@
         <b>42 testes de cenário</b>.
     </p>
     <p>
-        No agregado, o projeto encontrou <b>72</b> significâncias em Wilcoxon,
-        <b>76</b> em permutation test pareado,
+        No agregado, o projeto encontrou <b>73</b> significâncias em Wilcoxon,
+        <b>75</b> em permutation test pareado,
         <b>37</b> em Mann-Whitney e
         <b>36</b> em permutation test de cenário.
     </p>
    <p>
-        Isso dá sustentação empírica à diferença entre famílias. No fechamento deste projeto, houve
+        Isso dá sustentação empírica à leitura comparativa entre famílias. No fechamento deste projeto, houve
         convergência relevante entre os critérios centrais, com a mesma família aparecendo na liderança
         dos principais destaques do comparativo final. Ainda assim, o bloco estatístico continua importante
-        porque mostra que essa superioridade não deve ser lida como um acaso isolado, mas como um resultado
-        que encontrou apoio empírico nas comparações realizadas.
+        porque mostra que essa superioridade encontrou apoio empírico nas comparações realizadas, devendo ser lida
+        como <b>evidência robusta dentro do desenho adotado</b>, e não como certeza irrestrita fora da amostra.
     </p>
 </div>
 
@@ -821,28 +848,26 @@
         de mercado, proxy investível e fonte adicional de diversificação.
     </p>
 
-   <p>
+    <p>
         O projeto consolidou <b>45 ativos</b>,
         <b>102 estratégias</b> e
         <b>6 famílias de estratégia</b>.
         No fechamento consolidado, a família <b>Markowitz puro | max sharpe</b>
         terminou como principal destaque do estudo, liderando simultaneamente em <b>score final agregado</b>,
-        <b>Sharpe</b> e <b>CAGR</b>. Em vez de uma divisão entre líderes por critério, o que apareceu aqui foi
-        uma liderança convergente: a mesma família conseguiu reunir crescimento, eficiência e força no ranking
-        multicritério. Isso não elimina a importância dos trade-offs analisados ao longo do projeto, mas indica
-        que, nesta amostra e neste desenho metodológico, essa família conseguiu combinar retorno, qualidade de
-        retorno e posição agregada de forma superior às demais.
+        <b>Sharpe simplificado</b> e <b>CAGR</b>. Em vez de uma fragmentação completa entre vencedores por critério,
+        o que apareceu aqui foi uma <b>convergência relevante</b>: uma mesma família conseguiu reunir crescimento,
+        eficiência e posição agregada superior dentro da amostra analisada.
     </p>
 
     <p>
         O <b>Equal Weight</b> foi mais do que um ponto de partida; ele funcionou como teste de honestidade
-        do projeto. Com Sharpe médio de <b>1.033</b> e CAGR médio
-        de <b>14.8%</b>, ele mostrou que uma diversificação simples
-        e transparente já entrega uma base forte. No comparativo final, sua leitura foi mantida em
-        <b>frequência mensal consistente com os demais métodos</b>, o que tornou a comparação com Markowitz puro,
-        Markowitz restrito e HRP metodologicamente justa. Isso importa porque impede que métodos mais sofisticados
-        pareçam bons apenas por complexidade. Para vencer o Equal Weight, um método precisou realmente produzir
-        ganho empírico, e não apenas uma estética matemática mais elaborada.
+        do projeto. Com Sharpe simplificado médio de <b>1.034</b>
+        e CAGR médio de <b>14.8%</b>, ele mostrou que uma
+        diversificação simples e transparente já entrega uma base forte. No comparativo final, sua leitura foi
+        mantida em <b>frequência mensal consistente com os demais métodos</b>, o que tornou a comparação com
+        Markowitz puro, Markowitz restrito e HRP metodologicamente justa. Isso importa porque impede que métodos
+        mais sofisticados pareçam bons apenas por complexidade. Para superar o Equal Weight, um método precisou
+        realmente produzir ganho empírico, e não apenas uma estética matemática mais elaborada.
     </p>
 
     <p>
@@ -858,48 +883,57 @@
     </p>
 
     <p>
-        O <b>Markowitz puro</b> foi a face mais agressiva da otimização. No agregado, ele apresentou Sharpe médio
-        de <b>1.262</b>, CAGR médio de
-        <b>16.8%</b> e score médio de
-        <b>221.97</b>. Mas esse ganho veio acompanhado do preço
-        clássico da média-variância sem amarras: maior tendência à concentração, peso máximo mais elevado e
-        estrutura menos amistosa para implementação. Em outras palavras, o Markowitz puro mostrou a potência da
-        otimização quando deixada livre, mas também escancarou sua fragilidade prática quando a solução ótima
-        converge demais para poucas teses.
+        Por outro lado, os métodos de otimização mostraram que a sofisticação pode, sim, agregar valor — mas de
+        forma diferente dependendo da família analisada. As versões de <b>Markowitz puro</b>, especialmente nos
+        blocos orientados a <b>maximização de Sharpe</b>, tenderam a se destacar com mais frequência em eficiência
+        e crescimento composto. Em contrapartida, esse ganho veio acompanhado de maior sensibilidade à concentração,
+        mostrando que carteiras teoricamente ótimas podem se tornar mais dependentes de poucos ativos ou fatores de
+        risco. Em outras palavras: a otimização pura elevou a performance em vários cenários, mas muitas vezes ao
+        custo de uma estrutura mais concentrada.
     </p>
 
     <p>
-        O <b>Markowitz restrito</b> foi justamente a resposta metodológica a esse problema. Com peso máximo médio
-        de <b>22.9%</b> contra
+        Essa leitura fica ainda mais forte quando lembramos que o projeto trabalha com ETFs. Como cada ETF já é uma
+        cesta diversificada internamente, a retirada de alguns fundos pelos métodos de otimização não deve ser lida
+        automaticamente como perda de qualidade. Em muitos casos, ela representa justamente a eliminação de exposições
+        redundantes ou de blocos de risco menos eficientes, o que ajuda a explicar por que uma carteira com menos ETFs
+        pode, em certas situações, apresentar melhor equilíbrio entre retorno e volatilidade.
+    </p>
+
+    <p>
+        Já o <b>Markowitz restrito</b> mostrou a utilidade prática das restrições. Ao impor limites de peso, o modelo
+        perdeu parte da liberdade extrema da solução pura, mas ganhou em disciplina alocativa, reduzindo concentração
+        excessiva e tornando as carteiras mais implementáveis. Com peso máximo médio de
+        <b>22.9%</b> contra
         <b>55.2%</b> no puro, e número efetivo médio de ativos
-        de <b>9.42</b>, o método mostrou que é possível
+        de <b>9.43</b>, o método mostrou que é possível
         disciplinar a carteira sem esvaziar completamente o ganho da otimização. Esse ponto é um dos resultados
         mais maduros do relatório: boa parte do valor do Markowitz pode ser preservada quando a carteira é obrigada
         a respeitar limites minimamente plausíveis de governança, concentração e capacidade de implementação.
     </p>
 
     <p>
-        O <b>HRP</b>, por sua vez, cumpriu um papel estratégico muito importante. Em vez de competir apenas como
+        O <b>HRP</b>, por sua vez, cumpriu um papel estratégico importante. Em vez de competir apenas como
         “mais um otimizador”, ele trouxe uma lógica diferente, baseada em hierarquia de correlações e distribuição
-        de risco. Seu Sharpe médio de <b>1.028</b> e CAGR médio de
-        <b>14.0%</b> mostram que ele permaneceu competitivo,
-        funcionando como alternativa intermediária entre a simplicidade do Equal Weight e a agressividade do
-        Markowitz. Isso é relevante porque o projeto não buscava coroar apenas um vencedor absoluto, mas mapear
-        estilos de construção de carteira coerentes com objetivos distintos.
+        de risco. Seu Sharpe simplificado médio de <b>1.028</b>
+        e CAGR médio de <b>14.0%</b> mostram que ele permaneceu
+        competitivo, funcionando como alternativa intermediária entre a simplicidade do Equal Weight e a
+        agressividade do Markowitz. Isso é relevante porque o projeto não buscava coroar apenas um vencedor
+        absoluto, mas mapear estilos de construção de carteira coerentes com objetivos distintos.
     </p>
 
     <p>
         A leitura conjunta de <b>concentração, diversificação efetiva, eficiência e drawdown</b> foi uma das maiores
         qualidades metodológicas do projeto. Não bastava saber quem teve maior CAGR; era necessário observar como
         esse resultado foi construído. Por isso, métricas como peso máximo, top 3 pesos, HHI, número efetivo de ativos,
-        Sharpe, Sortino, Calmar e drawdown máximo tiveram papel central. Esse conjunto mostrou que retorno alto sem
-        disciplina de pesos pode esconder fragilidade estrutural, enquanto carteiras mais equilibradas podem abrir mão
-        de algum upside para ganhar robustez, estabilidade e governança.
+        Sharpe simplificado, Sortino simplificado, Calmar e drawdown máximo tiveram papel central. Esse conjunto mostrou
+        que retorno alto sem disciplina de pesos pode esconder fragilidade estrutural, enquanto carteiras mais equilibradas
+        podem abrir mão de algum upside para ganhar robustez, estabilidade e governança.
     </p>
 
     <p>
         O bloco de <b>alternativos</b> reforçou exatamente essa visão de trade-off. O melhor ganho médio de Sharpe
-        com alternativos veio de <b>Markowitz puro | max sharpe</b>,
+        simplificado com alternativos veio de <b>Markowitz puro | max sharpe</b>,
         com delta de <b>0.761</b>. Já o melhor ganho de CAGR
         veio de <b>Markowitz restrito | max sharpe</b>, enquanto a melhor melhora
         em drawdown apareceu em <b>Markowitz puro | min vol</b>.
@@ -922,12 +956,20 @@
         O bloco de robustez estatística avaliou <b>7 métricas</b>,
         com <b>105 testes pareados</b> e
         <b>42 testes de cenário</b>. No agregado, foram encontradas
-        <b>72</b> significâncias em Wilcoxon,
-        <b>76</b> em permutation test pareado,
+        <b>73</b> significâncias em Wilcoxon,
+        <b>75</b> em permutation test pareado,
         <b>37</b> em Mann-Whitney e
         <b>36</b> em permutation test de cenário.
-        Isso não transforma o relatório em uma verdade absoluta, mas dá uma base muito mais sólida para afirmar
-        que as diferenças observadas não são mero ruído casual.
+        Esses resultados fortalecem a leitura comparativa do relatório, mas devem ser entendidos como
+        <b>evidência robusta dentro do desenho adotado</b>, e não como certeza irrestrita fora da amostra.
+    </p>
+
+    <p>
+        Também é importante registrar de forma explícita que as métricas de <b>Sharpe</b> e <b>Sortino</b> utilizadas
+        no projeto devem ser entendidas como versões <b>simplificadas</b>, aplicadas de forma padronizada entre
+        as famílias de estratégia. Isso preserva a comparabilidade relativa entre os métodos ao longo do estudo,
+        embora não corresponda exatamente às formulações clássicas com taxa livre de risco explícita ou alvo formal
+        de retorno.
     </p>
 
     <p>
@@ -935,32 +977,18 @@
         distintas em termos de simplicidade, disciplina de pesos, robustez estrutural e controle de concentração,
         <b>o fechamento deste estudo mostrou convergência relevante entre os critérios centrais</b>. Em vez de uma
         fragmentação completa entre vencedores por métrica, o comparativo final revelou que uma mesma família
-        conseguiu reunir liderança em <b>score agregado</b>, <b>Sharpe</b> e <b>CAGR</b>. Isso não elimina os
-        trade-offs discutidos ao longo do relatório, mas indica que, nesta amostra e neste desenho metodológico,
+        conseguiu reunir liderança em <b>score agregado</b>, <b>Sharpe simplificado</b> e <b>CAGR</b>. Isso não elimina
+        os trade-offs discutidos ao longo do relatório, mas sugere que, nesta amostra e neste desenho metodológico,
         uma solução conseguiu combinar melhor crescimento, eficiência e qualidade de alocação do que as demais.
     </p>
 
     <p>
         Em termos profissionais, o relatório final sugere que a boa prática não é procurar uma carteira “perfeita”,
         mas sim escolher conscientemente a família de carteira mais aderente ao objetivo e à tolerância do investidor.
-        O projeto mostra que a sofisticação só vale a pena quando produz ganho real sobre um baseline simples, que
-        restrições não são inimigas da otimização — muitas vezes são o que torna a otimização utilizável — e que
-        alternativos devem entrar como instrumentos funcionais, não como adereços. Essa é uma conclusão compatível
-        com um projeto grande: metodologicamente cuidadosa, empiricamente sustentada e honesta sobre os limites e
-        vantagens de cada abordagem.
+        O projeto mostra que a sofisticação só vale a pena quando produz ganho empírico real, e também mostra que
+        boa parte do valor da diversificação global depende menos de “ter muitos ativos” e mais de <b>combinar
+        blocos de risco globais de forma coerente</b>.
     </p>
-
-    <h3>Principais aprendizados</h3>
-    <ul>
-        <li>índices, ETFs e alternativos precisam permanecer em blocos conceituais separados para evitar leitura contaminada;</li>
-        <li>Equal Weight foi um benchmark forte e útil para testar se a sofisticação realmente agregou valor;</li>
-        <li>Markowitz puro concentrou mais, mas também mostrou o teto de eficiência possível quando a otimização fica livre;</li>
-        <li>Markowitz restrito preservou parte relevante do ganho do puro com melhor disciplina de pesos e maior implementabilidade;</li>
-        <li>HRP ofereceu uma alternativa estruturalmente distinta, especialmente interessante para quem valoriza diversificação por correlação;</li>
-        <li>alternativos ajudaram, mas de forma seletiva e dependente do objetivo da família de carteira;</li>
-        <li>os testes estatísticos reforçaram que as diferenças entre famílias são reais, embora não resumíveis a uma única métrica;</li>
-        <li>a decisão final entre famílias deve ser orientada por objetivo, risco tolerado, concentração aceitável e robustez desejada.</li>
-    </ul>
 </div>
 
         </section>

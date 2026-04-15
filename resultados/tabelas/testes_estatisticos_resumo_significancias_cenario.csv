@@ -1,7 +1,7 @@
 ﻿familia_estrategia,vencedor_media,qtd_testes,qtd_sig_mannwhitney,qtd_sig_permutation,media_diff_media
-equal_weight,com_alternativos,7,5,6,0.29447894160553556
-hrp,com_alternativos,7,7,5,0.2649692993910109
-markowitz_puro__max_sharpe,com_alternativos,7,7,7,1.1444205731646666
-markowitz_puro__min_vol,com_alternativos,7,7,6,0.47752196372075034
-markowitz_restrito__max_sharpe,com_alternativos,7,6,7,0.8910241856012912
-markowitz_restrito__min_vol,com_alternativos,7,5,5,0.23232403794641152
+equal_weight,com_alternativos,7,5,6,0.29468278071499804
+hrp,com_alternativos,7,7,5,0.26453453733198795
+markowitz_puro__max_sharpe,com_alternativos,7,7,7,1.1483076227860123
+markowitz_puro__min_vol,com_alternativos,7,7,6,0.47734310046247075
+markowitz_restrito__max_sharpe,com_alternativos,7,6,7,0.8928490317789813
+markowitz_restrito__min_vol,com_alternativos,7,5,5,0.23242335835985317
